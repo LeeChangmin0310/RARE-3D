@@ -1,3 +1,7 @@
+아래를 그대로 README.md에 붙여넣어 쓰면 된다. Ubuntu 22.04 LTS + RTX 5000(쿠다 12.x) 환경에 맞춰 정리했다. 공식 레포의 예제 스케줄(200/300 epoch)과 논문 설정(150/100 epoch, Adam 1e-6, batch 64)을 모두 명시했다.
+
+---
+
 # RARE-3D: Reinforcement Learning–based Adaptive Path Selection for Efficient Point-Cloud Restoration
 
 **TL;DR.** We modernize **PathNet** (point-wise path selection for denoising) by replacing its **LSTM + REINFORCE** routing with a **Transformer encoder + PPO (with GAE)**. We keep the original 2-stage training protocol and loss design, aiming for better stability, equal-or-better quality, and lower use of complex paths.
@@ -21,58 +25,109 @@ This repo is a fork/derivative of **PathNet**. We keep upstream scripts, dataset
 
 ---
 
-## Environment
+## Environment (Ubuntu 22.04 LTS + RTX 5000)
 
-* **GPU:** Single NVIDIA GPU (≥ 24 GiB VRAM recommended)
-* **OS:** Ubuntu 20.04+ (CUDA 11.8/12.x supported)
-* **Core:** Python 3.10+, PyTorch 2.x, TorchRL or CleanRL, PyTorch3D, Open3D
+* **OS:** Ubuntu 22.04 LTS
+* **GPU:** NVIDIA RTX 5000 (CUDA 12.x supported)
+* **Python:** 3.10+
+* **Core:** PyTorch 2.x, **either** TorchRL **or** CleanRL (pick one), PyTorch3D, Open3D
+
+> PyTorch3D wheels must match your **PyTorch** and **CUDA** versions. Two safe paths are provided below.
+
+### Option A — Official env (from upstream)
 
 ```bash
-# Conda env (example)
+conda env create -f env.yml
+conda activate pathnet
+```
+
+### Option B — Modern toolchain (CUDA 12.1 / PyTorch 2.1.2)
+
+```bash
+# Create env
 conda create -n rare3d python=3.10 -y
 conda activate rare3d
 
-# Install PyTorch (match CUDA to your driver)
-pip install --index-url https://download.pytorch.org/whl/cu121 torch torchvision torchaudio
+# PyTorch 2.1.2 (CUDA 12.1)
+pip install --index-url https://download.pytorch.org/whl/cu121 \
+  torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2
 
-# PyTorch3D (use official wheels matching your versions)
+# PyTorch3D wheel matching torch==2.1.2 + cu121
 pip install -U fvcore iopath
-# Example wheel index (adjust for your CUDA/PyTorch):
-pip install pytorch3d -f https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu121_pyt212/download.html
+pip install pytorch3d -f \
+  https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu121_pyt212/download.html
 
 # Common libs
 pip install open3d tensorboardX tqdm h5py numpy scipy
-# RL stack (choose one family)
-pip install torchrl==0.* cleanrl==1.*
+
+# RL stack (pick ONE)
+pip install cleanrl==1.*          # or: pip install torchrl==0.*
+```
+
+**Sanity check**
+
+```bash
+python - << 'PY'
+import torch, sys
+print("torch:", torch.__version__, "cuda:", torch.version.cuda)
+try:
+    import pytorch3d
+    print("pytorch3d OK")
+except Exception as e:
+    print("pytorch3d import error:", e, file=sys.stderr)
+PY
 ```
 
 ---
 
 ## Data & Pretrained (from PathNet)
 
-Download **datasets** and **pretrained models** from the PathNet repository (Drive links).
-Place them like:
+Download **datasets** and **pretrained models** from the PathNet repository (Drive links). Place files as:
 
 ```
 RARE-3D/
   data/
     train_data.hdf5
-    test_data.zip  (unzip if required)
+    test_data.zip  # unzip if required
 ```
 
 We follow the original **2-stage** training protocol.
 
 ---
 
-## Reproducing the Baseline (PathNet)
+## Baselines (Repo-default vs Paper-config)
+
+### A) Repo-default (as in the official README)
 
 ```bash
-# Stage 1: random routing warm-up
+cd PathNet
+# Stage 1 (random routing warm-up)
 python train.py --epoch 200 --use_random_path 1
-
-# Stage 2: learn routing (original REINFORCE routing)
+# Stage 2 (learn routing with REINFORCE)
 python train.py --epoch 300 --use_random_path 0
 ```
+
+### B) Paper-config (TPAMI’24, for faithful reproduction)
+
+```bash
+cd PathNet
+# Stage 1
+python train.py \
+  --use_random_path 1 \
+  --epoch 150 \
+  --batch_size 64 \
+  --lr 1e-6
+
+# Stage 2
+python train.py \
+  --use_random_path 0 \
+  --epoch 100 \
+  --batch_size 64 \
+  --lr 1e-6
+```
+
+> We report which profile (A or B) is used for each experiment.
+> Restorer optimizer for paper-config: **Adam, lr=1e-6**, batch **64**.
 
 ---
 
@@ -89,10 +144,14 @@ python tools/ppo_trainer.py \
   --gamma 0.99 --gae_lambda 0.95 \
   --entropy_coef 1e-3 --lr 3e-4
 
-# (B) Restorer step — freeze policy, update the denoiser supervised
-python tools/train_restorer.py --epochs 1 --loss cd+repulsion
+# (B) Restorer step — freeze policy, supervised update of the denoiser
+python tools/train_restorer.py \
+  --epochs 1 \
+  --batch_size 64 \
+  --lr 1e-6 \
+  --loss cd+repulsion
 
-# Repeat (A) and (B).
+# Repeat (A) and (B)
 # IMPORTANT: Do not reuse rollouts across different restorer weights (keep on-policy).
 ```
 
@@ -125,7 +184,7 @@ python tools/eval.py --split test --metrics cd fscore
 
 * **Quality:** CD ↓ **≥3%** vs original PathNet baseline; F-score@1% **+2.0 pt**
 * **Efficiency:** complex-path utilization **−20%** at equal quality; inference time **−15%**
-* **Generalization:** Synth-A/B → Real-A/B drop ≤ 30%
+* **Generalization:** Synth-A/B → Real-A/B drop ≤ **30%**
 
 ---
 
@@ -157,7 +216,7 @@ RARE-3D/
 ## Method Brief
 
 * **State:** local patch features ⊕ previous action one-hot ⊕ block index (positional encoding)
-* **Action:** select path (a_t \in { \text{bypass}, \text{complex} }) (extensible to (M>2))
+* **Action:** select path (a_t \in {\text{bypass}, \text{complex}}) (extensible to (M>2))
 * **Reward:** complexity penalty at intermediate steps; noise/geometry-aware improvement at the final step (kept from PathNet)
 * **Losses (restorer):** squared nearest-neighbor distance (L_d) + repulsion (L_r)
 * **PPO defaults:** clip 0.1–0.2, epochs 4–8, minibatch 8–16, (\gamma=0.99), (\lambda_{\text{GAE}}=0.95), entropy 1e-3, lr 3e-4, max-grad-norm 0.5
@@ -174,8 +233,35 @@ RARE-3D/
 
 ## Contributors
 
-* **Changmin Lee (@your-id)**, **Ui-Hyun Maeng (@your-id)**, **Suyeon Myung (@your-id)**
-  Maintainer: **@your-id**
+<table>
+  <tr>
+    <td align="center" valign="top" width="160">
+      <a href="https://github.com/LeeChangmin0310">
+        <img src="https://github.com/LeeChangmin0310.png?size=120" width="96" height="96" alt="LeeChangmin0310 avatar"/><br/>
+        <sub><b>Changmin Lee</b></sub><br/>
+        <sub>@LeeChangmin0310</sub><br/>
+        <sub>Maintainer</sub>
+      </a>
+    </td>
+    <td align="center" valign="top" width="160">
+      <a href="https://github.com/suyeonmyeong">
+        <img src="https://github.com/suyeonmyeong.png?size=120" width="96" height="96" alt="suyeonmyeong avatar"/><br/>
+        <sub><b>Suyeon Myung</b></sub><br/>
+        <sub>@suyeonmyeong</sub><br/>
+        <sub>Core Contributor</sub>
+      </a>
+    </td>
+    <td align="center" valign="top" width="160">
+      <a href="https://github.com/maeng00">
+        <img src="https://github.com/maeng00.png?size=120" width="96" height="96" alt="maeng00 avatar"/><br/>
+        <sub><b>Ui-Hyun Maeng</b></sub><br/>
+        <sub>@maeng00</sub><br/>
+        <sub>Core Contributor</sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
 
 ---
 
