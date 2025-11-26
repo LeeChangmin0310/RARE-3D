@@ -234,15 +234,15 @@ RARE-3D/
     <td align="center" valign="top" width="160">
       <a href="https://github.com/LeeChangmin0310">
         <img src="https://github.com/LeeChangmin0310.png?size=120" width="96" height="96" alt="LeeChangmin0310 avatar"/><br/>
-        <sub><b>Changmin Lee</b></sub><br/>
+        <sub><b>Chang-Min Lee</b></sub><br/>
         <sub>@LeeChangmin0310</sub><br/>
-        <sub>Maintainer</sub>
+        <sub>Core Contributor</sub>
       </a>
     </td>
     <td align="center" valign="top" width="160">
       <a href="https://github.com/suyeonmyeong">
         <img src="https://github.com/suyeonmyeong.png?size=120" width="96" height="96" alt="suyeonmyeong avatar"/><br/>
-        <sub><b>Suyeon Myung</b></sub><br/>
+        <sub><b>Soo-Youn Myoung</b></sub><br/>
         <sub>@suyeonmyeong</sub><br/>
         <sub>Core Contributor</sub>
       </a>
