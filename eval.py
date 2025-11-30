@@ -7,7 +7,12 @@ from tqdm import trange
 
 from config import Config
 from envs.doom_env import DoomEnv
+
 from models.dddqn import DuelingDQN
+from models.dqn import DQN
+from models.ppo import PPO
+from models.a3c import A3C
+from models.trpo import TRPO
 
 
 def evaluate(ckpt_path=None, num_episodes=10):
@@ -24,7 +29,16 @@ def evaluate(ckpt_path=None, num_episodes=10):
     )
     num_actions = len(env.possible_actions)
 
-    net = DuelingDQN(cfg.stack_size, num_actions).to(device)
+    if cfg.algorithm == "dddqn":
+        net = DuelingDQN(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "dqn":
+        net = DQN(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "ppo":
+        net = PPO(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "a3c":
+        net = A3C(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "trpo":
+        net = TRPO(cfg.stack_size, num_actions).to(device)
 
     if ckpt_path is None:
         ckpt_path = os.path.join(cfg.checkpoint_dir, "dddqn_latest.pt")

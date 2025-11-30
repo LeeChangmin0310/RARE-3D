@@ -12,9 +12,23 @@ import wandb
 
 from config import Config
 from envs.doom_env import DoomEnv
+
 from models.dddqn import DuelingDQN
+from models.dqn import DQN
+from models.ppo import PPO
+from models.a3c import A3C
+from models.trpo import TRPO
+
 from memory.per_memory import PERMemory
 
+from dotenv import load_dotenv
+
+load_dotenv()
+
+WANDB_API_KEY = os.getenv("WANDB_API_KEY")
+WANDB_ENTITY = os.getenv("WANDB_ENTITY")
+WANDB_PROJECT = os.getenv("WANDB_PROJECT")
+WANDB_DIR = os.getenv("WANDB_DIR")
 
 def select_action(q_net, state, epsilon, num_actions, device):
     """Epsilon-greedy action selection."""
@@ -28,6 +42,50 @@ def select_action(q_net, state, epsilon, num_actions, device):
     action_idx = int(torch.argmax(q_values, dim=1).item())
     return action_idx
 
+def select_action_ppo(q_net, state, epsilon, num_actions, device):
+    """Epsilon-greedy action selection for PPO and other models."""
+    if np.random.rand() < epsilon:
+        # Explore: random action
+        action_idx = np.random.randint(0, num_actions)
+        return action_idx
+
+    state_t = torch.from_numpy(state).unsqueeze(0).to(device)  # (1, C, H, W)
+    with torch.no_grad():
+        # Get the policy (probability distribution) and value from the network
+        policy, value = q_net(state_t)
+
+    action_probs = policy.squeeze(0)  # (A,)
+    action_idx = torch.multinomial(action_probs, 1).item()  # 샘플링을 통해 액션 선택
+    return action_idx
+
+def select_action_a3c(q_net, state, epsilon, num_actions, device):
+    """Epsilon-greedy action selection."""
+    if np.random.rand() < epsilon:
+        action_idx = np.random.randint(0, num_actions)
+        return action_idx
+
+    state_t = torch.from_numpy(state).unsqueeze(0).to(device)  # (1, C, H, W)
+    with torch.no_grad():
+        # q_net가 정책과 가치를 튜플로 반환할 수 있기 때문에 정책만 사용
+        policy, value = q_net(state_t)
+
+    if policy is None:
+        raise ValueError("Policy output from q_net is None. Ensure q_net returns both policy and value.")
+
+    action_probs = policy.squeeze(0)  # (A,)
+    action_idx = torch.multinomial(action_probs, 1).item()  # 샘플링을 통해 액션 선택
+    return action_idx
+
+def select_action_trpo(q_net, state, epsilon, num_actions, device):
+    """Epsilon-greedy action selection for TRPO."""
+    state_t = torch.from_numpy(state).unsqueeze(0).to(device)  # (1, C, H, W)
+    with torch.no_grad():
+        # Get the policy (probability distribution) and value from the network
+        policy = q_net(state_t)
+
+    action_probs = policy.squeeze(0)  # (A,)
+    action_idx = torch.multinomial(action_probs, 1).item()  # 샘플링을 통해 액션 선택
+    return action_idx
 
 def soft_update(target_net, online_net, tau):
     """Soft or hard update of target network parameters."""
@@ -41,7 +99,6 @@ def soft_update(target_net, online_net, tau):
         target_param.data.copy_(
             tau * online_param.data + (1.0 - tau) * target_param.data
         )
-
 
 def train():
     cfg = Config()
@@ -62,8 +119,23 @@ def train():
     num_actions = len(env.possible_actions)
 
     # Initialize networks
-    online_net = DuelingDQN(cfg.stack_size, num_actions).to(device)
-    target_net = DuelingDQN(cfg.stack_size, num_actions).to(device)
+    if cfg.algorithm == "dddqn":
+        online_net = DuelingDQN(cfg.stack_size, num_actions).to(device)
+        target_net = DuelingDQN(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "dqn":
+        online_net = DQN(cfg.stack_size, num_actions).to(device)
+        target_net = DQN(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "ppo":
+        online_net = PPO(cfg.stack_size, num_actions).to(device)
+        target_net = PPO(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "a3c":
+        online_net = A3C(cfg.stack_size, num_actions).to(device)
+        target_net = A3C(cfg.stack_size, num_actions).to(device)
+    elif cfg.algorithm == "trpo":
+        online_net = TRPO(cfg.stack_size, num_actions).to(device)
+        target_net = TRPO(cfg.stack_size, num_actions).to(device)
+        old_policy_net = TRPO(cfg.stack_size, num_actions).to(device)
+
     target_net.load_state_dict(online_net.state_dict())
     target_net.eval()
 
@@ -123,9 +195,15 @@ def train():
                 * np.exp(-cfg.eps_decay * global_step),
             )
 
-            action_idx = select_action(
-                online_net, state, epsilon, num_actions, device
-            )
+            if cfg.algorithm == "ppo":
+                action_idx = select_action_ppo(online_net, state, epsilon, num_actions, device)
+            elif cfg.algorithm == "a3c":
+                action_idx = select_action_a3c(online_net, state, epsilon, num_actions, device)
+            elif cfg.algorithm == "trpo":
+                action_idx = select_action_trpo(online_net, state, epsilon, num_actions, device)
+            else:
+                action_idx = select_action(online_net, state, epsilon, num_actions, device)
+
             next_state, reward, done = env.step(action_idx)
             episode_reward += reward
 
@@ -149,27 +227,58 @@ def train():
                 dones_t = torch.from_numpy(dones).to(device)
                 is_weights_t = torch.from_numpy(is_weights).to(device)
 
-                # Current Q-values
-                q_values = online_net(states_t)  # (B, A)
-                q_values = q_values.gather(
-                    1, actions_t.unsqueeze(1)
-                ).squeeze(1)  # (B,)
+                if cfg.algorithm == "dddqn" or cfg.algorithm == "dqn":
+                    # Current Q-values
+                    q_values = online_net(states_t)  # (B, A)
+                    q_values = q_values.gather(
+                        1, actions_t.unsqueeze(1)
+                    ).squeeze(1)  # (B,)
+                    # Double DQN target
+                    with torch.no_grad():
+                        next_q_online = online_net(next_states_t)
+                        next_actions = torch.argmax(next_q_online, dim=1)
 
-                # Double DQN target
-                with torch.no_grad():
-                    next_q_online = online_net(next_states_t)
-                    next_actions = torch.argmax(next_q_online, dim=1)
+                        next_q_target = target_net(next_states_t)
+                        next_q = next_q_target.gather(
+                            1, next_actions.unsqueeze(1)
+                        ).squeeze(1)
+                        targets = rewards_t + cfg.gamma * (1.0 - dones_t) * next_q
+                    # PER-weighted loss
+                    loss_per_sample = mse_loss(q_values, targets)
+                    loss = (is_weights_t.squeeze(1) * loss_per_sample).mean()
+                
+                elif cfg.algorithm == "ppo":
+                    # PPO loss calculation (with clipping)
+                    policy, value = online_net(states_t)
+                    next_policy, next_value = target_net(next_states_t)
+                    # PPO loss using advantage (clipped)
+                    log_probs = torch.log(policy.gather(1, actions_t.unsqueeze(1)))
+                    value_loss = 0.5 * (rewards_t - value).pow(2)
+                    advantage = rewards_t - value.detach()
+                    policy_loss = -log_probs * advantage.detach()
+                    loss = policy_loss.mean() + value_loss.mean()
 
-                    next_q_target = target_net(next_states_t)
-                    next_q = next_q_target.gather(
-                        1, next_actions.unsqueeze(1)
-                    ).squeeze(1)
+                elif cfg.algorithm == "a3c":
+                    policy, value = online_net(states_t)
+                    # A3C 손실 계산
+                    log_probs = torch.log(policy.gather(1, actions_t.unsqueeze(1)))
+                    value_loss = 0.5 * (rewards_t - value).pow(2)
+                    advantage = rewards_t - value.detach()
+                    policy_loss = -log_probs * advantage.detach()
+                    total_loss = policy_loss.mean() + value_loss.mean()
+                    loss = total_loss
 
-                    targets = rewards_t + cfg.gamma * (1.0 - dones_t) * next_q
-
-                # PER-weighted loss
-                loss_per_sample = mse_loss(q_values, targets)
-                loss = (is_weights_t.squeeze(1) * loss_per_sample).mean()
+                elif cfg.algorithm == "trpo":
+                    policy = online_net(states_t)  # Get the policy (probability distribution)
+                    # TRPO loss calculation (with KL divergence)
+                    log_probs = torch.log(policy.gather(1, actions_t.unsqueeze(1)))  # Log probabilities of chosen actions
+                    old_policy = old_policy_net(states_t)  # Old policy (for KL divergence)
+                    # Compute KL divergence between the new and old policy
+                    kl_div = torch.mean(torch.sum(old_policy * (torch.log(old_policy) - log_probs), dim=1))
+                    # TRPO loss: policy loss + KL divergence
+                    policy_loss = -log_probs
+                    # Total loss for TRPO
+                    loss = policy_loss.mean() + cfg.kl_coeff * kl_div
 
                 optimizer.zero_grad()
                 loss.backward()
@@ -178,9 +287,13 @@ def train():
 
                 losses.append(loss.item())
 
-                # Update priorities
-                abs_errors = torch.abs(q_values - targets).detach().cpu().numpy()
-                memory.update_batch(idxs, abs_errors)
+                if cfg.algorithm == "dddqn" or cfg.algorithm == "dqn":
+                    # Update priorities
+                    abs_errors = torch.abs(q_values - targets).detach().cpu().numpy()
+                    memory.update_batch(idxs, abs_errors)
+
+                if cfg.algorithm == 'trpo':
+                    old_policy_net.load_state_dict(online_net.state_dict())
 
                 # Update target network
                 if global_step % cfg.target_update_freq == 0:
