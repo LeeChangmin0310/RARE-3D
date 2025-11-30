@@ -1,229 +1,359 @@
-# RARE-3D: Reinforcement Learning–based Adaptive Path Selection for Efficient Point-Cloud Restoration
+# Doom DDDQN: Prioritized Dueling Double DQN for VizDoom
 
-**TL;DR.** We modernize **PathNet** (point-wise path selection for denoising) by replacing its **LSTM + REINFORCE** routing with a **Transformer encoder + PPO (with GAE)**. We keep the original 2-stage training protocol and loss design, aiming for better stability, equal-or-better quality, and lower use of complex paths.
+**TL;DR.** This repo implements a **Dueling Double Deep Q-Network (DDDQN)** with **Prioritized Experience Replay (PER)** for the VizDoom **Deadly Corridor** scenario, using **PyTorch**, **wandb**, and a tmux-friendly training script.
 
----
-
-## What’s New
-
-* **Routing agent:** LSTM → **Transformer Encoder** (2–4 layers, d=256, ≤4 heads)
-* **RL algorithm:** REINFORCE → **PPO-Clip + GAE** (alt: **Discrete SAC** for comparison)
-* **Training loop:** on-policy **alternating freezing** (update policy while freezing the restorer, then vice versa)
+The goal is a clean, self-contained RL toy project that can run on a shared lab server without polluting the global environment.
 
 ---
 
-## Project Status
+## Features
 
-This repo is a fork/derivative of **PathNet**. We keep upstream scripts, datasets, and pretrained weights, and add our RL modules under `tools/` and `models/routing/`.
+- **Environment wrapper**
+  - VizDoom Deadly Corridor (`deadly_corridor.cfg`, `deadly_corridor.wad`)
+  - Frame preprocessing (crop → normalize → resize)
+  - Frame stacking (4 frames → shape `(C, H, W)`)
 
-* Upstream PathNet (code/data): [https://github.com/ZeyongWei/PathNet](https://github.com/ZeyongWei/PathNet)
-* Paper (TPAMI’24): Path-Selective Point Cloud Denoising
+- **RL algorithm**
+  - Dueling DQN (separate value + advantage streams)
+  - Double DQN target (online network for argmax, target network for value)
+  - Prioritized Experience Replay (SumTree implementation)
+
+- **Training infrastructure**
+  - PyTorch implementation (DDDQN + PER)
+  - Hard / soft target network update
+  - Checkpointing (`checkpoints/`)
+  - wandb logging (episode reward, loss, epsilon, etc.)
+  - tmux-friendly shell scripts (`scripts/run_train.sh`, optional `run_eval.sh`)
 
 ---
 
-## Environment (Ubuntu 22.04 LTS + RTX 5000)
+## Environment
 
-* **OS:** Ubuntu 22.04 LTS
-* **GPU:** NVIDIA RTX 5000 (CUDA 12.x supported)
-* **Python:** 3.10+
-* **Core:** PyTorch 2.x, **either** TorchRL **or** CleanRL (pick one), PyTorch3D, Open3D
+Tested on a shared lab server:
 
-> PyTorch3D wheels must match your **PyTorch** and **CUDA** versions. Two safe paths are provided below.
+- **OS:** Ubuntu 20.04 / 22.04
+- **GPU:** NVIDIA RTX A5000 / RTX 3090 (CUDA 12.x driver)
+- **Python:** 3.9 (via conda env `doomrl`)
+- **Frameworks:** PyTorch, VizDoom, wandb
 
-### Option A — Official env (from upstream)
+All dependencies are installed only inside the `doomrl` conda environment so that the system / lab environment is not modified.
 
-```bash
-conda env create -f env.yml
-conda activate rare3d
-```
+---
 
-### Option B — Modern toolchain (CUDA 12.1 / PyTorch 2.1.2)
+## Installation
 
-```bash
-# Create env
-conda create -n rare3d python=3.10 -y
-conda activate rare3d
-
-# PyTorch 2.1.2 (CUDA 12.1)
-pip install --index-url https://download.pytorch.org/whl/cu121 \
-  torch==2.1.2 torchvision==0.16.2 torchaudio==2.1.2
-
-# PyTorch3D wheel matching torch==2.1.2 + cu121
-pip install -U fvcore iopath
-pip install pytorch3d -f \
-  https://dl.fbaipublicfiles.com/pytorch3d/packaging/wheels/py310_cu121_pyt212/download.html
-
-# Common libs
-pip install open3d tensorboardX tqdm h5py numpy scipy
-
-# RL stack (pick ONE)
-pip install cleanrl==1.*          # or: pip install torchrl==0.*
-```
-
-**Sanity check**
+Clone the repository and create a dedicated conda environment:
 
 ```bash
-python - << 'PY'
-import torch, sys
-print("torch:", torch.__version__, "cuda:", torch.version.cuda)
-try:
-    import pytorch3d
-    print("pytorch3d OK")
-except Exception as e:
-    print("pytorch3d import error:", e, file=sys.stderr)
-PY
+git clone <THIS_REPO_URL> RLDoom
+cd RLDoom
+
+# Create dedicated env (do not touch base / system env)
+conda create -n doomrl python=3.9 -y
+conda activate doomrl
+
+# Basic libs (can also be installed via requirements.txt)
+pip install -r requirements.txt
+# or, manually:
+# pip install numpy scikit-image tqdm matplotlib vizdoom wandb torch torchvision
+````
+
+Make sure the environment’s Python is used:
+
+```bash
+which python
+# -> something like: /home/<USER>/anaconda3/envs/doomrl/bin/python
 ```
 
 ---
 
-## Data & Pretrained (from PathNet)
+## VizDoom assets
 
-Download **datasets** and **pretrained models** from the PathNet repository (Drive links). Place files as:
+This project assumes the following files exist in the **repo root**:
 
+* `deadly_corridor.cfg`
+* `deadly_corridor.wad`
+
+You can copy them from the VizDoom examples or from Thomas Simonini’s Doom tutorial resources.
+
+`config.py` currently expects:
+
+```python
+class Config:
+    config_path = "deadly_corridor.cfg"
+    scenario_path = "deadly_corridor.wad"
 ```
-RARE-3D/
-  data/
-    train_data.hdf5
-    test_data.zip  # unzip if required
-```
 
-We follow the original **2-stage** training protocol.
+If you prefer `assets/` or another directory, adjust these paths accordingly.
 
 ---
 
-## Baselines (Repo-default vs Paper-config)
+## Repository Structure
 
-### A) Repo-default (as in the official README)
+```text
+RLDoom/
+  config.py               # Global hyperparameters & paths
+  train.py                # Main training script (DDDQN + PER + wandb)
+  eval.py                 # Evaluation script for trained agent
+  requirements.txt        # Python dependencies
 
-```bash
-cd PathNet
-# Stage 1 (random routing warm-up)
-python train.py --epoch 200 --use_random_path 1
-# Stage 2 (learn routing with REINFORCE)
-python train.py --epoch 300 --use_random_path 0
+  envs/
+    __init__.py
+    doom_env.py           # VizDoom wrapper + preprocessing + frame stacking
+
+  models/
+    __init__.py
+    dddqn.py              # Dueling DQN (value + advantage streams)
+
+  memory/
+    __init__.py
+    sumtree.py            # SumTree data structure for PER
+    per_memory.py         # Prioritized Experience Replay buffer
+
+  scripts/
+    run_train.sh          # tmux-friendly training launcher (GPU + env setup)
+    run_eval.sh           # (optional) evaluation launcher
+
+  checkpoints/            # Saved PyTorch checkpoints (created at runtime)
+  logs/                   # Console logs + wandb local cache (created at runtime)
+
+  deadly_corridor.cfg     # VizDoom config (expected)
+  deadly_corridor.wad     # VizDoom scenario (expected)
+  README.md
 ```
-
-### B) Paper-config (TPAMI’24, for faithful reproduction)
-
-```bash
-cd PathNet
-# Stage 1
-python train.py \
-  --use_random_path 1 \
-  --epoch 150 \
-  --batch_size 64 \
-  --lr 1e-6
-
-# Stage 2
-python train.py \
-  --use_random_path 0 \
-  --epoch 100 \
-  --batch_size 64 \
-  --lr 1e-6
-```
-
-> We report which profile (A or B) is used for each experiment.
-> Restorer optimizer for paper-config: **Adam, lr=1e-6**, batch **64**.
 
 ---
 
-## Our Method (Transformer Routing + PPO)
+## Configuration
 
-**Key idea:** Keep the denoiser/backbone and losses; swap the routing agent to a Transformer policy/value and train with PPO using **alternating freezing**.
+Global configuration is centralized in `config.py`:
 
-```bash
-# (A) Policy step — freeze restorer, update policy with PPO
-python tools/ppo_trainer.py \
-  --agent transformer \
-  --horizon 6 \
-  --clip 0.2 --epochs 6 --mb 16 \
-  --gamma 0.99 --gae_lambda 0.95 \
-  --entropy_coef 1e-3 --lr 3e-4
+```python
+class Config:
+    # Doom assets
+    config_path = "deadly_corridor.cfg"
+    scenario_path = "deadly_corridor.wad"
 
-# (B) Restorer step — freeze policy, supervised update of the denoiser
-python tools/train_restorer.py \
-  --epochs 1 \
-  --batch_size 64 \
-  --lr 1e-6 \
-  --loss cd+repulsion
+    # Frame & stack
+    frame_height = 100
+    frame_width = 120
+    stack_size = 4
 
-# Repeat (A) and (B)
-# IMPORTANT: Do not reuse rollouts across different restorer weights (keep on-policy).
+    # Training
+    learning_rate = 2.5e-4
+    gamma = 0.95
+    total_episodes = 1000
+    max_steps_per_episode = 3000
+
+    # Epsilon-greedy
+    eps_start = 1.0
+    eps_end = 0.01
+    eps_decay = 5e-5
+
+    # Replay memory
+    memory_size = 100000
+    pretrain_length = 50000
+    learn_start = 1000
+
+    # Target network
+    target_update_freq = 1000
+    tau = 1.0  # 1.0 = hard update; <1.0 = soft update
+
+    # Optimizer
+    grad_clip = 10.0
+    batch_size = 64
+
+    # Paths
+    checkpoint_dir = "<REPO_ROOT>/checkpoints"
+    logs_dir = "<REPO_ROOT>/logs"
+    checkpoint_interval = 50
+
+    # wandb
+    wandb_project = "doom-dddqn"
+    wandb_run_name = "dddqn_deadly_corridor"
 ```
 
-Optional comparison (max-entropy exploration):
+You can tune hyperparameters here without touching the training code.
+
+---
+
+## Training
+
+### 1. Prepare wandb
+
+Once inside the `doomrl` environment:
 
 ```bash
-# Discrete SAC comparison run (example args)
-python tools/sacd_trainer.py \
-  --agent transformer --horizon 6 \
-  --alpha auto --gamma 0.99 --target_tau 0.005
+conda activate doomrl
+wandb login
+# paste your API key
 ```
+
+### 2. Training via script (recommended)
+
+Edit `scripts/run_train.sh` to match your environment (conda path, repo path, GPU index).
+Example:
+
+```bash
+#!/usr/bin/env bash
+set -e
+
+# Activate conda environment
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate doomrl
+
+# Go to project root
+cd /home/<USER>/disk1/bci_intern/AAAI2026/RLDoom
+
+# Use only GPU 3 (visible as device 0 inside the process)
+export CUDA_VISIBLE_DEVICES=3
+
+# wandb local cache
+export WANDB_DIR="${PWD}/logs/wandb"
+mkdir -p "$WANDB_DIR"
+
+mkdir -p logs
+
+python train.py 2>&1 | tee logs/train.log
+```
+
+Make it executable:
+
+```bash
+chmod +x scripts/run_train.sh
+```
+
+Run it inside tmux:
+
+```bash
+tmux new -s doomrl
+bash scripts/run_train.sh
+
+# Detach:  Ctrl+b, d
+# Reattach: tmux attach -t doomrl
+```
+
+Training will:
+
+* Pre-fill replay memory with random actions
+* Train DDDQN with PER
+* Log metrics to wandb
+* Save checkpoints to `checkpoints/dddqn_ep_XXXXXX.pt` and `checkpoints/dddqn_latest.pt`
 
 ---
 
 ## Evaluation
 
+You can evaluate a trained agent with the latest checkpoint:
+
 ```bash
-# Chamfer Distance / F-score@1%
-python tools/eval.py --split test --metrics cd fscore
+conda activate doomrl
+cd /home/<USER>/disk1/bci_intern/AAAI2026/RLDoom
 
-# Report mean ± std over 3 runs (seed=1,2,3)
+python eval.py
+# or specify a checkpoint:
+# python eval.py --ckpt checkpoints/dddqn_ep_000500.pt
 ```
 
-**Primary metrics:** Chamfer Distance (CD), MSE, F-score@1%
-**Secondary:** complex-path utilization (%), inference time (ms), qualitative heatmaps
+If you prefer a script, you can use `scripts/run_eval.sh`:
 
----
+```bash
+#!/usr/bin/env bash
+set -e
 
-## Targets (Course Project)
+source ~/anaconda3/etc/profile.d/conda.sh
+conda activate doomrl
 
-* **Quality:** CD ↓ **≥3%** vs original PathNet baseline; F-score@1% **+2.0 pt**
-* **Efficiency:** complex-path utilization **−20%** at equal quality; inference time **−15%**
-* **Generalization:** Synth-A/B → Real-A/B drop ≤ **30%**
+cd /home/<USER>/disk1/bci_intern/AAAI2026/RLDoom
 
----
+export CUDA_VISIBLE_DEVICES=3
 
-## Repository Structure (planned)
-
-```
-RARE-3D/
-  data/                      # datasets (see PathNet)
-  models/
-    restorer/                # bypass / complex backbones (from PathNet)
-    routing/
-      transformer.py         # Transformer policy + value heads (ours)
-  tools/
-    ppo_trainer.py           # PPO loop with GAE & clipping (ours)
-    sacd_trainer.py          # Discrete SAC trainer (optional; ours)
-    train_restorer.py        # supervised updates for the denoiser (ours)
-    eval.py                  # CD / F-score evaluation (ours)
-  scripts/
-    run_baseline.sh
-    run_rare3d.sh
-  README.md
-  LICENSE
-  CITATION.cff
-  CONTRIBUTING.md
+mkdir -p logs
+python eval.py 2>&1 | tee logs/eval.log
 ```
 
----
-
-## Method Brief
-
-* **State:** local patch features ⊕ previous action one-hot ⊕ block index (positional encoding)
-* **Action:** select path (a_t \in {\text{bypass}, \text{complex}}) (extensible to (M>2))
-* **Reward:** complexity penalty at intermediate steps; noise/geometry-aware improvement at the final step (kept from PathNet)
-* **Losses (restorer):** squared nearest-neighbor distance (L_d) + repulsion (L_r)
-* **PPO defaults:** clip 0.1–0.2, epochs 4–8, minibatch 8–16, (\gamma=0.99), (\lambda_{\text{GAE}}=0.95), entropy 1e-3, lr 3e-4, max-grad-norm 0.5
+(Use your actual path and GPU index.)
 
 ---
 
-## How We Train Stably (Alternating Freezing)
+## Logging & Checkpoints
 
-1. **Policy step:** freeze the restorer, collect fresh on-policy rollouts, compute GAE, run PPO updates.
-2. **Restorer step:** freeze the policy, use the policy’s chosen paths to supervise the denoiser with (L_d + \lambda_r L_r).
-3. **Repeat:** never mix rollouts across different restorer weights.
+* **Console logs:**
+  `logs/train.log`, `logs/eval.log` (from `tee` in the scripts).
+
+* **wandb logs:**
+
+  * Project name: `doom-dddqn` (configurable in `Config.wandb_project`)
+  * Metrics: episode reward, mean loss, epsilon, global step, etc.
+  * Local cache: `logs/wandb` (via `WANDB_DIR`)
+
+* **Checkpoints:**
+
+  * Saved every `checkpoint_interval` episodes (default: 50)
+  * Format: `checkpoints/dddqn_ep_000050.pt`, `checkpoints/dddqn_latest.pt`
+  * Each checkpoint contains:
+
+    * Online network weights
+    * Target network weights
+    * Optimizer state
+    * Episode index, global step, epsilon
+
+---
+
+## Method Overview
+
+* **Input state:** stack of 4 grayscale frames
+  Shape: `(C=4, H=100, W=120)` after crop + normalize + resize.
+
+* **Network:** Dueling DQN (`models/dddqn.py`)
+
+  * Conv encoder (3 conv layers)
+  * Flatten
+  * Two streams:
+
+    * Value stream: `V(s)`
+    * Advantage stream: `A(s, a)`
+  * Aggregation:
+    `Q(s, a) = V(s) + A(s, a) - mean_a A(s, a)`
+
+* **Double DQN target:**
+
+  * Online network chooses `argmax_a Q(s', a)`
+  * Target network evaluates that action’s Q-value
+  * Target:
+    `y = r + γ (1 − done) Q_target(s', argmax_a Q_online(s', a))`
+
+* **Prioritized Experience Replay:**
+
+  * SumTree (`memory/sumtree.py`) stores priorities and experiences.
+  * Memory (`memory/per_memory.py`) implements:
+
+    * Sampling by priority
+    * Importance-sampling weights for unbiased updates
+    * Priority updates using TD error
+
+* **Optimization:**
+
+  * Loss: PER-weighted MSE between current Q and target
+  * Optimizer: RMSprop
+  * Gradient clipping: `max_grad_norm = 10.0`
+  * Target network update: every `target_update_freq` global steps, using hard or soft update (`tau`)
+
+---
+
+## Credits & References
+
+This project is inspired by:
+
+* Thomas Simonini, **“Dueling Double Deep Q-Learning with PER — Doom Deadly Corridor”**
+  Deep Reinforcement Learning Course (TensorFlow notebook).
+* Mnih et al., **“Human-level control through deep reinforcement learning,”** Nature, 2015.
+* Wang et al., **“Dueling Network Architectures for Deep Reinforcement Learning,”** ICML, 2016.
+* Van Hasselt et al., **“Deep Reinforcement Learning with Double Q-learning,”** AAAI, 2016.
+* Schaul et al., **“Prioritized Experience Replay,”** ICLR, 2016.
+* VizDoom: **“ViZDoom: A Doom-based AI Research Platform for Visual Reinforcement Learning”**
+
+All original Doom assets belong to their respective copyright holders.
 
 ---
 
@@ -258,26 +388,5 @@ RARE-3D/
   </tr>
 </table>
 
-
----
-
-## Citing & License
-
-This work builds upon **PathNet** (MIT License). Please cite the original authors.
-
-* PathNet repo: [https://github.com/ZeyongWei/PathNet](https://github.com/ZeyongWei/PathNet)
-* PathNet paper: “Path-Selective Point Cloud Denoising,” TPAMI 2024
-
-Our additions are released under **MIT License**. Upstream copyright and notices are preserved.
-
----
-
-## References
-
-* Schulman et al., “Proximal Policy Optimization Algorithms,” 2017
-* Schulman et al., “Generalized Advantage Estimation,” 2016
-* TorchRL PPO Tutorial — [https://docs.pytorch.org/tutorials/intermediate/reinforcement_ppo.html](https://docs.pytorch.org/tutorials/intermediate/reinforcement_ppo.html)
-* CleanRL — [https://github.com/vwxyzjn/cleanrl](https://github.com/vwxyzjn/cleanrl)
-* PyTorch3D Chamfer loss — [https://pytorch3d.readthedocs.io/en/latest/modules/loss.html](https://pytorch3d.readthedocs.io/en/latest/modules/loss.html)
 
 ---
