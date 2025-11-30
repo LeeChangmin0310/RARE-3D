@@ -1,0 +1,9 @@
+Traceback (most recent call last):
+  File "/home/cia/disk1/bci_intern/AAAI2026/RLDoom/train.py", line 14, in <module>
+    from envs.doom_env import DoomEnv
+  File "/home/cia/disk1/bci_intern/AAAI2026/RLDoom/envs/doom_env.py", line 6, in <module>
+    from skimage import transform
+  File "/home/cia/anaconda3/envs/doomrl/lib/python3.9/site-packages/skimage/__init__.py", line 124, in <module>
+    from ._shared import geometry
+  File "geometry.pyx", line 1, in init skimage._shared.geometry
+ValueError: numpy.dtype size changed, may indicate binary incompatibility. Expected 96 from C header, got 88 from PyObject

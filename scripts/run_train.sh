@@ -2,20 +2,21 @@
 set -e
 
 # Activate conda environment
-# Change this path if your conda installation is located elsewhere
-source ~/miniconda3/etc/profile.d/conda.sh
+# Use Anaconda installation detected at ~/anaconda3
+source ~/anaconda3/etc/profile.d/conda.sh
 conda activate doomrl
 
 # Go to project root
-cd ~/projects/doom-rl  # change to your actual path
+cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
 
-# Use only GPU 0 (e.g., RTX A5000)
-export CUDA_VISIBLE_DEVICES=0
+# Use only GPU 3
+export CUDA_VISIBLE_DEVICES=3
 
-# Optional: set local wandb directory
+# Set local wandb directory
 export WANDB_DIR="${PWD}/logs/wandb"
 mkdir -p "$WANDB_DIR"
 
+# Create logs directory if it does not exist
 mkdir -p logs
 
 # Run training and save console output
