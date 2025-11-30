@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -e
 
+# Go to project root
+cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
+
 # Load env vars from .env (WANDB_API_KEY, WANDB_ENTITY, WANDB_PROJECT, WANDB_DIR)
 if [ -f ".env" ]; then
   set -a
@@ -12,9 +15,6 @@ fi
 # Activate conda environment
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate doomrl
-
-# Go to project root
-cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
 
 # Select GPU
 export CUDA_VISIBLE_DEVICES=3
