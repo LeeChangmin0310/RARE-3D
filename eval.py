@@ -41,9 +41,9 @@ def evaluate(ckpt_path=None, num_episodes=10):
         net = TRPO(cfg.stack_size, num_actions).to(device)
 
     if ckpt_path is None:
-        ckpt_path = os.path.join(cfg.checkpoint_dir, "dddqn_latest.pt")
+        ckpt_path = os.path.join(cfg.checkpoint_dir, "dddqn_ep_005000.pt")
 
-    ckpt = torch.load(ckpt_path, map_location=device)
+    ckpt = torch.load(ckpt_path, map_location=device, weights_only=False)
     net.load_state_dict(ckpt["online_state_dict"])
     net.eval()
 

@@ -50,6 +50,6 @@ class Config:
     wandb_project = "doom"
     wandb_run_name = "dddqn_deadly_corridor"
 
-    algorithm = "trpo"
+    algorithm = "dddqn"
 
     kl_coeff = 0.01
