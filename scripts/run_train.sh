@@ -1,26 +1,27 @@
 #!/usr/bin/env bash
 set -e
 
-# Go to project root
-cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
-
-# Load env vars from .env (WANDB_API_KEY, WANDB_ENTITY, WANDB_PROJECT, WANDB_DIR)
-if [ -f ".env" ]; then
-  set -a
-  # shellcheck disable=SC1091
-  . ./.env
-  set +a
-fi
-
-# Activate conda environment
+# Activate conda env
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate doomrl
 
-# Select GPU
+# Go to project root
+cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
+
+# Load .env if exists (for WANDB_API_KEY, WANDB_PROJECT, etc.)
+if [ -f ".env" ]; then
+  set -a
+  source .env
+  set +a
+fi
+
+# Use specific GPU
 export CUDA_VISIBLE_DEVICES=3
 
-# Ensure wandb/logs dirs exist
-mkdir -p "${WANDB_DIR:-${PWD}/logs/wandb}"
 mkdir -p logs
 
-python train.py "$@"
+ALGO=${1:-dqn}
+SEED=${2:-0}
+
+python -u train.py --algo "${ALGO}" --seed "${SEED}" --mode train \
+  2>&1 | tee "logs/train_${ALGO}_seed${SEED}.log"

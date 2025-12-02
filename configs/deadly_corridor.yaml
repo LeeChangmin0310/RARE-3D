@@ -1,0 +1,119 @@
+# rldoom/configs/deadly_corridor.yaml
+
+env:
+  cfg_path: "doom_files/deadly_corridor.cfg"
+  wad_path: "doom_files/deadly_corridor.wad"
+  frame_size: 84
+  stack_size: 4
+  frame_skip: 4
+
+train:
+  num_episodes: 1000
+  checkpoint_dir: "checkpoints"
+  checkpoint_interval: 50
+  logs_dir: "logs"
+
+defaults:
+  feature_dim: 512
+  gamma: 0.99
+  grad_clip: 10.0
+
+logging:
+  use_wandb: true
+  wandb_project: "RLDoom"
+  wandb_entity: "lee_changmin-sangmyung-uni"
+
+algos:
+  dqn:
+    type: "offpolicy"
+    lr: 0.0001
+    buffer_size: 100000
+    batch_size: 32
+    learn_start: 1000
+    eps_start: 1.0
+    eps_end: 0.01
+    eps_decay: 100000
+    target_update_every: 1000
+
+  ddqn:
+    type: "offpolicy"
+    lr: 0.0001
+    buffer_size: 100000
+    batch_size: 32
+    learn_start: 1000
+    eps_start: 1.0
+    eps_end: 0.01
+    eps_decay: 100000
+    target_update_every: 1000
+
+  dddqn:             # <-- 새로 추가 (듀얼링 더블 DQN)
+    type: "offpolicy"
+    lr: 0.0001
+    buffer_size: 100000
+    batch_size: 32
+    learn_start: 1000
+    eps_start: 1.0
+    eps_end: 0.01
+    eps_decay: 100000
+    target_update_every: 1000
+
+  rainbow:
+    type: "offpolicy"
+    lr: 0.0001
+    buffer_size: 100000
+    batch_size: 32
+    learn_start: 1000
+    eps_start: 1.0
+    eps_end: 0.01
+    eps_decay: 100000
+    target_update_every: 1000
+    per_alpha: 0.6
+    per_beta_start: 0.4
+    per_beta_frames: 1000000
+
+  reinforce:
+    type: "onpolicy"
+    lr: 0.0001
+    ent_coef: 0.0
+
+  a2c:
+    type: "onpolicy"
+    lr_actor: 0.0001
+    lr_critic: 0.0001
+    ent_coef: 0.01
+    vf_coef: 0.5
+    rollout_len: 64
+    batch_size: 64
+
+  a3c:
+    type: "onpolicy"
+    lr_actor: 0.0001
+    lr_critic: 0.0001
+    ent_coef: 0.01
+    vf_coef: 0.5
+    rollout_len: 32
+    batch_size: 32
+
+  ppo:
+    type: "onpolicy"
+    lr_actor: 0.0001
+    ent_coef: 0.01
+    vf_coef: 0.5
+    gamma: 0.99
+    gae_lambda: 0.95
+    rollout_len: 128
+    batch_size: 64
+    ppo_epochs: 4
+    clip_range: 0.2
+
+  trpo:
+    type: "onpolicy"
+    lr_actor: 0.00005
+    ent_coef: 0.01
+    vf_coef: 0.5
+    gamma: 0.99
+    gae_lambda: 0.95
+    rollout_len: 128
+    batch_size: 64
+    trpo_epochs: 4
+    kl_coef: 0.5

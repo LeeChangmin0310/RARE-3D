@@ -1,265 +1,87 @@
 # train.py
-
+import argparse
 import os
-import numpy as np
-from tqdm import trange
 
 import torch
-import torch.nn as nn
-import torch.optim as optim
 
-import wandb
+from rldoom.configs import make_config
+from rldoom.utils.logger import Logger
+from rldoom.utils.seeding import set_seed
 
-from config import Config
-from envs.doom_env import DoomEnv
-from models.dddqn import DuelingDQN
-from memory.per_memory import PERMemory
+from rldoom.agents.dqn import DQNAgent
+from rldoom.agents.ddqn import DDQNAgent
+from rldoom.agents.dddqn import DDDQNAgent
+from rldoom.agents.rainbow import RainbowAgent
+from rldoom.agents.reinforce import ReinforceAgent
+from rldoom.agents.a2c import A2CAgent
+from rldoom.agents.a3c import A3CAgent
+from rldoom.agents.ppo import PPOAgent
+from rldoom.agents.trpo import TRPOAgent
 
-
-def select_action(q_net, state, epsilon, num_actions, device):
-    """Epsilon-greedy action selection."""
-    if np.random.rand() < epsilon:
-        action_idx = np.random.randint(0, num_actions)
-        return action_idx
-
-    state_t = torch.from_numpy(state).unsqueeze(0).to(device)  # (1, C, H, W)
-    with torch.no_grad():
-        q_values = q_net(state_t)
-    action_idx = int(torch.argmax(q_values, dim=1).item())
-    return action_idx
+from rldoom.trainers.offpolicy import train_offpolicy
+from rldoom.trainers.onpolicy import train_onpolicy
 
 
-def soft_update(target_net, online_net, tau):
-    """Soft or hard update of target network parameters."""
-    if tau >= 1.0:
-        # Hard update
-        target_net.load_state_dict(online_net.state_dict())
-        return
+def build_agent(algo: str, obs_shape, num_actions: int, cfg, device):
+    """Factory for all supported agents."""
+    if algo == "dqn":
+        return DQNAgent(obs_shape, num_actions, cfg, device)
+    if algo == "ddqn":
+        return DDQNAgent(obs_shape, num_actions, cfg, device)
+    if algo == "dddqn":
+        return DDDQNAgent(obs_shape, num_actions, cfg, device)
+    if algo == "rainbow":
+        return RainbowAgent(obs_shape, num_actions, cfg, device)
+    if algo == "reinforce":
+        return ReinforceAgent(obs_shape, num_actions, cfg, device)
+    if algo == "a2c":
+        return A2CAgent(obs_shape, num_actions, cfg, device)
+    if algo == "a3c":
+        return A3CAgent(obs_shape, num_actions, cfg, device)
+    if algo == "ppo":
+        return PPOAgent(obs_shape, num_actions, cfg, device)
+    if algo == "trpo":
+        return TRPOAgent(obs_shape, num_actions, cfg, device)
+    raise ValueError(f"Unknown algorithm: {algo}")
 
-    # Soft update
-    for target_param, online_param in zip(target_net.parameters(), online_net.parameters()):
-        target_param.data.copy_(
-            tau * online_param.data + (1.0 - tau) * target_param.data
-        )
 
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--algo", type=str, default="dqn",
+                        choices=["dqn", "ddqn", "dddqn", "rainbow",
+                                 "reinforce", "a2c", "a3c", "ppo", "trpo"])
+    parser.add_argument("--seed", type=int, default=0)
+    args = parser.parse_args()
 
-def train():
-    cfg = Config()
+    # Build config from YAML + selected algo + seed
+    cfg = make_config(args.algo, args.seed)
 
-    os.makedirs(cfg.checkpoint_dir, exist_ok=True)
-    os.makedirs(cfg.logs_dir, exist_ok=True)
+    # Seeding
+    set_seed(cfg.seed)
 
-    device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+    # Device
+    device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-    # Initialize environment
-    env = DoomEnv(
-        config_path=cfg.config_path,
-        scenario_path=cfg.scenario_path,
-        frame_height=cfg.frame_height,
-        frame_width=cfg.frame_width,
-        stack_size=cfg.stack_size,
-    )
-    num_actions = len(env.possible_actions)
+    # Observation shape (C, H, W)
+    obs_shape = (cfg.stack_size, cfg.frame_size, cfg.frame_size)
+    # Deadly Corridor has 7 discrete actions
+    num_actions = 7
 
-    # Initialize networks
-    online_net = DuelingDQN(cfg.stack_size, num_actions).to(device)
-    target_net = DuelingDQN(cfg.stack_size, num_actions).to(device)
-    target_net.load_state_dict(online_net.state_dict())
-    target_net.eval()
+    # Agent
+    agent = build_agent(cfg.algo, obs_shape, num_actions, cfg, device)
 
-    optimizer = optim.RMSprop(online_net.parameters(), lr=cfg.learning_rate)
-    mse_loss = nn.MSELoss(reduction="none")
+    # Logger (handles wandb / tensorboard inside)
+    logger = Logger(cfg)
 
-    # Replay memory
-    memory = PERMemory(cfg.memory_size)
-
-    # wandb
-    wandb.init(
-        project=os.environ.get("WANDB_PROJECT", cfg.wandb_project),
-        entity=os.environ.get("WANDB_ENTITY", None),
-        name=cfg.wandb_run_name,
-        config={
-            "learning_rate": cfg.learning_rate,
-            "gamma": cfg.gamma,
-            "batch_size": cfg.batch_size,
-            "total_episodes": cfg.total_episodes,
-            "max_steps_per_episode": cfg.max_steps_per_episode,
-            "memory_size": cfg.memory_size,
-            "pretrain_length": cfg.pretrain_length,
-        },
-    )
-
-    # Pre-fill replay buffer with random policy
-    print("[INFO] Pre-filling replay buffer...")
-    state = env.reset()
-    for _ in trange(cfg.pretrain_length):
-        action_idx = np.random.randint(0, num_actions)
-        next_state, reward, done = env.step(action_idx)
-        memory.store((state, action_idx, reward, next_state, done))
-
-        if done:
-            state = env.reset()
-        else:
-            state = next_state
-
-    global_step = 0
-    epsilon = cfg.eps_start
-    best_reward = -np.inf  # track best episode reward
-
-    pbar = trange(1, cfg.total_episodes + 1, desc="Training episodes")
-    for episode in pbar:
-        state = env.reset()
-        episode_reward = 0.0
-        losses = []
-
-        for step in range(cfg.max_steps_per_episode):
-            global_step += 1
-
-            # Exponential epsilon decay
-            epsilon = max(
-                cfg.eps_end,
-                cfg.eps_end
-                + (cfg.eps_start - cfg.eps_end)
-                * np.exp(-cfg.eps_decay * global_step),
-            )
-
-            action_idx = select_action(
-                online_net, state, epsilon, num_actions, device
-            )
-            next_state, reward, done = env.step(action_idx)
-            episode_reward += reward
-
-            memory.store((state, action_idx, reward, next_state, done))
-            state = next_state
-
-            # Learning phase
-            if global_step > cfg.learn_start:
-                idxs, batch, is_weights = memory.sample(cfg.batch_size)
-
-                states = np.stack([b[0] for b in batch], axis=0)
-                actions = np.array([b[1] for b in batch], dtype=np.int64)
-                rewards = np.array([b[2] for b in batch], dtype=np.float32)
-                next_states = np.stack([b[3] for b in batch], axis=0)
-                dones = np.array([b[4] for b in batch], dtype=np.float32)
-
-                states_t = torch.from_numpy(states).to(device)
-                next_states_t = torch.from_numpy(next_states).to(device)
-                actions_t = torch.from_numpy(actions).to(device)
-                rewards_t = torch.from_numpy(rewards).to(device)
-                dones_t = torch.from_numpy(dones).to(device)
-                is_weights_t = torch.from_numpy(is_weights).to(device)
-
-                # Current Q-values
-                q_values = online_net(states_t)  # (B, A)
-                q_values = q_values.gather(
-                    1, actions_t.unsqueeze(1)
-                ).squeeze(1)  # (B,)
-
-                # Double DQN target
-                with torch.no_grad():
-                    next_q_online = online_net(next_states_t)
-                    next_actions = torch.argmax(next_q_online, dim=1)
-
-                    next_q_target = target_net(next_states_t)
-                    next_q = next_q_target.gather(
-                        1, next_actions.unsqueeze(1)
-                    ).squeeze(1)
-
-                    targets = rewards_t + cfg.gamma * (1.0 - dones_t) * next_q
-
-                # PER-weighted loss
-                loss_per_sample = mse_loss(q_values, targets)
-                loss = (is_weights_t.squeeze(1) * loss_per_sample).mean()
-
-                optimizer.zero_grad()
-                loss.backward()
-                nn.utils.clip_grad_norm_(online_net.parameters(), cfg.grad_clip)
-                optimizer.step()
-
-                losses.append(loss.item())
-
-                # Update priorities
-                abs_errors = torch.abs(q_values - targets).detach().cpu().numpy()
-                memory.update_batch(idxs, abs_errors)
-
-                # Update target network
-                if global_step % cfg.target_update_freq == 0:
-                    soft_update(target_net, online_net, cfg.tau)
-
-            if done:
-                break
-
-        avg_loss = float(np.mean(losses)) if losses else 0.0
-        
-        pbar.set_postfix(
-            reward=f"{episode_reward:.2f}",
-            loss=f"{avg_loss:.4f}",
-            eps=f"{epsilon:.3f}",
-        )
-
-        if episode_reward > best_reward:
-            best_reward = episode_reward
-            print(
-                "[BEST] EP {:05d} reward={:.2f} loss={:.4f} epsilon={:.4f}".format(
-                    episode, episode_reward, avg_loss, epsilon
-                )
-            )
-
-            # 2) save best checkpoint
-            best_path = os.path.join(cfg.checkpoint_dir, "dddqn_best.pt")
-            ckpt = {
-                "episode": episode,
-                "global_step": global_step,
-                "online_state_dict": online_net.state_dict(),
-                "target_state_dict": target_net.state_dict(),
-                "optimizer_state_dict": optimizer.state_dict(),
-                "epsilon": epsilon,
-                "best_reward": best_reward,
-            }
-            torch.save(ckpt, best_path)
-            # W&B summary에 최고 값 기록
-            wandb.run.summary["best_reward"] = best_reward
-            wandb.save(best_path, base_path=cfg.base_dir)
-
-        # wandb logging
-        wandb.log(
-            {
-                "train/episode_reward": episode_reward,
-                "train/loss": avg_loss,
-                "train/epsilon": epsilon,
-                "train/episode": episode,
-                "train/global_step": global_step,
-            },
-            step=episode,
-        )
-
-        # Checkpoint saving
-        if episode % cfg.checkpoint_interval == 0:
-            ckpt_path = os.path.join(
-                cfg.checkpoint_dir, "dddqn_ep_{:06d}.pt".format(episode)
-            )
-            latest_path = os.path.join(cfg.checkpoint_dir, "dddqn_latest.pt")
-
-            ckpt = {
-                "episode": episode,
-                "global_step": global_step,
-                "online_state_dict": online_net.state_dict(),
-                "target_state_dict": target_net.state_dict(),
-                "optimizer_state_dict": optimizer.state_dict(),
-                "epsilon": epsilon,
-            }
-
-            torch.save(ckpt, ckpt_path)
-            torch.save(ckpt, latest_path)
-
-            # Upload checkpoint to wandb (optional)
-            # Use base_path to preserve folder structure in W&B
-            wandb.save(ckpt_path, base_path=cfg.base_dir)
-            print("[INFO] Saved checkpoint to {}".format(ckpt_path))
-
-    env.close()
-    wandb.finish()
+    # Choose trainer by algo_type from YAML
+    if cfg.algo_type == "offpolicy":
+        train_offpolicy(agent, cfg, logger)
+    elif cfg.algo_type == "onpolicy":
+        train_onpolicy(agent, cfg, logger)
+    else:
+        raise ValueError(f"Unknown algo_type: {cfg.algo_type}")
 
 
 if __name__ == "__main__":
-    train()
+    # Make sure we run from project root, so 'rldoom' is importable
+    main()

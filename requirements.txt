@@ -1,11 +1,24 @@
-numpy
-scikit-image
+# Core
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+numpy==1.26.4
+scipy==1.13.1
+
+# Doom environment
+vizdoom==1.2.4
+pygame==2.6.1
+scikit-image==0.22.0
+imageio
+tifffile
+pillow
+opencv-python
+
+# Logging / utilities
 tqdm
-matplotlib
-vizdoom
-wandb
-torch
-torchvision
+matplotlib==3.9.4
+PyYAML==6.0.3
+wandb==0.23.0
+
 
 
 # absl-py==2.3.1

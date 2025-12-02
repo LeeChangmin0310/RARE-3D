@@ -1,18 +1,22 @@
 #!/usr/bin/env bash
 set -e
 
-# Activate conda environment
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate doomrl
 
-# Go to project root
 cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
 
-# Use only GPU 3
+if [ -f ".env" ]; then
+  set -a
+  source .env
+  set +a
+fi
+
 export CUDA_VISIBLE_DEVICES=3
 
-# Create logs directory if it does not exist
-mkdir -p logs
+ALGO=${1:-dqn}
+SEED=${2:-0}
+CKPT_PATH=${3:-"checkpoints/${ALGO}_seed${SEED}.pth"}
 
-# Run evaluation and save console output
-python eval.py "$@"
+python -u train.py --algo "${ALGO}" --seed "${SEED}" \
+  --mode eval --checkpoint "${CKPT_PATH}"
