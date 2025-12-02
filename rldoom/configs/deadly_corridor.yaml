@@ -8,9 +8,10 @@ env:
   frame_skip: 4
 
 train:
-  num_episodes: 1000
+  num_episodes: 5000              
+  max_steps_per_episode: 3000     # ← both off/on 
   checkpoint_dir: "checkpoints"
-  checkpoint_interval: 50
+  checkpoint_interval: 200        # ← 5000/200 = 25 ckpts
   logs_dir: "logs"
 
 defaults:
@@ -24,12 +25,13 @@ logging:
   wandb_entity: "lee_changmin-sangmyung-uni"
 
 algos:
+  # ---------- Off-policy ----------
   dqn:
     type: "offpolicy"
     lr: 0.0001
     buffer_size: 100000
-    batch_size: 32
-    learn_start: 1000
+    batch_size: 128
+    learn_start: 5000
     eps_start: 1.0
     eps_end: 0.01
     eps_decay: 100000
@@ -39,19 +41,19 @@ algos:
     type: "offpolicy"
     lr: 0.0001
     buffer_size: 100000
-    batch_size: 32
-    learn_start: 1000
+    batch_size: 128
+    learn_start: 5000
     eps_start: 1.0
     eps_end: 0.01
     eps_decay: 100000
     target_update_every: 1000
 
-  dddqn:             # <-- 새로 추가 (듀얼링 더블 DQN)
+  dddqn:
     type: "offpolicy"
     lr: 0.0001
     buffer_size: 100000
-    batch_size: 32
-    learn_start: 1000
+    batch_size: 128
+    learn_start: 5000
     eps_start: 1.0
     eps_end: 0.01
     eps_decay: 100000
@@ -61,8 +63,8 @@ algos:
     type: "offpolicy"
     lr: 0.0001
     buffer_size: 100000
-    batch_size: 32
-    learn_start: 1000
+    batch_size: 128
+    learn_start: 5000
     eps_start: 1.0
     eps_end: 0.01
     eps_decay: 100000
@@ -71,10 +73,13 @@ algos:
     per_beta_start: 0.4
     per_beta_frames: 1000000
 
+  # ---------- On-policy ----------
   reinforce:
     type: "onpolicy"
     lr: 0.0001
+    gamma: 0.99
     ent_coef: 0.0
+    batch_size: 128
 
   a2c:
     type: "onpolicy"
@@ -82,8 +87,9 @@ algos:
     lr_critic: 0.0001
     ent_coef: 0.01
     vf_coef: 0.5
-    rollout_len: 64
-    batch_size: 64
+    gamma: 0.99
+    rollout_len: 128
+    batch_size: 128
 
   a3c:
     type: "onpolicy"
@@ -91,29 +97,32 @@ algos:
     lr_critic: 0.0001
     ent_coef: 0.01
     vf_coef: 0.5
-    rollout_len: 32
-    batch_size: 32
+    gamma: 0.99
+    rollout_len: 128
+    batch_size: 128
 
   ppo:
     type: "onpolicy"
     lr_actor: 0.0001
+    lr_critic: 0.0001
     ent_coef: 0.01
     vf_coef: 0.5
     gamma: 0.99
     gae_lambda: 0.95
     rollout_len: 128
-    batch_size: 64
+    batch_size: 128
     ppo_epochs: 4
     clip_range: 0.2
 
   trpo:
     type: "onpolicy"
-    lr_actor: 0.00005
+    lr_actor: 0.0001
+    lr_critic: 0.0001
     ent_coef: 0.01
     vf_coef: 0.5
     gamma: 0.99
     gae_lambda: 0.95
     rollout_len: 128
-    batch_size: 64
+    batch_size: 128
     trpo_epochs: 4
     kl_coef: 0.5
