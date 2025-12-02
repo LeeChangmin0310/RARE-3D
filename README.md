@@ -1,90 +1,77 @@
-# Doom DDDQN: Prioritized Dueling Double DQN for VizDoom
+# RLDoom: Comparative Deep RL Algorithms on VizDoom Deadly Corridor
 
-**TL;DR.** This repo implements a **Dueling Double Deep Q-Network (DDDQN)** with **Prioritized Experience Replay (PER)** for the VizDoom **Deadly Corridor** scenario, using **PyTorch**, **wandb**, and a tmux-friendly training script.
+**TL;DR.** This repository implements a **comparative benchmark** of classic and modern Deep RL algorithms on the **VizDoom Deadly Corridor** scenario, using a **unified environment wrapper, YAML-based configs, and wandb logging**.
 
-The goal is a clean, self-contained RL toy project that can run on a shared lab server without polluting the global environment.
+All agents share:
+
+- The **same VizDoom environment** (Deadly Corridor)
+- The **same preprocessing & frame stacking**
+- The **same logging / checkpointing pipeline**
+
+so that we can focus on **algorithmic differences** in sample efficiency and final performance.
 
 ---
 
-## Features
+## Algorithms
 
-- **Environment wrapper**
-  - VizDoom Deadly Corridor (`deadly_corridor.cfg`, `deadly_corridor.wad`)
-  - Frame preprocessing (crop → normalize → resize)
-  - Frame stacking (4 frames → shape `(C, H, W)`)
+All algorithms act on the **same discrete 7-action space** and stacked grayscale frames `(C, H, W)`:
 
-- **RL algorithm**
-  - Dueling DQN (separate value + advantage streams)
-  - Double DQN target (online network for argmax, target network for value)
-  - Prioritized Experience Replay (SumTree implementation)
+### Off-policy (value-based)
 
-- **Training infrastructure**
-  - PyTorch implementation (DDDQN + PER)
-  - Hard / soft target network update
-  - Checkpointing (`checkpoints/`)
-  - wandb logging (episode reward, loss, epsilon, etc.)
-  - tmux-friendly shell scripts (`scripts/run_train.sh`, optional `run_eval.sh`)
+- **DQN**
+- **DDQN** (Double DQN)
+- **DDDQN** (Dueling Double DQN)
+- **Rainbow-style DQN**
+  - Dueling architecture
+  - Distributional head (if enabled)
+  - Prioritized Experience Replay (PER) via a dedicated buffer
+
+### On-policy (policy gradient & actor-critic)
+
+- **REINFORCE** (Monte Carlo Policy Gradient)
+- **A2C** (Advantage Actor-Critic, synchronous)
+- **A3C** (Advantage Actor-Critic, asynchronous-style loop)
+- **PPO** (Proximal Policy Optimization)
+- **TRPO** (Trust Region Policy Optimization, simplified)
+
+The goal is a **clean, reproducible toy benchmark** that can run on a lab server (SSH + tmux) without touching global system packages.
 
 ---
 
 ## Environment
 
-Tested on a shared lab server:
+- **Scenario:** VizDoom – *Deadly Corridor*
+- **Goal:** Reach the vest at the end of the corridor **without dying**.
+- **Map:** narrow corridor with 6 monsters on both sides.
+- **Reward:**
+  - `+dX` for getting closer to the vest
+  - `-dX` for moving away
+  - `-100` death penalty
 
-- **OS:** Ubuntu 20.04 / 22.04
-- **GPU:** NVIDIA RTX A5000 / RTX 3090 (CUDA 12.x driver)
-- **Python:** 3.9 (via conda env `doomrl`)
-- **Frameworks:** PyTorch, VizDoom, wandb
+### Actions
 
-All dependencies are installed only inside the `doomrl` conda environment so that the system / lab environment is not modified.
+We use **7 discrete actions** (one-hot):
 
----
+- MOVE_LEFT
+- MOVE_RIGHT
+- ATTACK
+- MOVE_FORWARD
+- MOVE_BACKWARD
+- TURN_LEFT
+- TURN_RIGHT
 
-## Installation
+### Preprocessing & Frame Stacking
 
-Clone the repository and create a dedicated conda environment:
+Implemented in `rldoom/envs/deadly_corridor.py`:
 
-```bash
-git clone <THIS_REPO_URL> RLDoom
-cd RLDoom
+- Take raw RGB buffer from VizDoom.
+- Convert to **grayscale**.
+- **Crop** uninformative regions (HUD, floor, etc.).
+- **Resize** to `frame_size x frame_size` (default: 84×84).
+- Normalize to `[0, 1]`.
+- Maintain a **deque of last 4 frames**, stacked to tensor of shape `(4, 84, 84)`.
 
-# Create dedicated env (do not touch base / system env)
-conda create -n doomrl python=3.9 -y
-conda activate doomrl
-
-# Basic libs (can also be installed via requirements.txt)
-pip install -r requirements.txt
-# or, manually:
-# pip install numpy scikit-image tqdm matplotlib vizdoom wandb torch torchvision
-````
-
-Make sure the environment’s Python is used:
-
-```bash
-which python
-# -> something like: /home/<USER>/anaconda3/envs/doomrl/bin/python
-```
-
----
-
-## VizDoom assets
-
-This project assumes the following files exist in the **repo root**:
-
-* `deadly_corridor.cfg`
-* `deadly_corridor.wad`
-
-You can copy them from the VizDoom examples or from Thomas Simonini’s Doom tutorial resources.
-
-`config.py` currently expects:
-
-```python
-class Config:
-    config_path = "deadly_corridor.cfg"
-    scenario_path = "deadly_corridor.wad"
-```
-
-If you prefer `assets/` or another directory, adjust these paths accordingly.
+This ensures all algorithms see **identical observations**.
 
 ---
 
@@ -92,266 +79,420 @@ If you prefer `assets/` or another directory, adjust these paths accordingly.
 
 ```text
 RLDoom/
-  config.py               # Global hyperparameters & paths
-  train.py                # Main training script (DDDQN + PER + wandb)
-  eval.py                 # Evaluation script for trained agent
-  requirements.txt        # Python dependencies
+  train.py                 # Main training entrypoint
+  eval.py                  # Evaluation entrypoint
+  requirements.txt         # Python dependencies
 
-  envs/
-    __init__.py
-    doom_env.py           # VizDoom wrapper + preprocessing + frame stacking
+  doom_files/
+    deadly_corridor.cfg    # VizDoom config
+    deadly_corridor.wad    # VizDoom scenario
 
-  models/
+  rldoom/
     __init__.py
-    dddqn.py              # Dueling DQN (value + advantage streams)
 
-  memory/
-    __init__.py
-    sumtree.py            # SumTree data structure for PER
-    per_memory.py         # Prioritized Experience Replay buffer
+    configs/
+      __init__.py
+      deadly_corridor.yaml # YAML config (env, train, logging, algo-specific)
+
+    envs/
+      __init__.py
+      deadly_corridor.py   # VizDoom wrapper + preprocessing + frame stacking
+
+    models/
+      __init__.py
+      cnn_backbone.py      # Shared convolutional encoder for images
+      heads.py             # Q-heads, dueling heads, actor/critic heads, etc.
+
+    buffers/
+      __init__.py
+      replay_buffer.py     # Standard experience replay buffer
+      per_buffer.py        # Prioritized Experience Replay (Rainbow etc.)
+      rollout_buffer.py    # On-policy rollout storage for PPO/TRPO/A2C/A3C
+
+    agents/
+      __init__.py
+      base.py              # Base Agent class (common interface)
+      dqn.py               # Vanilla DQN
+      ddqn.py              # Double DQN
+      dddqn.py             # Dueling Double DQN
+      rainbow.py           # Rainbow-style DQN with PER
+      reinforce.py         # REINFORCE (Monte Carlo Policy Gradient)
+      a2c.py               # Advantage Actor-Critic
+      a3c.py               # A3C-style agent (single-process version)
+      ppo.py               # PPO agent
+      trpo.py              # TRPO-style agent
+
+    trainers/
+      __init__.py
+      offpolicy.py         # Training loop for DQN / DDQN / DDDQN / Rainbow
+      onpolicy.py          # Training loop for REINFORCE / A2C / A3C / PPO / TRPO
+
+    utils/
+      __init__.py
+      logger.py            # Wandb/console logger wrapper
+      seeding.py           # Seeding helper
+      misc.py              # Small utilities (path helpers, etc.)
 
   scripts/
-    run_train.sh          # tmux-friendly training launcher (GPU + env setup)
-    run_eval.sh           # (optional) evaluation launcher
+    run_train.sh           # tmux-friendly training launcher
+    run_eval.sh            # tmux-friendly evaluation launcher
 
-  checkpoints/            # Saved PyTorch checkpoints (created at runtime)
-  logs/                   # Console logs + wandb local cache (created at runtime)
-
-  deadly_corridor.cfg     # VizDoom config (expected)
-  deadly_corridor.wad     # VizDoom scenario (expected)
+  checkpoints/             # Saved model checkpoints (created at runtime)
+  logs/                    # Text logs + wandb local cache (created at runtime)
   README.md
+````
+
+---
+
+## Installation
+
+Create and activate a dedicated conda environment:
+
+```bash
+git clone <THIS_REPO_URL> RLDoom
+cd RLDoom
+
+conda create -n doomrl python=3.9 -y
+conda activate doomrl
+
+pip install -r requirements.txt
+```
+
+Typical `requirements.txt` (simplified):
+
+```txt
+torch==2.5.1+cu121
+torchvision==0.20.1+cu121
+
+vizdoom==1.2.4
+gymnasium==1.1.1
+
+numpy==1.26.4
+scipy==1.13.1
+scikit-image==0.22.0
+imageio
+tifffile
+pillow
+
+opencv-python        # for cv2, used in preprocessing
+
+matplotlib==3.9.4
+tqdm
+pyyaml
+wandb==0.23.0
+```
+
+Check that the environment Python is used:
+
+```bash
+which python
+# -> .../anaconda3/envs/doomrl/bin/python
 ```
 
 ---
 
-## Configuration
+## VizDoom Assets
 
-Global configuration is centralized in `config.py`:
+The YAML config assumes the following paths:
 
-```python
-class Config:
-    # Doom assets
-    config_path = "deadly_corridor.cfg"
-    scenario_path = "deadly_corridor.wad"
-
-    # Frame & stack
-    frame_height = 100
-    frame_width = 120
-    stack_size = 4
-
-    # Training
-    learning_rate = 2.5e-4
-    gamma = 0.95
-    total_episodes = 1000
-    max_steps_per_episode = 3000
-
-    # Epsilon-greedy
-    eps_start = 1.0
-    eps_end = 0.01
-    eps_decay = 5e-5
-
-    # Replay memory
-    memory_size = 100000
-    pretrain_length = 50000
-    learn_start = 1000
-
-    # Target network
-    target_update_freq = 1000
-    tau = 1.0  # 1.0 = hard update; <1.0 = soft update
-
-    # Optimizer
-    grad_clip = 10.0
-    batch_size = 64
-
-    # Paths
-    checkpoint_dir = "<REPO_ROOT>/checkpoints"
-    logs_dir = "<REPO_ROOT>/logs"
-    checkpoint_interval = 50
-
-    # wandb
-    wandb_project = "doom-dddqn"
-    wandb_run_name = "dddqn_deadly_corridor"
+```yaml
+env:
+  cfg_path: "doom_files/deadly_corridor.cfg"
+  wad_path: "doom_files/deadly_corridor.wad"
 ```
 
-You can tune hyperparameters here without touching the training code.
+Place these files under `doom_files/`:
+
+```text
+RLDoom/
+  doom_files/
+    deadly_corridor.cfg
+    deadly_corridor.wad
+```
+
+You can copy them from the official VizDoom examples or tutorial resources.
+
+---
+
+## Configuration (YAML + Python)
+
+All configuration is centralized in:
+
+```text
+rldoom/configs/deadly_corridor.yaml
+rldoom/configs/__init__.py  (make_config)
+```
+
+### YAML layout (high-level)
+
+```yaml
+env:
+  cfg_path: "doom_files/deadly_corridor.cfg"
+  wad_path: "doom_files/deadly_corridor.wad"
+  frame_size: 84
+  stack_size: 4
+  frame_skip: 4
+
+train:
+  num_episodes: 1000
+  checkpoint_dir: "checkpoints"
+  checkpoint_interval: 50
+  logs_dir: "logs"
+
+defaults:
+  feature_dim: 512
+  gamma: 0.99
+  grad_clip: 10.0
+
+logging:
+  use_wandb: true
+  wandb_project: "RLDoom"
+  wandb_entity: "lee_changmin-sangmyung-uni"
+
+algos:
+  dqn:    # algo-specific hyperparameters...
+  ddqn:
+  dddqn:
+  rainbow:
+  reinforce:
+  a2c:
+  a3c:
+  ppo:
+  trpo:
+```
+
+`make_config(algo, seed)` flattens this into a simple object:
+
+```python
+from rldoom.configs import make_config
+
+cfg = make_config("dddqn", seed=0)
+
+cfg.algo            # "dddqn"
+cfg.algo_type       # "offpolicy" / "onpolicy"
+cfg.cfg_path        # doom_files/deadly_corridor.cfg
+cfg.wad_path        # doom_files/deadly_corridor.wad
+cfg.frame_size      # 84
+cfg.stack_size      # 4
+cfg.frame_skip      # 4
+
+cfg.num_episodes
+cfg.checkpoint_dir
+cfg.logs_dir
+cfg.feature_dim
+cfg.gamma
+cfg.grad_clip
+
+# algo-specific
+cfg.lr
+cfg.buffer_size
+cfg.batch_size
+cfg.learn_start
+cfg.eps_start
+cfg.eps_end
+cfg.eps_decay
+cfg.target_update_every
+...
+```
+
+All agents and trainers use this same `cfg` object.
+
+---
+
+## wandb Setup (.env)
+
+Wandb is configured via **environment variables** and/or the YAML:
+
+Create a `.env` file in the project root (or export in your shell):
+
+```bash
+WANDB_API_KEY="YOUR_KEY"
+WANDB_ENTITY="lee_changmin-sangmyung-uni"
+WANDB_PROJECT="RLDoom"
+WANDB_DIR="/home/cia/disk1/bci_intern/AAAI2026/RLDoom/logs/wandb"
+```
+
+Then either:
+
+```bash
+export $(grep -v '^#' .env | xargs)
+```
+
+or your logger can load `.env` internally (e.g., via `python-dotenv`).
+
+`rldoom/utils/logger.py` reads:
+
+* `cfg.use_wandb`
+* `cfg.wandb_project`
+* `cfg.wandb_entity`
+* `WANDB_API_KEY`, `WANDB_DIR` from the environment
+
+and initializes wandb accordingly.
 
 ---
 
 ## Training
 
-### 1. Prepare wandb
+### Command-line
 
-Once inside the `doomrl` environment:
+From the project root:
 
 ```bash
 conda activate doomrl
-wandb login
-# paste your API key
+cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
+
+# DDDQN
+python train.py --algo dddqn --seed 0
+
+# DQN / DDQN / Rainbow
+python train.py --algo dqn --seed 0
+python train.py --algo ddqn --seed 0
+python train.py --algo rainbow --seed 0
+
+# On-policy algorithms
+python train.py --algo reinforce --seed 0
+python train.py --algo a2c --seed 0
+python train.py --algo a3c --seed 0
+python train.py --algo ppo --seed 0
+python train.py --algo trpo --seed 0
 ```
 
-### 2. Training via script (recommended)
+`train.py`:
 
-Edit `scripts/run_train.sh` to match your environment (conda path, repo path, GPU index).
-Example:
+* Builds `cfg = make_config(algo, seed)`
+* Sets seeds (Python / NumPy / Torch)
+* Creates `obs_shape = (stack_size, frame_size, frame_size)` and `num_actions = 7`
+* Instantiates the corresponding `Agent` subclass
+* Wraps logging via `Logger(cfg)`
+* Dispatches to:
+
+  * `train_offpolicy(agent, cfg, logger)` for DQN / DDQN / DDDQN / Rainbow
+  * `train_onpolicy(agent, cfg, logger)` for REINFORCE / A2C / A3C / PPO / TRPO
+
+Both trainers use **tqdm** to show progress over episodes without spamming the terminal.
+
+### tmux-friendly script
+
+`scripts/run_train.sh` example:
 
 ```bash
 #!/usr/bin/env bash
 set -e
 
-# Activate conda environment
 source ~/anaconda3/etc/profile.d/conda.sh
 conda activate doomrl
 
-# Go to project root
-cd /home/<USER>/disk1/bci_intern/AAAI2026/RLDoom
+cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
 
-# Use only GPU 3 (visible as device 0 inside the process)
-export CUDA_VISIBLE_DEVICES=3
-
-# wandb local cache
+export CUDA_VISIBLE_DEVICES=0
 export WANDB_DIR="${PWD}/logs/wandb"
-mkdir -p "$WANDB_DIR"
 
-mkdir -p logs
+mkdir -p logs checkpoints
 
-python train.py 2>&1 | tee logs/train.log
+# Choose algorithm via env or hard-code
+ALGO=${ALGO:-dddqn}
+SEED=${SEED:-0}
+
+python train.py --algo "${ALGO}" --seed "${SEED}" 2>&1 | tee "logs/train_${ALGO}_s${SEED}.log"
 ```
 
-Make it executable:
+Usage:
 
 ```bash
 chmod +x scripts/run_train.sh
-```
 
-Run it inside tmux:
-
-```bash
 tmux new -s doomrl
-bash scripts/run_train.sh
-
-# Detach:  Ctrl+b, d
-# Reattach: tmux attach -t doomrl
+ALGO=dddqn SEED=0 bash scripts/run_train.sh
+# detach: Ctrl+b, d
+# attach: tmux attach -t doomrl
 ```
-
-Training will:
-
-* Pre-fill replay memory with random actions
-* Train DDDQN with PER
-* Log metrics to wandb
-* Save checkpoints to `checkpoints/dddqn_ep_XXXXXX.pt` and `checkpoints/dddqn_latest.pt`
 
 ---
 
 ## Evaluation
 
-You can evaluate a trained agent with the latest checkpoint:
+Run evaluation with a saved checkpoint:
 
 ```bash
 conda activate doomrl
-cd /home/<USER>/disk1/bci_intern/AAAI2026/RLDoom
+cd /home/cia/disk1/bci_intern/AAAI2026/RLDoom
 
-python eval.py
-# or specify a checkpoint:
-# python eval.py --ckpt checkpoints/dddqn_ep_000500.pt
+python eval.py \
+  --algo dddqn \
+  --checkpoint checkpoints/dddqn_ep_000500.pt \
+  --episodes 10
 ```
 
-If you prefer a script, you can use `scripts/run_eval.sh`:
+`eval.py`:
 
-```bash
-#!/usr/bin/env bash
-set -e
+* Loads the same `cfg = make_config(algo, seed)`
+* Disables wandb (`cfg.use_wandb = False`)
+* Builds the agent and loads weights
+* Creates `env = make_env(cfg)` (headless VizDoom, safe over SSH)
+* Runs evaluation episodes with **deterministic actions** (`epsilon=0` or greedy policy)
+* Uses `tqdm` to show progress over evaluation episodes
+* Prints per-episode return:
 
-source ~/anaconda3/etc/profile.d/conda.sh
-conda activate doomrl
-
-cd /home/<USER>/disk1/bci_intern/AAAI2026/RLDoom
-
-export CUDA_VISIBLE_DEVICES=3
-
-mkdir -p logs
-python eval.py 2>&1 | tee logs/eval.log
+```text
+[EVAL] algo=dddqn episode=1 reward=123.45
+...
 ```
 
-(Use your actual path and GPU index.)
+You can also use `scripts/run_eval.sh` to wrap this in tmux.
 
 ---
 
-## Logging & Checkpoints
+## Project Story: What This Repo is For
 
-* **Console logs:**
-  `logs/train.log`, `logs/eval.log` (from `tee` in the scripts).
+The point is **not** to build the most powerful Doom agent, but to:
 
-* **wandb logs:**
+* Fix the **environment** (Deadly Corridor, same preprocessing, same action space)
+* Fix the **hardware constraints** (single GPU lab server, headless)
+* Fix the **logging & metrics pipeline** (wandb, same reward definition)
 
-  * Project name: `doom-dddqn` (configurable in `Config.wandb_project`)
-  * Metrics: episode reward, mean loss, epsilon, global step, etc.
-  * Local cache: `logs/wandb` (via `WANDB_DIR`)
+and then systematically compare:
 
-* **Checkpoints:**
+1. **Value-based methods**
 
-  * Saved every `checkpoint_interval` episodes (default: 50)
-  * Format: `checkpoints/dddqn_ep_000050.pt`, `checkpoints/dddqn_latest.pt`
-  * Each checkpoint contains:
+   * DQN → DDQN → DDDQN → Rainbow
+   * How do Double / Dueling / PER / distributional tricks affect:
 
-    * Online network weights
-    * Target network weights
-    * Optimizer state
-    * Episode index, global step, epsilon
+     * sample efficiency
+     * stability
+     * final performance?
 
----
+2. **Policy gradient & actor-critic**
 
-## Method Overview
+   * REINFORCE vs A2C/A3C vs PPO vs TRPO
+   * How do trust-region and clipping-based methods behave in a sparse-ish, death-penalized environment?
 
-* **Input state:** stack of 4 grayscale frames
-  Shape: `(C=4, H=100, W=120)` after crop + normalize + resize.
+3. **Fairness**
 
-* **Network:** Dueling DQN (`models/dddqn.py`)
+   * Same reward function
+   * Same frame preprocessing and stacking
+   * Similar training horizon (`num_episodes`)
+   * Shared hyperparameter style (LR, batch size, rollout length) in YAML
 
-  * Conv encoder (3 conv layers)
-  * Flatten
-  * Two streams:
+The repo is structured so that **adding another algorithm** (e.g., SAC or DQN+NoisyNets) is just:
 
-    * Value stream: `V(s)`
-    * Advantage stream: `A(s, a)`
-  * Aggregation:
-    `Q(s, a) = V(s) + A(s, a) - mean_a A(s, a)`
-
-* **Double DQN target:**
-
-  * Online network chooses `argmax_a Q(s', a)`
-  * Target network evaluates that action’s Q-value
-  * Target:
-    `y = r + γ (1 − done) Q_target(s', argmax_a Q_online(s', a))`
-
-* **Prioritized Experience Replay:**
-
-  * SumTree (`memory/sumtree.py`) stores priorities and experiences.
-  * Memory (`memory/per_memory.py`) implements:
-
-    * Sampling by priority
-    * Importance-sampling weights for unbiased updates
-    * Priority updates using TD error
-
-* **Optimization:**
-
-  * Loss: PER-weighted MSE between current Q and target
-  * Optimizer: RMSprop
-  * Gradient clipping: `max_grad_norm = 10.0`
-  * Target network update: every `target_update_freq` global steps, using hard or soft update (`tau`)
+* implementing a new `Agent` class under `rldoom/agents/`,
+* adding a corresponding entry under `algos:` in the YAML.
 
 ---
 
 ## Credits & References
 
-This project is inspired by:
+This project builds on:
 
 * Thomas Simonini, **“Dueling Double Deep Q-Learning with PER — Doom Deadly Corridor”**
-  Deep Reinforcement Learning Course (TensorFlow notebook).
 * Mnih et al., **“Human-level control through deep reinforcement learning,”** Nature, 2015.
-* Wang et al., **“Dueling Network Architectures for Deep Reinforcement Learning,”** ICML, 2016.
 * Van Hasselt et al., **“Deep Reinforcement Learning with Double Q-learning,”** AAAI, 2016.
+* Wang et al., **“Dueling Network Architectures for Deep Reinforcement Learning,”** ICML, 2016.
 * Schaul et al., **“Prioritized Experience Replay,”** ICLR, 2016.
-* VizDoom: **“ViZDoom: A Doom-based AI Research Platform for Visual Reinforcement Learning”**
+* Mnih et al., **“Asynchronous Methods for Deep Reinforcement Learning,”** ICML, 2016. (A3C)
+* Schulman et al., **“Trust Region Policy Optimization,”** ICML, 2015.
+* Schulman et al., **“Proximal Policy Optimization Algorithms,”** arXiv, 2017.
+* VizDoom: **“ViZDoom: A Doom-based AI Research Platform for Visual Reinforcement Learning.”**
 
 All original Doom assets belong to their respective copyright holders.
 
