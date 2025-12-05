@@ -96,8 +96,8 @@ class PPOAgent(Agent):
             _, last_value = self._forward(last_obs)
             last_value = last_value.squeeze(0)
 
-        advantages, returns = self._compute_gae(rewards, values, dones, last_value)
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+            advantages, returns = self._compute_gae(rewards, values, dones, last_value)
+            advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
         obs_all = obs
         actions_all = actions
@@ -107,7 +107,11 @@ class PPOAgent(Agent):
 
         total_steps = obs_all.shape[0]
         batch_size = self.batch_size
-        assert total_steps >= batch_size, "Rollout too short for PPO batch"
+
+        # If rollout shorter than one batch, skip update
+        if total_steps < batch_size:
+            self.buffer.reset()
+            return {}
 
         for _ in range(self.ppo_epochs):
             idxs = torch.randperm(total_steps, device=self.device)
@@ -130,7 +134,9 @@ class PPOAgent(Agent):
 
                 ratio = torch.exp(log_probs - mb_old_log_probs)
                 surr1 = ratio * mb_advantages
-                surr2 = torch.clamp(ratio, 1.0 - self.clip_range, 1.0 + self.clip_range) * mb_advantages
+                surr2 = torch.clamp(
+                    ratio, 1.0 - self.clip_range, 1.0 + self.clip_range
+                ) * mb_advantages
                 policy_loss = -torch.min(surr1, surr2).mean()
 
                 value_loss = F.mse_loss(values_mb, mb_returns)
@@ -149,3 +155,4 @@ class PPOAgent(Agent):
             "value_loss": float(value_loss.item()),
             "loss": float(loss.item()),
         }
+

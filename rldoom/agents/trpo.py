@@ -85,33 +85,42 @@ class TRPOAgent(Agent):
         return advantages, returns
 
     def update(self) -> Dict[str, float]:
+        # 1) Wait until rollout buffer is full
         if not self.buffer.is_ready():
             return {}
 
+        # 2) Fetch rollout
         obs, actions, rewards, next_obs, dones = self.buffer.get()
+        total_steps = obs.shape[0]
+        batch_size = self.batch_size
 
-        logits_old, values = self._forward(obs)
-        dist_old = torch.distributions.Categorical(logits=logits_old)
-        old_log_probs = dist_old.log_prob(actions).detach()
+        # If rollout is shorter than one batch, skip update
+        if total_steps < batch_size:
+            self.buffer.reset()
+            return {}
 
+        # 3) Compute old policy, values, advantages, returns
         with torch.no_grad():
+            # Old policy and value predictions (frozen during update)
+            logits_old, values = self._forward(obs)
+            dist_old = torch.distributions.Categorical(logits=logits_old)
+            old_log_probs = dist_old.log_prob(actions)
+
+            # Bootstrap value for the last state
             last_obs = next_obs[-1].unsqueeze(0)
             _, last_value = self._forward(last_obs)
             last_value = last_value.squeeze(0)
 
-        advantages, returns = self._compute_gae(rewards, values, dones, last_value)
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+            advantages, returns = self._compute_gae(rewards, values, dones, last_value)
+            advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
         obs_all = obs
         actions_all = actions
-        old_log_probs_all = old_log_probs
+        old_log_probs_all = old_log_probs.detach()
         returns_all = returns.detach()
         advantages_all = advantages.detach()
 
-        total_steps = obs_all.shape[0]
-        batch_size = self.batch_size
-        assert total_steps >= batch_size, "Rollout too short for TRPO batch"
-
+        # 4) TRPO-style update with KL penalty (simplified)
         for _ in range(self.trpo_epochs):
             idxs = torch.randperm(total_steps, device=self.device)
             for start in range(0, total_steps, batch_size):
@@ -126,16 +135,18 @@ class TRPOAgent(Agent):
                 mb_returns = returns_all[mb_idx]
                 mb_old_log_probs = old_log_probs_all[mb_idx]
 
+                # Current policy/value
                 logits, values_mb = self._forward(mb_obs)
                 dist = torch.distributions.Categorical(logits=logits)
                 log_probs = dist.log_prob(mb_actions)
                 entropy = dist.entropy().mean()
 
-                # KL divergence (approximate)
+                # Old probs subset for KL
                 with torch.no_grad():
-                    probs_old = dist_old.probs[mb_idx]
+                    probs_old_mb = dist_old.probs[mb_idx]
+
                 kl = torch.distributions.kl.kl_divergence(
-                    torch.distributions.Categorical(probs=probs_old),
+                    torch.distributions.Categorical(probs=probs_old_mb),
                     dist,
                 ).mean()
 
@@ -150,6 +161,7 @@ class TRPOAgent(Agent):
                 nn.utils.clip_grad_norm_(self.backbone.parameters(), self.cfg.grad_clip)
                 self.optimizer.step()
 
+        # 5) Reset buffer for the next rollout
         self.buffer.reset()
 
         return {
