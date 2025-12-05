@@ -1,0 +1,375 @@
+dqn train:   2%|▏         | 31/2000 [01:16<41:57,  1.28s/it]  
+[step=1] episode=1.0000 return=-110.5250 length=12.0000 global_step=12.0000
+[step=2] episode=2.0000 return=-92.9580 length=29.0000 global_step=41.0000
+[step=3] episode=3.0000 return=6.6775 length=26.0000 global_step=67.0000
+[step=4] episode=4.0000 return=-111.6426 length=12.0000 global_step=79.0000
+[step=5] episode=5.0000 return=-45.9968 length=26.0000 global_step=105.0000
+[step=6] episode=6.0000 return=-115.9874 length=20.0000 global_step=125.0000
+[step=7] episode=7.0000 return=-115.9972 length=29.0000 global_step=154.0000
+[step=8] episode=8.0000 return=-115.8481 length=13.0000 global_step=167.0000
+[step=9] episode=9.0000 return=-107.9455 length=28.0000 global_step=195.0000
+[step=10] episode=10.0000 return=-85.1486 length=26.0000 global_step=221.0000
+[step=11] episode=11.0000 return=-112.9733 length=29.0000 global_step=250.0000
+[step=12] episode=12.0000 return=-74.2867 length=12.0000 global_step=262.0000
+[step=13] episode=13.0000 return=-108.1106 length=19.0000 global_step=281.0000
+[step=14] episode=14.0000 return=-88.5665 length=20.0000 global_step=301.0000
+[step=15] episode=15.0000 return=-110.0913 length=22.0000 global_step=323.0000
+[step=16] episode=16.0000 return=-115.9903 length=29.0000 global_step=352.0000
+[step=17] episode=17.0000 return=35.3871 length=510.0000 global_step=862.0000
+[step=18] episode=18.0000 return=-106.3589 length=20.0000 global_step=882.0000
+[step=19] episode=19.0000 return=-90.2117 length=29.0000 global_step=911.0000
+[step=20] episode=20.0000 return=-98.6570 length=28.0000 global_step=939.0000
+[step=21] episode=21.0000 return=-89.8438 length=20.0000 global_step=959.0000
+[step=22] episode=22.0000 return=-63.9678 length=50.0000 global_step=1009.0000
+[step=23] episode=23.0000 return=-115.9993 length=29.0000 global_step=1038.0000
+[step=24] episode=24.0000 return=-115.9756 length=58.0000 global_step=1096.0000
+[step=25] episode=25.0000 return=-5.1462 length=20.0000 global_step=1116.0000
+[step=26] episode=26.0000 return=-115.9909 length=20.0000 global_step=1136.0000
+[step=27] episode=27.0000 return=-112.8625 length=29.0000 global_step=1165.0000
+[step=28] episode=28.0000 return=-75.3228 length=19.0000 global_step=1184.0000
+[step=29] episode=29.0000 return=-115.9797 length=13.0000 global_step=1197.0000
+[step=30] episode=30.0000 return=-115.0005 length=12.0000 global_step=1209.0000
+[step=31] episode=31.0000 return=-74.4482 length=20.0000 global_step=1229.0000
+[step=32] episode=32.0000 return=-91.9877 length=27.0000 global_step=1256.0000
+[step=33] episode=33.0000 return=-115.3479 length=21.0000 global_step=1277.0000
+[step=34] episode=34.0000 return=-75.2827 length=26.0000 global_step=1303.0000
+[step=35] episode=35.0000 return=-115.9979 length=20.0000 global_step=1323.0000
+[step=36] episode=36.0000 return=-89.2111 length=20.0000 global_step=1343.0000
+[step=37] episode=37.0000 return=-82.3332 length=33.0000 global_step=1376.0000
+[step=38] episode=38.0000 return=-72.1279 length=57.0000 global_step=1433.0000
+[step=39] episode=39.0000 return=-56.6322 length=12.0000 global_step=1445.0000
+[step=40] episode=40.0000 return=-76.2246 length=42.0000 global_step=1487.0000
+[step=41] episode=41.0000 return=-81.8221 length=37.0000 global_step=1524.0000
+[step=42] episode=42.0000 return=-115.9760 length=11.0000 global_step=1535.0000
+[step=43] episode=43.0000 return=-115.3879 length=25.0000 global_step=1560.0000
+[step=44] episode=44.0000 return=-115.9943 length=13.0000 global_step=1573.0000
+[step=45] episode=45.0000 return=-53.0702 length=20.0000 global_step=1593.0000
+[step=46] episode=46.0000 return=-114.9712 length=11.0000 global_step=1604.0000
+[step=47] episode=47.0000 return=-110.3473 length=21.0000 global_step=1625.0000
+[step=48] episode=48.0000 return=-110.7384 length=37.0000 global_step=1662.0000
+[step=49] episode=49.0000 return=-89.0066 length=12.0000 global_step=1674.0000
+[step=50] episode=50.0000 return=-105.2874 length=30.0000 global_step=1704.0000
+[step=51] episode=51.0000 return=-115.9986 length=21.0000 global_step=1725.0000
+[step=52] episode=52.0000 return=-58.4149 length=29.0000 global_step=1754.0000
+[step=53] episode=53.0000 return=-104.4104 length=21.0000 global_step=1775.0000
+[step=54] episode=54.0000 return=-79.2222 length=19.0000 global_step=1794.0000
+[step=55] episode=55.0000 return=-115.4832 length=20.0000 global_step=1814.0000
+[step=56] episode=56.0000 return=-81.1837 length=30.0000 global_step=1844.0000
+[step=57] episode=57.0000 return=-0.4050 length=71.0000 global_step=1915.0000
+[step=58] episode=58.0000 return=-59.7065 length=56.0000 global_step=1971.0000
+[step=59] episode=59.0000 return=-60.6595 length=28.0000 global_step=1999.0000
+[step=60] episode=60.0000 return=-115.2224 length=11.0000 global_step=2010.0000
+[step=61] episode=61.0000 return=-87.0326 length=58.0000 global_step=2068.0000
+[step=62] episode=62.0000 return=-77.7601 length=21.0000 global_step=2089.0000
+[step=63] episode=63.0000 return=-112.1075 length=46.0000 global_step=2135.0000
+[step=64] episode=64.0000 return=-59.2478 length=35.0000 global_step=2170.0000
+[step=65] episode=65.0000 return=-111.7419 length=20.0000 global_step=2190.0000
+[step=66] episode=66.0000 return=7.0167 length=49.0000 global_step=2239.0000
+[step=67] episode=67.0000 return=-99.3842 length=28.0000 global_step=2267.0000
+[step=68] episode=68.0000 return=32.0231 length=250.0000 global_step=2517.0000
+[step=69] episode=69.0000 return=-90.7466 length=20.0000 global_step=2537.0000
+[step=70] episode=70.0000 return=-102.1158 length=21.0000 global_step=2558.0000
+[step=71] episode=71.0000 return=-97.3312 length=18.0000 global_step=2576.0000
+[step=72] episode=72.0000 return=-115.9319 length=52.0000 global_step=2628.0000
+[step=73] episode=73.0000 return=-115.5984 length=33.0000 global_step=2661.0000
+[step=74] episode=74.0000 return=-115.4111 length=22.0000 global_step=2683.0000
+[step=75] episode=75.0000 return=-115.9975 length=18.0000 global_step=2701.0000
+[step=76] episode=76.0000 return=-92.2214 length=21.0000 global_step=2722.0000
+[step=77] episode=77.0000 return=-86.5213 length=20.0000 global_step=2742.0000
+[step=78] episode=78.0000 return=-68.7873 length=21.0000 global_step=2763.0000
+[step=79] episode=79.0000 return=-115.9966 length=30.0000 global_step=2793.0000
+[step=80] episode=80.0000 return=-95.8934 length=13.0000 global_step=2806.0000
+[step=81] episode=81.0000 return=-97.6845 length=28.0000 global_step=2834.0000
+[step=82] episode=82.0000 return=-115.9407 length=13.0000 global_step=2847.0000
+[step=83] episode=83.0000 return=-71.5366 length=30.0000 global_step=2877.0000
+[step=84] episode=84.0000 return=-111.3794 length=88.0000 global_step=2965.0000
+[step=85] episode=85.0000 return=-95.4966 length=36.0000 global_step=3001.0000
+[step=86] episode=86.0000 return=-105.5476 length=13.0000 global_step=3014.0000
+[step=87] episode=87.0000 return=-40.9605 length=49.0000 global_step=3063.0000
+[step=88] episode=88.0000 return=-94.7968 length=12.0000 global_step=3075.0000
+[step=89] episode=89.0000 return=-115.9875 length=28.0000 global_step=3103.0000
+[step=90] episode=90.0000 return=-107.8665 length=28.0000 global_step=3131.0000
+[step=91] episode=91.0000 return=-84.3842 length=26.0000 global_step=3157.0000
+[step=92] episode=92.0000 return=-57.0065 length=49.0000 global_step=3206.0000
+[step=93] episode=93.0000 return=-115.9835 length=20.0000 global_step=3226.0000
+[step=94] episode=94.0000 return=-48.8140 length=45.0000 global_step=3271.0000
+[step=95] episode=95.0000 return=-114.0250 length=13.0000 global_step=3284.0000
+[step=96] episode=96.0000 return=-50.3203 length=18.0000 global_step=3302.0000
+[step=97] episode=97.0000 return=-115.9583 length=21.0000 global_step=3323.0000
+[step=98] episode=98.0000 return=-99.5670 length=87.0000 global_step=3410.0000
+[step=99] episode=99.0000 return=-109.7787 length=29.0000 global_step=3439.0000
+[step=100] episode=100.0000 return=-94.2957 length=20.0000 global_step=3459.0000
+[step=101] episode=101.0000 return=-7.8161 length=21.0000 global_step=3480.0000
+[step=102] episode=102.0000 return=-99.0595 length=33.0000 global_step=3513.0000
+[step=103] episode=103.0000 return=-115.9969 length=20.0000 global_step=3533.0000
+[step=104] episode=104.0000 return=-103.9311 length=26.0000 global_step=3559.0000
+[step=105] episode=105.0000 return=-91.9532 length=20.0000 global_step=3579.0000
+[step=106] episode=106.0000 return=-115.9059 length=29.0000 global_step=3608.0000
+[step=107] episode=107.0000 return=-99.7684 length=20.0000 global_step=3628.0000
+[step=108] episode=108.0000 return=-39.5685 length=27.0000 global_step=3655.0000
+[step=109] episode=109.0000 return=-115.9778 length=11.0000 global_step=3666.0000
+[step=110] episode=110.0000 return=-80.4528 length=20.0000 global_step=3686.0000
+[step=111] episode=111.0000 return=-100.9868 length=21.0000 global_step=3707.0000
+[step=112] episode=112.0000 return=-108.7345 length=12.0000 global_step=3719.0000
+[step=113] episode=113.0000 return=-88.3615 length=29.0000 global_step=3748.0000
+[step=114] episode=114.0000 return=-65.8859 length=37.0000 global_step=3785.0000
+[step=115] episode=115.0000 return=-101.7022 length=18.0000 global_step=3803.0000
+[step=116] episode=116.0000 return=-67.6572 length=28.0000 global_step=3831.0000
+[step=117] episode=117.0000 return=-97.8020 length=20.0000 global_step=3851.0000
+[step=118] episode=118.0000 return=-33.9700 length=30.0000 global_step=3881.0000
+[step=119] episode=119.0000 return=-45.5791 length=28.0000 global_step=3909.0000
+[step=120] episode=120.0000 return=-112.0808 length=21.0000 global_step=3930.0000
+[step=121] episode=121.0000 return=-112.5496 length=28.0000 global_step=3958.0000
+[step=122] episode=122.0000 return=-111.4770 length=29.0000 global_step=3987.0000
+[step=123] episode=123.0000 return=-78.9584 length=18.0000 global_step=4005.0000
+[step=124] episode=124.0000 return=-79.9719 length=22.0000 global_step=4027.0000
+[step=125] episode=125.0000 return=-113.5872 length=28.0000 global_step=4055.0000
+[step=126] episode=126.0000 return=-113.1408 length=18.0000 global_step=4073.0000
+[step=127] episode=127.0000 return=30.9705 length=65.0000 global_step=4138.0000
+[step=128] episode=128.0000 return=-59.7609 length=21.0000 global_step=4159.0000
+[step=129] episode=129.0000 return=-110.0779 length=25.0000 global_step=4184.0000
+[step=130] episode=130.0000 return=-115.9280 length=20.0000 global_step=4204.0000
+[step=131] episode=131.0000 return=-86.3393 length=28.0000 global_step=4232.0000
+[step=132] episode=132.0000 return=100.4203 length=462.0000 global_step=4694.0000
+[step=133] episode=133.0000 return=-88.6882 length=26.0000 global_step=4720.0000
+[step=134] episode=134.0000 return=-102.7938 length=34.0000 global_step=4754.0000
+[step=135] episode=135.0000 return=-87.0450 length=13.0000 global_step=4767.0000
+[step=136] episode=136.0000 return=202.8892 length=178.0000 global_step=4945.0000
+[step=137] episode=137.0000 return=-38.5903 length=30.0000 global_step=4975.0000
+[step=138] episode=138.0000 return=-115.9700 length=20.0000 global_step=4995.0000
+[step=139] episode=139.0000 return=-115.9428 length=35.0000 global_step=5030.0000 loss=252.7393
+[step=140] episode=140.0000 return=-105.8802 length=13.0000 global_step=5043.0000 loss=249.4283
+[step=141] episode=141.0000 return=-12.9100 length=28.0000 global_step=5071.0000 loss=249.0780
+[step=142] episode=142.0000 return=-72.9050 length=21.0000 global_step=5092.0000 loss=395.0361
+[step=143] episode=143.0000 return=88.7365 length=138.0000 global_step=5230.0000 loss=27.7917
+[step=144] episode=144.0000 return=-103.9639 length=21.0000 global_step=5251.0000 loss=470.2677
+[step=145] episode=145.0000 return=-38.9694 length=22.0000 global_step=5273.0000 loss=175.7425
+[step=146] episode=146.0000 return=-114.3580 length=29.0000 global_step=5302.0000 loss=178.0343
+[step=147] episode=147.0000 return=-115.1283 length=13.0000 global_step=5315.0000 loss=173.4205
+[step=148] episode=148.0000 return=-97.2248 length=20.0000 global_step=5335.0000 loss=175.5347
+[step=149] episode=149.0000 return=-64.8883 length=22.0000 global_step=5357.0000 loss=615.9027
+[step=150] episode=150.0000 return=-54.2661 length=28.0000 global_step=5385.0000 loss=541.1133
+[step=151] episode=151.0000 return=-108.8929 length=19.0000 global_step=5404.0000 loss=315.4899
+[step=152] episode=152.0000 return=-97.2498 length=22.0000 global_step=5426.0000 loss=259.2288
+[step=153] episode=153.0000 return=-12.3247 length=19.0000 global_step=5445.0000 loss=245.6115
+[step=154] episode=154.0000 return=-113.9400 length=20.0000 global_step=5465.0000 loss=467.2944
+[step=155] episode=155.0000 return=-39.3490 length=22.0000 global_step=5487.0000 loss=105.7839
+[step=156] episode=156.0000 return=-94.9614 length=26.0000 global_step=5513.0000 loss=175.6080
+[step=157] episode=157.0000 return=-32.9260 length=20.0000 global_step=5533.0000 loss=345.7396
+[step=158] episode=158.0000 return=-107.8164 length=21.0000 global_step=5554.0000 loss=169.0970
+[step=159] episode=159.0000 return=-26.4380 length=27.0000 global_step=5581.0000 loss=313.1166
+[step=160] episode=160.0000 return=-36.7905 length=20.0000 global_step=5601.0000 loss=105.3140
+[step=161] episode=161.0000 return=-46.0452 length=20.0000 global_step=5621.0000 loss=168.3437
+[step=162] episode=162.0000 return=-82.2865 length=53.0000 global_step=5674.0000 loss=456.8858
+[step=163] episode=163.0000 return=-82.5624 length=19.0000 global_step=5693.0000 loss=331.5048
+[step=164] episode=164.0000 return=-113.8015 length=36.0000 global_step=5729.0000 loss=451.2928
+[step=165] episode=165.0000 return=-100.6879 length=29.0000 global_step=5758.0000 loss=186.8829
+[step=166] episode=166.0000 return=-101.8955 length=19.0000 global_step=5777.0000 loss=490.6012
+[step=167] episode=167.0000 return=-102.7771 length=12.0000 global_step=5789.0000 loss=27.5099
+[step=168] episode=168.0000 return=-71.6012 length=25.0000 global_step=5814.0000 loss=455.2283
+[step=169] episode=169.0000 return=-93.0671 length=28.0000 global_step=5842.0000 loss=550.6901
+[step=170] episode=170.0000 return=-115.8693 length=13.0000 global_step=5855.0000 loss=275.3127
+[step=171] episode=171.0000 return=-115.9871 length=13.0000 global_step=5868.0000 loss=318.1714
+[step=172] episode=172.0000 return=1.2289 length=20.0000 global_step=5888.0000 loss=244.4383
+[step=173] episode=173.0000 return=-65.1644 length=21.0000 global_step=5909.0000 loss=246.6126
+[step=174] episode=174.0000 return=-97.1817 length=13.0000 global_step=5922.0000 loss=324.2899
+[step=175] episode=175.0000 return=-110.9244 length=26.0000 global_step=5948.0000 loss=250.4807
+[step=176] episode=176.0000 return=-106.5343 length=13.0000 global_step=5961.0000 loss=260.7367
+[step=177] episode=177.0000 return=-44.1524 length=64.0000 global_step=6025.0000 loss=354.5988
+[step=178] episode=178.0000 return=-112.1889 length=20.0000 global_step=6045.0000 loss=804.5822
+[step=179] episode=179.0000 return=-102.9748 length=34.0000 global_step=6079.0000 loss=358.0001
+[step=180] episode=180.0000 return=-99.0548 length=29.0000 global_step=6108.0000 loss=337.1608
+[step=181] episode=181.0000 return=-69.7897 length=26.0000 global_step=6134.0000 loss=119.1243
+[step=182] episode=182.0000 return=-75.9889 length=29.0000 global_step=6163.0000 loss=322.8738
+[step=183] episode=183.0000 return=-95.7223 length=11.0000 global_step=6174.0000 loss=317.9178
+[step=184] episode=184.0000 return=-75.7439 length=29.0000 global_step=6203.0000 loss=271.0907
+[step=185] episode=185.0000 return=-88.3207 length=20.0000 global_step=6223.0000 loss=187.4081
+[step=186] episode=186.0000 return=-39.4725 length=35.0000 global_step=6258.0000 loss=346.9130
+[step=187] episode=187.0000 return=-80.9270 length=12.0000 global_step=6270.0000 loss=111.3213
+[step=188] episode=188.0000 return=-115.9758 length=20.0000 global_step=6290.0000 loss=396.8549
+[step=189] episode=189.0000 return=-20.3423 length=30.0000 global_step=6320.0000 loss=594.5325
+[step=190] episode=190.0000 return=-68.6206 length=19.0000 global_step=6339.0000 loss=488.9082
+[step=191] episode=191.0000 return=-110.8623 length=26.0000 global_step=6365.0000 loss=504.9344
+[step=192] episode=192.0000 return=-114.3701 length=18.0000 global_step=6383.0000 loss=126.5844
+[step=193] episode=193.0000 return=-78.7576 length=11.0000 global_step=6394.0000 loss=493.2393
+[step=194] episode=194.0000 return=-90.1710 length=13.0000 global_step=6407.0000 loss=651.7290
+[step=195] episode=195.0000 return=-115.9979 length=12.0000 global_step=6419.0000 loss=413.6049
+[step=196] episode=196.0000 return=-65.5403 length=45.0000 global_step=6464.0000 loss=338.2975
+[step=197] episode=197.0000 return=-31.0970 length=22.0000 global_step=6486.0000 loss=356.5534
+[step=198] episode=198.0000 return=-90.8947 length=54.0000 global_step=6540.0000 loss=266.1618
+[step=199] episode=199.0000 return=-57.9731 length=28.0000 global_step=6568.0000 loss=394.7365
+[step=200] episode=200.0000 return=-63.0417 length=19.0000 global_step=6587.0000 loss=245.5863
+[step=201] episode=201.0000 return=-24.2565 length=40.0000 global_step=6627.0000 loss=427.1586
+[step=202] episode=202.0000 return=-110.2256 length=20.0000 global_step=6647.0000 loss=119.7468
+[step=203] episode=203.0000 return=-94.2575 length=26.0000 global_step=6673.0000 loss=740.1255
+[step=204] episode=204.0000 return=-115.9971 length=21.0000 global_step=6694.0000 loss=329.2120
+[step=205] episode=205.0000 return=-115.9342 length=18.0000 global_step=6712.0000 loss=418.5488
+[step=206] episode=206.0000 return=-115.9363 length=12.0000 global_step=6724.0000 loss=404.1785
+[step=207] episode=207.0000 return=-55.5901 length=13.0000 global_step=6737.0000 loss=424.9058
+[step=208] episode=208.0000 return=-68.9691 length=25.0000 global_step=6762.0000 loss=559.0534
+[step=209] episode=209.0000 return=-98.6856 length=27.0000 global_step=6789.0000 loss=179.1647
+[step=210] episode=210.0000 return=-107.9718 length=13.0000 global_step=6802.0000 loss=598.8837
+[step=211] episode=211.0000 return=-90.0417 length=21.0000 global_step=6823.0000 loss=267.3095
+[step=212] episode=212.0000 return=-43.1376 length=19.0000 global_step=6842.0000 loss=122.6800
+[step=213] episode=213.0000 return=36.6461 length=19.0000 global_step=6861.0000 loss=487.2144
+[step=214] episode=214.0000 return=-103.0767 length=29.0000 global_step=6890.0000 loss=198.3492
+[step=215] episode=215.0000 return=-34.6436 length=22.0000 global_step=6912.0000 loss=570.6772
+[step=216] episode=216.0000 return=-92.3430 length=21.0000 global_step=6933.0000 loss=178.0106
+[step=217] episode=217.0000 return=-115.8351 length=34.0000 global_step=6967.0000 loss=412.1536
+[step=218] episode=218.0000 return=-115.9796 length=11.0000 global_step=6978.0000 loss=444.8452
+[step=219] episode=219.0000 return=-35.6114 length=21.0000 global_step=6999.0000 loss=196.2918
+[step=220] episode=220.0000 return=-115.9993 length=29.0000 global_step=7028.0000 loss=188.0761
+[step=221] episode=221.0000 return=-115.4355 length=34.0000 global_step=7062.0000 loss=183.5633
+[step=222] episode=222.0000 return=-89.1152 length=19.0000 global_step=7081.0000 loss=182.3404
+[step=223] episode=223.0000 return=-115.9774 length=13.0000 global_step=7094.0000 loss=347.2286
+[step=224] episode=224.0000 return=-108.9091 length=28.0000 global_step=7122.0000 loss=191.1537
+[step=225] episode=225.0000 return=-69.4008 length=49.0000 global_step=7171.0000 loss=211.3362
+[step=226] episode=226.0000 return=29.3946 length=30.0000 global_step=7201.0000 loss=344.7395
+[step=227] episode=227.0000 return=74.9912 length=26.0000 global_step=7227.0000 loss=248.4338
+[step=228] episode=228.0000 return=-112.5881 length=11.0000 global_step=7238.0000 loss=238.7714
+[step=229] episode=229.0000 return=-44.3131 length=34.0000 global_step=7272.0000 loss=513.5637
+[step=230] episode=230.0000 return=-67.9515 length=12.0000 global_step=7284.0000 loss=568.1271
+[step=231] episode=231.0000 return=-61.6457 length=21.0000 global_step=7305.0000 loss=421.6365
+[step=232] episode=232.0000 return=1.4982 length=20.0000 global_step=7325.0000 loss=436.4060
+[step=233] episode=233.0000 return=-99.5114 length=21.0000 global_step=7346.0000 loss=128.0849
+[step=234] episode=234.0000 return=-67.0126 length=12.0000 global_step=7358.0000 loss=615.8533
+[step=235] episode=235.0000 return=-78.1519 length=21.0000 global_step=7379.0000 loss=188.6589
+[step=236] episode=236.0000 return=-112.5070 length=12.0000 global_step=7391.0000 loss=252.7995
+[step=237] episode=237.0000 return=-104.9076 length=20.0000 global_step=7411.0000 loss=180.2960
+[step=238] episode=238.0000 return=-30.1671 length=38.0000 global_step=7449.0000 loss=275.3705
+[step=239] episode=239.0000 return=-101.8468 length=19.0000 global_step=7468.0000 loss=403.8734
+[step=240] episode=240.0000 return=-67.4186 length=13.0000 global_step=7481.0000 loss=418.9111
+[step=241] episode=241.0000 return=-55.0560 length=12.0000 global_step=7493.0000 loss=267.6313
+[step=242] episode=242.0000 return=-92.8498 length=44.0000 global_step=7537.0000 loss=183.7477
+[step=243] episode=243.0000 return=-52.9460 length=20.0000 global_step=7557.0000 loss=345.2251
+[step=244] episode=244.0000 return=-64.7272 length=18.0000 global_step=7575.0000 loss=343.1193
+[step=245] episode=245.0000 return=27.4384 length=30.0000 global_step=7605.0000 loss=428.2684
+[step=246] episode=246.0000 return=-59.4265 length=28.0000 global_step=7633.0000 loss=414.5560
+[step=247] episode=247.0000 return=-98.5855 length=21.0000 global_step=7654.0000 loss=341.4913
+[step=248] episode=248.0000 return=-115.9972 length=21.0000 global_step=7675.0000 loss=304.8023
+[step=249] episode=249.0000 return=-38.8103 length=11.0000 global_step=7686.0000 loss=430.4779
+[step=250] episode=250.0000 return=-92.1682 length=30.0000 global_step=7716.0000 loss=182.7083
+[step=251] episode=251.0000 return=-50.4842 length=30.0000 global_step=7746.0000 loss=640.8693
+[step=252] episode=252.0000 return=-88.3143 length=18.0000 global_step=7764.0000 loss=521.8877
+[step=253] episode=253.0000 return=-82.0615 length=20.0000 global_step=7784.0000 loss=419.5905
+[step=254] episode=254.0000 return=170.4465 length=107.0000 global_step=7891.0000 loss=343.1072
+[step=255] episode=255.0000 return=-87.7316 length=20.0000 global_step=7911.0000 loss=314.7342
+[step=256] episode=256.0000 return=-114.3168 length=13.0000 global_step=7924.0000 loss=121.9346
+[step=257] episode=257.0000 return=-62.1552 length=28.0000 global_step=7952.0000 loss=189.3285
+[step=258] episode=258.0000 return=-98.3609 length=28.0000 global_step=7980.0000 loss=274.9923
+[step=259] episode=259.0000 return=-92.6836 length=12.0000 global_step=7992.0000 loss=507.2639
+[step=260] episode=260.0000 return=-84.8264 length=41.0000 global_step=8033.0000 loss=265.3156
+[step=261] episode=261.0000 return=-91.1827 length=28.0000 global_step=8061.0000 loss=413.0683
+[step=262] episode=262.0000 return=-78.6761 length=29.0000 global_step=8090.0000 loss=440.1077
+[step=263] episode=263.0000 return=-67.4122 length=21.0000 global_step=8111.0000 loss=607.8714
+[step=264] episode=264.0000 return=-85.1679 length=20.0000 global_step=8131.0000 loss=250.5929
+[step=265] episode=265.0000 return=-112.7876 length=35.0000 global_step=8166.0000 loss=445.3303
+[step=266] episode=266.0000 return=-47.3635 length=20.0000 global_step=8186.0000 loss=524.2512
+[step=267] episode=267.0000 return=-100.2327 length=27.0000 global_step=8213.0000 loss=607.4031
+[step=268] episode=268.0000 return=-101.6801 length=36.0000 global_step=8249.0000 loss=422.3362
+[step=269] episode=269.0000 return=-91.9006 length=12.0000 global_step=8261.0000 loss=299.1505
+[step=270] episode=270.0000 return=-86.1453 length=20.0000 global_step=8281.0000 loss=284.2966
+[step=271] episode=271.0000 return=-2.6310 length=20.0000 global_step=8301.0000 loss=346.0087
+[step=272] episode=272.0000 return=-114.6537 length=38.0000 global_step=8339.0000 loss=532.2427
+[step=273] episode=273.0000 return=-63.3188 length=58.0000 global_step=8397.0000 loss=644.4187
+[step=274] episode=274.0000 return=-82.5052 length=29.0000 global_step=8426.0000 loss=254.8102
+[step=275] episode=275.0000 return=-64.6380 length=20.0000 global_step=8446.0000 loss=377.7365
+[step=276] episode=276.0000 return=-87.4008 length=27.0000 global_step=8473.0000 loss=446.0936
+[step=277] episode=277.0000 return=-101.8348 length=19.0000 global_step=8492.0000 loss=455.1162
+[step=278] episode=278.0000 return=-68.7310 length=33.0000 global_step=8525.0000 loss=634.6307
+[step=279] episode=279.0000 return=-50.4983 length=28.0000 global_step=8553.0000 loss=319.8998
+[step=280] episode=280.0000 return=-110.9483 length=20.0000 global_step=8573.0000 loss=178.5972
+[step=281] episode=281.0000 return=-115.9783 length=20.0000 global_step=8593.0000 loss=381.1215
+[step=282] episode=282.0000 return=51.2348 length=21.0000 global_step=8614.0000 loss=103.1692
+[step=283] episode=283.0000 return=-15.6401 length=12.0000 global_step=8626.0000 loss=430.6913
+[step=284] episode=284.0000 return=-89.8334 length=20.0000 global_step=8646.0000 loss=270.6517
+[step=285] episode=285.0000 return=39.5702 length=58.0000 global_step=8704.0000 loss=122.9246
+[step=286] episode=286.0000 return=-115.9781 length=36.0000 global_step=8740.0000 loss=516.1791
+[step=287] episode=287.0000 return=-63.7353 length=20.0000 global_step=8760.0000 loss=275.0543
+[step=288] episode=288.0000 return=-47.7566 length=22.0000 global_step=8782.0000 loss=285.4617
+[step=289] episode=289.0000 return=-71.7066 length=33.0000 global_step=8815.0000 loss=206.0921
+[step=290] episode=290.0000 return=-107.5895 length=28.0000 global_step=8843.0000 loss=185.9291
+[step=291] episode=291.0000 return=-80.1623 length=28.0000 global_step=8871.0000 loss=539.1888
+[step=292] episode=292.0000 return=-62.3742 length=27.0000 global_step=8898.0000 loss=118.1806
+[step=293] episode=293.0000 return=-71.7130 length=20.0000 global_step=8918.0000 loss=310.4710
+[step=294] episode=294.0000 return=-100.1223 length=11.0000 global_step=8929.0000 loss=404.6847
+[step=295] episode=295.0000 return=-30.5356 length=25.0000 global_step=8954.0000 loss=662.6157
+[step=296] episode=296.0000 return=-86.3083 length=26.0000 global_step=8980.0000 loss=309.4938
+[step=297] episode=297.0000 return=-101.8353 length=30.0000 global_step=9010.0000 loss=325.7531
+[step=298] episode=298.0000 return=-85.5614 length=22.0000 global_step=9032.0000 loss=353.5042
+[step=299] episode=299.0000 return=-89.6638 length=21.0000 global_step=9053.0000 loss=225.8474
+[step=300] episode=300.0000 return=-64.7443 length=12.0000 global_step=9065.0000 loss=302.5652
+[step=301] episode=301.0000 return=-115.9971 length=22.0000 global_step=9087.0000 loss=499.2062
+[step=302] episode=302.0000 return=-57.8138 length=41.0000 global_step=9128.0000 loss=590.6932
+[step=303] episode=303.0000 return=-87.4291 length=29.0000 global_step=9157.0000 loss=176.8406
+[step=304] episode=304.0000 return=-94.0289 length=21.0000 global_step=9178.0000 loss=292.6136
+[step=305] episode=305.0000 return=-98.5894 length=37.0000 global_step=9215.0000 loss=298.0587
+[step=306] episode=306.0000 return=-65.0326 length=20.0000 global_step=9235.0000 loss=220.3223
+[step=307] episode=307.0000 return=-115.9986 length=21.0000 global_step=9256.0000 loss=195.5662
+[step=308] episode=308.0000 return=-54.2693 length=20.0000 global_step=9276.0000 loss=287.5815
+[step=309] episode=309.0000 return=-21.4694 length=63.0000 global_step=9339.0000 loss=262.9725
+[step=310] episode=310.0000 return=-114.1118 length=30.0000 global_step=9369.0000 loss=583.5494
+[step=311] episode=311.0000 return=171.9099 length=292.0000 global_step=9661.0000 loss=557.6370
+[step=312] episode=312.0000 return=-20.5529 length=12.0000 global_step=9673.0000 loss=308.1426
+[step=313] episode=313.0000 return=-79.3728 length=13.0000 global_step=9686.0000 loss=466.6514
+[step=314] episode=314.0000 return=-68.9992 length=20.0000 global_step=9706.0000 loss=606.1326
+[step=315] episode=315.0000 return=-100.5366 length=12.0000 global_step=9718.0000 loss=332.8683
+[step=316] episode=316.0000 return=-87.8551 length=20.0000 global_step=9738.0000 loss=312.3918
+[step=317] episode=317.0000 return=-115.9919 length=21.0000 global_step=9759.0000 loss=129.2113
+[step=318] episode=318.0000 return=-95.2982 length=21.0000 global_step=9780.0000 loss=119.8031
+[step=319] episode=319.0000 return=19.5384 length=21.0000 global_step=9801.0000 loss=212.2754
+[step=320] episode=320.0000 return=-115.9793 length=20.0000 global_step=9821.0000 loss=195.5415
+[step=321] episode=321.0000 return=-115.9758 length=20.0000 global_step=9841.0000 loss=206.5423
+[step=322] episode=322.0000 return=-30.1318 length=57.0000 global_step=9898.0000 loss=421.6779
+[step=323] episode=323.0000 return=-58.4810 length=34.0000 global_step=9932.0000 loss=284.4270
+[step=324] episode=324.0000 return=132.0109 length=178.0000 global_step=10110.0000 loss=212.4776
+[step=325] episode=325.0000 return=-109.8296 length=21.0000 global_step=10131.0000 loss=301.1603
+[step=326] episode=326.0000 return=-4.1242 length=22.0000 global_step=10153.0000 loss=366.2266
+[step=327] episode=327.0000 return=-79.4630 length=30.0000 global_step=10183.0000 loss=122.2838
+[step=328] episode=328.0000 return=-113.6233 length=20.0000 global_step=10203.0000 loss=640.6105
+[step=329] episode=329.0000 return=-114.9269 length=28.0000 global_step=10231.0000 loss=204.2618
+[step=330] episode=330.0000 return=-52.7478 length=42.0000 global_step=10273.0000 loss=202.6616
+[step=331] episode=331.0000 return=-106.1588 length=27.0000 global_step=10300.0000 loss=146.0359
+[step=332] episode=332.0000 return=-115.9815 length=25.0000 global_step=10325.0000 loss=153.4992
+[step=333] episode=333.0000 return=-72.5998 length=12.0000 global_step=10337.0000 loss=280.2802
+[step=334] episode=334.0000 return=-86.2879 length=25.0000 global_step=10362.0000 loss=615.5547
+[step=335] episode=335.0000 return=-74.5288 length=20.0000 global_step=10382.0000 loss=390.1507
+[step=336] episode=336.0000 return=26.3689 length=28.0000 global_step=10410.0000 loss=387.5337
+[step=337] episode=337.0000 return=-44.6364 length=20.0000 global_step=10430.0000 loss=367.9578
+[step=338] episode=338.0000 return=51.8553 length=86.0000 global_step=10516.0000 loss=320.2737
+[step=339] episode=339.0000 return=-82.3441 length=12.0000 global_step=10528.0000 loss=131.3644
+[step=340] episode=340.0000 return=-31.5170 length=35.0000 global_step=10563.0000 loss=561.6081
+[step=341] episode=341.0000 return=-99.2781 length=20.0000 global_step=10583.0000 loss=431.2453
+[step=342] episode=342.0000 return=5.7641 length=20.0000 global_step=10603.0000 loss=616.1943
+[step=343] episode=343.0000 return=-24.1813 length=19.0000 global_step=10622.0000 loss=106.5173
+[step=344] episode=344.0000 return=-97.1596 length=21.0000 global_step=10643.0000 loss=203.3126
+[step=345] episode=345.0000 return=-33.1452 length=13.0000 global_step=10656.0000 loss=513.1769
+[step=346] episode=346.0000 return=-7.2186 length=36.0000 global_step=10692.0000 loss=408.0522
+[step=347] episode=347.0000 return=-106.9166 length=20.0000 global_step=10712.0000 loss=747.4671
+[step=348] episode=348.0000 return=-86.6365 length=20.0000 global_step=10732.0000 loss=314.8511
+[step=349] episode=349.0000 return=-87.7908 length=27.0000 global_step=10759.0000 loss=316.2579
+[step=350] episode=350.0000 return=-62.0033 length=11.0000 global_step=10770.0000 loss=254.7110
+[step=351] episode=351.0000 return=-115.3558 length=33.0000 global_step=10803.0000 loss=467.0714
+[step=352] episode=352.0000 return=-76.2701 length=27.0000 global_step=10830.0000 loss=327.5236
+[step=353] episode=353.0000 return=-87.0040 length=19.0000 global_step=10849.0000 loss=199.4120
+[step=354] episode=354.0000 return=-2.7629 length=21.0000 global_step=10870.0000 loss=443.3627
+[step=355] episode=355.0000 return=-85.5033 length=42.0000 global_step=10912.0000 loss=667.2804
+[step=356] episode=356.0000 return=-115.9964 length=29.0000 global_step=10941.0000 loss=407.9669
+[step=357] episode=357.0000 return=-58.0375 length=20.0000 global_step=10961.0000 loss=252.7402
+[step=358] episode=358.0000 return=-100.3320 length=22.0000 global_step=10983.0000 loss=239.8749
+[step=359] episode=359.0000 return=-27.4445 length=20.0000 global_step=11003.0000 loss=443.9497
+[step=360] episode=360.0000 return=-75.9362 length=29.0000 global_step=11032.0000 loss=179.1573
+[step=361] episode=361.0000 return=-87.5933 length=19.0000 global_step=11051.0000 loss=434.8643
+[step=362] episode=362.0000 return=-98.4722 length=13.0000 global_step=11064.0000 loss=620.5505
+[step=363] episode=363.0000 return=-65.7473 length=88.0000 global_step=11152.0000 loss=710.7849
+[step=364] episode=364.0000 return=-96.7468 length=20.0000 global_step=11172.0000 loss=543.0192
+[step=365] episode=365.0000 return=-98.0119 length=19.0000 global_step=11191.0000 loss=185.6211
+[step=366] episode=366.0000 return=-96.1395 length=13.0000 global_step=11204.0000 loss=134.2106
+[step=367] episode=367.0000 return=-26.0991 length=19.0000 global_step=11223.0000 loss=536.9174
+[step=368] episode=368.0000 return=-26.3891 length=21.0000 global_step=11244.0000 loss=138.7871
+[step=369] episode=369.0000 return=-90.9039 length=27.0000 global_step=11271.0000 loss=489.1899
+[step=370] episode=370.0000 return=-115.1620 length=21.0000 global_step=11292.0000 loss=326.3546
+[step=371] episode=371.0000 return=-59.4409 length=56.0000 global_step=11348.0000 loss=218.4809
+[step=372] episode=372.0000 return=-60.2331 length=18.0000 global_step=11366.0000 loss=284.5983
+[step=373] episode=373.0000 return=-100.3586 length=37.0000 global_step=11403.0000 loss=544.7417
+[step=374] episode=374.0000 return=196.9955 length=110.0000 global_step=11513.0000 loss=273.4760

@@ -22,6 +22,9 @@ def train_offpolicy(agent, cfg, logger):
     os.makedirs(cfg.checkpoint_dir, exist_ok=True)
 
     for ep in trange(cfg.train_episodes, desc=f"{cfg.algo} train", dynamic_ncols=True):
+        # 1-based episode index
+        ep_idx = ep + 1
+
         obs = env.reset()
         episode_return = 0.0
         episode_len = 0
@@ -34,7 +37,7 @@ def train_offpolicy(agent, cfg, logger):
             # 2) Step environment
             next_obs, reward, done, info = env.step(action)
 
-            # 3) Give transition to agent
+            # 3) Give transition to agent (5-tuple)
             transition = (obs, action, reward, next_obs, done)
             agent.observe(transition)
 
@@ -54,6 +57,7 @@ def train_offpolicy(agent, cfg, logger):
 
         # -------- logging --------
         log_dict: Dict[str, float] = {
+            "episode": float(ep_idx),
             "return": episode_return,
             "length": episode_len,
             "global_step": float(global_step),
@@ -61,15 +65,10 @@ def train_offpolicy(agent, cfg, logger):
         for k, v in last_metrics.items():
             log_dict[k] = float(v)
 
-        logger.log_metrics(log_dict, step=ep)
+        logger.log_metrics(log_dict, step=ep_idx)
 
         # -------- checkpointing --------
-        # Save every cfg.checkpoint_interval episodes, and at the very end.
-        ep_idx = ep + 1  # 1-based index for readability
-        if (
-            ep_idx % cfg.checkpoint_interval == 0
-            or ep_idx == cfg.train_episodes
-        ):
+        if (ep_idx % cfg.checkpoint_interval == 0) or (ep_idx == cfg.train_episodes):
             ckpt_name = f"{cfg.algo}_seed{cfg.seed}_ep{ep_idx:06d}.pth"
             ckpt_path = os.path.join(cfg.checkpoint_dir, ckpt_name)
 

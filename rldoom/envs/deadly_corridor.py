@@ -30,6 +30,7 @@ class DeadlyCorridorEnv:
         self.stack_size = stack_size
         self.frame_skip = frame_skip
 
+        # Initialize frame stack with zeros
         self.frames = deque(
             [np.zeros((frame_size, frame_size), dtype=np.float32)
              for _ in range(stack_size)],
@@ -37,20 +38,53 @@ class DeadlyCorridorEnv:
         )
 
     def _preprocess(self, frame: np.ndarray) -> np.ndarray:
-        """Convert RGB frame (H,W,3) -> gray, crop, resize, normalize."""
-        # Original: (C,H,W) so transpose first if needed
-        if frame.ndim == 3 and frame.shape[0] == 3:
-            frame = frame.transpose(1, 2, 0)  # (H,W,3)
+        """
+        Convert Doom screen_buffer to (frame_size, frame_size) grayscale float32 in [0,1].
 
-        gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
-        # Crop: (0, -60, -40, 60) in the notebooks ⇒ [top:bottom, left:right]
+        Handles different shapes:
+          - (H, W)               : already grayscale
+          - (C, H, W), C in {1,3}: channel-first, possibly RGB
+          - (H, W, C), C in {1,3}: channel-last, possibly RGB
+        """
+        if frame is None:
+            raise RuntimeError("VizDoom returned None screen_buffer")
+
+        # If channel-first, move channels to last dimension.
+        # Typical shapes from VizDoom: (C, H, W) with C=1 or 3.
+        if frame.ndim == 3 and frame.shape[0] in (1, 3):
+            frame = frame.transpose(1, 2, 0)  # (H, W, C)
+
+        # Now handle according to number of dimensions/channels
+        if frame.ndim == 2:
+            # (H, W): already grayscale
+            gray = frame
+        elif frame.ndim == 3:
+            h, w, c = frame.shape
+            if c == 3:
+                # (H, W, 3): RGB -> GRAY
+                gray = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY)
+            elif c == 1:
+                # (H, W, 1): squeeze channel
+                gray = frame[:, :, 0]
+            else:
+                raise ValueError(f"Unexpected number of channels: {c} in frame.shape={frame.shape}")
+        else:
+            raise ValueError(f"Unexpected frame ndim: {frame.ndim}, shape={frame.shape}")
+
+        # Crop (same as your original logic)
         h, w = gray.shape
         top, bottom = 0, h - 60
         left, right = 40, w - 60
         cropped = gray[top:bottom, left:right]
 
-        resized = cv2.resize(cropped, (self.frame_size, self.frame_size),
-                             interpolation=cv2.INTER_AREA)
+        # Resize to target frame_size
+        resized = cv2.resize(
+            cropped,
+            (self.frame_size, self.frame_size),
+            interpolation=cv2.INTER_AREA,
+        )
+
+        # Normalize to [0, 1] float32
         norm = resized.astype(np.float32) / 255.0
         return norm
 
@@ -71,14 +105,17 @@ class DeadlyCorridorEnv:
         return stacked
 
     def reset(self) -> np.ndarray:
+        """Start a new episode and return initial stacked observation."""
         self.game.new_episode()
-        state = self.game.get_state().screen_buffer
-        frame = self._preprocess(state)
+        state = self.game.get_state()
+        if state is None:
+            raise RuntimeError("Game state is None right after new_episode()")
+        frame = self._preprocess(state.screen_buffer)
         stacked = self._stack(frame, new_episode=True)
         return stacked
 
     def step(self, action_idx: int) -> Tuple[np.ndarray, float, bool, dict]:
-        """Frame-skip step."""
+        """Frame-skip step with reward accumulation."""
         action = self.possible_actions[action_idx]
         total_reward = 0.0
         done = False
@@ -91,14 +128,21 @@ class DeadlyCorridorEnv:
                 break
 
         if done:
-            next_state = np.zeros(
+            # If episode finished, push zeros as next frame
+            next_frame = np.zeros(
                 (self.frame_size, self.frame_size), dtype=np.float32
             )
-            stacked = self._stack(next_state, new_episode=False)
+            stacked = self._stack(next_frame, new_episode=False)
         else:
-            state = self.game.get_state().screen_buffer
-            frame = self._preprocess(state)
-            stacked = self._stack(frame, new_episode=False)
+            state = self.game.get_state()
+            if state is None:
+                # Safety check: treat as done with zero frame
+                next_frame = np.zeros(
+                    (self.frame_size, self.frame_size), dtype=np.float32
+                )
+            else:
+                next_frame = self._preprocess(state.screen_buffer)
+            stacked = self._stack(next_frame, new_episode=False)
 
         info = {}
         return stacked, float(total_reward), bool(done), info
