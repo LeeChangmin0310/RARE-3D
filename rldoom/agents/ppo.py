@@ -58,13 +58,11 @@ class PPOAgent(Agent):
                 action = int(dist.sample().item())
         return action
 
-    def observe(
-        self,
-        transition: Tuple[np.ndarray, int, float, np.ndarray, bool, Dict[str, Any]],
-    ) -> None:
-        obs, action, reward, next_obs, done, _ = transition
+    def observe(self, transition):
+        """Store transition in replay buffer."""
+        obs, action, reward, next_obs, done = transition
         self.buffer.add(obs, action, reward, next_obs, done)
-
+        
     def _compute_gae(self, rewards, values, dones, last_value):
         """Compute GAE-Lambda advantages."""
         T = rewards.shape[0]
@@ -98,8 +96,8 @@ class PPOAgent(Agent):
             _, last_value = self._forward(last_obs)
             last_value = last_value.squeeze(0)
 
-        advantages, returns = self._compute_gae(rewards, values, dones, last_value)
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+            advantages, returns = self._compute_gae(rewards, values, dones, last_value)
+            advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
         obs_all = obs
         actions_all = actions
@@ -109,7 +107,11 @@ class PPOAgent(Agent):
 
         total_steps = obs_all.shape[0]
         batch_size = self.batch_size
-        assert total_steps >= batch_size, "Rollout too short for PPO batch"
+
+        # If rollout shorter than one batch, skip update
+        if total_steps < batch_size:
+            self.buffer.reset()
+            return {}
 
         for _ in range(self.ppo_epochs):
             idxs = torch.randperm(total_steps, device=self.device)
@@ -132,7 +134,9 @@ class PPOAgent(Agent):
 
                 ratio = torch.exp(log_probs - mb_old_log_probs)
                 surr1 = ratio * mb_advantages
-                surr2 = torch.clamp(ratio, 1.0 - self.clip_range, 1.0 + self.clip_range) * mb_advantages
+                surr2 = torch.clamp(
+                    ratio, 1.0 - self.clip_range, 1.0 + self.clip_range
+                ) * mb_advantages
                 policy_loss = -torch.min(surr1, surr2).mean()
 
                 value_loss = F.mse_loss(values_mb, mb_returns)
@@ -147,7 +151,26 @@ class PPOAgent(Agent):
         self.buffer.reset()
 
         return {
+            "loss": float(loss.item()),                 # total
             "policy_loss": float(policy_loss.item()),
             "value_loss": float(value_loss.item()),
-            "loss": float(loss.item()),
         }
+        
+    def state_dict(self):
+        """Return state dict for checkpointing."""
+        return {
+            "backbone": self.backbone.state_dict(),
+            "policy_head": self.policy_head.state_dict(),
+            "value_head": self.value_head.state_dict(),
+            "optimizer": self.optimizer.state_dict(),
+        }
+
+    def load_state_dict(self, state_dict):
+        """Load state dict from checkpoint."""
+        self.backbone.load_state_dict(state_dict["backbone"])
+        self.policy_head.load_state_dict(state_dict["policy_head"])
+        self.value_head.load_state_dict(state_dict["value_head"])
+        self.optimizer.load_state_dict(state_dict["optimizer"])
+
+
+

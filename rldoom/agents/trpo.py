@@ -62,11 +62,9 @@ class TRPOAgent(Agent):
                 action = int(dist.sample().item())
         return action
 
-    def observe(
-        self,
-        transition: Tuple[np.ndarray, int, float, np.ndarray, bool, Dict[str, Any]],
-    ) -> None:
-        obs, action, reward, next_obs, done, _ = transition
+    def observe(self, transition):
+        """Store transition in replay buffer."""
+        obs, action, reward, next_obs, done = transition
         self.buffer.add(obs, action, reward, next_obs, done)
 
     def _compute_gae(self, rewards, values, dones, last_value):
@@ -87,33 +85,40 @@ class TRPOAgent(Agent):
         return advantages, returns
 
     def update(self) -> Dict[str, float]:
+        # 1) Wait until rollout buffer is full
         if not self.buffer.is_ready():
             return {}
 
+        # 2) Fetch rollout
         obs, actions, rewards, next_obs, dones = self.buffer.get()
+        total_steps = obs.shape[0]
+        batch_size = self.batch_size
 
-        logits_old, values = self._forward(obs)
-        dist_old = torch.distributions.Categorical(logits=logits_old)
-        old_log_probs = dist_old.log_prob(actions).detach()
+        # If rollout is shorter than one batch, skip update
+        if total_steps < batch_size:
+            self.buffer.reset()
+            return {}
 
+        # 3) Old policy/value + advantages/returns
         with torch.no_grad():
+            logits_old, values = self._forward(obs)
+            dist_old = torch.distributions.Categorical(logits=logits_old)
+            old_log_probs = dist_old.log_prob(actions)
+
             last_obs = next_obs[-1].unsqueeze(0)
             _, last_value = self._forward(last_obs)
             last_value = last_value.squeeze(0)
 
-        advantages, returns = self._compute_gae(rewards, values, dones, last_value)
-        advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
+            advantages, returns = self._compute_gae(rewards, values, dones, last_value)
+            advantages = (advantages - advantages.mean()) / (advantages.std() + 1e-8)
 
         obs_all = obs
         actions_all = actions
-        old_log_probs_all = old_log_probs
+        old_log_probs_all = old_log_probs.detach()
         returns_all = returns.detach()
         advantages_all = advantages.detach()
 
-        total_steps = obs_all.shape[0]
-        batch_size = self.batch_size
-        assert total_steps >= batch_size, "Rollout too short for TRPO batch"
-
+        # 4) TRPO-style update with KL penalty (simplified)
         for _ in range(self.trpo_epochs):
             idxs = torch.randperm(total_steps, device=self.device)
             for start in range(0, total_steps, batch_size):
@@ -133,11 +138,11 @@ class TRPOAgent(Agent):
                 log_probs = dist.log_prob(mb_actions)
                 entropy = dist.entropy().mean()
 
-                # KL divergence (approximate)
+                # KL divergence with frozen old policy
                 with torch.no_grad():
-                    probs_old = dist_old.probs[mb_idx]
+                    probs_old_mb = dist_old.probs[mb_idx]
                 kl = torch.distributions.kl.kl_divergence(
-                    torch.distributions.Categorical(probs=probs_old),
+                    torch.distributions.Categorical(probs=probs_old_mb),
                     dist,
                 ).mean()
 
@@ -155,8 +160,24 @@ class TRPOAgent(Agent):
         self.buffer.reset()
 
         return {
+            "loss": float(loss.item()),
             "policy_loss": float(policy_loss.item()),
             "value_loss": float(value_loss.item()),
             "kl": float(kl.item()),
-            "loss": float(loss.item()),
         }
+
+    def state_dict(self):
+        """Return state dict for checkpointing."""
+        return {
+            "backbone": self.backbone.state_dict(),
+            "policy_head": self.policy_head.state_dict(),
+            "value_head": self.value_head.state_dict(),
+            "optimizer": self.optimizer.state_dict(),
+        }
+
+    def load_state_dict(self, state_dict):
+        """Load state dict from checkpoint."""
+        self.backbone.load_state_dict(state_dict["backbone"])
+        self.policy_head.load_state_dict(state_dict["policy_head"])
+        self.value_head.load_state_dict(state_dict["value_head"])
+        self.optimizer.load_state_dict(state_dict["optimizer"])
