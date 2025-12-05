@@ -5,14 +5,15 @@ import subprocess
 
 # Jobs to run: (algo, seed)
 JOBS = [
-    ("dqn", 0),
-    ("dddqn", 0),
-    ("rainbow", 0),
+    # ("dqn", 0),
+    # ("dddqn", 0),
+    # ("rainbow", 0),
+    ("ddqn", 0),
     ("reinforce", 0),
     ("a2c", 0),
-    # ("a3c", 0),
     ("ppo", 0),
     ("trpo", 0),
+    # ("a3c", 0),
 ]
 
 # GPUs you want to use

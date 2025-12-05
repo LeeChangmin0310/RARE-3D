@@ -1053,4 +1053,984 @@ kmsro: driver missing
 rainbow train:  52%|█████▏    | 1040/2000 [33:55<35:57,  2.25s/it][step=1041] episode=1041.0000 return=-84.1473 length=12.0000 global_step=29461.0000 loss=432.4719
 rainbow train:  52%|█████▏    | 1041/2000 [33:56<29:03,  1.82s/it][step=1042] episode=1042.0000 return=-65.4391 length=18.0000 global_step=29479.0000 loss=187.7211
 rainbow train:  52%|█████▏    | 1042/2000 [33:57<26:02,  1.63s/it][step=1043] episode=1043.0000 return=-36.3176 length=20.0000 global_step=29499.0000 loss=315.6003
-rainbow train:  52%|█████▏    | 1043/2000 [33:58<24:53,  1.56s/it]
+rainbow train:  52%|█████▏    | 1043/2000 [33:58<24:53,  1.56s/it][step=1044] episode=1044.0000 return=180.5763 length=56.0000 global_step=29555.0000 loss=186.1166
+rainbow train:  52%|█████▏    | 1044/2000 [34:02<36:29,  2.29s/it][step=1045] episode=1045.0000 return=34.4549 length=40.0000 global_step=29595.0000 loss=214.1912
+rainbow train:  52%|█████▏    | 1045/2000 [34:05<39:00,  2.45s/it][step=1046] episode=1046.0000 return=-84.7439 length=36.0000 global_step=29631.0000 loss=297.1702
+rainbow train:  52%|█████▏    | 1046/2000 [34:08<39:53,  2.51s/it][step=1047] episode=1047.0000 return=199.6209 length=79.0000 global_step=29710.0000 loss=400.5922
+rainbow train:  52%|█████▏    | 1047/2000 [34:13<54:52,  3.46s/it][step=1048] episode=1048.0000 return=-115.9980 length=28.0000 global_step=29738.0000 loss=188.8562
+rainbow train:  52%|█████▏    | 1048/2000 [34:15<47:42,  3.01s/it][step=1049] episode=1049.0000 return=150.5342 length=64.0000 global_step=29802.0000 loss=148.5796
+rainbow train:  52%|█████▏    | 1049/2000 [34:20<54:19,  3.43s/it][step=1050] episode=1050.0000 return=-31.3405 length=13.0000 global_step=29815.0000 loss=291.5781
+rainbow train:  52%|█████▎    | 1050/2000 [34:21<42:15,  2.67s/it][step=1051] episode=1051.0000 return=-20.6945 length=37.0000 global_step=29852.0000 loss=303.1925
+rainbow train:  53%|█████▎    | 1051/2000 [34:23<42:17,  2.67s/it][step=1052] episode=1052.0000 return=-23.7416 length=19.0000 global_step=29871.0000 loss=234.0074
+rainbow train:  53%|█████▎    | 1052/2000 [34:25<35:52,  2.27s/it][step=1053] episode=1053.0000 return=-104.9924 length=20.0000 global_step=29891.0000 loss=380.9485
+rainbow train:  53%|█████▎    | 1053/2000 [34:26<31:42,  2.01s/it][step=1054] episode=1054.0000 return=-96.2953 length=21.0000 global_step=29912.0000 loss=219.6890
+rainbow train:  53%|█████▎    | 1054/2000 [34:28<29:22,  1.86s/it][step=1055] episode=1055.0000 return=-3.6579 length=20.0000 global_step=29932.0000 loss=226.5772
+rainbow train:  53%|█████▎    | 1055/2000 [34:29<27:12,  1.73s/it][step=1056] episode=1056.0000 return=2.5217 length=20.0000 global_step=29952.0000 loss=266.4655
+rainbow train:  53%|█████▎    | 1056/2000 [34:30<25:20,  1.61s/it][step=1057] episode=1057.0000 return=24.2899 length=20.0000 global_step=29972.0000 loss=229.6740
+rainbow train:  53%|█████▎    | 1057/2000 [34:32<24:29,  1.56s/it][step=1058] episode=1058.0000 return=-10.6931 length=29.0000 global_step=30001.0000 loss=306.6314
+rainbow train:  53%|█████▎    | 1058/2000 [34:34<26:47,  1.71s/it][step=1059] episode=1059.0000 return=-70.3398 length=43.0000 global_step=30044.0000 loss=411.5354
+rainbow train:  53%|█████▎    | 1059/2000 [34:37<32:54,  2.10s/it][step=1060] episode=1060.0000 return=71.7163 length=33.0000 global_step=30077.0000 loss=278.4002
+rainbow train:  53%|█████▎    | 1060/2000 [34:39<33:34,  2.14s/it][step=1061] episode=1061.0000 return=-1.0958 length=35.0000 global_step=30112.0000 loss=194.2450
+rainbow train:  53%|█████▎    | 1061/2000 [34:42<35:22,  2.26s/it][step=1062] episode=1062.0000 return=-107.2539 length=12.0000 global_step=30124.0000 loss=237.8540
+rainbow train:  53%|█████▎    | 1062/2000 [34:42<28:56,  1.85s/it][step=1063] episode=1063.0000 return=-115.1601 length=13.0000 global_step=30137.0000 loss=408.4004
+rainbow train:  53%|█████▎    | 1063/2000 [34:43<24:38,  1.58s/it][step=1064] episode=1064.0000 return=-33.1437 length=18.0000 global_step=30155.0000 loss=432.4510
+rainbow train:  53%|█████▎    | 1064/2000 [34:45<23:09,  1.48s/it][step=1065] episode=1065.0000 return=-59.8513 length=37.0000 global_step=30192.0000 loss=307.1097
+rainbow train:  53%|█████▎    | 1065/2000 [34:47<28:02,  1.80s/it][step=1066] episode=1066.0000 return=-3.0099 length=19.0000 global_step=30211.0000 loss=262.2358
+rainbow train:  53%|█████▎    | 1066/2000 [34:49<25:55,  1.66s/it][step=1067] episode=1067.0000 return=-62.1485 length=21.0000 global_step=30232.0000 loss=183.7794
+rainbow train:  53%|█████▎    | 1067/2000 [34:50<25:07,  1.62s/it][step=1068] episode=1068.0000 return=-3.0577 length=21.0000 global_step=30253.0000 loss=380.1132
+rainbow train:  53%|█████▎    | 1068/2000 [34:52<24:36,  1.58s/it][step=1069] episode=1069.0000 return=-52.5409 length=19.0000 global_step=30272.0000 loss=280.0856
+rainbow train:  53%|█████▎    | 1069/2000 [34:53<23:36,  1.52s/it][step=1070] episode=1070.0000 return=-33.3560 length=36.0000 global_step=30308.0000 loss=375.2816
+rainbow train:  54%|█████▎    | 1070/2000 [34:56<28:20,  1.83s/it][step=1071] episode=1071.0000 return=-83.2912 length=20.0000 global_step=30328.0000 loss=375.1809
+rainbow train:  54%|█████▎    | 1071/2000 [34:57<26:20,  1.70s/it][step=1072] episode=1072.0000 return=-115.3212 length=25.0000 global_step=30353.0000 loss=291.8016
+rainbow train:  54%|█████▎    | 1072/2000 [34:59<26:50,  1.74s/it][step=1073] episode=1073.0000 return=-11.1640 length=35.0000 global_step=30388.0000 loss=364.2939
+rainbow train:  54%|█████▎    | 1073/2000 [35:01<30:00,  1.94s/it][step=1074] episode=1074.0000 return=-115.9888 length=28.0000 global_step=30416.0000 loss=302.3224
+rainbow train:  54%|█████▎    | 1074/2000 [35:03<29:51,  1.93s/it][step=1075] episode=1075.0000 return=-112.7389 length=21.0000 global_step=30437.0000 loss=282.2919
+rainbow train:  54%|█████▍    | 1075/2000 [35:05<27:37,  1.79s/it][step=1076] episode=1076.0000 return=-84.6333 length=19.0000 global_step=30456.0000 loss=165.3849
+rainbow train:  54%|█████▍    | 1076/2000 [35:06<25:18,  1.64s/it][step=1077] episode=1077.0000 return=-55.8321 length=20.0000 global_step=30476.0000 loss=169.2301
+rainbow train:  54%|█████▍    | 1077/2000 [35:07<24:10,  1.57s/it][step=1078] episode=1078.0000 return=-61.3394 length=19.0000 global_step=30495.0000 loss=147.4893
+rainbow train:  54%|█████▍    | 1078/2000 [35:09<23:06,  1.50s/it][step=1079] episode=1079.0000 return=99.7894 length=22.0000 global_step=30517.0000 loss=332.4302
+rainbow train:  54%|█████▍    | 1079/2000 [35:10<22:51,  1.49s/it][step=1080] episode=1080.0000 return=-114.1027 length=20.0000 global_step=30537.0000 loss=356.1429
+rainbow train:  54%|█████▍    | 1080/2000 [35:11<22:19,  1.46s/it][step=1081] episode=1081.0000 return=-61.8045 length=35.0000 global_step=30572.0000 loss=101.6979
+rainbow train:  54%|█████▍    | 1081/2000 [35:14<26:58,  1.76s/it][step=1082] episode=1082.0000 return=-115.9658 length=20.0000 global_step=30592.0000 loss=146.5957
+rainbow train:  54%|█████▍    | 1082/2000 [35:15<25:27,  1.66s/it][step=1083] episode=1083.0000 return=-113.6928 length=18.0000 global_step=30610.0000 loss=297.9890
+rainbow train:  54%|█████▍    | 1083/2000 [35:17<23:36,  1.54s/it][step=1084] episode=1084.0000 return=-106.6665 length=13.0000 global_step=30623.0000 loss=453.0884
+rainbow train:  54%|█████▍    | 1084/2000 [35:18<20:59,  1.38s/it][step=1085] episode=1085.0000 return=-18.1414 length=18.0000 global_step=30641.0000 loss=400.6450
+rainbow train:  54%|█████▍    | 1085/2000 [35:19<20:28,  1.34s/it][step=1086] episode=1086.0000 return=-115.9686 length=5.0000 global_step=30646.0000 loss=253.7311
+rainbow train:  54%|█████▍    | 1086/2000 [35:19<15:55,  1.05s/it][step=1087] episode=1087.0000 return=-74.4634 length=19.0000 global_step=30665.0000 loss=362.0313
+rainbow train:  54%|█████▍    | 1087/2000 [35:21<17:23,  1.14s/it][step=1088] episode=1088.0000 return=-101.4843 length=12.0000 global_step=30677.0000 loss=342.9674
+rainbow train:  54%|█████▍    | 1088/2000 [35:21<16:00,  1.05s/it][step=1089] episode=1089.0000 return=-71.7088 length=13.0000 global_step=30690.0000 loss=252.3370
+rainbow train:  54%|█████▍    | 1089/2000 [35:22<15:08,  1.00it/s][step=1090] episode=1090.0000 return=-29.7898 length=36.0000 global_step=30726.0000 loss=396.9738
+rainbow train:  55%|█████▍    | 1090/2000 [35:25<22:38,  1.49s/it][step=1091] episode=1091.0000 return=-9.5374 length=58.0000 global_step=30784.0000 loss=178.6505
+rainbow train:  55%|█████▍    | 1091/2000 [35:29<34:32,  2.28s/it][step=1092] episode=1092.0000 return=-48.4318 length=20.0000 global_step=30804.0000 loss=428.5631
+rainbow train:  55%|█████▍    | 1092/2000 [35:31<30:59,  2.05s/it][step=1093] episode=1093.0000 return=-42.7056 length=12.0000 global_step=30816.0000 loss=378.3883
+rainbow train:  55%|█████▍    | 1093/2000 [35:31<25:18,  1.67s/it][step=1094] episode=1094.0000 return=-75.5271 length=13.0000 global_step=30829.0000 loss=258.7090
+rainbow train:  55%|█████▍    | 1094/2000 [35:32<22:04,  1.46s/it][step=1095] episode=1095.0000 return=-51.6045 length=21.0000 global_step=30850.0000 loss=249.5793
+rainbow train:  55%|█████▍    | 1095/2000 [35:34<22:06,  1.47s/it][step=1096] episode=1096.0000 return=21.0996 length=42.0000 global_step=30892.0000 loss=258.7723
+rainbow train:  55%|█████▍    | 1096/2000 [35:37<28:56,  1.92s/it][step=1097] episode=1097.0000 return=-107.5930 length=11.0000 global_step=30903.0000 loss=191.4962
+rainbow train:  55%|█████▍    | 1097/2000 [35:38<23:54,  1.59s/it][step=1098] episode=1098.0000 return=-53.0949 length=13.0000 global_step=30916.0000 loss=164.6009
+rainbow train:  55%|█████▍    | 1098/2000 [35:39<20:58,  1.40s/it][step=1099] episode=1099.0000 return=-83.3608 length=20.0000 global_step=30936.0000 loss=243.5236
+rainbow train:  55%|█████▍    | 1099/2000 [35:40<21:36,  1.44s/it][step=1100] episode=1100.0000 return=-101.4768 length=22.0000 global_step=30958.0000 loss=297.1158
+rainbow train:  55%|█████▌    | 1100/2000 [35:42<22:39,  1.51s/it][step=1101] episode=1101.0000 return=-17.6480 length=33.0000 global_step=30991.0000 loss=381.3435
+rainbow train:  55%|█████▌    | 1101/2000 [35:44<26:38,  1.78s/it][step=1102] episode=1102.0000 return=-92.0975 length=21.0000 global_step=31012.0000 loss=234.3316
+rainbow train:  55%|█████▌    | 1102/2000 [35:46<25:40,  1.72s/it][step=1103] episode=1103.0000 return=-25.6839 length=29.0000 global_step=31041.0000 loss=231.0057
+rainbow train:  55%|█████▌    | 1103/2000 [35:48<27:01,  1.81s/it][step=1104] episode=1104.0000 return=-19.6859 length=28.0000 global_step=31069.0000 loss=250.9597
+rainbow train:  55%|█████▌    | 1104/2000 [35:50<28:09,  1.89s/it][step=1105] episode=1105.0000 return=-89.2578 length=28.0000 global_step=31097.0000 loss=388.5728
+rainbow train:  55%|█████▌    | 1105/2000 [35:52<28:26,  1.91s/it][step=1106] episode=1106.0000 return=12.7794 length=57.0000 global_step=31154.0000 loss=293.3714
+rainbow train:  55%|█████▌    | 1106/2000 [35:56<37:40,  2.53s/it][step=1107] episode=1107.0000 return=-100.0503 length=21.0000 global_step=31175.0000 loss=348.9446
+rainbow train:  55%|█████▌    | 1107/2000 [35:57<33:24,  2.25s/it][step=1108] episode=1108.0000 return=-114.3015 length=12.0000 global_step=31187.0000 loss=354.1395
+rainbow train:  55%|█████▌    | 1108/2000 [35:58<27:08,  1.83s/it][step=1109] episode=1109.0000 return=-79.9582 length=29.0000 global_step=31216.0000 loss=245.0310
+rainbow train:  55%|█████▌    | 1109/2000 [36:00<28:10,  1.90s/it][step=1110] episode=1110.0000 return=17.2891 length=13.0000 global_step=31229.0000 loss=284.3475
+rainbow train:  56%|█████▌    | 1110/2000 [36:01<23:51,  1.61s/it][step=1111] episode=1111.0000 return=63.0431 length=49.0000 global_step=31278.0000 loss=379.0616
+rainbow train:  56%|█████▌    | 1111/2000 [36:05<32:20,  2.18s/it][step=1112] episode=1112.0000 return=21.0444 length=27.0000 global_step=31305.0000 loss=350.5678
+rainbow train:  56%|█████▌    | 1112/2000 [36:07<31:16,  2.11s/it][step=1113] episode=1113.0000 return=238.2683 length=57.0000 global_step=31362.0000 loss=425.9978
+rainbow train:  56%|█████▌    | 1113/2000 [36:11<39:55,  2.70s/it][step=1114] episode=1114.0000 return=-57.5023 length=13.0000 global_step=31375.0000 loss=529.8177
+rainbow train:  56%|█████▌    | 1114/2000 [36:12<31:59,  2.17s/it][step=1115] episode=1115.0000 return=-6.2521 length=12.0000 global_step=31387.0000 loss=295.5265
+rainbow train:  56%|█████▌    | 1115/2000 [36:13<26:21,  1.79s/it][step=1116] episode=1116.0000 return=40.3465 length=64.0000 global_step=31451.0000 loss=446.2883
+rainbow train:  56%|█████▌    | 1116/2000 [36:17<38:34,  2.62s/it][step=1117] episode=1117.0000 return=-52.9362 length=12.0000 global_step=31463.0000 loss=332.7437
+rainbow train:  56%|█████▌    | 1117/2000 [36:18<30:47,  2.09s/it][step=1118] episode=1118.0000 return=-47.7336 length=13.0000 global_step=31476.0000 loss=111.1831
+rainbow train:  56%|█████▌    | 1118/2000 [36:19<25:36,  1.74s/it][step=1119] episode=1119.0000 return=-5.3815 length=21.0000 global_step=31497.0000 loss=254.5825
+rainbow train:  56%|█████▌    | 1119/2000 [36:20<24:41,  1.68s/it][step=1120] episode=1120.0000 return=-23.1380 length=33.0000 global_step=31530.0000 loss=236.8638
+rainbow train:  56%|█████▌    | 1120/2000 [36:23<27:24,  1.87s/it][step=1121] episode=1121.0000 return=-15.3317 length=64.0000 global_step=31594.0000 loss=264.2433
+rainbow train:  56%|█████▌    | 1121/2000 [36:27<39:15,  2.68s/it][step=1122] episode=1122.0000 return=-114.5856 length=29.0000 global_step=31623.0000 loss=234.6349
+rainbow train:  56%|█████▌    | 1122/2000 [36:29<36:43,  2.51s/it][step=1123] episode=1123.0000 return=-23.9799 length=20.0000 global_step=31643.0000 loss=211.9514
+rainbow train:  56%|█████▌    | 1123/2000 [36:31<31:53,  2.18s/it][step=1124] episode=1124.0000 return=-115.9262 length=87.0000 global_step=31730.0000 loss=192.5905
+rainbow train:  56%|█████▌    | 1124/2000 [36:37<49:20,  3.38s/it][step=1125] episode=1125.0000 return=120.1662 length=50.0000 global_step=31780.0000 loss=135.6602
+rainbow train:  56%|█████▋    | 1125/2000 [36:41<50:07,  3.44s/it][step=1126] episode=1126.0000 return=-94.1812 length=11.0000 global_step=31791.0000 loss=343.0389
+rainbow train:  56%|█████▋    | 1126/2000 [36:41<38:45,  2.66s/it][step=1127] episode=1127.0000 return=-115.9402 length=11.0000 global_step=31802.0000 loss=220.8499
+rainbow train:  56%|█████▋    | 1127/2000 [36:42<30:38,  2.11s/it][step=1128] episode=1128.0000 return=-93.8072 length=28.0000 global_step=31830.0000 loss=255.3261
+rainbow train:  56%|█████▋    | 1128/2000 [36:44<29:59,  2.06s/it][step=1129] episode=1129.0000 return=-50.6473 length=11.0000 global_step=31841.0000 loss=186.9975
+rainbow train:  56%|█████▋    | 1129/2000 [36:45<24:35,  1.69s/it][step=1130] episode=1130.0000 return=-46.3175 length=20.0000 global_step=31861.0000 loss=427.4871
+rainbow train:  56%|█████▋    | 1130/2000 [36:46<23:32,  1.62s/it][step=1131] episode=1131.0000 return=59.5301 length=51.0000 global_step=31912.0000 loss=293.8989
+rainbow train:  57%|█████▋    | 1131/2000 [36:50<32:24,  2.24s/it][step=1132] episode=1132.0000 return=-55.7440 length=13.0000 global_step=31925.0000 loss=235.5945
+rainbow train:  57%|█████▋    | 1132/2000 [36:51<26:43,  1.85s/it][step=1133] episode=1133.0000 return=-9.4772 length=19.0000 global_step=31944.0000 loss=253.1615
+rainbow train:  57%|█████▋    | 1133/2000 [36:52<24:39,  1.71s/it][step=1134] episode=1134.0000 return=-83.2392 length=13.0000 global_step=31957.0000 loss=117.5786
+rainbow train:  57%|█████▋    | 1134/2000 [36:53<21:39,  1.50s/it][step=1135] episode=1135.0000 return=-53.7038 length=20.0000 global_step=31977.0000 loss=243.0190
+rainbow train:  57%|█████▋    | 1135/2000 [36:55<21:33,  1.50s/it][step=1136] episode=1136.0000 return=-39.9956 length=12.0000 global_step=31989.0000 loss=210.7975
+rainbow train:  57%|█████▋    | 1136/2000 [36:56<18:41,  1.30s/it][step=1137] episode=1137.0000 return=-79.7418 length=22.0000 global_step=32011.0000 loss=400.1935
+rainbow train:  57%|█████▋    | 1137/2000 [36:57<20:00,  1.39s/it][step=1138] episode=1138.0000 return=-47.2136 length=12.0000 global_step=32023.0000 loss=145.7148
+rainbow train:  57%|█████▋    | 1138/2000 [36:58<17:48,  1.24s/it][step=1139] episode=1139.0000 return=-21.4669 length=22.0000 global_step=32045.0000 loss=196.9504
+rainbow train:  57%|█████▋    | 1139/2000 [37:00<19:15,  1.34s/it][step=1140] episode=1140.0000 return=31.1348 length=20.0000 global_step=32065.0000 loss=278.3517
+rainbow train:  57%|█████▋    | 1140/2000 [37:01<19:42,  1.37s/it][step=1141] episode=1141.0000 return=-68.4333 length=21.0000 global_step=32086.0000 loss=198.6270
+rainbow train:  57%|█████▋    | 1141/2000 [37:03<20:08,  1.41s/it][step=1142] episode=1142.0000 return=-93.2141 length=13.0000 global_step=32099.0000 loss=325.4376
+rainbow train:  57%|█████▋    | 1142/2000 [37:04<18:15,  1.28s/it][step=1143] episode=1143.0000 return=38.5246 length=34.0000 global_step=32133.0000 loss=264.7039
+rainbow train:  57%|█████▋    | 1143/2000 [37:06<23:14,  1.63s/it][step=1144] episode=1144.0000 return=168.4633 length=43.0000 global_step=32176.0000 loss=220.7739
+rainbow train:  57%|█████▋    | 1144/2000 [37:09<29:32,  2.07s/it][step=1145] episode=1145.0000 return=-54.8795 length=19.0000 global_step=32195.0000 loss=97.2085
+rainbow train:  57%|█████▋    | 1145/2000 [37:11<26:29,  1.86s/it][step=1146] episode=1146.0000 return=-50.0102 length=37.0000 global_step=32232.0000 loss=175.1816
+rainbow train:  57%|█████▋    | 1146/2000 [37:13<29:45,  2.09s/it][step=1147] episode=1147.0000 return=-84.8354 length=34.0000 global_step=32266.0000 loss=131.4208
+rainbow train:  57%|█████▋    | 1147/2000 [37:16<31:31,  2.22s/it][step=1148] episode=1148.0000 return=-45.2681 length=20.0000 global_step=32286.0000 loss=260.8536
+rainbow train:  57%|█████▋    | 1148/2000 [37:17<27:56,  1.97s/it][step=1149] episode=1149.0000 return=-10.6755 length=28.0000 global_step=32314.0000 loss=186.3875
+rainbow train:  57%|█████▋    | 1149/2000 [37:19<28:05,  1.98s/it][step=1150] episode=1150.0000 return=-31.6028 length=28.0000 global_step=32342.0000 loss=225.5754
+rainbow train:  57%|█████▊    | 1150/2000 [37:21<28:19,  2.00s/it][step=1151] episode=1151.0000 return=32.2634 length=29.0000 global_step=32371.0000 loss=221.2143
+rainbow train:  58%|█████▊    | 1151/2000 [37:23<28:38,  2.02s/it][step=1152] episode=1152.0000 return=19.0720 length=34.0000 global_step=32405.0000 loss=361.0598
+rainbow train:  58%|█████▊    | 1152/2000 [37:26<30:23,  2.15s/it][step=1153] episode=1153.0000 return=15.6423 length=21.0000 global_step=32426.0000 loss=221.1583
+rainbow train:  58%|█████▊    | 1153/2000 [37:27<27:37,  1.96s/it][step=1154] episode=1154.0000 return=56.9534 length=34.0000 global_step=32460.0000 loss=194.7884
+rainbow train:  58%|█████▊    | 1154/2000 [37:30<29:23,  2.08s/it][step=1155] episode=1155.0000 return=67.5574 length=22.0000 global_step=32482.0000 loss=125.0610
+rainbow train:  58%|█████▊    | 1155/2000 [37:31<26:59,  1.92s/it][step=1156] episode=1156.0000 return=-114.6100 length=20.0000 global_step=32502.0000 loss=124.5315
+rainbow train:  58%|█████▊    | 1156/2000 [37:33<24:54,  1.77s/it][step=1157] episode=1157.0000 return=-54.5497 length=29.0000 global_step=32531.0000 loss=337.8714
+rainbow train:  58%|█████▊    | 1157/2000 [37:35<26:29,  1.89s/it][step=1158] episode=1158.0000 return=-80.5366 length=21.0000 global_step=32552.0000 loss=200.2736
+rainbow train:  58%|█████▊    | 1158/2000 [37:36<24:43,  1.76s/it][step=1159] episode=1159.0000 return=-103.4819 length=5.0000 global_step=32557.0000 loss=243.0116
+rainbow train:  58%|█████▊    | 1159/2000 [37:37<18:47,  1.34s/it][step=1160] episode=1160.0000 return=-65.3396 length=21.0000 global_step=32578.0000 loss=163.8642
+rainbow train:  58%|█████▊    | 1160/2000 [37:38<19:39,  1.40s/it][step=1161] episode=1161.0000 return=-97.4717 length=28.0000 global_step=32606.0000 loss=234.1593
+rainbow train:  58%|█████▊    | 1161/2000 [37:40<22:05,  1.58s/it][step=1162] episode=1162.0000 return=-92.2294 length=13.0000 global_step=32619.0000 loss=231.8040
+rainbow train:  58%|█████▊    | 1162/2000 [37:41<19:27,  1.39s/it][step=1163] episode=1163.0000 return=-106.4312 length=21.0000 global_step=32640.0000 loss=107.5622
+rainbow train:  58%|█████▊    | 1163/2000 [37:43<19:49,  1.42s/it][step=1164] episode=1164.0000 return=-105.3577 length=12.0000 global_step=32652.0000 loss=197.9028
+rainbow train:  58%|█████▊    | 1164/2000 [37:43<17:20,  1.24s/it][step=1165] episode=1165.0000 return=28.3272 length=19.0000 global_step=32671.0000 loss=239.2864
+rainbow train:  58%|█████▊    | 1165/2000 [37:45<17:34,  1.26s/it][step=1166] episode=1166.0000 return=-66.5208 length=21.0000 global_step=32692.0000 loss=264.2498
+rainbow train:  58%|█████▊    | 1166/2000 [37:46<18:32,  1.33s/it][step=1167] episode=1167.0000 return=-76.8628 length=20.0000 global_step=32712.0000 loss=254.8471
+rainbow train:  58%|█████▊    | 1167/2000 [37:48<18:54,  1.36s/it][step=1168] episode=1168.0000 return=-34.2953 length=22.0000 global_step=32734.0000 loss=287.5556
+rainbow train:  58%|█████▊    | 1168/2000 [37:49<19:42,  1.42s/it][step=1169] episode=1169.0000 return=-52.7730 length=13.0000 global_step=32747.0000 loss=162.6900
+rainbow train:  58%|█████▊    | 1169/2000 [37:50<17:41,  1.28s/it][step=1170] episode=1170.0000 return=-55.4493 length=42.0000 global_step=32789.0000 loss=167.7303
+rainbow train:  58%|█████▊    | 1170/2000 [37:53<24:51,  1.80s/it][step=1171] episode=1171.0000 return=-2.7746 length=19.0000 global_step=32808.0000 loss=227.5623
+rainbow train:  59%|█████▊    | 1171/2000 [37:55<23:09,  1.68s/it][step=1172] episode=1172.0000 return=-28.8622 length=42.0000 global_step=32850.0000 loss=184.8885
+rainbow train:  59%|█████▊    | 1172/2000 [37:58<28:11,  2.04s/it][step=1173] episode=1173.0000 return=-35.6190 length=19.0000 global_step=32869.0000 loss=197.6547
+rainbow train:  59%|█████▊    | 1173/2000 [37:59<25:17,  1.83s/it][step=1174] episode=1174.0000 return=-31.1234 length=42.0000 global_step=32911.0000 loss=226.1014
+rainbow train:  59%|█████▊    | 1174/2000 [38:02<29:24,  2.14s/it][step=1175] episode=1175.0000 return=-85.2347 length=20.0000 global_step=32931.0000 loss=193.1815
+rainbow train:  59%|█████▉    | 1175/2000 [38:03<26:40,  1.94s/it][step=1176] episode=1176.0000 return=-1.6479 length=13.0000 global_step=32944.0000 loss=186.3876
+rainbow train:  59%|█████▉    | 1176/2000 [38:04<22:28,  1.64s/it][step=1177] episode=1177.0000 return=-38.9667 length=29.0000 global_step=32973.0000 loss=223.2729
+rainbow train:  59%|█████▉    | 1177/2000 [38:06<23:52,  1.74s/it][step=1178] episode=1178.0000 return=-60.8817 length=20.0000 global_step=32993.0000 loss=226.9575
+rainbow train:  59%|█████▉    | 1178/2000 [38:08<22:31,  1.64s/it][step=1179] episode=1179.0000 return=10.7194 length=20.0000 global_step=33013.0000 loss=323.3319
+rainbow train:  59%|█████▉    | 1179/2000 [38:09<21:40,  1.58s/it][step=1180] episode=1180.0000 return=-23.0062 length=26.0000 global_step=33039.0000 loss=266.8697
+rainbow train:  59%|█████▉    | 1180/2000 [38:11<22:50,  1.67s/it][step=1181] episode=1181.0000 return=-87.1739 length=20.0000 global_step=33059.0000 loss=152.1733
+rainbow train:  59%|█████▉    | 1181/2000 [38:12<21:42,  1.59s/it][step=1182] episode=1182.0000 return=-102.7586 length=20.0000 global_step=33079.0000 loss=469.2285
+rainbow train:  59%|█████▉    | 1182/2000 [38:14<20:48,  1.53s/it][step=1183] episode=1183.0000 return=-7.4099 length=49.0000 global_step=33128.0000 loss=209.0928
+rainbow train:  59%|█████▉    | 1183/2000 [38:17<28:07,  2.07s/it][step=1184] episode=1184.0000 return=-36.8665 length=20.0000 global_step=33148.0000 loss=388.4232
+rainbow train:  59%|█████▉    | 1184/2000 [38:18<25:39,  1.89s/it][step=1185] episode=1185.0000 return=-105.5561 length=21.0000 global_step=33169.0000 loss=276.3455
+rainbow train:  59%|█████▉    | 1185/2000 [38:20<23:47,  1.75s/it][step=1186] episode=1186.0000 return=69.0627 length=25.0000 global_step=33194.0000 loss=266.2370
+rainbow train:  59%|█████▉    | 1186/2000 [38:22<24:03,  1.77s/it][step=1187] episode=1187.0000 return=-51.7805 length=29.0000 global_step=33223.0000 loss=172.1858
+rainbow train:  59%|█████▉    | 1187/2000 [38:24<24:52,  1.84s/it][step=1188] episode=1188.0000 return=-24.1615 length=29.0000 global_step=33252.0000 loss=225.2084
+rainbow train:  59%|█████▉    | 1188/2000 [38:26<25:53,  1.91s/it][step=1189] episode=1189.0000 return=-46.4112 length=27.0000 global_step=33279.0000 loss=267.5985
+rainbow train:  59%|█████▉    | 1189/2000 [38:28<25:55,  1.92s/it][step=1190] episode=1190.0000 return=-66.3442 length=29.0000 global_step=33308.0000 loss=270.4505
+rainbow train:  60%|█████▉    | 1190/2000 [38:30<26:28,  1.96s/it][step=1191] episode=1191.0000 return=-22.4731 length=27.0000 global_step=33335.0000 loss=214.8766
+rainbow train:  60%|█████▉    | 1191/2000 [38:32<26:08,  1.94s/it][step=1192] episode=1192.0000 return=-113.7326 length=30.0000 global_step=33365.0000 loss=232.0275
+rainbow train:  60%|█████▉    | 1192/2000 [38:34<26:59,  2.00s/it][step=1193] episode=1193.0000 return=-42.7466 length=12.0000 global_step=33377.0000 loss=142.0488
+rainbow train:  60%|█████▉    | 1193/2000 [38:35<22:23,  1.66s/it][step=1194] episode=1194.0000 return=-11.8378 length=13.0000 global_step=33390.0000 loss=159.1441
+rainbow train:  60%|█████▉    | 1194/2000 [38:36<19:31,  1.45s/it][step=1195] episode=1195.0000 return=-91.9346 length=29.0000 global_step=33419.0000 loss=164.1117
+rainbow train:  60%|█████▉    | 1195/2000 [38:38<22:04,  1.64s/it][step=1196] episode=1196.0000 return=-57.2078 length=19.0000 global_step=33438.0000 loss=338.2852
+rainbow train:  60%|█████▉    | 1196/2000 [38:39<21:00,  1.57s/it][step=1197] episode=1197.0000 return=-85.0564 length=30.0000 global_step=33468.0000 loss=254.3012
+rainbow train:  60%|█████▉    | 1197/2000 [38:41<23:22,  1.75s/it][step=1198] episode=1198.0000 return=-106.1254 length=20.0000 global_step=33488.0000 loss=217.8323
+rainbow train:  60%|█████▉    | 1198/2000 [38:43<22:03,  1.65s/it][step=1199] episode=1199.0000 return=-111.5349 length=29.0000 global_step=33517.0000 loss=159.7621
+rainbow train:  60%|█████▉    | 1199/2000 [38:45<23:24,  1.75s/it][step=1200] episode=1200.0000 return=-74.4310 length=20.0000 global_step=33537.0000 loss=117.7187
+rainbow train:  60%|██████    | 1200/2000 [38:46<22:37,  1.70s/it][step=1201] episode=1201.0000 return=116.4485 length=35.0000 global_step=33572.0000 loss=228.8003
+rainbow train:  60%|██████    | 1201/2000 [38:49<25:38,  1.93s/it][step=1202] episode=1202.0000 return=-108.6985 length=12.0000 global_step=33584.0000 loss=158.0438
+rainbow train:  60%|██████    | 1202/2000 [38:50<21:12,  1.59s/it][step=1203] episode=1203.0000 return=-110.6158 length=12.0000 global_step=33596.0000 loss=290.5071
+rainbow train:  60%|██████    | 1203/2000 [38:50<18:25,  1.39s/it][step=1204] episode=1204.0000 return=-49.3403 length=13.0000 global_step=33609.0000 loss=158.8180
+rainbow train:  60%|██████    | 1204/2000 [38:51<16:32,  1.25s/it][step=1205] episode=1205.0000 return=56.8531 length=42.0000 global_step=33651.0000 loss=312.7047
+rainbow train:  60%|██████    | 1205/2000 [38:54<23:25,  1.77s/it][step=1206] episode=1206.0000 return=-60.7790 length=30.0000 global_step=33681.0000 loss=200.0674
+rainbow train:  60%|██████    | 1206/2000 [38:56<25:00,  1.89s/it][step=1207] episode=1207.0000 return=-70.0208 length=13.0000 global_step=33694.0000 loss=258.7094
+rainbow train:  60%|██████    | 1207/2000 [38:57<21:14,  1.61s/it][step=1208] episode=1208.0000 return=-110.1447 length=13.0000 global_step=33707.0000 loss=170.2595
+rainbow train:  60%|██████    | 1208/2000 [38:58<18:51,  1.43s/it][step=1209] episode=1209.0000 return=94.6067 length=28.0000 global_step=33735.0000 loss=93.8566
+rainbow train:  60%|██████    | 1209/2000 [39:00<20:52,  1.58s/it][step=1210] episode=1210.0000 return=1.1068 length=20.0000 global_step=33755.0000 loss=222.7909
+rainbow train:  60%|██████    | 1210/2000 [39:02<20:04,  1.52s/it][step=1211] episode=1211.0000 return=68.8185 length=43.0000 global_step=33798.0000 loss=247.6635
+rainbow train:  61%|██████    | 1211/2000 [39:05<25:55,  1.97s/it][step=1212] episode=1212.0000 return=-89.0708 length=12.0000 global_step=33810.0000 loss=208.0136
+rainbow train:  61%|██████    | 1212/2000 [39:06<21:34,  1.64s/it][step=1213] episode=1213.0000 return=-115.9971 length=28.0000 global_step=33838.0000 loss=335.0170
+rainbow train:  61%|██████    | 1213/2000 [39:08<22:40,  1.73s/it][step=1214] episode=1214.0000 return=-115.9766 length=22.0000 global_step=33860.0000 loss=197.9760
+rainbow train:  61%|██████    | 1214/2000 [39:09<21:59,  1.68s/it][step=1215] episode=1215.0000 return=-115.9823 length=26.0000 global_step=33886.0000 loss=162.1689
+rainbow train:  61%|██████    | 1215/2000 [39:11<22:27,  1.72s/it][step=1216] episode=1216.0000 return=-59.4502 length=20.0000 global_step=33906.0000 loss=375.9183
+rainbow train:  61%|██████    | 1216/2000 [39:12<21:18,  1.63s/it][step=1217] episode=1217.0000 return=-32.6404 length=13.0000 global_step=33919.0000 loss=186.4417
+rainbow train:  61%|██████    | 1217/2000 [39:13<18:23,  1.41s/it][step=1218] episode=1218.0000 return=-74.4357 length=21.0000 global_step=33940.0000 loss=234.7563
+rainbow train:  61%|██████    | 1218/2000 [39:15<18:41,  1.43s/it][step=1219] episode=1219.0000 return=1.6019 length=36.0000 global_step=33976.0000 loss=167.0742
+rainbow train:  61%|██████    | 1219/2000 [39:17<23:01,  1.77s/it][step=1220] episode=1220.0000 return=-2.9546 length=19.0000 global_step=33995.0000 loss=282.4447
+rainbow train:  61%|██████    | 1220/2000 [39:19<21:07,  1.62s/it][step=1221] episode=1221.0000 return=5.1380 length=20.0000 global_step=34015.0000 loss=403.0995
+rainbow train:  61%|██████    | 1221/2000 [39:20<20:18,  1.56s/it][step=1222] episode=1222.0000 return=4.6155 length=49.0000 global_step=34064.0000 loss=155.8698
+rainbow train:  61%|██████    | 1222/2000 [39:24<27:41,  2.14s/it][step=1223] episode=1223.0000 return=-32.0936 length=13.0000 global_step=34077.0000 loss=169.3647
+rainbow train:  61%|██████    | 1223/2000 [39:24<22:58,  1.77s/it][step=1224] episode=1224.0000 return=-17.2777 length=20.0000 global_step=34097.0000 loss=319.8846
+rainbow train:  61%|██████    | 1224/2000 [39:26<21:34,  1.67s/it][step=1225] episode=1225.0000 return=-28.9404 length=20.0000 global_step=34117.0000 loss=265.4716
+rainbow train:  61%|██████▏   | 1225/2000 [39:27<20:44,  1.61s/it][step=1226] episode=1226.0000 return=-79.9458 length=22.0000 global_step=34139.0000 loss=253.4943
+rainbow train:  61%|██████▏   | 1226/2000 [39:29<20:19,  1.58s/it][step=1227] episode=1227.0000 return=-107.2026 length=34.0000 global_step=34173.0000 loss=222.7529
+rainbow train:  61%|██████▏   | 1227/2000 [39:31<23:47,  1.85s/it][step=1228] episode=1228.0000 return=-91.5432 length=21.0000 global_step=34194.0000 loss=179.4746
+rainbow train:  61%|██████▏   | 1228/2000 [39:33<22:40,  1.76s/it][step=1229] episode=1229.0000 return=-98.3249 length=28.0000 global_step=34222.0000 loss=293.1692
+rainbow train:  61%|██████▏   | 1229/2000 [39:35<23:19,  1.82s/it][step=1230] episode=1230.0000 return=-41.9472 length=20.0000 global_step=34242.0000 loss=230.9054
+rainbow train:  62%|██████▏   | 1230/2000 [39:36<21:34,  1.68s/it][step=1231] episode=1231.0000 return=-111.0955 length=21.0000 global_step=34263.0000 loss=274.5623
+rainbow train:  62%|██████▏   | 1231/2000 [39:38<20:58,  1.64s/it][step=1232] episode=1232.0000 return=-55.2214 length=12.0000 global_step=34275.0000 loss=227.9166
+rainbow train:  62%|██████▏   | 1232/2000 [39:39<17:52,  1.40s/it][step=1233] episode=1233.0000 return=-54.1623 length=22.0000 global_step=34297.0000 loss=268.3267
+rainbow train:  62%|██████▏   | 1233/2000 [39:40<18:28,  1.45s/it][step=1234] episode=1234.0000 return=-102.0036 length=20.0000 global_step=34317.0000 loss=248.6552
+rainbow train:  62%|██████▏   | 1234/2000 [39:42<18:17,  1.43s/it][step=1235] episode=1235.0000 return=4.0706 length=20.0000 global_step=34337.0000 loss=253.4274
+rainbow train:  62%|██████▏   | 1235/2000 [39:43<18:04,  1.42s/it][step=1236] episode=1236.0000 return=-115.9343 length=20.0000 global_step=34357.0000 loss=167.8685
+rainbow train:  62%|██████▏   | 1236/2000 [39:44<17:58,  1.41s/it][step=1237] episode=1237.0000 return=-37.7236 length=19.0000 global_step=34376.0000 loss=211.3445
+rainbow train:  62%|██████▏   | 1237/2000 [39:46<17:52,  1.41s/it][step=1238] episode=1238.0000 return=-59.5273 length=19.0000 global_step=34395.0000 loss=276.1329
+rainbow train:  62%|██████▏   | 1238/2000 [39:47<17:43,  1.40s/it][step=1239] episode=1239.0000 return=-28.0582 length=42.0000 global_step=34437.0000 loss=365.2272
+rainbow train:  62%|██████▏   | 1239/2000 [39:50<23:57,  1.89s/it][step=1240] episode=1240.0000 return=-27.0371 length=11.0000 global_step=34448.0000 loss=261.3847
+rainbow train:  62%|██████▏   | 1240/2000 [39:51<19:51,  1.57s/it][step=1241] episode=1241.0000 return=-85.4143 length=27.0000 global_step=34475.0000 loss=244.3973
+rainbow train:  62%|██████▏   | 1241/2000 [39:53<21:07,  1.67s/it][step=1242] episode=1242.0000 return=-71.4591 length=20.0000 global_step=34495.0000 loss=239.0566
+rainbow train:  62%|██████▏   | 1242/2000 [39:54<20:03,  1.59s/it][step=1243] episode=1243.0000 return=33.7059 length=42.0000 global_step=34537.0000 loss=303.7950
+rainbow train:  62%|██████▏   | 1243/2000 [39:57<25:13,  2.00s/it][step=1244] episode=1244.0000 return=-97.0942 length=21.0000 global_step=34558.0000 loss=339.2238
+rainbow train:  62%|██████▏   | 1244/2000 [39:59<23:23,  1.86s/it][step=1245] episode=1245.0000 return=-42.7545 length=12.0000 global_step=34570.0000 loss=217.4573
+rainbow train:  62%|██████▏   | 1245/2000 [40:00<19:37,  1.56s/it][step=1246] episode=1246.0000 return=71.3152 length=21.0000 global_step=34591.0000 loss=177.5472
+rainbow train:  62%|██████▏   | 1246/2000 [40:01<19:22,  1.54s/it][step=1247] episode=1247.0000 return=-38.8496 length=13.0000 global_step=34604.0000 loss=196.4040
+rainbow train:  62%|██████▏   | 1247/2000 [40:02<17:06,  1.36s/it][step=1248] episode=1248.0000 return=-42.1897 length=12.0000 global_step=34616.0000 loss=279.7742
+rainbow train:  62%|██████▏   | 1248/2000 [40:03<15:01,  1.20s/it][step=1249] episode=1249.0000 return=0.3831 length=20.0000 global_step=34636.0000 loss=279.3468
+rainbow train:  62%|██████▏   | 1249/2000 [40:04<15:48,  1.26s/it][step=1250] episode=1250.0000 return=-68.2339 length=22.0000 global_step=34658.0000 loss=211.3205
+rainbow train:  62%|██████▎   | 1250/2000 [40:06<16:47,  1.34s/it][step=1251] episode=1251.0000 return=-69.7833 length=21.0000 global_step=34679.0000 loss=333.2454
+rainbow train:  63%|██████▎   | 1251/2000 [40:07<17:10,  1.38s/it][step=1252] episode=1252.0000 return=-115.9972 length=18.0000 global_step=34697.0000 loss=297.4360
+rainbow train:  63%|██████▎   | 1252/2000 [40:08<16:30,  1.32s/it][step=1253] episode=1253.0000 return=-87.1862 length=20.0000 global_step=34717.0000 loss=371.4110
+rainbow train:  63%|██████▎   | 1253/2000 [40:10<16:52,  1.36s/it][step=1254] episode=1254.0000 return=-109.2177 length=21.0000 global_step=34738.0000 loss=218.3069
+rainbow train:  63%|██████▎   | 1254/2000 [40:11<17:21,  1.40s/it][step=1255] episode=1255.0000 return=-54.9903 length=12.0000 global_step=34750.0000 loss=127.7021
+rainbow train:  63%|██████▎   | 1255/2000 [40:12<15:21,  1.24s/it][step=1256] episode=1256.0000 return=-19.0428 length=21.0000 global_step=34771.0000 loss=77.8332
+rainbow train:  63%|██████▎   | 1256/2000 [40:14<16:12,  1.31s/it][step=1257] episode=1257.0000 return=-39.3513 length=42.0000 global_step=34813.0000 loss=221.1100
+rainbow train:  63%|██████▎   | 1257/2000 [40:17<22:16,  1.80s/it][step=1258] episode=1258.0000 return=-62.2270 length=27.0000 global_step=34840.0000 loss=217.8108
+rainbow train:  63%|██████▎   | 1258/2000 [40:18<22:13,  1.80s/it][step=1259] episode=1259.0000 return=-37.7766 length=13.0000 global_step=34853.0000 loss=303.3588
+rainbow train:  63%|██████▎   | 1259/2000 [40:19<19:05,  1.55s/it][step=1260] episode=1260.0000 return=-20.5823 length=21.0000 global_step=34874.0000 loss=243.7603
+rainbow train:  63%|██████▎   | 1260/2000 [40:21<18:45,  1.52s/it][step=1261] episode=1261.0000 return=9.5348 length=27.0000 global_step=34901.0000 loss=322.0102
+rainbow train:  63%|██████▎   | 1261/2000 [40:23<20:17,  1.65s/it][step=1262] episode=1262.0000 return=0.8010 length=57.0000 global_step=34958.0000 loss=354.8351
+rainbow train:  63%|██████▎   | 1262/2000 [40:27<29:15,  2.38s/it][step=1263] episode=1263.0000 return=-88.1288 length=26.0000 global_step=34984.0000 loss=158.6207
+rainbow train:  63%|██████▎   | 1263/2000 [40:29<27:13,  2.22s/it][step=1264] episode=1264.0000 return=10.9521 length=34.0000 global_step=35018.0000 loss=192.5407
+rainbow train:  63%|██████▎   | 1264/2000 [40:31<27:59,  2.28s/it][step=1265] episode=1265.0000 return=-56.8084 length=28.0000 global_step=35046.0000 loss=154.7934
+rainbow train:  63%|██████▎   | 1265/2000 [40:33<26:47,  2.19s/it][step=1266] episode=1266.0000 return=-114.6915 length=19.0000 global_step=35065.0000 loss=239.8626
+rainbow train:  63%|██████▎   | 1266/2000 [40:34<23:34,  1.93s/it][step=1267] episode=1267.0000 return=-43.4737 length=19.0000 global_step=35084.0000 loss=318.4451
+rainbow train:  63%|██████▎   | 1267/2000 [40:36<21:25,  1.75s/it][step=1268] episode=1268.0000 return=-115.2366 length=13.0000 global_step=35097.0000 loss=438.2473
+rainbow train:  63%|██████▎   | 1268/2000 [40:37<18:11,  1.49s/it][step=1269] episode=1269.0000 return=3.9861 length=13.0000 global_step=35110.0000 loss=365.0316
+rainbow train:  63%|██████▎   | 1269/2000 [40:38<16:14,  1.33s/it][step=1270] episode=1270.0000 return=251.0600 length=34.0000 global_step=35144.0000 loss=249.6104
+rainbow train:  64%|██████▎   | 1270/2000 [40:40<19:57,  1.64s/it][step=1271] episode=1271.0000 return=-108.1062 length=14.0000 global_step=35158.0000 loss=135.6297
+rainbow train:  64%|██████▎   | 1271/2000 [40:41<17:30,  1.44s/it][step=1272] episode=1272.0000 return=-28.7030 length=12.0000 global_step=35170.0000 loss=310.4114
+rainbow train:  64%|██████▎   | 1272/2000 [40:42<15:21,  1.27s/it][step=1273] episode=1273.0000 return=-31.7932 length=48.0000 global_step=35218.0000 loss=253.1878
+rainbow train:  64%|██████▎   | 1273/2000 [40:45<23:11,  1.91s/it][step=1274] episode=1274.0000 return=-78.2794 length=27.0000 global_step=35245.0000 loss=299.3336
+rainbow train:  64%|██████▎   | 1274/2000 [40:47<23:02,  1.90s/it][step=1275] episode=1275.0000 return=-103.6208 length=28.0000 global_step=35273.0000 loss=169.8447
+rainbow train:  64%|██████▍   | 1275/2000 [40:49<23:06,  1.91s/it][step=1276] episode=1276.0000 return=-115.9757 length=27.0000 global_step=35300.0000 loss=123.7383
+rainbow train:  64%|██████▍   | 1276/2000 [40:51<23:16,  1.93s/it][step=1277] episode=1277.0000 return=-7.6565 length=50.0000 global_step=35350.0000 loss=440.3425
+rainbow train:  64%|██████▍   | 1277/2000 [40:55<29:00,  2.41s/it][step=1278] episode=1278.0000 return=-29.8570 length=13.0000 global_step=35363.0000 loss=455.1572
+rainbow train:  64%|██████▍   | 1278/2000 [40:55<23:37,  1.96s/it][step=1279] episode=1279.0000 return=17.0833 length=29.0000 global_step=35392.0000 loss=238.4301
+rainbow train:  64%|██████▍   | 1279/2000 [40:58<23:52,  1.99s/it][step=1280] episode=1280.0000 return=-74.7902 length=12.0000 global_step=35404.0000 loss=268.3881
+rainbow train:  64%|██████▍   | 1280/2000 [40:58<19:37,  1.64s/it][step=1281] episode=1281.0000 return=-92.9928 length=21.0000 global_step=35425.0000 loss=428.8892
+rainbow train:  64%|██████▍   | 1281/2000 [41:00<18:55,  1.58s/it][step=1282] episode=1282.0000 return=-29.2070 length=12.0000 global_step=35437.0000 loss=306.8284
+rainbow train:  64%|██████▍   | 1282/2000 [41:01<16:13,  1.36s/it][step=1283] episode=1283.0000 return=-28.5785 length=20.0000 global_step=35457.0000 loss=148.6351
+rainbow train:  64%|██████▍   | 1283/2000 [41:02<16:37,  1.39s/it][step=1284] episode=1284.0000 return=-63.2395 length=20.0000 global_step=35477.0000 loss=254.9580
+rainbow train:  64%|██████▍   | 1284/2000 [41:04<16:50,  1.41s/it][step=1285] episode=1285.0000 return=-104.6606 length=44.0000 global_step=35521.0000 loss=213.8838
+rainbow train:  64%|██████▍   | 1285/2000 [41:07<22:44,  1.91s/it][step=1286] episode=1286.0000 return=74.5385 length=41.0000 global_step=35562.0000 loss=223.5659
+rainbow train:  64%|██████▍   | 1286/2000 [41:10<26:16,  2.21s/it][step=1287] episode=1287.0000 return=41.2482 length=12.0000 global_step=35574.0000 loss=301.8716
+rainbow train:  64%|██████▍   | 1287/2000 [41:10<21:25,  1.80s/it][step=1288] episode=1288.0000 return=39.1729 length=19.0000 global_step=35593.0000 loss=300.6235
+rainbow train:  64%|██████▍   | 1288/2000 [41:12<20:09,  1.70s/it][step=1289] episode=1289.0000 return=-7.9055 length=20.0000 global_step=35613.0000 loss=259.0069
+rainbow train:  64%|██████▍   | 1289/2000 [41:13<19:04,  1.61s/it][step=1290] episode=1290.0000 return=-19.4226 length=18.0000 global_step=35631.0000 loss=390.4376
+rainbow train:  64%|██████▍   | 1290/2000 [41:15<17:55,  1.51s/it][step=1291] episode=1291.0000 return=-102.5858 length=12.0000 global_step=35643.0000 loss=262.4929
+rainbow train:  65%|██████▍   | 1291/2000 [41:15<15:41,  1.33s/it][step=1292] episode=1292.0000 return=101.8147 length=56.0000 global_step=35699.0000 loss=308.5653
+rainbow train:  65%|██████▍   | 1292/2000 [41:19<24:59,  2.12s/it][step=1293] episode=1293.0000 return=34.3656 length=35.0000 global_step=35734.0000 loss=155.1075
+rainbow train:  65%|██████▍   | 1293/2000 [41:22<26:28,  2.25s/it][step=1294] episode=1294.0000 return=-58.7827 length=12.0000 global_step=35746.0000 loss=195.0673
+rainbow train:  65%|██████▍   | 1294/2000 [41:23<21:40,  1.84s/it][step=1295] episode=1295.0000 return=-107.5394 length=11.0000 global_step=35757.0000 loss=157.6644
+rainbow train:  65%|██████▍   | 1295/2000 [41:24<18:07,  1.54s/it][step=1296] episode=1296.0000 return=-14.7332 length=28.0000 global_step=35785.0000 loss=270.4882
+rainbow train:  65%|██████▍   | 1296/2000 [41:26<19:33,  1.67s/it][step=1297] episode=1297.0000 return=11.0389 length=41.0000 global_step=35826.0000 loss=335.1092
+rainbow train:  65%|██████▍   | 1297/2000 [41:29<24:05,  2.06s/it][step=1298] episode=1298.0000 return=-104.4821 length=19.0000 global_step=35845.0000 loss=296.6042
+rainbow train:  65%|██████▍   | 1298/2000 [41:30<21:40,  1.85s/it][step=1299] episode=1299.0000 return=-115.9599 length=33.0000 global_step=35878.0000 loss=374.1444
+rainbow train:  65%|██████▍   | 1299/2000 [41:32<23:21,  2.00s/it][step=1300] episode=1300.0000 return=59.6692 length=34.0000 global_step=35912.0000 loss=380.4314
+rainbow train:  65%|██████▌   | 1300/2000 [41:35<25:15,  2.17s/it][step=1301] episode=1301.0000 return=-69.6887 length=27.0000 global_step=35939.0000 loss=256.8705
+rainbow train:  65%|██████▌   | 1301/2000 [41:37<24:24,  2.09s/it][step=1302] episode=1302.0000 return=-23.4247 length=20.0000 global_step=35959.0000 loss=306.6895
+rainbow train:  65%|██████▌   | 1302/2000 [41:38<21:59,  1.89s/it][step=1303] episode=1303.0000 return=-58.1226 length=36.0000 global_step=35995.0000 loss=163.4433
+rainbow train:  65%|██████▌   | 1303/2000 [41:41<24:19,  2.09s/it][step=1304] episode=1304.0000 return=-49.6716 length=12.0000 global_step=36007.0000 loss=326.4449
+rainbow train:  65%|██████▌   | 1304/2000 [41:42<19:56,  1.72s/it][step=1305] episode=1305.0000 return=300.3286 length=66.0000 global_step=36073.0000 loss=82.6326
+rainbow train:  65%|██████▌   | 1305/2000 [41:46<30:07,  2.60s/it][step=1306] episode=1306.0000 return=-81.5315 length=11.0000 global_step=36084.0000 loss=116.6846
+rainbow train:  65%|██████▌   | 1306/2000 [41:47<23:38,  2.04s/it][step=1307] episode=1307.0000 return=-94.4674 length=12.0000 global_step=36096.0000 loss=257.7514
+rainbow train:  65%|██████▌   | 1307/2000 [41:48<19:30,  1.69s/it][step=1308] episode=1308.0000 return=-77.3014 length=20.0000 global_step=36116.0000 loss=316.3226
+rainbow train:  65%|██████▌   | 1308/2000 [41:49<18:22,  1.59s/it][step=1309] episode=1309.0000 return=51.5927 length=21.0000 global_step=36137.0000 loss=310.9284
+rainbow train:  65%|██████▌   | 1309/2000 [41:51<17:55,  1.56s/it][step=1310] episode=1310.0000 return=-64.6266 length=11.0000 global_step=36148.0000 loss=334.5150
+rainbow train:  66%|██████▌   | 1310/2000 [41:52<15:22,  1.34s/it][step=1311] episode=1311.0000 return=-67.3491 length=21.0000 global_step=36169.0000 loss=210.6343
+rainbow train:  66%|██████▌   | 1311/2000 [41:53<16:05,  1.40s/it][step=1312] episode=1312.0000 return=-86.7624 length=21.0000 global_step=36190.0000 loss=306.5750
+rainbow train:  66%|██████▌   | 1312/2000 [41:55<16:28,  1.44s/it][step=1313] episode=1313.0000 return=13.7301 length=28.0000 global_step=36218.0000 loss=278.5210
+rainbow train:  66%|██████▌   | 1313/2000 [41:57<18:24,  1.61s/it][step=1314] episode=1314.0000 return=-5.4033 length=38.0000 global_step=36256.0000 loss=266.7060
+rainbow train:  66%|██████▌   | 1314/2000 [41:59<22:05,  1.93s/it][step=1315] episode=1315.0000 return=14.9771 length=57.0000 global_step=36313.0000 loss=363.6010
+rainbow train:  66%|██████▌   | 1315/2000 [42:03<29:33,  2.59s/it][step=1316] episode=1316.0000 return=-115.9540 length=22.0000 global_step=36335.0000 loss=216.3902
+rainbow train:  66%|██████▌   | 1316/2000 [42:05<25:48,  2.26s/it][step=1317] episode=1317.0000 return=14.3528 length=50.0000 global_step=36385.0000 loss=189.3557
+rainbow train:  66%|██████▌   | 1317/2000 [42:09<30:18,  2.66s/it][step=1318] episode=1318.0000 return=-101.0930 length=11.0000 global_step=36396.0000 loss=245.0638
+rainbow train:  66%|██████▌   | 1318/2000 [42:09<23:58,  2.11s/it][step=1319] episode=1319.0000 return=6.7778 length=26.0000 global_step=36422.0000 loss=217.2290
+rainbow train:  66%|██████▌   | 1319/2000 [42:11<23:05,  2.04s/it][step=1320] episode=1320.0000 return=-61.3030 length=20.0000 global_step=36442.0000 loss=165.1348
+rainbow train:  66%|██████▌   | 1320/2000 [42:13<20:56,  1.85s/it][step=1321] episode=1321.0000 return=-44.5129 length=43.0000 global_step=36485.0000 loss=325.0016
+rainbow train:  66%|██████▌   | 1321/2000 [42:16<25:03,  2.21s/it][step=1322] episode=1322.0000 return=-1.0570 length=12.0000 global_step=36497.0000 loss=387.8717
+rainbow train:  66%|██████▌   | 1322/2000 [42:17<20:34,  1.82s/it][step=1323] episode=1323.0000 return=85.2132 length=20.0000 global_step=36517.0000 loss=170.3708
+rainbow train:  66%|██████▌   | 1323/2000 [42:18<19:09,  1.70s/it][step=1324] episode=1324.0000 return=175.0975 length=41.0000 global_step=36558.0000 loss=184.4093
+rainbow train:  66%|██████▌   | 1324/2000 [42:21<22:59,  2.04s/it][step=1325] episode=1325.0000 return=-14.6574 length=19.0000 global_step=36577.0000 loss=307.4133
+rainbow train:  66%|██████▋   | 1325/2000 [42:22<20:28,  1.82s/it][step=1326] episode=1326.0000 return=16.6481 length=19.0000 global_step=36596.0000 loss=369.8639
+rainbow train:  66%|██████▋   | 1326/2000 [42:24<18:54,  1.68s/it][step=1327] episode=1327.0000 return=99.7529 length=63.0000 global_step=36659.0000 loss=204.6879
+rainbow train:  66%|██████▋   | 1327/2000 [42:28<28:08,  2.51s/it][step=1328] episode=1328.0000 return=52.9846 length=27.0000 global_step=36686.0000 loss=273.0139
+rainbow train:  66%|██████▋   | 1328/2000 [42:30<26:10,  2.34s/it][step=1329] episode=1329.0000 return=-58.0972 length=12.0000 global_step=36698.0000 loss=282.3583
+rainbow train:  66%|██████▋   | 1329/2000 [42:31<21:23,  1.91s/it][step=1330] episode=1330.0000 return=-67.5728 length=13.0000 global_step=36711.0000 loss=341.8824
+rainbow train:  66%|██████▋   | 1330/2000 [42:32<17:56,  1.61s/it][step=1331] episode=1331.0000 return=-103.6744 length=12.0000 global_step=36723.0000 loss=222.0729
+rainbow train:  67%|██████▋   | 1331/2000 [42:33<15:35,  1.40s/it][step=1332] episode=1332.0000 return=-46.6890 length=28.0000 global_step=36751.0000 loss=239.4445
+rainbow train:  67%|██████▋   | 1332/2000 [42:35<17:24,  1.56s/it][step=1333] episode=1333.0000 return=-92.0785 length=22.0000 global_step=36773.0000 loss=309.7462
+rainbow train:  67%|██████▋   | 1333/2000 [42:36<17:12,  1.55s/it][step=1334] episode=1334.0000 return=44.9409 length=37.0000 global_step=36810.0000 loss=336.5942
+rainbow train:  67%|██████▋   | 1334/2000 [42:39<20:32,  1.85s/it][step=1335] episode=1335.0000 return=-106.7223 length=20.0000 global_step=36830.0000 loss=361.3148
+rainbow train:  67%|██████▋   | 1335/2000 [42:40<19:04,  1.72s/it][step=1336] episode=1336.0000 return=-57.0005 length=12.0000 global_step=36842.0000 loss=172.5233
+rainbow train:  67%|██████▋   | 1336/2000 [42:41<16:06,  1.46s/it][step=1337] episode=1337.0000 return=-50.8480 length=12.0000 global_step=36854.0000 loss=229.6796
+rainbow train:  67%|██████▋   | 1337/2000 [42:42<14:10,  1.28s/it][step=1338] episode=1338.0000 return=-108.9601 length=20.0000 global_step=36874.0000 loss=359.8561
+rainbow train:  67%|██████▋   | 1338/2000 [42:43<14:40,  1.33s/it][step=1339] episode=1339.0000 return=-100.4682 length=12.0000 global_step=36886.0000 loss=215.5951
+rainbow train:  67%|██████▋   | 1339/2000 [42:44<13:12,  1.20s/it][step=1340] episode=1340.0000 return=-68.4035 length=20.0000 global_step=36906.0000 loss=205.2251
+rainbow train:  67%|██████▋   | 1340/2000 [42:46<14:00,  1.27s/it][step=1341] episode=1341.0000 return=-78.9498 length=19.0000 global_step=36925.0000 loss=211.9738
+rainbow train:  67%|██████▋   | 1341/2000 [42:47<14:18,  1.30s/it][step=1342] episode=1342.0000 return=-108.4668 length=21.0000 global_step=36946.0000 loss=338.3060
+rainbow train:  67%|██████▋   | 1342/2000 [42:48<14:47,  1.35s/it][step=1343] episode=1343.0000 return=-35.8446 length=21.0000 global_step=36967.0000 loss=335.3827
+rainbow train:  67%|██████▋   | 1343/2000 [42:50<15:09,  1.38s/it][step=1344] episode=1344.0000 return=-22.1464 length=21.0000 global_step=36988.0000 loss=257.8479
+rainbow train:  67%|██████▋   | 1344/2000 [42:51<15:25,  1.41s/it][step=1345] episode=1345.0000 return=156.4724 length=62.0000 global_step=37050.0000 loss=272.6514
+rainbow train:  67%|██████▋   | 1345/2000 [42:56<24:50,  2.28s/it][step=1346] episode=1346.0000 return=-63.7774 length=22.0000 global_step=37072.0000 loss=257.7280
+rainbow train:  67%|██████▋   | 1346/2000 [42:57<22:25,  2.06s/it][step=1347] episode=1347.0000 return=-68.9462 length=20.0000 global_step=37092.0000 loss=232.2504
+rainbow train:  67%|██████▋   | 1347/2000 [42:59<20:10,  1.85s/it][step=1348] episode=1348.0000 return=77.4628 length=42.0000 global_step=37134.0000 loss=434.7993
+rainbow train:  67%|██████▋   | 1348/2000 [43:02<23:56,  2.20s/it][step=1349] episode=1349.0000 return=19.9196 length=49.0000 global_step=37183.0000 loss=231.6480
+rainbow train:  67%|██████▋   | 1349/2000 [43:05<27:52,  2.57s/it][step=1350] episode=1350.0000 return=-49.2795 length=80.0000 global_step=37263.0000 loss=272.9358
+rainbow train:  68%|██████▊   | 1350/2000 [43:11<37:53,  3.50s/it][step=1351] episode=1351.0000 return=-11.6334 length=30.0000 global_step=37293.0000 loss=259.5430
+rainbow train:  68%|██████▊   | 1351/2000 [43:13<33:22,  3.09s/it][step=1352] episode=1352.0000 return=-37.2248 length=35.0000 global_step=37328.0000 loss=245.3225
+rainbow train:  68%|██████▊   | 1352/2000 [43:15<31:11,  2.89s/it][step=1353] episode=1353.0000 return=1.5097 length=20.0000 global_step=37348.0000 loss=219.8425
+rainbow train:  68%|██████▊   | 1353/2000 [43:17<26:05,  2.42s/it][step=1354] episode=1354.0000 return=-55.7419 length=27.0000 global_step=37375.0000 loss=168.9115
+rainbow train:  68%|██████▊   | 1354/2000 [43:18<24:27,  2.27s/it][step=1355] episode=1355.0000 return=-18.2131 length=25.0000 global_step=37400.0000 loss=316.3456
+rainbow train:  68%|██████▊   | 1355/2000 [43:20<22:53,  2.13s/it][step=1356] episode=1356.0000 return=-7.5032 length=56.0000 global_step=37456.0000 loss=264.0447
+rainbow train:  68%|██████▊   | 1356/2000 [43:24<28:36,  2.67s/it][step=1357] episode=1357.0000 return=-29.6705 length=57.0000 global_step=37513.0000 loss=371.3414
+rainbow train:  68%|██████▊   | 1357/2000 [43:28<32:41,  3.05s/it][step=1358] episode=1358.0000 return=-41.0939 length=13.0000 global_step=37526.0000 loss=191.8007
+rainbow train:  68%|██████▊   | 1358/2000 [43:29<26:03,  2.44s/it][step=1359] episode=1359.0000 return=-11.4336 length=21.0000 global_step=37547.0000 loss=310.1948
+rainbow train:  68%|██████▊   | 1359/2000 [43:31<23:06,  2.16s/it][step=1360] episode=1360.0000 return=-64.1300 length=13.0000 global_step=37560.0000 loss=269.1278
+rainbow train:  68%|██████▊   | 1360/2000 [43:32<19:11,  1.80s/it][step=1361] episode=1361.0000 return=107.6066 length=49.0000 global_step=37609.0000 loss=89.0534
+rainbow train:  68%|██████▊   | 1361/2000 [43:35<24:15,  2.28s/it][step=1362] episode=1362.0000 return=-69.5084 length=18.0000 global_step=37627.0000 loss=186.8379
+rainbow train:  68%|██████▊   | 1362/2000 [43:36<20:57,  1.97s/it][step=1363] episode=1363.0000 return=-48.0498 length=21.0000 global_step=37648.0000 loss=224.5825
+rainbow train:  68%|██████▊   | 1363/2000 [43:38<19:23,  1.83s/it][step=1364] episode=1364.0000 return=-83.1795 length=20.0000 global_step=37668.0000 loss=337.2690
+rainbow train:  68%|██████▊   | 1364/2000 [43:39<17:49,  1.68s/it][step=1365] episode=1365.0000 return=-77.8881 length=12.0000 global_step=37680.0000 loss=197.5805
+rainbow train:  68%|██████▊   | 1365/2000 [43:40<15:19,  1.45s/it][step=1366] episode=1366.0000 return=-10.0911 length=35.0000 global_step=37715.0000 loss=285.4293
+rainbow train:  68%|██████▊   | 1366/2000 [43:43<18:41,  1.77s/it][step=1367] episode=1367.0000 return=-72.6244 length=13.0000 global_step=37728.0000 loss=162.2002
+rainbow train:  68%|██████▊   | 1367/2000 [43:43<15:55,  1.51s/it][step=1368] episode=1368.0000 return=-55.4316 length=19.0000 global_step=37747.0000 loss=146.3834
+rainbow train:  68%|██████▊   | 1368/2000 [43:45<15:29,  1.47s/it][step=1369] episode=1369.0000 return=-97.9114 length=22.0000 global_step=37769.0000 loss=214.6567
+rainbow train:  68%|██████▊   | 1369/2000 [43:46<15:46,  1.50s/it][step=1370] episode=1370.0000 return=-36.1808 length=26.0000 global_step=37795.0000 loss=294.1609
+rainbow train:  68%|██████▊   | 1370/2000 [43:48<16:59,  1.62s/it][step=1371] episode=1371.0000 return=25.5465 length=65.0000 global_step=37860.0000 loss=351.9893
+rainbow train:  69%|██████▊   | 1371/2000 [43:53<26:24,  2.52s/it][step=1372] episode=1372.0000 return=-43.9005 length=21.0000 global_step=37881.0000 loss=349.9064
+rainbow train:  69%|██████▊   | 1372/2000 [43:54<23:13,  2.22s/it][step=1373] episode=1373.0000 return=-9.4690 length=41.0000 global_step=37922.0000 loss=307.8905
+rainbow train:  69%|██████▊   | 1373/2000 [43:57<25:15,  2.42s/it][step=1374] episode=1374.0000 return=-101.9142 length=40.0000 global_step=37962.0000 loss=217.5177
+rainbow train:  69%|██████▊   | 1374/2000 [44:00<26:22,  2.53s/it][step=1375] episode=1375.0000 return=-43.2030 length=21.0000 global_step=37983.0000 loss=303.4477
+rainbow train:  69%|██████▉   | 1375/2000 [44:02<23:01,  2.21s/it][step=1376] episode=1376.0000 return=-15.5567 length=13.0000 global_step=37996.0000 loss=289.1615
+rainbow train:  69%|██████▉   | 1376/2000 [44:02<18:59,  1.83s/it][step=1377] episode=1377.0000 return=-108.8584 length=34.0000 global_step=38030.0000 loss=156.5903
+rainbow train:  69%|██████▉   | 1377/2000 [44:05<20:36,  1.98s/it][step=1378] episode=1378.0000 return=170.3232 length=42.0000 global_step=38072.0000 loss=290.0302
+rainbow train:  69%|██████▉   | 1378/2000 [44:08<23:09,  2.23s/it][step=1379] episode=1379.0000 return=69.1068 length=28.0000 global_step=38100.0000 loss=265.2893
+rainbow train:  69%|██████▉   | 1379/2000 [44:10<22:24,  2.16s/it][step=1380] episode=1380.0000 return=-27.5868 length=26.0000 global_step=38126.0000 loss=340.4256
+rainbow train:  69%|██████▉   | 1380/2000 [44:12<21:28,  2.08s/it][step=1381] episode=1381.0000 return=3.6992 length=51.0000 global_step=38177.0000 loss=130.3226
+rainbow train:  69%|██████▉   | 1381/2000 [44:15<26:09,  2.54s/it][step=1382] episode=1382.0000 return=-82.6963 length=11.0000 global_step=38188.0000 loss=392.9081
+rainbow train:  69%|██████▉   | 1382/2000 [44:16<20:49,  2.02s/it][step=1383] episode=1383.0000 return=-90.1984 length=21.0000 global_step=38209.0000 loss=167.9378
+rainbow train:  69%|██████▉   | 1383/2000 [44:17<19:16,  1.87s/it][step=1384] episode=1384.0000 return=-88.0380 length=21.0000 global_step=38230.0000 loss=159.4299
+rainbow train:  69%|██████▉   | 1384/2000 [44:19<18:03,  1.76s/it][step=1385] episode=1385.0000 return=-43.9070 length=49.0000 global_step=38279.0000 loss=361.4344
+rainbow train:  69%|██████▉   | 1385/2000 [44:22<23:21,  2.28s/it][step=1386] episode=1386.0000 return=-69.1171 length=19.0000 global_step=38298.0000 loss=230.6773
+rainbow train:  69%|██████▉   | 1386/2000 [44:24<20:32,  2.01s/it][step=1387] episode=1387.0000 return=-77.6152 length=12.0000 global_step=38310.0000 loss=228.6601
+rainbow train:  69%|██████▉   | 1387/2000 [44:25<17:02,  1.67s/it][step=1388] episode=1388.0000 return=-108.7314 length=20.0000 global_step=38330.0000 loss=242.0435
+rainbow train:  69%|██████▉   | 1388/2000 [44:26<16:03,  1.57s/it][step=1389] episode=1389.0000 return=-82.6414 length=20.0000 global_step=38350.0000 loss=143.8315
+rainbow train:  69%|██████▉   | 1389/2000 [44:27<15:35,  1.53s/it][step=1390] episode=1390.0000 return=301.6934 length=67.0000 global_step=38417.0000 loss=336.1295
+rainbow train:  70%|██████▉   | 1390/2000 [44:32<25:04,  2.47s/it][step=1391] episode=1391.0000 return=-8.7401 length=19.0000 global_step=38436.0000 loss=140.4447
+rainbow train:  70%|██████▉   | 1391/2000 [44:34<21:55,  2.16s/it][step=1392] episode=1392.0000 return=242.6436 length=50.0000 global_step=38486.0000 loss=272.4231
+rainbow train:  70%|██████▉   | 1392/2000 [44:37<25:59,  2.57s/it][step=1393] episode=1393.0000 return=-82.1380 length=21.0000 global_step=38507.0000 loss=219.7206
+rainbow train:  70%|██████▉   | 1393/2000 [44:39<22:40,  2.24s/it][step=1394] episode=1394.0000 return=-66.6634 length=11.0000 global_step=38518.0000 loss=111.2856
+rainbow train:  70%|██████▉   | 1394/2000 [44:39<18:18,  1.81s/it][step=1395] episode=1395.0000 return=38.3026 length=65.0000 global_step=38583.0000 loss=227.5911
+rainbow train:  70%|██████▉   | 1395/2000 [44:44<26:42,  2.65s/it][step=1396] episode=1396.0000 return=-18.4346 length=26.0000 global_step=38609.0000 loss=259.6971
+rainbow train:  70%|██████▉   | 1396/2000 [44:46<24:00,  2.38s/it][step=1397] episode=1397.0000 return=-51.7376 length=12.0000 global_step=38621.0000 loss=137.5487
+rainbow train:  70%|██████▉   | 1397/2000 [44:47<19:24,  1.93s/it][step=1398] episode=1398.0000 return=-10.2074 length=48.0000 global_step=38669.0000 loss=258.6796
+rainbow train:  70%|██████▉   | 1398/2000 [44:50<24:02,  2.40s/it][step=1399] episode=1399.0000 return=-88.4984 length=18.0000 global_step=38687.0000 loss=230.8419
+rainbow train:  70%|██████▉   | 1399/2000 [44:51<20:25,  2.04s/it][step=1400] episode=1400.0000 return=327.0063 length=134.0000 global_step=38821.0000 loss=366.3253
+rainbow train:  70%|███████   | 1400/2000 [45:01<43:16,  4.33s/it][step=1401] episode=1401.0000 return=67.8997 length=20.0000 global_step=38841.0000 loss=160.8415
+rainbow train:  70%|███████   | 1401/2000 [45:02<34:23,  3.45s/it][step=1402] episode=1402.0000 return=-95.7587 length=28.0000 global_step=38869.0000 loss=211.1721
+rainbow train:  70%|███████   | 1402/2000 [45:04<29:43,  2.98s/it][step=1403] episode=1403.0000 return=-35.9741 length=56.0000 global_step=38925.0000 loss=287.4319
+rainbow train:  70%|███████   | 1403/2000 [45:08<32:20,  3.25s/it][step=1404] episode=1404.0000 return=158.2606 length=78.0000 global_step=39003.0000 loss=203.2989
+rainbow train:  70%|███████   | 1404/2000 [45:14<39:05,  3.94s/it][step=1405] episode=1405.0000 return=-35.9193 length=13.0000 global_step=39016.0000 loss=216.7400
+rainbow train:  70%|███████   | 1405/2000 [45:15<30:05,  3.03s/it][step=1406] episode=1406.0000 return=-112.5052 length=13.0000 global_step=39029.0000 loss=321.6021
+rainbow train:  70%|███████   | 1406/2000 [45:16<23:56,  2.42s/it][step=1407] episode=1407.0000 return=-29.2993 length=18.0000 global_step=39047.0000 loss=328.2523
+rainbow train:  70%|███████   | 1407/2000 [45:17<20:27,  2.07s/it][step=1408] episode=1408.0000 return=133.5711 length=50.0000 global_step=39097.0000 loss=318.7365
+rainbow train:  70%|███████   | 1408/2000 [45:20<24:28,  2.48s/it][step=1409] episode=1409.0000 return=-115.9800 length=19.0000 global_step=39116.0000 loss=254.7639
+rainbow train:  70%|███████   | 1409/2000 [45:22<21:08,  2.15s/it][step=1410] episode=1410.0000 return=-96.6262 length=19.0000 global_step=39135.0000 loss=189.2832
+rainbow train:  70%|███████   | 1410/2000 [45:23<18:58,  1.93s/it][step=1411] episode=1411.0000 return=-87.9621 length=18.0000 global_step=39153.0000 loss=368.9251
+rainbow train:  71%|███████   | 1411/2000 [45:24<16:55,  1.72s/it][step=1412] episode=1412.0000 return=66.7061 length=50.0000 global_step=39203.0000 loss=404.2064
+rainbow train:  71%|███████   | 1412/2000 [45:28<22:04,  2.25s/it][step=1413] episode=1413.0000 return=-3.6728 length=41.0000 global_step=39244.0000 loss=180.9100
+rainbow train:  71%|███████   | 1413/2000 [45:31<23:57,  2.45s/it][step=1414] episode=1414.0000 return=98.1518 length=48.0000 global_step=39292.0000 loss=307.4774
+rainbow train:  71%|███████   | 1414/2000 [45:34<26:42,  2.73s/it][step=1415] episode=1415.0000 return=-73.2477 length=18.0000 global_step=39310.0000 loss=207.8127
+rainbow train:  71%|███████   | 1415/2000 [45:35<22:16,  2.28s/it][step=1416] episode=1416.0000 return=-10.1563 length=34.0000 global_step=39344.0000 loss=365.3394
+rainbow train:  71%|███████   | 1416/2000 [45:38<22:43,  2.34s/it][step=1417] episode=1417.0000 return=28.8136 length=20.0000 global_step=39364.0000 loss=162.5411
+rainbow train:  71%|███████   | 1417/2000 [45:39<19:56,  2.05s/it][step=1418] episode=1418.0000 return=-92.7969 length=12.0000 global_step=39376.0000 loss=213.9726
+rainbow train:  71%|███████   | 1418/2000 [45:40<16:23,  1.69s/it][step=1419] episode=1419.0000 return=-89.2131 length=27.0000 global_step=39403.0000 loss=255.3203
+rainbow train:  71%|███████   | 1419/2000 [45:42<17:07,  1.77s/it][step=1420] episode=1420.0000 return=-83.2966 length=12.0000 global_step=39415.0000 loss=291.2956
+rainbow train:  71%|███████   | 1420/2000 [45:43<14:31,  1.50s/it][step=1421] episode=1421.0000 return=-115.9840 length=43.0000 global_step=39458.0000 loss=309.1304
+rainbow train:  71%|███████   | 1421/2000 [45:46<18:55,  1.96s/it][step=1422] episode=1422.0000 return=15.6201 length=35.0000 global_step=39493.0000 loss=276.0126
+rainbow train:  71%|███████   | 1422/2000 [45:48<20:20,  2.11s/it][step=1423] episode=1423.0000 return=-91.7903 length=41.0000 global_step=39534.0000 loss=195.0112
+rainbow train:  71%|███████   | 1423/2000 [45:51<22:40,  2.36s/it][step=1424] episode=1424.0000 return=-59.5765 length=12.0000 global_step=39546.0000 loss=189.4628
+rainbow train:  71%|███████   | 1424/2000 [45:52<18:15,  1.90s/it][step=1425] episode=1425.0000 return=-19.6605 length=50.0000 global_step=39596.0000 loss=244.7416
+rainbow train:  71%|███████▏  | 1425/2000 [45:56<22:49,  2.38s/it][step=1426] episode=1426.0000 return=-102.3013 length=11.0000 global_step=39607.0000 loss=223.4563
+rainbow train:  71%|███████▏  | 1426/2000 [45:56<18:10,  1.90s/it][step=1427] episode=1427.0000 return=29.8092 length=41.0000 global_step=39648.0000 loss=95.9943
+rainbow train:  71%|███████▏  | 1427/2000 [45:59<21:00,  2.20s/it][step=1428] episode=1428.0000 return=76.3670 length=21.0000 global_step=39669.0000 loss=157.8577
+rainbow train:  71%|███████▏  | 1428/2000 [46:01<18:57,  1.99s/it][step=1429] episode=1429.0000 return=-10.7648 length=20.0000 global_step=39689.0000 loss=220.1143
+rainbow train:  71%|███████▏  | 1429/2000 [46:02<17:14,  1.81s/it][step=1430] episode=1430.0000 return=-96.1387 length=29.0000 global_step=39718.0000 loss=244.5594
+rainbow train:  72%|███████▏  | 1430/2000 [46:04<17:47,  1.87s/it][step=1431] episode=1431.0000 return=-0.0583 length=22.0000 global_step=39740.0000 loss=236.8896
+rainbow train:  72%|███████▏  | 1431/2000 [46:06<16:43,  1.76s/it][step=1432] episode=1432.0000 return=108.1855 length=20.0000 global_step=39760.0000 loss=250.1423
+rainbow train:  72%|███████▏  | 1432/2000 [46:07<15:39,  1.65s/it][step=1433] episode=1433.0000 return=-47.1682 length=21.0000 global_step=39781.0000 loss=371.0390
+rainbow train:  72%|███████▏  | 1433/2000 [46:09<15:16,  1.62s/it][step=1434] episode=1434.0000 return=-16.2303 length=34.0000 global_step=39815.0000 loss=272.7846
+rainbow train:  72%|███████▏  | 1434/2000 [46:11<17:40,  1.87s/it][step=1435] episode=1435.0000 return=70.0967 length=49.0000 global_step=39864.0000 loss=162.2762
+rainbow train:  72%|███████▏  | 1435/2000 [46:15<22:01,  2.34s/it][step=1436] episode=1436.0000 return=304.8324 length=96.0000 global_step=39960.0000 loss=266.4818
+rainbow train:  72%|███████▏  | 1436/2000 [46:21<34:12,  3.64s/it][step=1437] episode=1437.0000 return=-98.2523 length=20.0000 global_step=39980.0000 loss=378.8139
+rainbow train:  72%|███████▏  | 1437/2000 [46:23<27:52,  2.97s/it][step=1438] episode=1438.0000 return=-37.6479 length=12.0000 global_step=39992.0000 loss=213.4653
+rainbow train:  72%|███████▏  | 1438/2000 [46:24<21:54,  2.34s/it][step=1439] episode=1439.0000 return=-107.4330 length=29.0000 global_step=40021.0000 loss=283.9029
+rainbow train:  72%|███████▏  | 1439/2000 [46:26<21:10,  2.27s/it][step=1440] episode=1440.0000 return=48.3410 length=42.0000 global_step=40063.0000 loss=265.5327
+rainbow train:  72%|███████▏  | 1440/2000 [46:29<23:13,  2.49s/it][step=1441] episode=1441.0000 return=22.7131 length=49.0000 global_step=40112.0000 loss=230.9369
+rainbow train:  72%|███████▏  | 1441/2000 [46:32<25:48,  2.77s/it][step=1442] episode=1442.0000 return=-3.8363 length=20.0000 global_step=40132.0000 loss=240.1541
+rainbow train:  72%|███████▏  | 1442/2000 [46:33<22:01,  2.37s/it][step=1443] episode=1443.0000 return=15.5778 length=33.0000 global_step=40165.0000 loss=169.2881
+rainbow train:  72%|███████▏  | 1443/2000 [46:36<22:01,  2.37s/it][step=1444] episode=1444.0000 return=-67.1485 length=11.0000 global_step=40176.0000 loss=203.9654
+rainbow train:  72%|███████▏  | 1444/2000 [46:37<17:33,  1.89s/it][step=1445] episode=1445.0000 return=-74.4769 length=12.0000 global_step=40188.0000 loss=158.0177
+rainbow train:  72%|███████▏  | 1445/2000 [46:38<14:45,  1.60s/it][step=1446] episode=1446.0000 return=-16.1593 length=63.0000 global_step=40251.0000 loss=311.2216
+rainbow train:  72%|███████▏  | 1446/2000 [46:42<22:48,  2.47s/it][step=1447] episode=1447.0000 return=39.9479 length=22.0000 global_step=40273.0000 loss=260.0797
+rainbow train:  72%|███████▏  | 1447/2000 [46:44<20:05,  2.18s/it][step=1448] episode=1448.0000 return=-66.7438 length=11.0000 global_step=40284.0000 loss=292.1822
+rainbow train:  72%|███████▏  | 1448/2000 [46:44<16:17,  1.77s/it][step=1449] episode=1449.0000 return=-36.9720 length=12.0000 global_step=40296.0000 loss=337.2736
+rainbow train:  72%|███████▏  | 1449/2000 [46:45<13:53,  1.51s/it][step=1450] episode=1450.0000 return=-56.9017 length=33.0000 global_step=40329.0000 loss=214.7660
+rainbow train:  72%|███████▎  | 1450/2000 [46:48<16:21,  1.79s/it][step=1451] episode=1451.0000 return=-82.4057 length=21.0000 global_step=40350.0000 loss=339.5256
+rainbow train:  73%|███████▎  | 1451/2000 [46:49<15:49,  1.73s/it][step=1452] episode=1452.0000 return=12.1045 length=21.0000 global_step=40371.0000 loss=255.9410
+rainbow train:  73%|███████▎  | 1452/2000 [46:51<15:07,  1.66s/it][step=1453] episode=1453.0000 return=-60.6764 length=11.0000 global_step=40382.0000 loss=286.1788
+rainbow train:  73%|███████▎  | 1453/2000 [46:52<12:46,  1.40s/it][step=1454] episode=1454.0000 return=235.0424 length=38.0000 global_step=40420.0000 loss=239.4020
+rainbow train:  73%|███████▎  | 1454/2000 [46:54<16:16,  1.79s/it][step=1455] episode=1455.0000 return=-90.6356 length=27.0000 global_step=40447.0000 loss=224.0277
+rainbow train:  73%|███████▎  | 1455/2000 [46:56<16:33,  1.82s/it][step=1456] episode=1456.0000 return=-59.1612 length=12.0000 global_step=40459.0000 loss=111.6757
+rainbow train:  73%|███████▎  | 1456/2000 [46:57<14:00,  1.55s/it][step=1457] episode=1457.0000 return=143.9859 length=82.0000 global_step=40541.0000 loss=476.1244
+rainbow train:  73%|███████▎  | 1457/2000 [47:03<25:38,  2.83s/it][step=1458] episode=1458.0000 return=-69.3654 length=20.0000 global_step=40561.0000 loss=275.4844
+rainbow train:  73%|███████▎  | 1458/2000 [47:04<21:48,  2.41s/it][step=1459] episode=1459.0000 return=-106.9576 length=26.0000 global_step=40587.0000 loss=174.2565
+rainbow train:  73%|███████▎  | 1459/2000 [47:06<20:15,  2.25s/it][step=1460] episode=1460.0000 return=-70.9165 length=21.0000 global_step=40608.0000 loss=251.9134
+rainbow train:  73%|███████▎  | 1460/2000 [47:08<18:20,  2.04s/it][step=1461] episode=1461.0000 return=-45.9315 length=12.0000 global_step=40620.0000 loss=249.0394
+rainbow train:  73%|███████▎  | 1461/2000 [47:09<15:02,  1.67s/it][step=1462] episode=1462.0000 return=17.5497 length=20.0000 global_step=40640.0000 loss=289.5312
+rainbow train:  73%|███████▎  | 1462/2000 [47:10<14:20,  1.60s/it][step=1463] episode=1463.0000 return=-78.1656 length=20.0000 global_step=40660.0000 loss=261.5941
+rainbow train:  73%|███████▎  | 1463/2000 [47:11<13:56,  1.56s/it][step=1464] episode=1464.0000 return=-21.7882 length=21.0000 global_step=40681.0000 loss=192.9868
+rainbow train:  73%|███████▎  | 1464/2000 [47:13<13:37,  1.53s/it][step=1465] episode=1465.0000 return=-79.4012 length=57.0000 global_step=40738.0000 loss=253.5368
+rainbow train:  73%|███████▎  | 1465/2000 [47:17<20:06,  2.25s/it][step=1466] episode=1466.0000 return=8.4711 length=20.0000 global_step=40758.0000 loss=244.7614
+rainbow train:  73%|███████▎  | 1466/2000 [47:18<17:52,  2.01s/it][step=1467] episode=1467.0000 return=-36.7064 length=19.0000 global_step=40777.0000 loss=148.8672
+rainbow train:  73%|███████▎  | 1467/2000 [47:20<16:07,  1.82s/it][step=1468] episode=1468.0000 return=-7.1927 length=20.0000 global_step=40797.0000 loss=332.1086
+rainbow train:  73%|███████▎  | 1468/2000 [47:21<15:05,  1.70s/it][step=1469] episode=1469.0000 return=-96.0740 length=19.0000 global_step=40816.0000 loss=350.2489
+rainbow train:  73%|███████▎  | 1469/2000 [47:22<14:13,  1.61s/it][step=1470] episode=1470.0000 return=-115.9310 length=19.0000 global_step=40835.0000 loss=306.1147
+rainbow train:  74%|███████▎  | 1470/2000 [47:24<13:36,  1.54s/it][step=1471] episode=1471.0000 return=16.4204 length=12.0000 global_step=40847.0000 loss=237.3477
+rainbow train:  74%|███████▎  | 1471/2000 [47:25<11:48,  1.34s/it][step=1472] episode=1472.0000 return=-72.8027 length=20.0000 global_step=40867.0000 loss=163.1008
+rainbow train:  74%|███████▎  | 1472/2000 [47:26<11:56,  1.36s/it][step=1473] episode=1473.0000 return=-115.9978 length=11.0000 global_step=40878.0000 loss=276.2011
+rainbow train:  74%|███████▎  | 1473/2000 [47:27<10:28,  1.19s/it][step=1474] episode=1474.0000 return=-80.7554 length=33.0000 global_step=40911.0000 loss=200.7124
+rainbow train:  74%|███████▎  | 1474/2000 [47:29<13:30,  1.54s/it][step=1475] episode=1475.0000 return=-29.1406 length=43.0000 global_step=40954.0000 loss=251.2580
+rainbow train:  74%|███████▍  | 1475/2000 [47:32<17:28,  2.00s/it][step=1476] episode=1476.0000 return=-49.6160 length=19.0000 global_step=40973.0000 loss=282.6433
+rainbow train:  74%|███████▍  | 1476/2000 [47:34<15:43,  1.80s/it][step=1477] episode=1477.0000 return=49.7195 length=33.0000 global_step=41006.0000 loss=225.8041
+rainbow train:  74%|███████▍  | 1477/2000 [47:36<17:18,  1.99s/it][step=1478] episode=1478.0000 return=-115.9976 length=13.0000 global_step=41019.0000 loss=295.1732
+rainbow train:  74%|███████▍  | 1478/2000 [47:37<14:37,  1.68s/it][step=1479] episode=1479.0000 return=-42.0711 length=20.0000 global_step=41039.0000 loss=343.2328
+rainbow train:  74%|███████▍  | 1479/2000 [47:38<13:52,  1.60s/it][step=1480] episode=1480.0000 return=-82.4209 length=21.0000 global_step=41060.0000 loss=260.2054
+rainbow train:  74%|███████▍  | 1480/2000 [47:40<13:41,  1.58s/it][step=1481] episode=1481.0000 return=14.8954 length=42.0000 global_step=41102.0000 loss=359.7924
+rainbow train:  74%|███████▍  | 1481/2000 [47:43<17:28,  2.02s/it][step=1482] episode=1482.0000 return=1.9540 length=20.0000 global_step=41122.0000 loss=196.2651
+rainbow train:  74%|███████▍  | 1482/2000 [47:44<15:46,  1.83s/it][step=1483] episode=1483.0000 return=-58.8033 length=28.0000 global_step=41150.0000 loss=157.8030
+rainbow train:  74%|███████▍  | 1483/2000 [47:46<16:08,  1.87s/it][step=1484] episode=1484.0000 return=145.9575 length=41.0000 global_step=41191.0000 loss=134.1136
+rainbow train:  74%|███████▍  | 1484/2000 [47:49<18:54,  2.20s/it][step=1485] episode=1485.0000 return=-77.9818 length=12.0000 global_step=41203.0000 loss=222.2734
+rainbow train:  74%|███████▍  | 1485/2000 [47:50<15:25,  1.80s/it][step=1486] episode=1486.0000 return=29.6795 length=21.0000 global_step=41224.0000 loss=270.2012
+rainbow train:  74%|███████▍  | 1486/2000 [47:52<14:33,  1.70s/it][step=1487] episode=1487.0000 return=15.6761 length=13.0000 global_step=41237.0000 loss=149.6404
+rainbow train:  74%|███████▍  | 1487/2000 [47:53<12:38,  1.48s/it][step=1488] episode=1488.0000 return=-56.2179 length=28.0000 global_step=41265.0000 loss=159.5351
+rainbow train:  74%|███████▍  | 1488/2000 [47:55<14:03,  1.65s/it][step=1489] episode=1489.0000 return=-89.9701 length=21.0000 global_step=41286.0000 loss=235.3134
+rainbow train:  74%|███████▍  | 1489/2000 [47:56<13:28,  1.58s/it][step=1490] episode=1490.0000 return=8.4091 length=20.0000 global_step=41306.0000 loss=173.2232
+rainbow train:  74%|███████▍  | 1490/2000 [47:58<13:13,  1.55s/it][step=1491] episode=1491.0000 return=-42.0932 length=13.0000 global_step=41319.0000 loss=191.7121
+rainbow train:  75%|███████▍  | 1491/2000 [47:59<11:27,  1.35s/it][step=1492] episode=1492.0000 return=-34.0532 length=20.0000 global_step=41339.0000 loss=318.0207
+rainbow train:  75%|███████▍  | 1492/2000 [48:00<11:36,  1.37s/it][step=1493] episode=1493.0000 return=-100.1850 length=57.0000 global_step=41396.0000 loss=215.2752
+rainbow train:  75%|███████▍  | 1493/2000 [48:04<18:02,  2.14s/it][step=1494] episode=1494.0000 return=-60.0290 length=21.0000 global_step=41417.0000 loss=303.3820
+rainbow train:  75%|███████▍  | 1494/2000 [48:05<16:30,  1.96s/it][step=1495] episode=1495.0000 return=137.2333 length=19.0000 global_step=41436.0000 loss=368.9442
+rainbow train:  75%|███████▍  | 1495/2000 [48:07<14:55,  1.77s/it][step=1496] episode=1496.0000 return=24.0680 length=25.0000 global_step=41461.0000 loss=218.7304
+rainbow train:  75%|███████▍  | 1496/2000 [48:09<15:05,  1.80s/it][step=1497] episode=1497.0000 return=-90.9020 length=12.0000 global_step=41473.0000 loss=128.7321
+rainbow train:  75%|███████▍  | 1497/2000 [48:09<12:41,  1.51s/it][step=1498] episode=1498.0000 return=-84.8505 length=29.0000 global_step=41502.0000 loss=236.1915
+rainbow train:  75%|███████▍  | 1498/2000 [48:12<14:11,  1.70s/it][step=1499] episode=1499.0000 return=-64.9542 length=19.0000 global_step=41521.0000 loss=267.7526
+rainbow train:  75%|███████▍  | 1499/2000 [48:13<13:19,  1.60s/it][step=1500] episode=1500.0000 return=136.1572 length=37.0000 global_step=41558.0000 loss=60.4622
+rainbow train:  75%|███████▌  | 1500/2000 [48:16<15:53,  1.91s/it][step=1501] episode=1501.0000 return=-24.0847 length=22.0000 global_step=41580.0000 loss=193.1017
+rainbow train:  75%|███████▌  | 1501/2000 [48:17<15:08,  1.82s/it][step=1502] episode=1502.0000 return=95.0768 length=21.0000 global_step=41601.0000 loss=199.0159
+rainbow train:  75%|███████▌  | 1502/2000 [48:19<14:27,  1.74s/it][step=1503] episode=1503.0000 return=-67.3720 length=28.0000 global_step=41629.0000 loss=149.8310
+rainbow train:  75%|███████▌  | 1503/2000 [48:21<14:59,  1.81s/it][step=1504] episode=1504.0000 return=-89.8848 length=21.0000 global_step=41650.0000 loss=229.0201
+rainbow train:  75%|███████▌  | 1504/2000 [48:22<14:15,  1.72s/it][step=1505] episode=1505.0000 return=-26.6341 length=12.0000 global_step=41662.0000 loss=290.7300
+rainbow train:  75%|███████▌  | 1505/2000 [48:23<12:09,  1.47s/it][step=1506] episode=1506.0000 return=-45.5570 length=19.0000 global_step=41681.0000 loss=113.2139
+rainbow train:  75%|███████▌  | 1506/2000 [48:25<11:57,  1.45s/it][step=1507] episode=1507.0000 return=-39.6809 length=20.0000 global_step=41701.0000 loss=226.6015
+rainbow train:  75%|███████▌  | 1507/2000 [48:26<11:57,  1.46s/it][step=1508] episode=1508.0000 return=-6.9981 length=41.0000 global_step=41742.0000 loss=245.9913
+rainbow train:  75%|███████▌  | 1508/2000 [48:29<15:38,  1.91s/it][step=1509] episode=1509.0000 return=-27.2168 length=13.0000 global_step=41755.0000 loss=391.2602
+rainbow train:  75%|███████▌  | 1509/2000 [48:30<13:10,  1.61s/it][step=1510] episode=1510.0000 return=-85.8732 length=13.0000 global_step=41768.0000 loss=243.4335
+rainbow train:  76%|███████▌  | 1510/2000 [48:31<11:33,  1.42s/it][step=1511] episode=1511.0000 return=-37.0913 length=11.0000 global_step=41779.0000 loss=271.2547
+rainbow train:  76%|███████▌  | 1511/2000 [48:32<10:03,  1.23s/it][step=1512] episode=1512.0000 return=41.1466 length=33.0000 global_step=41812.0000 loss=230.4864
+rainbow train:  76%|███████▌  | 1512/2000 [48:34<12:41,  1.56s/it][step=1513] episode=1513.0000 return=-83.2098 length=13.0000 global_step=41825.0000 loss=220.9667
+rainbow train:  76%|███████▌  | 1513/2000 [48:35<11:12,  1.38s/it][step=1514] episode=1514.0000 return=-6.4562 length=19.0000 global_step=41844.0000 loss=281.9341
+rainbow train:  76%|███████▌  | 1514/2000 [48:36<11:02,  1.36s/it][step=1515] episode=1515.0000 return=130.6773 length=49.0000 global_step=41893.0000 loss=302.0605
+rainbow train:  76%|███████▌  | 1515/2000 [48:40<15:56,  1.97s/it][step=1516] episode=1516.0000 return=-115.9803 length=20.0000 global_step=41913.0000 loss=126.2865
+rainbow train:  76%|███████▌  | 1516/2000 [48:41<14:36,  1.81s/it][step=1517] episode=1517.0000 return=-41.9107 length=41.0000 global_step=41954.0000 loss=331.0196
+rainbow train:  76%|███████▌  | 1517/2000 [48:44<17:22,  2.16s/it][step=1518] episode=1518.0000 return=-83.7479 length=19.0000 global_step=41973.0000 loss=268.9706
+rainbow train:  76%|███████▌  | 1518/2000 [48:45<15:28,  1.93s/it][step=1519] episode=1519.0000 return=-101.5648 length=13.0000 global_step=41986.0000 loss=72.2834
+rainbow train:  76%|███████▌  | 1519/2000 [48:46<13:04,  1.63s/it][step=1520] episode=1520.0000 return=-115.9979 length=21.0000 global_step=42007.0000 loss=215.5238
+rainbow train:  76%|███████▌  | 1520/2000 [48:48<12:46,  1.60s/it][step=1521] episode=1521.0000 return=31.2750 length=13.0000 global_step=42020.0000 loss=320.7444
+rainbow train:  76%|███████▌  | 1521/2000 [48:49<11:10,  1.40s/it][step=1522] episode=1522.0000 return=-93.9049 length=13.0000 global_step=42033.0000 loss=257.9861
+rainbow train:  76%|███████▌  | 1522/2000 [48:50<09:55,  1.25s/it][step=1523] episode=1523.0000 return=-43.7308 length=28.0000 global_step=42061.0000 loss=213.6239
+rainbow train:  76%|███████▌  | 1523/2000 [48:52<11:35,  1.46s/it][step=1524] episode=1524.0000 return=-50.0490 length=19.0000 global_step=42080.0000 loss=227.3205
+rainbow train:  76%|███████▌  | 1524/2000 [48:53<11:21,  1.43s/it][step=1525] episode=1525.0000 return=104.1624 length=149.0000 global_step=42229.0000 loss=252.7062
+rainbow train:  76%|███████▋  | 1525/2000 [49:04<33:06,  4.18s/it][step=1526] episode=1526.0000 return=-60.3901 length=21.0000 global_step=42250.0000 loss=256.1545
+rainbow train:  76%|███████▋  | 1526/2000 [49:05<26:35,  3.37s/it][step=1527] episode=1527.0000 return=-17.6581 length=21.0000 global_step=42271.0000 loss=125.4458
+rainbow train:  76%|███████▋  | 1527/2000 [49:07<22:11,  2.82s/it][step=1528] episode=1528.0000 return=-18.0149 length=65.0000 global_step=42336.0000 loss=232.4833
+rainbow train:  76%|███████▋  | 1528/2000 [49:11<25:56,  3.30s/it][step=1529] episode=1529.0000 return=-87.8223 length=12.0000 global_step=42348.0000 loss=163.9128
+rainbow train:  76%|███████▋  | 1529/2000 [49:12<20:19,  2.59s/it][step=1530] episode=1530.0000 return=-10.5605 length=27.0000 global_step=42375.0000 loss=307.2347
+rainbow train:  76%|███████▋  | 1530/2000 [49:14<18:56,  2.42s/it][step=1531] episode=1531.0000 return=22.9874 length=30.0000 global_step=42405.0000 loss=142.9270
+rainbow train:  77%|███████▋  | 1531/2000 [49:16<18:05,  2.31s/it][step=1532] episode=1532.0000 return=1.8037 length=42.0000 global_step=42447.0000 loss=189.8268
+rainbow train:  77%|███████▋  | 1532/2000 [49:19<19:34,  2.51s/it][step=1533] episode=1533.0000 return=7.8357 length=41.0000 global_step=42488.0000 loss=210.3147
+rainbow train:  77%|███████▋  | 1533/2000 [49:22<20:14,  2.60s/it][step=1534] episode=1534.0000 return=-115.9950 length=13.0000 global_step=42501.0000 loss=218.4939
+rainbow train:  77%|███████▋  | 1534/2000 [49:23<16:18,  2.10s/it][step=1535] episode=1535.0000 return=-1.5026 length=26.0000 global_step=42527.0000 loss=277.1606
+rainbow train:  77%|███████▋  | 1535/2000 [49:25<15:40,  2.02s/it][step=1536] episode=1536.0000 return=363.3992 length=60.0000 global_step=42587.0000 loss=234.1814
+rainbow train:  77%|███████▋  | 1536/2000 [49:29<20:56,  2.71s/it][step=1537] episode=1537.0000 return=-69.7960 length=12.0000 global_step=42599.0000 loss=210.9465
+rainbow train:  77%|███████▋  | 1537/2000 [49:30<16:39,  2.16s/it][step=1538] episode=1538.0000 return=-104.0767 length=19.0000 global_step=42618.0000 loss=270.3572
+rainbow train:  77%|███████▋  | 1538/2000 [49:31<14:46,  1.92s/it][step=1539] episode=1539.0000 return=-63.1893 length=29.0000 global_step=42647.0000 loss=214.1588
+rainbow train:  77%|███████▋  | 1539/2000 [49:33<14:58,  1.95s/it][step=1540] episode=1540.0000 return=1.3299 length=35.0000 global_step=42682.0000 loss=134.4182
+rainbow train:  77%|███████▋  | 1540/2000 [49:36<16:05,  2.10s/it][step=1541] episode=1541.0000 return=-91.6774 length=19.0000 global_step=42701.0000 loss=374.0432
+rainbow train:  77%|███████▋  | 1541/2000 [49:37<14:23,  1.88s/it][step=1542] episode=1542.0000 return=-10.6049 length=56.0000 global_step=42757.0000 loss=169.4595
+rainbow train:  77%|███████▋  | 1542/2000 [49:41<19:14,  2.52s/it][step=1543] episode=1543.0000 return=-70.1233 length=19.0000 global_step=42776.0000 loss=268.6987
+rainbow train:  77%|███████▋  | 1543/2000 [49:42<16:44,  2.20s/it][step=1544] episode=1544.0000 return=31.9066 length=12.0000 global_step=42788.0000 loss=79.2554
+rainbow train:  77%|███████▋  | 1544/2000 [49:43<13:43,  1.81s/it][step=1545] episode=1545.0000 return=-28.7089 length=21.0000 global_step=42809.0000 loss=232.7208
+rainbow train:  77%|███████▋  | 1545/2000 [49:45<12:58,  1.71s/it][step=1546] episode=1546.0000 return=-4.3060 length=21.0000 global_step=42830.0000 loss=310.5458
+rainbow train:  77%|███████▋  | 1546/2000 [49:46<12:30,  1.65s/it][step=1547] episode=1547.0000 return=-90.1894 length=12.0000 global_step=42842.0000 loss=199.4734
+rainbow train:  77%|███████▋  | 1547/2000 [49:47<10:48,  1.43s/it][step=1548] episode=1548.0000 return=35.6589 length=20.0000 global_step=42862.0000 loss=182.6935
+rainbow train:  77%|███████▋  | 1548/2000 [49:49<10:50,  1.44s/it][step=1549] episode=1549.0000 return=-10.9834 length=29.0000 global_step=42891.0000 loss=161.8723
+rainbow train:  77%|███████▋  | 1549/2000 [49:51<12:06,  1.61s/it][step=1550] episode=1550.0000 return=-52.9893 length=57.0000 global_step=42948.0000 loss=238.4785
+rainbow train:  78%|███████▊  | 1550/2000 [49:55<17:29,  2.33s/it][step=1551] episode=1551.0000 return=-113.5420 length=26.0000 global_step=42974.0000 loss=159.5963
+rainbow train:  78%|███████▊  | 1551/2000 [49:57<16:10,  2.16s/it][step=1552] episode=1552.0000 return=-41.8417 length=13.0000 global_step=42987.0000 loss=399.5074
+rainbow train:  78%|███████▊  | 1552/2000 [49:57<13:25,  1.80s/it][step=1553] episode=1553.0000 return=-71.8170 length=21.0000 global_step=43008.0000 loss=298.9481
+rainbow train:  78%|███████▊  | 1553/2000 [49:59<12:38,  1.70s/it][step=1554] episode=1554.0000 return=6.5688 length=27.0000 global_step=43035.0000 loss=398.3914
+rainbow train:  78%|███████▊  | 1554/2000 [50:01<13:15,  1.78s/it][step=1555] episode=1555.0000 return=-19.5910 length=12.0000 global_step=43047.0000 loss=120.9277
+rainbow train:  78%|███████▊  | 1555/2000 [50:02<11:14,  1.52s/it][step=1556] episode=1556.0000 return=-70.1325 length=72.0000 global_step=43119.0000 loss=240.3079
+rainbow train:  78%|███████▊  | 1556/2000 [50:07<19:14,  2.60s/it][step=1557] episode=1557.0000 return=246.4853 length=53.0000 global_step=43172.0000 loss=182.4831
+rainbow train:  78%|███████▊  | 1557/2000 [50:11<21:46,  2.95s/it][step=1558] episode=1558.0000 return=-115.9950 length=12.0000 global_step=43184.0000 loss=425.8427
+rainbow train:  78%|███████▊  | 1558/2000 [50:12<17:11,  2.33s/it][step=1559] episode=1559.0000 return=-42.5003 length=13.0000 global_step=43197.0000 loss=297.4712
+rainbow train:  78%|███████▊  | 1559/2000 [50:13<14:03,  1.91s/it][step=1560] episode=1560.0000 return=9.7889 length=25.0000 global_step=43222.0000 loss=333.8605
+rainbow train:  78%|███████▊  | 1560/2000 [50:14<13:45,  1.88s/it][step=1561] episode=1561.0000 return=-61.6913 length=13.0000 global_step=43235.0000 loss=306.8331
+rainbow train:  78%|███████▊  | 1561/2000 [50:15<11:35,  1.58s/it][step=1562] episode=1562.0000 return=-15.9924 length=21.0000 global_step=43256.0000 loss=358.5032
+rainbow train:  78%|███████▊  | 1562/2000 [50:17<11:30,  1.58s/it][step=1563] episode=1563.0000 return=143.7450 length=117.0000 global_step=43373.0000 loss=196.0702
+rainbow train:  78%|███████▊  | 1563/2000 [50:25<26:07,  3.59s/it][step=1564] episode=1564.0000 return=29.6458 length=22.0000 global_step=43395.0000 loss=201.1393
+rainbow train:  78%|███████▊  | 1564/2000 [50:27<21:32,  2.96s/it][step=1565] episode=1565.0000 return=9.0759 length=26.0000 global_step=43421.0000 loss=428.2136
+rainbow train:  78%|███████▊  | 1565/2000 [50:28<19:06,  2.64s/it][step=1566] episode=1566.0000 return=-42.4086 length=26.0000 global_step=43447.0000 loss=287.0705
+rainbow train:  78%|███████▊  | 1566/2000 [50:30<17:22,  2.40s/it][step=1567] episode=1567.0000 return=-115.9895 length=12.0000 global_step=43459.0000 loss=226.1175
+rainbow train:  78%|███████▊  | 1567/2000 [50:31<14:02,  1.95s/it][step=1568] episode=1568.0000 return=-32.4113 length=19.0000 global_step=43478.0000 loss=193.6897
+rainbow train:  78%|███████▊  | 1568/2000 [50:33<12:44,  1.77s/it][step=1569] episode=1569.0000 return=-115.9384 length=19.0000 global_step=43497.0000 loss=205.3119
+rainbow train:  78%|███████▊  | 1569/2000 [50:34<11:58,  1.67s/it][step=1570] episode=1570.0000 return=60.8550 length=41.0000 global_step=43538.0000 loss=146.3282
+rainbow train:  78%|███████▊  | 1570/2000 [50:37<14:38,  2.04s/it][step=1571] episode=1571.0000 return=-31.9513 length=26.0000 global_step=43564.0000 loss=252.0022
+rainbow train:  79%|███████▊  | 1571/2000 [50:39<14:18,  2.00s/it][step=1572] episode=1572.0000 return=-71.7688 length=42.0000 global_step=43606.0000 loss=217.1491
+rainbow train:  79%|███████▊  | 1572/2000 [50:42<16:11,  2.27s/it][step=1573] episode=1573.0000 return=54.3170 length=21.0000 global_step=43627.0000 loss=95.8878
+rainbow train:  79%|███████▊  | 1573/2000 [50:43<14:33,  2.04s/it][step=1574] episode=1574.0000 return=-57.2911 length=22.0000 global_step=43649.0000 loss=188.6765
+rainbow train:  79%|███████▊  | 1574/2000 [50:45<13:22,  1.88s/it][step=1575] episode=1575.0000 return=12.3002 length=29.0000 global_step=43678.0000 loss=84.9168
+rainbow train:  79%|███████▉  | 1575/2000 [50:47<13:30,  1.91s/it][step=1576] episode=1576.0000 return=-74.7269 length=34.0000 global_step=43712.0000 loss=197.5518
+rainbow train:  79%|███████▉  | 1576/2000 [50:49<14:41,  2.08s/it][step=1577] episode=1577.0000 return=215.9558 length=65.0000 global_step=43777.0000 loss=187.1910
+rainbow train:  79%|███████▉  | 1577/2000 [50:54<20:01,  2.84s/it][step=1578] episode=1578.0000 return=123.3195 length=48.0000 global_step=43825.0000 loss=134.5030
+rainbow train:  79%|███████▉  | 1578/2000 [50:57<21:09,  3.01s/it][step=1579] episode=1579.0000 return=65.1147 length=18.0000 global_step=43843.0000 loss=273.1056
+rainbow train:  79%|███████▉  | 1579/2000 [50:59<17:34,  2.50s/it][step=1580] episode=1580.0000 return=-13.5995 length=27.0000 global_step=43870.0000 loss=212.1850
+rainbow train:  79%|███████▉  | 1580/2000 [51:00<16:16,  2.32s/it][step=1581] episode=1581.0000 return=-106.1618 length=29.0000 global_step=43899.0000 loss=122.1125
+rainbow train:  79%|███████▉  | 1581/2000 [51:02<15:37,  2.24s/it][step=1582] episode=1582.0000 return=-93.4532 length=11.0000 global_step=43910.0000 loss=302.6261
+rainbow train:  79%|███████▉  | 1582/2000 [51:03<12:43,  1.83s/it][step=1583] episode=1583.0000 return=-36.4658 length=21.0000 global_step=43931.0000 loss=185.4140
+rainbow train:  79%|███████▉  | 1583/2000 [51:05<11:52,  1.71s/it][step=1584] episode=1584.0000 return=-19.9753 length=21.0000 global_step=43952.0000 loss=260.8395
+rainbow train:  79%|███████▉  | 1584/2000 [51:06<11:21,  1.64s/it][step=1585] episode=1585.0000 return=19.1337 length=49.0000 global_step=44001.0000 loss=123.8857
+rainbow train:  79%|███████▉  | 1585/2000 [51:10<15:15,  2.21s/it][step=1586] episode=1586.0000 return=-35.5437 length=27.0000 global_step=44028.0000 loss=259.8942
+rainbow train:  79%|███████▉  | 1586/2000 [51:12<14:41,  2.13s/it][step=1587] episode=1587.0000 return=-46.8477 length=19.0000 global_step=44047.0000 loss=258.5625
+rainbow train:  79%|███████▉  | 1587/2000 [51:13<13:04,  1.90s/it][step=1588] episode=1588.0000 return=-74.8399 length=20.0000 global_step=44067.0000 loss=193.1140
+rainbow train:  79%|███████▉  | 1588/2000 [51:15<12:02,  1.75s/it][step=1589] episode=1589.0000 return=-10.9218 length=12.0000 global_step=44079.0000 loss=238.3592
+rainbow train:  79%|███████▉  | 1589/2000 [51:15<10:08,  1.48s/it][step=1590] episode=1590.0000 return=-106.3684 length=12.0000 global_step=44091.0000 loss=183.8631
+rainbow train:  80%|███████▉  | 1590/2000 [51:16<08:58,  1.31s/it][step=1591] episode=1591.0000 return=-48.1014 length=21.0000 global_step=44112.0000 loss=302.8221
+rainbow train:  80%|███████▉  | 1591/2000 [51:18<09:20,  1.37s/it][step=1592] episode=1592.0000 return=2.0552 length=22.0000 global_step=44134.0000 loss=277.9700
+rainbow train:  80%|███████▉  | 1592/2000 [51:19<09:41,  1.43s/it][step=1593] episode=1593.0000 return=43.8335 length=19.0000 global_step=44153.0000 loss=136.1229
+rainbow train:  80%|███████▉  | 1593/2000 [51:21<09:40,  1.43s/it][step=1594] episode=1594.0000 return=204.6149 length=49.0000 global_step=44202.0000 loss=186.0857
+rainbow train:  80%|███████▉  | 1594/2000 [51:24<13:43,  2.03s/it][step=1595] episode=1595.0000 return=-16.2578 length=29.0000 global_step=44231.0000 loss=180.1498
+rainbow train:  80%|███████▉  | 1595/2000 [51:26<13:42,  2.03s/it][step=1596] episode=1596.0000 return=-49.8925 length=13.0000 global_step=44244.0000 loss=292.1548
+rainbow train:  80%|███████▉  | 1596/2000 [51:27<11:31,  1.71s/it][step=1597] episode=1597.0000 return=12.0172 length=20.0000 global_step=44264.0000 loss=83.0853
+rainbow train:  80%|███████▉  | 1597/2000 [51:29<11:02,  1.64s/it][step=1598] episode=1598.0000 return=12.3161 length=33.0000 global_step=44297.0000 loss=183.7587
+rainbow train:  80%|███████▉  | 1598/2000 [51:31<12:30,  1.87s/it][step=1599] episode=1599.0000 return=-16.1410 length=13.0000 global_step=44310.0000 loss=88.8904
+rainbow train:  80%|███████▉  | 1599/2000 [51:32<10:38,  1.59s/it][step=1600] episode=1600.0000 return=-28.0107 length=12.0000 global_step=44322.0000 loss=256.8018
+rainbow train:  80%|████████  | 1600/2000 [51:33<09:25,  1.41s/it][step=1601] episode=1601.0000 return=-77.3237 length=35.0000 global_step=44357.0000 loss=307.4205
+rainbow train:  80%|████████  | 1601/2000 [51:35<11:22,  1.71s/it][step=1602] episode=1602.0000 return=45.5238 length=12.0000 global_step=44369.0000 loss=362.2393
+rainbow train:  80%|████████  | 1602/2000 [51:36<09:42,  1.46s/it][step=1603] episode=1603.0000 return=107.9366 length=49.0000 global_step=44418.0000 loss=198.6107
+rainbow train:  80%|████████  | 1603/2000 [51:40<13:45,  2.08s/it][step=1604] episode=1604.0000 return=3.4046 length=34.0000 global_step=44452.0000 loss=192.9728
+rainbow train:  80%|████████  | 1604/2000 [51:42<14:23,  2.18s/it][step=1605] episode=1605.0000 return=-41.9883 length=20.0000 global_step=44472.0000 loss=208.6511
+rainbow train:  80%|████████  | 1605/2000 [51:44<12:47,  1.94s/it][step=1606] episode=1606.0000 return=9.6502 length=42.0000 global_step=44514.0000 loss=155.3678
+rainbow train:  80%|████████  | 1606/2000 [51:47<14:45,  2.25s/it][step=1607] episode=1607.0000 return=-80.3566 length=13.0000 global_step=44527.0000 loss=257.4308
+rainbow train:  80%|████████  | 1607/2000 [51:48<12:07,  1.85s/it][step=1608] episode=1608.0000 return=-28.9082 length=12.0000 global_step=44539.0000 loss=219.6932
+rainbow train:  80%|████████  | 1608/2000 [51:48<10:13,  1.57s/it][step=1609] episode=1609.0000 return=-11.0823 length=13.0000 global_step=44552.0000 loss=194.5368
+rainbow train:  80%|████████  | 1609/2000 [51:49<09:00,  1.38s/it][step=1610] episode=1610.0000 return=-93.2308 length=11.0000 global_step=44563.0000 loss=199.2259
+rainbow train:  80%|████████  | 1610/2000 [51:50<07:57,  1.22s/it][step=1611] episode=1611.0000 return=65.0071 length=20.0000 global_step=44583.0000 loss=186.2537
+rainbow train:  81%|████████  | 1611/2000 [51:52<08:18,  1.28s/it][step=1612] episode=1612.0000 return=-8.9663 length=22.0000 global_step=44605.0000 loss=154.6398
+rainbow train:  81%|████████  | 1612/2000 [51:53<08:50,  1.37s/it][step=1613] episode=1613.0000 return=-36.7731 length=13.0000 global_step=44618.0000 loss=384.3339
+rainbow train:  81%|████████  | 1613/2000 [51:54<07:54,  1.23s/it][step=1614] episode=1614.0000 return=60.4524 length=20.0000 global_step=44638.0000 loss=371.6384
+rainbow train:  81%|████████  | 1614/2000 [51:56<08:20,  1.30s/it][step=1615] episode=1615.0000 return=116.4589 length=19.0000 global_step=44657.0000 loss=245.5832
+rainbow train:  81%|████████  | 1615/2000 [51:57<08:25,  1.31s/it][step=1616] episode=1616.0000 return=-66.0610 length=13.0000 global_step=44670.0000 loss=235.4689
+rainbow train:  81%|████████  | 1616/2000 [51:58<07:34,  1.18s/it][step=1617] episode=1617.0000 return=-40.0093 length=34.0000 global_step=44704.0000 loss=261.2444
+rainbow train:  81%|████████  | 1617/2000 [52:00<09:53,  1.55s/it][step=1618] episode=1618.0000 return=-95.0237 length=10.0000 global_step=44714.0000 loss=231.1661
+rainbow train:  81%|████████  | 1618/2000 [52:01<08:21,  1.31s/it][step=1619] episode=1619.0000 return=-40.0122 length=12.0000 global_step=44726.0000 loss=263.8698
+rainbow train:  81%|████████  | 1619/2000 [52:02<07:30,  1.18s/it][step=1620] episode=1620.0000 return=-63.4191 length=55.0000 global_step=44781.0000 loss=378.3024
+rainbow train:  81%|████████  | 1620/2000 [52:06<12:34,  1.99s/it][step=1621] episode=1621.0000 return=124.1008 length=20.0000 global_step=44801.0000 loss=269.9305
+rainbow train:  81%|████████  | 1621/2000 [52:07<11:27,  1.81s/it][step=1622] episode=1622.0000 return=-67.9610 length=20.0000 global_step=44821.0000 loss=329.1093
+rainbow train:  81%|████████  | 1622/2000 [52:09<10:38,  1.69s/it][step=1623] episode=1623.0000 return=79.9916 length=13.0000 global_step=44834.0000 loss=178.2734
+rainbow train:  81%|████████  | 1623/2000 [52:09<09:07,  1.45s/it][step=1624] episode=1624.0000 return=-58.7062 length=20.0000 global_step=44854.0000 loss=219.3026
+rainbow train:  81%|████████  | 1624/2000 [52:11<08:58,  1.43s/it][step=1625] episode=1625.0000 return=-45.6231 length=13.0000 global_step=44867.0000 loss=223.4478
+rainbow train:  81%|████████▏ | 1625/2000 [52:12<08:05,  1.29s/it][step=1626] episode=1626.0000 return=-93.9966 length=21.0000 global_step=44888.0000 loss=162.6898
+rainbow train:  81%|████████▏ | 1626/2000 [52:13<08:32,  1.37s/it][step=1627] episode=1627.0000 return=24.0800 length=20.0000 global_step=44908.0000 loss=285.5814
+rainbow train:  81%|████████▏ | 1627/2000 [52:15<08:38,  1.39s/it][step=1628] episode=1628.0000 return=-60.6681 length=21.0000 global_step=44929.0000 loss=184.7166
+rainbow train:  81%|████████▏ | 1628/2000 [52:16<08:44,  1.41s/it][step=1629] episode=1629.0000 return=114.0435 length=49.0000 global_step=44978.0000 loss=148.6238
+rainbow train:  81%|████████▏ | 1629/2000 [52:20<12:29,  2.02s/it][step=1630] episode=1630.0000 return=-108.8484 length=12.0000 global_step=44990.0000 loss=135.2862
+rainbow train:  82%|████████▏ | 1630/2000 [52:20<10:17,  1.67s/it][step=1631] episode=1631.0000 return=-14.7421 length=21.0000 global_step=45011.0000 loss=418.4465
+rainbow train:  82%|████████▏ | 1631/2000 [52:22<09:56,  1.62s/it][step=1632] episode=1632.0000 return=24.7827 length=21.0000 global_step=45032.0000 loss=122.6441
+rainbow train:  82%|████████▏ | 1632/2000 [52:23<09:41,  1.58s/it][step=1633] episode=1633.0000 return=-2.6525 length=33.0000 global_step=45065.0000 loss=180.1074
+rainbow train:  82%|████████▏ | 1633/2000 [52:26<10:54,  1.78s/it][step=1634] episode=1634.0000 return=12.3717 length=27.0000 global_step=45092.0000 loss=125.2972
+rainbow train:  82%|████████▏ | 1634/2000 [52:28<11:18,  1.85s/it][step=1635] episode=1635.0000 return=-42.3531 length=12.0000 global_step=45104.0000 loss=219.2328
+rainbow train:  82%|████████▏ | 1635/2000 [52:29<09:30,  1.56s/it][step=1636] episode=1636.0000 return=-95.3957 length=12.0000 global_step=45116.0000 loss=242.2469
+rainbow train:  82%|████████▏ | 1636/2000 [52:30<08:13,  1.36s/it][step=1637] episode=1637.0000 return=-32.7237 length=13.0000 global_step=45129.0000 loss=153.4637
+rainbow train:  82%|████████▏ | 1637/2000 [52:30<07:26,  1.23s/it][step=1638] episode=1638.0000 return=-83.1550 length=20.0000 global_step=45149.0000 loss=287.2392
+rainbow train:  82%|████████▏ | 1638/2000 [52:32<07:43,  1.28s/it][step=1639] episode=1639.0000 return=-69.3777 length=18.0000 global_step=45167.0000 loss=212.0665
+rainbow train:  82%|████████▏ | 1639/2000 [52:33<07:41,  1.28s/it][step=1640] episode=1640.0000 return=-43.3917 length=34.0000 global_step=45201.0000 loss=215.8368
+rainbow train:  82%|████████▏ | 1640/2000 [52:36<09:41,  1.61s/it][step=1641] episode=1641.0000 return=-86.1836 length=20.0000 global_step=45221.0000 loss=324.6565
+rainbow train:  82%|████████▏ | 1641/2000 [52:37<09:18,  1.56s/it][step=1642] episode=1642.0000 return=-57.8398 length=12.0000 global_step=45233.0000 loss=182.0914
+rainbow train:  82%|████████▏ | 1642/2000 [52:38<07:59,  1.34s/it][step=1643] episode=1643.0000 return=-8.4336 length=20.0000 global_step=45253.0000 loss=260.3532
+rainbow train:  82%|████████▏ | 1643/2000 [52:39<08:08,  1.37s/it][step=1644] episode=1644.0000 return=-115.9760 length=20.0000 global_step=45273.0000 loss=324.5129
+rainbow train:  82%|████████▏ | 1644/2000 [52:41<08:11,  1.38s/it][step=1645] episode=1645.0000 return=-4.7647 length=28.0000 global_step=45301.0000 loss=317.1476
+rainbow train:  82%|████████▏ | 1645/2000 [52:43<09:09,  1.55s/it][step=1646] episode=1646.0000 return=-17.5171 length=30.0000 global_step=45331.0000 loss=179.1709
+rainbow train:  82%|████████▏ | 1646/2000 [52:45<10:07,  1.72s/it][step=1647] episode=1647.0000 return=-96.2215 length=28.0000 global_step=45359.0000 loss=175.4575
+rainbow train:  82%|████████▏ | 1647/2000 [52:47<10:26,  1.78s/it][step=1648] episode=1648.0000 return=-101.2715 length=27.0000 global_step=45386.0000 loss=302.3511
+rainbow train:  82%|████████▏ | 1648/2000 [52:48<10:38,  1.81s/it][step=1649] episode=1649.0000 return=-33.2481 length=19.0000 global_step=45405.0000 loss=350.6225
+rainbow train:  82%|████████▏ | 1649/2000 [52:50<09:52,  1.69s/it][step=1650] episode=1650.0000 return=35.9823 length=20.0000 global_step=45425.0000 loss=239.3078
+rainbow train:  82%|████████▎ | 1650/2000 [52:51<09:22,  1.61s/it][step=1651] episode=1651.0000 return=72.4364 length=26.0000 global_step=45451.0000 loss=196.1866
+rainbow train:  83%|████████▎ | 1651/2000 [52:53<09:41,  1.67s/it][step=1652] episode=1652.0000 return=-44.9090 length=13.0000 global_step=45464.0000 loss=173.8940
+rainbow train:  83%|████████▎ | 1652/2000 [52:54<08:23,  1.45s/it][step=1653] episode=1653.0000 return=-70.7258 length=20.0000 global_step=45484.0000 loss=188.5650
+rainbow train:  83%|████████▎ | 1653/2000 [52:55<08:20,  1.44s/it][step=1654] episode=1654.0000 return=-99.5967 length=11.0000 global_step=45495.0000 loss=238.7329
+rainbow train:  83%|████████▎ | 1654/2000 [52:56<07:13,  1.25s/it][step=1655] episode=1655.0000 return=-115.9757 length=19.0000 global_step=45514.0000 loss=254.9119
+rainbow train:  83%|████████▎ | 1655/2000 [52:58<07:21,  1.28s/it][step=1656] episode=1656.0000 return=-70.7591 length=12.0000 global_step=45526.0000 loss=204.3068
+rainbow train:  83%|████████▎ | 1656/2000 [52:58<06:38,  1.16s/it][step=1657] episode=1657.0000 return=-37.6464 length=35.0000 global_step=45561.0000 loss=304.2987
+rainbow train:  83%|████████▎ | 1657/2000 [53:01<08:56,  1.56s/it][step=1658] episode=1658.0000 return=-88.1031 length=28.0000 global_step=45589.0000 loss=205.1008
+rainbow train:  83%|████████▎ | 1658/2000 [53:03<09:37,  1.69s/it][step=1659] episode=1659.0000 return=-111.1485 length=29.0000 global_step=45618.0000 loss=268.7468
+rainbow train:  83%|████████▎ | 1659/2000 [53:05<10:14,  1.80s/it][step=1660] episode=1660.0000 return=-91.5556 length=20.0000 global_step=45638.0000 loss=232.7425
+rainbow train:  83%|████████▎ | 1660/2000 [53:06<09:30,  1.68s/it][step=1661] episode=1661.0000 return=29.2806 length=19.0000 global_step=45657.0000 loss=179.4412
+rainbow train:  83%|████████▎ | 1661/2000 [53:08<08:56,  1.58s/it][step=1662] episode=1662.0000 return=19.6603 length=20.0000 global_step=45677.0000 loss=168.2631
+rainbow train:  83%|████████▎ | 1662/2000 [53:09<08:50,  1.57s/it][step=1663] episode=1663.0000 return=2.8354 length=13.0000 global_step=45690.0000 loss=273.1075
+rainbow train:  83%|████████▎ | 1663/2000 [53:10<07:43,  1.38s/it][step=1664] episode=1664.0000 return=41.3439 length=29.0000 global_step=45719.0000 loss=317.2543
+rainbow train:  83%|████████▎ | 1664/2000 [53:12<08:52,  1.59s/it][step=1665] episode=1665.0000 return=8.1519 length=42.0000 global_step=45761.0000 loss=241.3624
+rainbow train:  83%|████████▎ | 1665/2000 [53:15<11:09,  2.00s/it][step=1666] episode=1666.0000 return=-89.2425 length=12.0000 global_step=45773.0000 loss=121.5408
+rainbow train:  83%|████████▎ | 1666/2000 [53:16<09:12,  1.65s/it][step=1667] episode=1667.0000 return=-102.7334 length=22.0000 global_step=45795.0000 loss=199.3547
+rainbow train:  83%|████████▎ | 1667/2000 [53:18<09:03,  1.63s/it][step=1668] episode=1668.0000 return=17.8733 length=12.0000 global_step=45807.0000 loss=100.4211
+rainbow train:  83%|████████▎ | 1668/2000 [53:19<07:45,  1.40s/it][step=1669] episode=1669.0000 return=370.5298 length=68.0000 global_step=45875.0000 loss=220.1492
+rainbow train:  83%|████████▎ | 1669/2000 [53:23<13:25,  2.43s/it][step=1670] episode=1670.0000 return=-6.8861 length=19.0000 global_step=45894.0000 loss=117.9622
+rainbow train:  84%|████████▎ | 1670/2000 [53:25<11:39,  2.12s/it][step=1671] episode=1671.0000 return=-33.3925 length=45.0000 global_step=45939.0000 loss=228.4166
+rainbow train:  84%|████████▎ | 1671/2000 [53:28<13:22,  2.44s/it][step=1672] episode=1672.0000 return=-60.8730 length=21.0000 global_step=45960.0000 loss=358.9327
+rainbow train:  84%|████████▎ | 1672/2000 [53:29<11:44,  2.15s/it][step=1673] episode=1673.0000 return=-17.3788 length=34.0000 global_step=45994.0000 loss=204.2920
+rainbow train:  84%|████████▎ | 1673/2000 [53:32<12:04,  2.22s/it][step=1674] episode=1674.0000 return=-57.9252 length=12.0000 global_step=46006.0000 loss=193.0969
+rainbow train:  84%|████████▎ | 1674/2000 [53:33<09:56,  1.83s/it][step=1675] episode=1675.0000 return=-13.1228 length=49.0000 global_step=46055.0000 loss=291.9467
+rainbow train:  84%|████████▍ | 1675/2000 [53:36<12:30,  2.31s/it][step=1676] episode=1676.0000 return=31.7588 length=87.0000 global_step=46142.0000 loss=353.3025
+rainbow train:  84%|████████▍ | 1676/2000 [53:42<18:39,  3.46s/it][step=1677] episode=1677.0000 return=-91.4542 length=41.0000 global_step=46183.0000 loss=345.8051
+rainbow train:  84%|████████▍ | 1677/2000 [53:45<17:39,  3.28s/it][step=1678] episode=1678.0000 return=-82.9137 length=19.0000 global_step=46202.0000 loss=325.3617
+rainbow train:  84%|████████▍ | 1678/2000 [53:47<14:40,  2.73s/it][step=1679] episode=1679.0000 return=9.3739 length=57.0000 global_step=46259.0000 loss=249.7907
+rainbow train:  84%|████████▍ | 1679/2000 [53:51<16:44,  3.13s/it][step=1680] episode=1680.0000 return=-21.2337 length=21.0000 global_step=46280.0000 loss=259.4687
+rainbow train:  84%|████████▍ | 1680/2000 [53:52<14:01,  2.63s/it][step=1681] episode=1681.0000 return=7.3605 length=21.0000 global_step=46301.0000 loss=274.3343
+rainbow train:  84%|████████▍ | 1681/2000 [53:54<12:12,  2.30s/it][step=1682] episode=1682.0000 return=0.2563 length=19.0000 global_step=46320.0000 loss=312.9291
+rainbow train:  84%|████████▍ | 1682/2000 [53:55<10:36,  2.00s/it][step=1683] episode=1683.0000 return=-103.6992 length=29.0000 global_step=46349.0000 loss=174.7137
+rainbow train:  84%|████████▍ | 1683/2000 [53:57<10:32,  2.00s/it][step=1684] episode=1684.0000 return=-22.7539 length=27.0000 global_step=46376.0000 loss=321.4315
+rainbow train:  84%|████████▍ | 1684/2000 [53:59<10:26,  1.98s/it][step=1685] episode=1685.0000 return=-115.9333 length=13.0000 global_step=46389.0000 loss=134.1758
+rainbow train:  84%|████████▍ | 1685/2000 [54:00<08:45,  1.67s/it][step=1686] episode=1686.0000 return=-115.4411 length=12.0000 global_step=46401.0000 loss=219.9516
+rainbow train:  84%|████████▍ | 1686/2000 [54:01<07:30,  1.43s/it][step=1687] episode=1687.0000 return=-76.8861 length=11.0000 global_step=46412.0000 loss=244.1758
+rainbow train:  84%|████████▍ | 1687/2000 [54:02<06:29,  1.24s/it][step=1688] episode=1688.0000 return=-0.8350 length=19.0000 global_step=46431.0000 loss=116.2816
+rainbow train:  84%|████████▍ | 1688/2000 [54:03<06:39,  1.28s/it][step=1689] episode=1689.0000 return=65.0861 length=33.0000 global_step=46464.0000 loss=274.0944
+rainbow train:  84%|████████▍ | 1689/2000 [54:05<08:11,  1.58s/it][step=1690] episode=1690.0000 return=-81.0547 length=11.0000 global_step=46475.0000 loss=265.9415
+rainbow train:  84%|████████▍ | 1690/2000 [54:06<06:57,  1.35s/it][step=1691] episode=1691.0000 return=80.3589 length=20.0000 global_step=46495.0000 loss=151.5862
+rainbow train:  85%|████████▍ | 1691/2000 [54:07<07:02,  1.37s/it][step=1692] episode=1692.0000 return=-107.7960 length=35.0000 global_step=46530.0000 loss=250.6361
+rainbow train:  85%|████████▍ | 1692/2000 [54:10<08:44,  1.70s/it][step=1693] episode=1693.0000 return=-97.0007 length=41.0000 global_step=46571.0000 loss=252.1270
+rainbow train:  85%|████████▍ | 1693/2000 [54:13<10:39,  2.08s/it][step=1694] episode=1694.0000 return=128.6841 length=42.0000 global_step=46613.0000 loss=214.7117
+rainbow train:  85%|████████▍ | 1694/2000 [54:16<11:58,  2.35s/it][step=1695] episode=1695.0000 return=-99.5417 length=21.0000 global_step=46634.0000 loss=263.6259
+rainbow train:  85%|████████▍ | 1695/2000 [54:17<10:36,  2.09s/it][step=1696] episode=1696.0000 return=-78.5018 length=19.0000 global_step=46653.0000 loss=306.9477
+rainbow train:  85%|████████▍ | 1696/2000 [54:19<09:31,  1.88s/it][step=1697] episode=1697.0000 return=163.0316 length=59.0000 global_step=46712.0000 loss=204.8429
+rainbow train:  85%|████████▍ | 1697/2000 [54:23<13:04,  2.59s/it][step=1698] episode=1698.0000 return=6.7375 length=33.0000 global_step=46745.0000 loss=329.7281
+rainbow train:  85%|████████▍ | 1698/2000 [54:25<12:40,  2.52s/it][step=1699] episode=1699.0000 return=79.7740 length=41.0000 global_step=46786.0000 loss=184.7506
+rainbow train:  85%|████████▍ | 1699/2000 [54:28<13:07,  2.62s/it][step=1700] episode=1700.0000 return=-10.4890 length=18.0000 global_step=46804.0000 loss=200.2654
+rainbow train:  85%|████████▌ | 1700/2000 [54:30<11:16,  2.26s/it][step=1701] episode=1701.0000 return=8.5231 length=40.0000 global_step=46844.0000 loss=113.7863
+rainbow train:  85%|████████▌ | 1701/2000 [54:32<12:03,  2.42s/it][step=1702] episode=1702.0000 return=-64.5009 length=11.0000 global_step=46855.0000 loss=143.3899
+rainbow train:  85%|████████▌ | 1702/2000 [54:33<09:37,  1.94s/it][step=1703] episode=1703.0000 return=237.0820 length=21.0000 global_step=46876.0000 loss=100.9847
+rainbow train:  85%|████████▌ | 1703/2000 [54:35<08:56,  1.81s/it][step=1704] episode=1704.0000 return=36.4914 length=42.0000 global_step=46918.0000 loss=247.8580
+rainbow train:  85%|████████▌ | 1704/2000 [54:38<10:38,  2.16s/it][step=1705] episode=1705.0000 return=50.5550 length=20.0000 global_step=46938.0000 loss=158.7059
+rainbow train:  85%|████████▌ | 1705/2000 [54:39<09:30,  1.93s/it][step=1706] episode=1706.0000 return=-96.2429 length=13.0000 global_step=46951.0000 loss=240.3224
+rainbow train:  85%|████████▌ | 1706/2000 [54:40<07:57,  1.62s/it][step=1707] episode=1707.0000 return=-77.1159 length=19.0000 global_step=46970.0000 loss=286.8551
+rainbow train:  85%|████████▌ | 1707/2000 [54:41<07:31,  1.54s/it][step=1708] episode=1708.0000 return=8.9301 length=27.0000 global_step=46997.0000 loss=142.8355
+rainbow train:  85%|████████▌ | 1708/2000 [54:43<08:10,  1.68s/it][step=1709] episode=1709.0000 return=-82.7832 length=13.0000 global_step=47010.0000 loss=444.2096
+rainbow train:  85%|████████▌ | 1709/2000 [54:44<07:05,  1.46s/it][step=1710] episode=1710.0000 return=44.4757 length=41.0000 global_step=47051.0000 loss=312.7028
+rainbow train:  86%|████████▌ | 1710/2000 [54:47<09:06,  1.88s/it][step=1711] episode=1711.0000 return=69.5625 length=20.0000 global_step=47071.0000 loss=251.9761
+rainbow train:  86%|████████▌ | 1711/2000 [54:49<08:27,  1.76s/it][step=1712] episode=1712.0000 return=-79.3637 length=26.0000 global_step=47097.0000 loss=331.8875
+rainbow train:  86%|████████▌ | 1712/2000 [54:50<08:34,  1.79s/it][step=1713] episode=1713.0000 return=-93.8450 length=13.0000 global_step=47110.0000 loss=303.4575
+rainbow train:  86%|████████▌ | 1713/2000 [54:51<07:15,  1.52s/it][step=1714] episode=1714.0000 return=34.0682 length=21.0000 global_step=47131.0000 loss=162.1299
+rainbow train:  86%|████████▌ | 1714/2000 [54:53<07:06,  1.49s/it][step=1715] episode=1715.0000 return=-8.4572 length=13.0000 global_step=47144.0000 loss=230.5324
+rainbow train:  86%|████████▌ | 1715/2000 [54:54<06:14,  1.31s/it][step=1716] episode=1716.0000 return=-5.6340 length=21.0000 global_step=47165.0000 loss=224.1845
+rainbow train:  86%|████████▌ | 1716/2000 [54:55<06:23,  1.35s/it][step=1717] episode=1717.0000 return=-34.7003 length=20.0000 global_step=47185.0000 loss=210.3327
+rainbow train:  86%|████████▌ | 1717/2000 [54:57<06:25,  1.36s/it][step=1718] episode=1718.0000 return=-32.8666 length=20.0000 global_step=47205.0000 loss=354.5547
+rainbow train:  86%|████████▌ | 1718/2000 [54:58<06:29,  1.38s/it][step=1719] episode=1719.0000 return=-36.3825 length=25.0000 global_step=47230.0000 loss=287.6518
+rainbow train:  86%|████████▌ | 1719/2000 [55:00<07:03,  1.51s/it][step=1720] episode=1720.0000 return=10.1922 length=21.0000 global_step=47251.0000 loss=136.5233
+rainbow train:  86%|████████▌ | 1720/2000 [55:01<06:52,  1.47s/it][step=1721] episode=1721.0000 return=-51.8623 length=29.0000 global_step=47280.0000 loss=233.3745
+rainbow train:  86%|████████▌ | 1721/2000 [55:03<07:23,  1.59s/it][step=1722] episode=1722.0000 return=-97.6752 length=12.0000 global_step=47292.0000 loss=158.8766
+rainbow train:  86%|████████▌ | 1722/2000 [55:04<06:17,  1.36s/it][step=1723] episode=1723.0000 return=-33.6772 length=12.0000 global_step=47304.0000 loss=240.9565
+rainbow train:  86%|████████▌ | 1723/2000 [55:05<05:27,  1.18s/it][step=1724] episode=1724.0000 return=22.7138 length=30.0000 global_step=47334.0000 loss=229.0685
+rainbow train:  86%|████████▌ | 1724/2000 [55:07<06:25,  1.39s/it][step=1725] episode=1725.0000 return=-71.2325 length=20.0000 global_step=47354.0000 loss=307.2170
+rainbow train:  86%|████████▋ | 1725/2000 [55:08<06:15,  1.37s/it][step=1726] episode=1726.0000 return=-41.2664 length=12.0000 global_step=47366.0000 loss=226.8165
+rainbow train:  86%|████████▋ | 1726/2000 [55:09<05:22,  1.18s/it][step=1727] episode=1727.0000 return=-93.9717 length=12.0000 global_step=47378.0000 loss=260.2257
+rainbow train:  86%|████████▋ | 1727/2000 [55:09<04:48,  1.06s/it][step=1728] episode=1728.0000 return=-66.3358 length=11.0000 global_step=47389.0000 loss=445.3822
+rainbow train:  86%|████████▋ | 1728/2000 [55:10<04:20,  1.04it/s][step=1729] episode=1729.0000 return=-34.6077 length=20.0000 global_step=47409.0000 loss=340.9990
+rainbow train:  86%|████████▋ | 1729/2000 [55:11<04:43,  1.05s/it][step=1730] episode=1730.0000 return=-99.4058 length=25.0000 global_step=47434.0000 loss=294.6501
+rainbow train:  86%|████████▋ | 1730/2000 [55:13<05:25,  1.20s/it][step=1731] episode=1731.0000 return=-115.9775 length=21.0000 global_step=47455.0000 loss=234.4775
+rainbow train:  87%|████████▋ | 1731/2000 [55:14<05:33,  1.24s/it][step=1732] episode=1732.0000 return=-14.6336 length=20.0000 global_step=47475.0000 loss=220.2504
+rainbow train:  87%|████████▋ | 1732/2000 [55:15<05:34,  1.25s/it][step=1733] episode=1733.0000 return=-93.2493 length=13.0000 global_step=47488.0000 loss=249.2671
+rainbow train:  87%|████████▋ | 1733/2000 [55:16<04:59,  1.12s/it][step=1734] episode=1734.0000 return=1.6410 length=35.0000 global_step=47523.0000 loss=314.3534
+rainbow train:  87%|████████▋ | 1734/2000 [55:19<06:27,  1.46s/it][step=1735] episode=1735.0000 return=-96.7142 length=18.0000 global_step=47541.0000 loss=203.9866
+rainbow train:  87%|████████▋ | 1735/2000 [55:20<06:02,  1.37s/it][step=1736] episode=1736.0000 return=-16.8045 length=33.0000 global_step=47574.0000 loss=285.4319
+rainbow train:  87%|████████▋ | 1736/2000 [55:22<07:00,  1.59s/it][step=1737] episode=1737.0000 return=-81.7592 length=13.0000 global_step=47587.0000 loss=227.1913
+rainbow train:  87%|████████▋ | 1737/2000 [55:23<05:58,  1.36s/it][step=1738] episode=1738.0000 return=-63.9507 length=11.0000 global_step=47598.0000 loss=219.7283
+rainbow train:  87%|████████▋ | 1738/2000 [55:23<05:08,  1.18s/it][step=1739] episode=1739.0000 return=-100.8374 length=21.0000 global_step=47619.0000 loss=280.2866
+rainbow train:  87%|████████▋ | 1739/2000 [55:25<05:19,  1.22s/it][step=1740] episode=1740.0000 return=-68.0947 length=21.0000 global_step=47640.0000 loss=415.7876
+rainbow train:  87%|████████▋ | 1740/2000 [55:26<05:30,  1.27s/it][step=1741] episode=1741.0000 return=-76.3288 length=19.0000 global_step=47659.0000 loss=212.5711
+rainbow train:  87%|████████▋ | 1741/2000 [55:27<05:27,  1.26s/it][step=1742] episode=1742.0000 return=-61.4544 length=20.0000 global_step=47679.0000 loss=207.9111
+rainbow train:  87%|████████▋ | 1742/2000 [55:29<05:24,  1.26s/it][step=1743] episode=1743.0000 return=186.9079 length=23.0000 global_step=47702.0000 loss=249.6699
+rainbow train:  87%|████████▋ | 1743/2000 [55:30<05:44,  1.34s/it][step=1744] episode=1744.0000 return=-24.3204 length=12.0000 global_step=47714.0000 loss=223.7047
+rainbow train:  87%|████████▋ | 1744/2000 [55:31<05:00,  1.18s/it][step=1745] episode=1745.0000 return=-40.7096 length=40.0000 global_step=47754.0000 loss=267.0729
+rainbow train:  87%|████████▋ | 1745/2000 [55:33<06:44,  1.58s/it][step=1746] episode=1746.0000 return=-91.3528 length=37.0000 global_step=47791.0000 loss=220.7544
+rainbow train:  87%|████████▋ | 1746/2000 [55:36<07:37,  1.80s/it][step=1747] episode=1747.0000 return=-84.1801 length=13.0000 global_step=47804.0000 loss=177.4319
+rainbow train:  87%|████████▋ | 1747/2000 [55:37<06:20,  1.50s/it][step=1748] episode=1748.0000 return=99.3343 length=63.0000 global_step=47867.0000 loss=188.3557
+rainbow train:  87%|████████▋ | 1748/2000 [55:41<09:26,  2.25s/it][step=1749] episode=1749.0000 return=-76.8919 length=26.0000 global_step=47893.0000 loss=245.6044
+rainbow train:  87%|████████▋ | 1749/2000 [55:42<08:39,  2.07s/it][step=1750] episode=1750.0000 return=-13.2242 length=13.0000 global_step=47906.0000 loss=109.6517
+rainbow train:  88%|████████▊ | 1750/2000 [55:43<07:07,  1.71s/it][step=1751] episode=1751.0000 return=105.4101 length=41.0000 global_step=47947.0000 loss=154.4393
+rainbow train:  88%|████████▊ | 1751/2000 [55:46<08:11,  1.97s/it][step=1752] episode=1752.0000 return=38.4406 length=13.0000 global_step=47960.0000 loss=425.0864
+rainbow train:  88%|████████▊ | 1752/2000 [55:47<06:47,  1.64s/it][step=1753] episode=1753.0000 return=129.4744 length=34.0000 global_step=47994.0000 loss=249.4177
+rainbow train:  88%|████████▊ | 1753/2000 [55:49<07:20,  1.78s/it][step=1754] episode=1754.0000 return=35.2686 length=65.0000 global_step=48059.0000 loss=119.3372
+rainbow train:  88%|████████▊ | 1754/2000 [55:53<10:05,  2.46s/it][step=1755] episode=1755.0000 return=42.7291 length=21.0000 global_step=48080.0000 loss=228.4804
+rainbow train:  88%|████████▊ | 1755/2000 [55:54<08:40,  2.12s/it][step=1756] episode=1756.0000 return=-91.1358 length=20.0000 global_step=48100.0000 loss=313.1451
+rainbow train:  88%|████████▊ | 1756/2000 [55:55<07:35,  1.87s/it][step=1757] episode=1757.0000 return=22.3267 length=19.0000 global_step=48119.0000 loss=271.0430
+rainbow train:  88%|████████▊ | 1757/2000 [55:56<06:45,  1.67s/it][step=1758] episode=1758.0000 return=47.4298 length=35.0000 global_step=48154.0000 loss=200.8307
+rainbow train:  88%|████████▊ | 1758/2000 [55:59<07:20,  1.82s/it][step=1759] episode=1759.0000 return=207.3517 length=64.0000 global_step=48218.0000 loss=221.4670
+rainbow train:  88%|████████▊ | 1759/2000 [56:03<09:55,  2.47s/it][step=1760] episode=1760.0000 return=-1.2845 length=48.0000 global_step=48266.0000 loss=233.2054
+rainbow train:  88%|████████▊ | 1760/2000 [56:06<10:37,  2.66s/it][step=1761] episode=1761.0000 return=-25.6687 length=34.0000 global_step=48300.0000 loss=102.8405
+rainbow train:  88%|████████▊ | 1761/2000 [56:08<09:54,  2.49s/it][step=1762] episode=1762.0000 return=-73.9863 length=18.0000 global_step=48318.0000 loss=344.8308
+rainbow train:  88%|████████▊ | 1762/2000 [56:09<08:17,  2.09s/it][step=1763] episode=1763.0000 return=28.4828 length=26.0000 global_step=48344.0000 loss=220.5252
+rainbow train:  88%|████████▊ | 1763/2000 [56:11<07:44,  1.96s/it][step=1764] episode=1764.0000 return=-37.5806 length=21.0000 global_step=48365.0000 loss=291.9841
+rainbow train:  88%|████████▊ | 1764/2000 [56:12<06:59,  1.78s/it][step=1765] episode=1765.0000 return=-46.0846 length=12.0000 global_step=48377.0000 loss=153.8184
+rainbow train:  88%|████████▊ | 1765/2000 [56:13<05:46,  1.47s/it][step=1766] episode=1766.0000 return=-30.8185 length=33.0000 global_step=48410.0000 loss=197.1133
+rainbow train:  88%|████████▊ | 1766/2000 [56:15<06:24,  1.64s/it][step=1767] episode=1767.0000 return=47.6974 length=63.0000 global_step=48473.0000 loss=152.2968
+rainbow train:  88%|████████▊ | 1767/2000 [56:19<08:59,  2.31s/it][step=1768] episode=1768.0000 return=-90.1005 length=21.0000 global_step=48494.0000 loss=225.2552
+rainbow train:  88%|████████▊ | 1768/2000 [56:20<07:44,  2.00s/it][step=1769] episode=1769.0000 return=-27.1220 length=21.0000 global_step=48515.0000 loss=304.2509
+rainbow train:  88%|████████▊ | 1769/2000 [56:21<06:57,  1.81s/it][step=1770] episode=1770.0000 return=-40.4671 length=20.0000 global_step=48535.0000 loss=313.6972
+rainbow train:  88%|████████▊ | 1770/2000 [56:23<06:18,  1.65s/it][step=1771] episode=1771.0000 return=-59.2146 length=13.0000 global_step=48548.0000 loss=184.2266
+rainbow train:  89%|████████▊ | 1771/2000 [56:23<05:20,  1.40s/it][step=1772] episode=1772.0000 return=-35.6262 length=21.0000 global_step=48569.0000 loss=233.1506
+rainbow train:  89%|████████▊ | 1772/2000 [56:25<05:13,  1.37s/it][step=1773] episode=1773.0000 return=74.6280 length=19.0000 global_step=48588.0000 loss=152.8595
+rainbow train:  89%|████████▊ | 1773/2000 [56:26<05:01,  1.33s/it][step=1774] episode=1774.0000 return=-65.7386 length=21.0000 global_step=48609.0000 loss=126.7847
+rainbow train:  89%|████████▊ | 1774/2000 [56:27<05:00,  1.33s/it][step=1775] episode=1775.0000 return=-42.6950 length=20.0000 global_step=48629.0000 loss=274.7917
+rainbow train:  89%|████████▉ | 1775/2000 [56:29<04:51,  1.29s/it][step=1776] episode=1776.0000 return=-29.1185 length=12.0000 global_step=48641.0000 loss=287.2510
+rainbow train:  89%|████████▉ | 1776/2000 [56:29<04:17,  1.15s/it][step=1777] episode=1777.0000 return=25.7280 length=21.0000 global_step=48662.0000 loss=293.9858
+rainbow train:  89%|████████▉ | 1777/2000 [56:31<04:24,  1.19s/it][step=1778] episode=1778.0000 return=-65.9435 length=20.0000 global_step=48682.0000 loss=397.4855
+rainbow train:  89%|████████▉ | 1778/2000 [56:32<04:26,  1.20s/it][step=1779] episode=1779.0000 return=-98.1486 length=13.0000 global_step=48695.0000 loss=270.2411
+rainbow train:  89%|████████▉ | 1779/2000 [56:33<03:59,  1.08s/it][step=1780] episode=1780.0000 return=-6.9087 length=13.0000 global_step=48708.0000 loss=285.4181
+rainbow train:  89%|████████▉ | 1780/2000 [56:33<03:40,  1.00s/it][step=1781] episode=1781.0000 return=-58.7293 length=19.0000 global_step=48727.0000 loss=124.8933
+rainbow train:  89%|████████▉ | 1781/2000 [56:35<03:52,  1.06s/it][step=1782] episode=1782.0000 return=-104.0296 length=29.0000 global_step=48756.0000 loss=168.8830
+rainbow train:  89%|████████▉ | 1782/2000 [56:36<04:37,  1.27s/it][step=1783] episode=1783.0000 return=-48.6350 length=42.0000 global_step=48798.0000 loss=190.2991
+rainbow train:  89%|████████▉ | 1783/2000 [56:39<06:06,  1.69s/it][step=1784] episode=1784.0000 return=50.8059 length=33.0000 global_step=48831.0000 loss=257.1238
+rainbow train:  89%|████████▉ | 1784/2000 [56:41<06:30,  1.81s/it][step=1785] episode=1785.0000 return=257.1437 length=44.0000 global_step=48875.0000 loss=189.4206
+rainbow train:  89%|████████▉ | 1785/2000 [56:44<07:29,  2.09s/it][step=1786] episode=1786.0000 return=-97.3867 length=12.0000 global_step=48887.0000 loss=234.4790
+rainbow train:  89%|████████▉ | 1786/2000 [56:45<05:59,  1.68s/it][step=1787] episode=1787.0000 return=-43.9394 length=18.0000 global_step=48905.0000 loss=382.9327
+rainbow train:  89%|████████▉ | 1787/2000 [56:46<05:21,  1.51s/it][step=1788] episode=1788.0000 return=-82.4150 length=12.0000 global_step=48917.0000 loss=107.1490
+rainbow train:  89%|████████▉ | 1788/2000 [56:47<04:34,  1.29s/it][step=1789] episode=1789.0000 return=63.3878 length=19.0000 global_step=48936.0000 loss=400.5336
+rainbow train:  89%|████████▉ | 1789/2000 [56:48<04:27,  1.27s/it][step=1790] episode=1790.0000 return=-2.1035 length=19.0000 global_step=48955.0000 loss=87.0145
+rainbow train:  90%|████████▉ | 1790/2000 [56:49<04:19,  1.24s/it][step=1791] episode=1791.0000 return=-5.3090 length=19.0000 global_step=48974.0000 loss=223.1392
+rainbow train:  90%|████████▉ | 1791/2000 [56:50<04:17,  1.23s/it][step=1792] episode=1792.0000 return=-77.4977 length=19.0000 global_step=48993.0000 loss=290.9927
+rainbow train:  90%|████████▉ | 1792/2000 [56:51<04:18,  1.24s/it][step=1793] episode=1793.0000 return=-57.1430 length=12.0000 global_step=49005.0000 loss=408.5726
+rainbow train:  90%|████████▉ | 1793/2000 [56:52<03:47,  1.10s/it][step=1794] episode=1794.0000 return=-48.3704 length=12.0000 global_step=49017.0000 loss=163.3219
+rainbow train:  90%|████████▉ | 1794/2000 [56:53<03:28,  1.01s/it][step=1795] episode=1795.0000 return=28.2442 length=20.0000 global_step=49037.0000 loss=308.0513
+rainbow train:  90%|████████▉ | 1795/2000 [56:54<03:43,  1.09s/it][step=1796] episode=1796.0000 return=35.4858 length=19.0000 global_step=49056.0000 loss=405.9047
+rainbow train:  90%|████████▉ | 1796/2000 [56:55<03:49,  1.13s/it][step=1797] episode=1797.0000 return=-23.1007 length=13.0000 global_step=49069.0000 loss=561.7534
+rainbow train:  90%|████████▉ | 1797/2000 [56:56<03:29,  1.03s/it][step=1798] episode=1798.0000 return=175.5000 length=71.0000 global_step=49140.0000 loss=315.4276
+rainbow train:  90%|████████▉ | 1798/2000 [57:01<06:55,  2.06s/it][step=1799] episode=1799.0000 return=90.6334 length=28.0000 global_step=49168.0000 loss=286.2136
+rainbow train:  90%|████████▉ | 1799/2000 [57:02<06:35,  1.97s/it][step=1800] episode=1800.0000 return=-77.8937 length=27.0000 global_step=49195.0000 loss=390.2118
+rainbow train:  90%|█████████ | 1800/2000 [57:04<06:21,  1.91s/it][step=1801] episode=1801.0000 return=116.3897 length=42.0000 global_step=49237.0000 loss=231.1882
+rainbow train:  90%|█████████ | 1801/2000 [57:07<07:05,  2.14s/it][step=1802] episode=1802.0000 return=-10.4757 length=20.0000 global_step=49257.0000 loss=335.0472
+rainbow train:  90%|█████████ | 1802/2000 [57:08<06:12,  1.88s/it][step=1803] episode=1803.0000 return=-36.9402 length=19.0000 global_step=49276.0000 loss=315.4149
+rainbow train:  90%|█████████ | 1803/2000 [57:09<05:31,  1.68s/it][step=1804] episode=1804.0000 return=-112.7220 length=11.0000 global_step=49287.0000 loss=103.8691
+rainbow train:  90%|█████████ | 1804/2000 [57:10<04:35,  1.41s/it][step=1805] episode=1805.0000 return=81.0530 length=29.0000 global_step=49316.0000 loss=230.6005
+rainbow train:  90%|█████████ | 1805/2000 [57:12<04:58,  1.53s/it][step=1806] episode=1806.0000 return=-20.3300 length=26.0000 global_step=49342.0000 loss=315.2705
+rainbow train:  90%|█████████ | 1806/2000 [57:14<05:03,  1.56s/it][step=1807] episode=1807.0000 return=-70.1046 length=11.0000 global_step=49353.0000 loss=498.3846
+rainbow train:  90%|█████████ | 1807/2000 [57:14<04:10,  1.30s/it][step=1808] episode=1808.0000 return=-26.1184 length=13.0000 global_step=49366.0000 loss=318.3549
+rainbow train:  90%|█████████ | 1808/2000 [57:15<03:40,  1.15s/it][step=1809] episode=1809.0000 return=-115.9957 length=13.0000 global_step=49379.0000 loss=303.4395
+rainbow train:  90%|█████████ | 1809/2000 [57:16<03:19,  1.04s/it][step=1810] episode=1810.0000 return=-65.0343 length=20.0000 global_step=49399.0000 loss=278.4849
+rainbow train:  90%|█████████ | 1810/2000 [57:17<03:29,  1.10s/it][step=1811] episode=1811.0000 return=-21.5650 length=20.0000 global_step=49419.0000 loss=394.6497
+rainbow train:  91%|█████████ | 1811/2000 [57:18<03:35,  1.14s/it][step=1812] episode=1812.0000 return=-48.6406 length=20.0000 global_step=49439.0000 loss=261.6614
+rainbow train:  91%|█████████ | 1812/2000 [57:20<03:43,  1.19s/it][step=1813] episode=1813.0000 return=134.0584 length=35.0000 global_step=49474.0000 loss=249.6006
+rainbow train:  91%|█████████ | 1813/2000 [57:22<04:37,  1.49s/it][step=1814] episode=1814.0000 return=-43.3276 length=30.0000 global_step=49504.0000 loss=249.8633
+rainbow train:  91%|█████████ | 1814/2000 [57:24<04:58,  1.61s/it][step=1815] episode=1815.0000 return=2.2474 length=18.0000 global_step=49522.0000 loss=196.7580
+rainbow train:  91%|█████████ | 1815/2000 [57:25<04:34,  1.48s/it][step=1816] episode=1816.0000 return=23.8495 length=12.0000 global_step=49534.0000 loss=470.2511
+rainbow train:  91%|█████████ | 1816/2000 [57:26<03:55,  1.28s/it][step=1817] episode=1817.0000 return=1.8900 length=12.0000 global_step=49546.0000 loss=163.8503
+rainbow train:  91%|█████████ | 1817/2000 [57:27<03:26,  1.13s/it][step=1818] episode=1818.0000 return=84.1605 length=12.0000 global_step=49558.0000 loss=471.9426
+rainbow train:  91%|█████████ | 1818/2000 [57:27<03:03,  1.01s/it][step=1819] episode=1819.0000 return=60.1172 length=33.0000 global_step=49591.0000 loss=313.1315
+rainbow train:  91%|█████████ | 1819/2000 [57:29<04:02,  1.34s/it][step=1820] episode=1820.0000 return=-47.7181 length=26.0000 global_step=49617.0000 loss=423.4127
+rainbow train:  91%|█████████ | 1820/2000 [57:31<04:18,  1.43s/it][step=1821] episode=1821.0000 return=-23.5345 length=20.0000 global_step=49637.0000 loss=328.2946
+rainbow train:  91%|█████████ | 1821/2000 [57:32<04:10,  1.40s/it][step=1822] episode=1822.0000 return=-98.4646 length=40.0000 global_step=49677.0000 loss=185.2685
+rainbow train:  91%|█████████ | 1822/2000 [57:35<05:12,  1.76s/it][step=1823] episode=1823.0000 return=-115.9945 length=11.0000 global_step=49688.0000 loss=301.1679
+rainbow train:  91%|█████████ | 1823/2000 [57:36<04:16,  1.45s/it][step=1824] episode=1824.0000 return=-78.5639 length=20.0000 global_step=49708.0000 loss=280.3348
+rainbow train:  91%|█████████ | 1824/2000 [57:37<04:09,  1.42s/it][step=1825] episode=1825.0000 return=33.6475 length=56.0000 global_step=49764.0000 loss=135.4786
+rainbow train:  91%|█████████▏| 1825/2000 [57:40<05:56,  2.04s/it][step=1826] episode=1826.0000 return=102.2662 length=12.0000 global_step=49776.0000 loss=317.5910
+rainbow train:  91%|█████████▏| 1826/2000 [57:41<04:47,  1.65s/it][step=1827] episode=1827.0000 return=-42.4650 length=19.0000 global_step=49795.0000 loss=267.8760
+rainbow train:  91%|█████████▏| 1827/2000 [57:42<04:22,  1.52s/it][step=1828] episode=1828.0000 return=-24.1272 length=13.0000 global_step=49808.0000 loss=302.0613
+rainbow train:  91%|█████████▏| 1828/2000 [57:43<03:46,  1.32s/it][step=1829] episode=1829.0000 return=-40.0099 length=19.0000 global_step=49827.0000 loss=217.8523
+rainbow train:  91%|█████████▏| 1829/2000 [57:44<03:38,  1.28s/it][step=1830] episode=1830.0000 return=-48.9103 length=27.0000 global_step=49854.0000 loss=280.4513
+rainbow train:  92%|█████████▏| 1830/2000 [57:46<03:59,  1.41s/it][step=1831] episode=1831.0000 return=-62.6162 length=19.0000 global_step=49873.0000 loss=247.7717
+rainbow train:  92%|█████████▏| 1831/2000 [57:47<03:47,  1.35s/it][step=1832] episode=1832.0000 return=-18.3944 length=21.0000 global_step=49894.0000 loss=204.8316
+rainbow train:  92%|█████████▏| 1832/2000 [57:49<03:46,  1.35s/it][step=1833] episode=1833.0000 return=-93.6600 length=21.0000 global_step=49915.0000 loss=359.4565
+rainbow train:  92%|█████████▏| 1833/2000 [57:50<03:41,  1.33s/it][step=1834] episode=1834.0000 return=-102.8897 length=12.0000 global_step=49927.0000 loss=312.9612
+rainbow train:  92%|█████████▏| 1834/2000 [57:51<03:12,  1.16s/it][step=1835] episode=1835.0000 return=-63.1615 length=12.0000 global_step=49939.0000 loss=200.8226
+rainbow train:  92%|█████████▏| 1835/2000 [57:52<02:50,  1.04s/it][step=1836] episode=1836.0000 return=-32.2627 length=12.0000 global_step=49951.0000 loss=500.0534
+rainbow train:  92%|█████████▏| 1836/2000 [57:52<02:36,  1.05it/s][step=1837] episode=1837.0000 return=-53.9309 length=11.0000 global_step=49962.0000 loss=203.5281
+rainbow train:  92%|█████████▏| 1837/2000 [57:53<02:24,  1.13it/s][step=1838] episode=1838.0000 return=115.5143 length=50.0000 global_step=50012.0000 loss=259.0792
+rainbow train:  92%|█████████▏| 1838/2000 [57:56<04:11,  1.55s/it][step=1839] episode=1839.0000 return=277.5109 length=43.0000 global_step=50055.0000 loss=262.2273
+rainbow train:  92%|█████████▏| 1839/2000 [57:59<05:05,  1.90s/it][step=1840] episode=1840.0000 return=24.1098 length=21.0000 global_step=50076.0000 loss=272.9728
+rainbow train:  92%|█████████▏| 1840/2000 [58:00<04:39,  1.75s/it][step=1841] episode=1841.0000 return=-115.9061 length=11.0000 global_step=50087.0000 loss=362.1624
+rainbow train:  92%|█████████▏| 1841/2000 [58:01<03:49,  1.44s/it][step=1842] episode=1842.0000 return=76.1190 length=34.0000 global_step=50121.0000 loss=262.6827
+rainbow train:  92%|█████████▏| 1842/2000 [58:03<04:22,  1.66s/it][step=1843] episode=1843.0000 return=37.0715 length=12.0000 global_step=50133.0000 loss=455.7945
+rainbow train:  92%|█████████▏| 1843/2000 [58:04<03:37,  1.39s/it][step=1844] episode=1844.0000 return=-101.3248 length=20.0000 global_step=50153.0000 loss=336.8329
+rainbow train:  92%|█████████▏| 1844/2000 [58:05<03:33,  1.37s/it][step=1845] episode=1845.0000 return=177.6556 length=45.0000 global_step=50198.0000 loss=218.5059
+rainbow train:  92%|█████████▏| 1845/2000 [58:08<04:36,  1.78s/it][step=1846] episode=1846.0000 return=-36.8877 length=35.0000 global_step=50233.0000 loss=240.7486
+rainbow train:  92%|█████████▏| 1846/2000 [58:10<04:53,  1.91s/it][step=1847] episode=1847.0000 return=-78.6206 length=27.0000 global_step=50260.0000 loss=414.0340
+rainbow train:  92%|█████████▏| 1847/2000 [58:12<04:39,  1.83s/it][step=1848] episode=1848.0000 return=-60.4945 length=12.0000 global_step=50272.0000 loss=243.9137
+rainbow train:  92%|█████████▏| 1848/2000 [58:13<03:50,  1.52s/it][step=1849] episode=1849.0000 return=26.2705 length=19.0000 global_step=50291.0000 loss=319.1427
+rainbow train:  92%|█████████▏| 1849/2000 [58:14<03:36,  1.44s/it][step=1850] episode=1850.0000 return=-2.7661 length=12.0000 global_step=50303.0000 loss=161.7821
+rainbow train:  92%|█████████▎| 1850/2000 [58:15<03:07,  1.25s/it][step=1851] episode=1851.0000 return=-79.0829 length=12.0000 global_step=50315.0000 loss=353.2243
+rainbow train:  93%|█████████▎| 1851/2000 [58:15<02:43,  1.10s/it][step=1852] episode=1852.0000 return=-83.0443 length=19.0000 global_step=50334.0000 loss=464.2968
+rainbow train:  93%|█████████▎| 1852/2000 [58:17<02:46,  1.13s/it][step=1853] episode=1853.0000 return=12.2379 length=12.0000 global_step=50346.0000 loss=271.2585
+rainbow train:  93%|█████████▎| 1853/2000 [58:17<02:29,  1.02s/it][step=1854] episode=1854.0000 return=-10.6440 length=21.0000 global_step=50367.0000 loss=316.0351
+rainbow train:  93%|█████████▎| 1854/2000 [58:19<02:42,  1.11s/it][step=1855] episode=1855.0000 return=-24.0275 length=26.0000 global_step=50393.0000 loss=251.5540
+rainbow train:  93%|█████████▎| 1855/2000 [58:20<03:04,  1.27s/it][step=1856] episode=1856.0000 return=-14.8324 length=10.0000 global_step=50403.0000 loss=271.0873
+rainbow train:  93%|█████████▎| 1856/2000 [58:21<02:36,  1.09s/it][step=1857] episode=1857.0000 return=-49.3772 length=11.0000 global_step=50414.0000 loss=104.0899
+rainbow train:  93%|█████████▎| 1857/2000 [58:22<02:20,  1.02it/s][step=1858] episode=1858.0000 return=-33.9100 length=20.0000 global_step=50434.0000 loss=401.3533
+rainbow train:  93%|█████████▎| 1858/2000 [58:23<02:30,  1.06s/it][step=1859] episode=1859.0000 return=-85.3303 length=11.0000 global_step=50445.0000 loss=368.9893
+rainbow train:  93%|█████████▎| 1859/2000 [58:24<02:14,  1.05it/s][step=1860] episode=1860.0000 return=365.0633 length=61.0000 global_step=50506.0000 loss=280.9420
+rainbow train:  93%|█████████▎| 1860/2000 [58:28<04:15,  1.82s/it][step=1861] episode=1861.0000 return=-95.5870 length=19.0000 global_step=50525.0000 loss=204.5778
+rainbow train:  93%|█████████▎| 1861/2000 [58:29<03:48,  1.64s/it][step=1862] episode=1862.0000 return=-55.2820 length=20.0000 global_step=50545.0000 loss=351.7963
+rainbow train:  93%|█████████▎| 1862/2000 [58:30<03:31,  1.53s/it][step=1863] episode=1863.0000 return=90.9171 length=57.0000 global_step=50602.0000 loss=229.9866
+rainbow train:  93%|█████████▎| 1863/2000 [58:34<04:53,  2.14s/it][step=1864] episode=1864.0000 return=-85.3005 length=19.0000 global_step=50621.0000 loss=304.6362
+rainbow train:  93%|█████████▎| 1864/2000 [58:35<04:15,  1.88s/it][step=1865] episode=1865.0000 return=-37.2603 length=13.0000 global_step=50634.0000 loss=309.4645
+rainbow train:  93%|█████████▎| 1865/2000 [58:36<03:29,  1.55s/it][step=1866] episode=1866.0000 return=-14.9284 length=29.0000 global_step=50663.0000 loss=145.7139
+rainbow train:  93%|█████████▎| 1866/2000 [58:37<03:38,  1.63s/it][step=1867] episode=1867.0000 return=-111.0220 length=12.0000 global_step=50675.0000 loss=333.8787
+rainbow train:  93%|█████████▎| 1867/2000 [58:38<03:03,  1.38s/it][step=1868] episode=1868.0000 return=17.2974 length=48.0000 global_step=50723.0000 loss=295.8883
+rainbow train:  93%|█████████▎| 1868/2000 [58:41<04:07,  1.88s/it][step=1869] episode=1869.0000 return=-110.0447 length=38.0000 global_step=50761.0000 loss=405.2092
+rainbow train:  93%|█████████▎| 1869/2000 [58:44<04:22,  2.01s/it][step=1870] episode=1870.0000 return=-107.6154 length=12.0000 global_step=50773.0000 loss=201.8293
+rainbow train:  94%|█████████▎| 1870/2000 [58:44<03:31,  1.63s/it][step=1871] episode=1871.0000 return=104.2910 length=21.0000 global_step=50794.0000 loss=309.4551
+rainbow train:  94%|█████████▎| 1871/2000 [58:46<03:18,  1.54s/it][step=1872] episode=1872.0000 return=-70.1148 length=19.0000 global_step=50813.0000 loss=240.8161
+rainbow train:  94%|█████████▎| 1872/2000 [58:47<03:02,  1.43s/it][step=1873] episode=1873.0000 return=-115.9979 length=22.0000 global_step=50835.0000 loss=292.1258
+rainbow train:  94%|█████████▎| 1873/2000 [58:48<02:59,  1.41s/it][step=1874] episode=1874.0000 return=-67.9115 length=18.0000 global_step=50853.0000 loss=359.5749
+rainbow train:  94%|█████████▎| 1874/2000 [58:49<02:47,  1.33s/it][step=1875] episode=1875.0000 return=3.9927 length=13.0000 global_step=50866.0000 loss=325.4838
+rainbow train:  94%|█████████▍| 1875/2000 [58:50<02:26,  1.17s/it][step=1876] episode=1876.0000 return=-82.4866 length=35.0000 global_step=50901.0000 loss=224.2322
+rainbow train:  94%|█████████▍| 1876/2000 [58:52<03:01,  1.47s/it][step=1877] episode=1877.0000 return=-97.2468 length=20.0000 global_step=50921.0000 loss=475.7218
+rainbow train:  94%|█████████▍| 1877/2000 [58:54<02:52,  1.40s/it][step=1878] episode=1878.0000 return=-43.2416 length=27.0000 global_step=50948.0000 loss=329.2435
+rainbow train:  94%|█████████▍| 1878/2000 [58:55<03:02,  1.50s/it][step=1879] episode=1879.0000 return=-4.2422 length=42.0000 global_step=50990.0000 loss=288.4315
+rainbow train:  94%|█████████▍| 1879/2000 [58:58<03:42,  1.84s/it][step=1880] episode=1880.0000 return=3.0683 length=29.0000 global_step=51019.0000 loss=362.4140
+rainbow train:  94%|█████████▍| 1880/2000 [59:00<03:39,  1.83s/it][step=1881] episode=1881.0000 return=200.4415 length=72.0000 global_step=51091.0000 loss=343.0335
+rainbow train:  94%|█████████▍| 1881/2000 [59:04<05:13,  2.63s/it][step=1882] episode=1882.0000 return=-28.4565 length=27.0000 global_step=51118.0000 loss=185.2789
+rainbow train:  94%|█████████▍| 1882/2000 [59:06<04:37,  2.35s/it][step=1883] episode=1883.0000 return=-69.7033 length=41.0000 global_step=51159.0000 loss=258.6454
+rainbow train:  94%|█████████▍| 1883/2000 [59:08<04:39,  2.39s/it][step=1884] episode=1884.0000 return=49.0320 length=28.0000 global_step=51187.0000 loss=95.1106
+rainbow train:  94%|█████████▍| 1884/2000 [59:10<04:15,  2.20s/it][step=1885] episode=1885.0000 return=-35.2032 length=26.0000 global_step=51213.0000 loss=282.1563
+rainbow train:  94%|█████████▍| 1885/2000 [59:12<03:54,  2.04s/it][step=1886] episode=1886.0000 return=208.3328 length=72.0000 global_step=51285.0000 loss=441.6758
+rainbow train:  94%|█████████▍| 1886/2000 [59:16<05:11,  2.73s/it][step=1887] episode=1887.0000 return=-59.0414 length=12.0000 global_step=51297.0000 loss=370.4691
+rainbow train:  94%|█████████▍| 1887/2000 [59:17<04:02,  2.14s/it][step=1888] episode=1888.0000 return=224.3135 length=76.0000 global_step=51373.0000 loss=357.4258
+rainbow train:  94%|█████████▍| 1888/2000 [59:22<05:28,  2.93s/it][step=1889] episode=1889.0000 return=-111.8744 length=13.0000 global_step=51386.0000 loss=213.8700
+rainbow train:  94%|█████████▍| 1889/2000 [59:23<04:16,  2.31s/it][step=1890] episode=1890.0000 return=-65.7216 length=56.0000 global_step=51442.0000 loss=361.9131
+rainbow train:  94%|█████████▍| 1890/2000 [59:26<04:37,  2.52s/it][step=1891] episode=1891.0000 return=34.4401 length=18.0000 global_step=51460.0000 loss=285.8902
+rainbow train:  95%|█████████▍| 1891/2000 [59:27<03:47,  2.08s/it][step=1892] episode=1892.0000 return=-48.4173 length=41.0000 global_step=51501.0000 loss=286.7806
+rainbow train:  95%|█████████▍| 1892/2000 [59:29<03:49,  2.12s/it][step=1893] episode=1893.0000 return=-22.6811 length=20.0000 global_step=51521.0000 loss=360.3061
+rainbow train:  95%|█████████▍| 1893/2000 [59:30<03:13,  1.81s/it][step=1894] episode=1894.0000 return=-55.5133 length=20.0000 global_step=51541.0000 loss=378.6229
+rainbow train:  95%|█████████▍| 1894/2000 [59:31<02:50,  1.61s/it][step=1895] episode=1895.0000 return=-44.6525 length=12.0000 global_step=51553.0000 loss=188.7770
+rainbow train:  95%|█████████▍| 1895/2000 [59:32<02:21,  1.35s/it][step=1896] episode=1896.0000 return=-32.9828 length=34.0000 global_step=51587.0000 loss=212.8623
+rainbow train:  95%|█████████▍| 1896/2000 [59:34<02:33,  1.47s/it][step=1897] episode=1897.0000 return=-64.1148 length=21.0000 global_step=51608.0000 loss=297.0425
+rainbow train:  95%|█████████▍| 1897/2000 [59:35<02:22,  1.39s/it][step=1898] episode=1898.0000 return=-82.3133 length=11.0000 global_step=51619.0000 loss=340.6939
+rainbow train:  95%|█████████▍| 1898/2000 [59:35<02:00,  1.18s/it][step=1899] episode=1899.0000 return=-90.9894 length=13.0000 global_step=51632.0000 loss=139.1551
+rainbow train:  95%|█████████▍| 1899/2000 [59:36<01:48,  1.08s/it][step=1900] episode=1900.0000 return=-100.1888 length=18.0000 global_step=51650.0000 loss=431.4189
+rainbow train:  95%|█████████▌| 1900/2000 [59:37<01:49,  1.10s/it][step=1901] episode=1901.0000 return=-45.3470 length=13.0000 global_step=51663.0000 loss=158.4147
+rainbow train:  95%|█████████▌| 1901/2000 [59:38<01:40,  1.01s/it][step=1902] episode=1902.0000 return=92.6013 length=12.0000 global_step=51675.0000 loss=248.7147
+rainbow train:  95%|█████████▌| 1902/2000 [59:39<01:30,  1.08it/s][step=1903] episode=1903.0000 return=-29.6843 length=21.0000 global_step=51696.0000 loss=326.4268
+rainbow train:  95%|█████████▌| 1903/2000 [59:40<01:37,  1.00s/it][step=1904] episode=1904.0000 return=-39.7231 length=11.0000 global_step=51707.0000 loss=305.3223
+rainbow train:  95%|█████████▌| 1904/2000 [59:41<01:26,  1.11it/s][step=1905] episode=1905.0000 return=-6.9672 length=21.0000 global_step=51728.0000 loss=251.1097
+rainbow train:  95%|█████████▌| 1905/2000 [59:42<01:32,  1.03it/s][step=1906] episode=1906.0000 return=53.0113 length=19.0000 global_step=51747.0000 loss=283.5856
+rainbow train:  95%|█████████▌| 1906/2000 [59:43<01:33,  1.01it/s][step=1907] episode=1907.0000 return=20.1556 length=33.0000 global_step=51780.0000 loss=169.3151
+rainbow train:  95%|█████████▌| 1907/2000 [59:45<01:53,  1.23s/it][step=1908] episode=1908.0000 return=-83.9361 length=13.0000 global_step=51793.0000 loss=396.8819
+rainbow train:  95%|█████████▌| 1908/2000 [59:46<01:40,  1.10s/it][step=1909] episode=1909.0000 return=-86.1835 length=19.0000 global_step=51812.0000 loss=243.7024
+rainbow train:  95%|█████████▌| 1909/2000 [59:47<01:40,  1.11s/it][step=1910] episode=1910.0000 return=-0.9005 length=21.0000 global_step=51833.0000 loss=456.6398
+rainbow train:  96%|█████████▌| 1910/2000 [59:48<01:42,  1.14s/it][step=1911] episode=1911.0000 return=-84.2684 length=21.0000 global_step=51854.0000 loss=140.7871
+rainbow train:  96%|█████████▌| 1911/2000 [59:49<01:44,  1.17s/it][step=1912] episode=1912.0000 return=9.5820 length=20.0000 global_step=51874.0000 loss=455.5226
+rainbow train:  96%|█████████▌| 1912/2000 [59:50<01:41,  1.15s/it][step=1913] episode=1913.0000 return=-46.0052 length=22.0000 global_step=51896.0000 loss=198.3854
+rainbow train:  96%|█████████▌| 1913/2000 [59:52<01:43,  1.19s/it][step=1914] episode=1914.0000 return=236.8058 length=49.0000 global_step=51945.0000 loss=182.8764
+rainbow train:  96%|█████████▌| 1914/2000 [59:54<02:20,  1.64s/it][step=1915] episode=1915.0000 return=-115.9817 length=13.0000 global_step=51958.0000 loss=192.7203
+rainbow train:  96%|█████████▌| 1915/2000 [59:55<01:57,  1.39s/it][step=1916] episode=1916.0000 return=-3.4530 length=18.0000 global_step=51976.0000 loss=219.0967
+rainbow train:  96%|█████████▌| 1916/2000 [59:56<01:48,  1.29s/it][step=1917] episode=1917.0000 return=248.0789 length=63.0000 global_step=52039.0000 loss=315.7780
+rainbow train:  96%|█████████▌| 1917/2000 [59:59<02:37,  1.90s/it][step=1918] episode=1918.0000 return=-94.0529 length=27.0000 global_step=52066.0000 loss=365.7658
+rainbow train:  96%|█████████▌| 1918/2000 [1:00:01<02:25,  1.77s/it][step=1919] episode=1919.0000 return=-37.0635 length=42.0000 global_step=52108.0000 loss=246.4932
+rainbow train:  96%|█████████▌| 1919/2000 [1:00:03<02:34,  1.91s/it][step=1920] episode=1920.0000 return=-77.3001 length=20.0000 global_step=52128.0000 loss=334.4617
+rainbow train:  96%|█████████▌| 1920/2000 [1:00:04<02:14,  1.68s/it][step=1921] episode=1921.0000 return=-5.3391 length=20.0000 global_step=52148.0000 loss=377.6834
+rainbow train:  96%|█████████▌| 1921/2000 [1:00:05<02:00,  1.52s/it][step=1922] episode=1922.0000 return=166.3255 length=58.0000 global_step=52206.0000 loss=319.2814
+rainbow train:  96%|█████████▌| 1922/2000 [1:00:09<02:35,  1.99s/it][step=1923] episode=1923.0000 return=10.3718 length=34.0000 global_step=52240.0000 loss=212.7477
+rainbow train:  96%|█████████▌| 1923/2000 [1:00:10<02:31,  1.96s/it][step=1924] episode=1924.0000 return=-19.2502 length=20.0000 global_step=52260.0000 loss=472.6135
+rainbow train:  96%|█████████▌| 1924/2000 [1:00:12<02:10,  1.72s/it][step=1925] episode=1925.0000 return=84.4325 length=34.0000 global_step=52294.0000 loss=293.6051
+rainbow train:  96%|█████████▋| 1925/2000 [1:00:13<02:12,  1.76s/it][step=1926] episode=1926.0000 return=-41.7756 length=33.0000 global_step=52327.0000 loss=283.2741
+rainbow train:  96%|█████████▋| 1926/2000 [1:00:15<02:12,  1.78s/it][step=1927] episode=1927.0000 return=-109.7834 length=19.0000 global_step=52346.0000 loss=288.1185
+rainbow train:  96%|█████████▋| 1927/2000 [1:00:16<01:54,  1.57s/it][step=1928] episode=1928.0000 return=-27.6070 length=26.0000 global_step=52372.0000 loss=296.7484
+rainbow train:  96%|█████████▋| 1928/2000 [1:00:18<01:50,  1.54s/it][step=1929] episode=1929.0000 return=11.5338 length=12.0000 global_step=52384.0000 loss=207.4690
+rainbow train:  96%|█████████▋| 1929/2000 [1:00:19<01:32,  1.30s/it][step=1930] episode=1930.0000 return=5.2075 length=21.0000 global_step=52405.0000 loss=477.2308
+rainbow train:  96%|█████████▋| 1930/2000 [1:00:20<01:28,  1.27s/it][step=1931] episode=1931.0000 return=-20.7990 length=21.0000 global_step=52426.0000 loss=222.3414
+rainbow train:  97%|█████████▋| 1931/2000 [1:00:21<01:26,  1.25s/it][step=1932] episode=1932.0000 return=-71.4965 length=20.0000 global_step=52446.0000 loss=424.2705
+rainbow train:  97%|█████████▋| 1932/2000 [1:00:22<01:22,  1.21s/it][step=1933] episode=1933.0000 return=-7.5689 length=34.0000 global_step=52480.0000 loss=232.6076
+rainbow train:  97%|█████████▋| 1933/2000 [1:00:24<01:33,  1.40s/it][step=1934] episode=1934.0000 return=69.6813 length=28.0000 global_step=52508.0000 loss=452.6273
+rainbow train:  97%|█████████▋| 1934/2000 [1:00:25<01:36,  1.46s/it][step=1935] episode=1935.0000 return=63.3157 length=65.0000 global_step=52573.0000 loss=393.1970
+rainbow train:  97%|█████████▋| 1935/2000 [1:00:29<02:13,  2.06s/it][step=1936] episode=1936.0000 return=171.2739 length=64.0000 global_step=52637.0000 loss=306.0603
+rainbow train:  97%|█████████▋| 1936/2000 [1:00:32<02:36,  2.45s/it][step=1937] episode=1937.0000 return=-100.2852 length=12.0000 global_step=52649.0000 loss=271.3483
+rainbow train:  97%|█████████▋| 1937/2000 [1:00:33<02:02,  1.94s/it][step=1938] episode=1938.0000 return=295.3151 length=59.0000 global_step=52708.0000 loss=389.2701
+rainbow train:  97%|█████████▋| 1938/2000 [1:00:36<02:21,  2.29s/it][step=1939] episode=1939.0000 return=-13.5231 length=50.0000 global_step=52758.0000 loss=252.3107
+rainbow train:  97%|█████████▋| 1939/2000 [1:00:39<02:27,  2.42s/it][step=1940] episode=1940.0000 return=115.4759 length=41.0000 global_step=52799.0000 loss=325.3370
+rainbow train:  97%|█████████▋| 1940/2000 [1:00:41<02:22,  2.37s/it][step=1941] episode=1941.0000 return=118.5164 length=64.0000 global_step=52863.0000 loss=221.7699
+rainbow train:  97%|█████████▋| 1941/2000 [1:00:45<02:38,  2.68s/it][step=1942] episode=1942.0000 return=-27.2654 length=20.0000 global_step=52883.0000 loss=429.6037
+rainbow train:  97%|█████████▋| 1942/2000 [1:00:46<02:08,  2.22s/it][step=1943] episode=1943.0000 return=-105.2939 length=13.0000 global_step=52896.0000 loss=411.4620
+rainbow train:  97%|█████████▋| 1943/2000 [1:00:46<01:42,  1.79s/it][step=1944] episode=1944.0000 return=-79.2023 length=20.0000 global_step=52916.0000 loss=313.3840
+rainbow train:  97%|█████████▋| 1944/2000 [1:00:48<01:29,  1.59s/it][step=1945] episode=1945.0000 return=-102.5067 length=12.0000 global_step=52928.0000 loss=268.3481
+rainbow train:  97%|█████████▋| 1945/2000 [1:00:48<01:13,  1.34s/it][step=1946] episode=1946.0000 return=-115.9974 length=13.0000 global_step=52941.0000 loss=245.4308
+rainbow train:  97%|█████████▋| 1946/2000 [1:00:49<01:03,  1.18s/it][step=1947] episode=1947.0000 return=1.7620 length=13.0000 global_step=52954.0000 loss=167.4592
+rainbow train:  97%|█████████▋| 1947/2000 [1:00:50<00:55,  1.05s/it][step=1948] episode=1948.0000 return=22.2133 length=28.0000 global_step=52982.0000 loss=301.0033
+rainbow train:  97%|█████████▋| 1948/2000 [1:00:52<01:03,  1.21s/it][step=1949] episode=1949.0000 return=-108.5144 length=18.0000 global_step=53000.0000 loss=185.9290
+rainbow train:  97%|█████████▋| 1949/2000 [1:00:53<00:58,  1.16s/it][step=1950] episode=1950.0000 return=-104.7815 length=11.0000 global_step=53011.0000 loss=170.6360
+rainbow train:  98%|█████████▊| 1950/2000 [1:00:53<00:51,  1.02s/it][step=1951] episode=1951.0000 return=218.8291 length=40.0000 global_step=53051.0000 loss=303.4160
+rainbow train:  98%|█████████▊| 1951/2000 [1:00:55<01:07,  1.37s/it][step=1952] episode=1952.0000 return=-40.6026 length=21.0000 global_step=53072.0000 loss=345.1803
+rainbow train:  98%|█████████▊| 1952/2000 [1:00:57<01:03,  1.32s/it][step=1953] episode=1953.0000 return=1.2594 length=41.0000 global_step=53113.0000 loss=228.1414
+rainbow train:  98%|█████████▊| 1953/2000 [1:00:59<01:14,  1.59s/it][step=1954] episode=1954.0000 return=-95.6435 length=11.0000 global_step=53124.0000 loss=386.3689
+rainbow train:  98%|█████████▊| 1954/2000 [1:01:00<01:01,  1.33s/it][step=1955] episode=1955.0000 return=-63.6189 length=26.0000 global_step=53150.0000 loss=408.0611
+rainbow train:  98%|█████████▊| 1955/2000 [1:01:01<01:01,  1.37s/it][step=1956] episode=1956.0000 return=16.4801 length=21.0000 global_step=53171.0000 loss=450.3444
+rainbow train:  98%|█████████▊| 1956/2000 [1:01:02<00:58,  1.33s/it][step=1957] episode=1957.0000 return=-8.7068 length=34.0000 global_step=53205.0000 loss=483.9792
+rainbow train:  98%|█████████▊| 1957/2000 [1:01:04<01:03,  1.48s/it][step=1958] episode=1958.0000 return=-2.2137 length=11.0000 global_step=53216.0000 loss=286.8625
+rainbow train:  98%|█████████▊| 1958/2000 [1:01:05<00:52,  1.25s/it][step=1959] episode=1959.0000 return=14.6607 length=26.0000 global_step=53242.0000 loss=399.2457
+rainbow train:  98%|█████████▊| 1959/2000 [1:01:06<00:53,  1.31s/it][step=1960] episode=1960.0000 return=-27.6112 length=18.0000 global_step=53260.0000 loss=372.2842
+rainbow train:  98%|█████████▊| 1960/2000 [1:01:07<00:49,  1.23s/it][step=1961] episode=1961.0000 return=-0.8275 length=11.0000 global_step=53271.0000 loss=402.1749
+rainbow train:  98%|█████████▊| 1961/2000 [1:01:08<00:42,  1.08s/it][step=1962] episode=1962.0000 return=2.8933 length=42.0000 global_step=53313.0000 loss=175.2699
+rainbow train:  98%|█████████▊| 1962/2000 [1:01:10<00:54,  1.42s/it][step=1963] episode=1963.0000 return=233.2160 length=44.0000 global_step=53357.0000 loss=280.8336
+rainbow train:  98%|█████████▊| 1963/2000 [1:01:13<01:02,  1.69s/it][step=1964] episode=1964.0000 return=7.4716 length=19.0000 global_step=53376.0000 loss=365.0892
+rainbow train:  98%|█████████▊| 1964/2000 [1:01:14<00:54,  1.51s/it][step=1965] episode=1965.0000 return=33.2303 length=13.0000 global_step=53389.0000 loss=271.8700
+rainbow train:  98%|█████████▊| 1965/2000 [1:01:14<00:44,  1.28s/it][step=1966] episode=1966.0000 return=-51.1502 length=21.0000 global_step=53410.0000 loss=330.0443
+rainbow train:  98%|█████████▊| 1966/2000 [1:01:16<00:43,  1.27s/it][step=1967] episode=1967.0000 return=17.4554 length=21.0000 global_step=53431.0000 loss=290.7581
+rainbow train:  98%|█████████▊| 1967/2000 [1:01:17<00:41,  1.25s/it][step=1968] episode=1968.0000 return=-15.3301 length=13.0000 global_step=53444.0000 loss=292.5528
+rainbow train:  98%|█████████▊| 1968/2000 [1:01:18<00:35,  1.11s/it][step=1969] episode=1969.0000 return=41.7417 length=13.0000 global_step=53457.0000 loss=219.8760
+rainbow train:  98%|█████████▊| 1969/2000 [1:01:18<00:31,  1.01s/it][step=1970] episode=1970.0000 return=-101.7791 length=25.0000 global_step=53482.0000 loss=343.6509
+rainbow train:  98%|█████████▊| 1970/2000 [1:01:20<00:33,  1.13s/it][step=1971] episode=1971.0000 return=44.6566 length=33.0000 global_step=53515.0000 loss=350.6414
+rainbow train:  99%|█████████▊| 1971/2000 [1:01:22<00:38,  1.34s/it][step=1972] episode=1972.0000 return=91.1582 length=22.0000 global_step=53537.0000 loss=365.9375
+rainbow train:  99%|█████████▊| 1972/2000 [1:01:23<00:36,  1.31s/it][step=1973] episode=1973.0000 return=-106.3030 length=28.0000 global_step=53565.0000 loss=452.2931
+rainbow train:  99%|█████████▊| 1973/2000 [1:01:24<00:36,  1.37s/it][step=1974] episode=1974.0000 return=-115.9947 length=18.0000 global_step=53583.0000 loss=136.4966
+rainbow train:  99%|█████████▊| 1974/2000 [1:01:25<00:33,  1.27s/it][step=1975] episode=1975.0000 return=58.3100 length=20.0000 global_step=53603.0000 loss=254.5726
+rainbow train:  99%|█████████▉| 1975/2000 [1:01:27<00:30,  1.24s/it][step=1976] episode=1976.0000 return=23.9276 length=42.0000 global_step=53645.0000 loss=345.7081
+rainbow train:  99%|█████████▉| 1976/2000 [1:01:29<00:36,  1.53s/it][step=1977] episode=1977.0000 return=-13.2622 length=11.0000 global_step=53656.0000 loss=218.4269
+rainbow train:  99%|█████████▉| 1977/2000 [1:01:30<00:29,  1.29s/it][step=1978] episode=1978.0000 return=-80.4175 length=27.0000 global_step=53683.0000 loss=359.8378
+rainbow train:  99%|█████████▉| 1978/2000 [1:01:31<00:29,  1.36s/it][step=1979] episode=1979.0000 return=-107.0076 length=12.0000 global_step=53695.0000 loss=303.6836
+rainbow train:  99%|█████████▉| 1979/2000 [1:01:32<00:24,  1.16s/it][step=1980] episode=1980.0000 return=35.4832 length=41.0000 global_step=53736.0000 loss=244.3955
+rainbow train:  99%|█████████▉| 1980/2000 [1:01:34<00:29,  1.49s/it][step=1981] episode=1981.0000 return=-107.0733 length=21.0000 global_step=53757.0000 loss=311.1980
+rainbow train:  99%|█████████▉| 1981/2000 [1:01:35<00:26,  1.39s/it][step=1982] episode=1982.0000 return=32.5345 length=28.0000 global_step=53785.0000 loss=294.1541
+rainbow train:  99%|█████████▉| 1982/2000 [1:01:37<00:26,  1.45s/it][step=1983] episode=1983.0000 return=-113.3759 length=21.0000 global_step=53806.0000 loss=296.8679
+rainbow train:  99%|█████████▉| 1983/2000 [1:01:38<00:23,  1.38s/it][step=1984] episode=1984.0000 return=39.3884 length=13.0000 global_step=53819.0000 loss=372.4248
+rainbow train:  99%|█████████▉| 1984/2000 [1:01:39<00:19,  1.21s/it][step=1985] episode=1985.0000 return=-19.7533 length=20.0000 global_step=53839.0000 loss=247.1941
+rainbow train:  99%|█████████▉| 1985/2000 [1:01:40<00:17,  1.20s/it][step=1986] episode=1986.0000 return=29.3197 length=65.0000 global_step=53904.0000 loss=156.6020
+rainbow train:  99%|█████████▉| 1986/2000 [1:01:43<00:26,  1.88s/it][step=1987] episode=1987.0000 return=-47.0056 length=45.0000 global_step=53949.0000 loss=194.6161
+rainbow train:  99%|█████████▉| 1987/2000 [1:01:46<00:26,  2.05s/it][step=1988] episode=1988.0000 return=-113.8524 length=12.0000 global_step=53961.0000 loss=141.0875
+rainbow train:  99%|█████████▉| 1988/2000 [1:01:47<00:19,  1.65s/it][step=1989] episode=1989.0000 return=-94.5261 length=19.0000 global_step=53980.0000 loss=458.8969
+rainbow train:  99%|█████████▉| 1989/2000 [1:01:48<00:16,  1.49s/it][step=1990] episode=1990.0000 return=80.7161 length=41.0000 global_step=54021.0000 loss=351.0835
+rainbow train: 100%|█████████▉| 1990/2000 [1:01:50<00:16,  1.69s/it][step=1991] episode=1991.0000 return=-58.7354 length=13.0000 global_step=54034.0000 loss=359.4719
+rainbow train: 100%|█████████▉| 1991/2000 [1:01:51<00:12,  1.42s/it][step=1992] episode=1992.0000 return=-45.6073 length=12.0000 global_step=54046.0000 loss=254.5180
+rainbow train: 100%|█████████▉| 1992/2000 [1:01:51<00:09,  1.22s/it][step=1993] episode=1993.0000 return=-87.1572 length=13.0000 global_step=54059.0000 loss=503.8664
+rainbow train: 100%|█████████▉| 1993/2000 [1:01:52<00:07,  1.08s/it][step=1994] episode=1994.0000 return=184.4432 length=46.0000 global_step=54105.0000 loss=241.1045
+rainbow train: 100%|█████████▉| 1994/2000 [1:01:55<00:09,  1.50s/it][step=1995] episode=1995.0000 return=-104.3778 length=18.0000 global_step=54123.0000 loss=258.9832
+rainbow train: 100%|█████████▉| 1995/2000 [1:01:56<00:06,  1.37s/it][step=1996] episode=1996.0000 return=137.4012 length=20.0000 global_step=54143.0000 loss=323.4959
+rainbow train: 100%|█████████▉| 1996/2000 [1:01:57<00:05,  1.31s/it][step=1997] episode=1997.0000 return=-79.6791 length=12.0000 global_step=54155.0000 loss=231.1965
+rainbow train: 100%|█████████▉| 1997/2000 [1:01:58<00:03,  1.15s/it][step=1998] episode=1998.0000 return=141.0692 length=35.0000 global_step=54190.0000 loss=409.1609
+rainbow train: 100%|█████████▉| 1998/2000 [1:02:00<00:02,  1.38s/it][step=1999] episode=1999.0000 return=-115.9758 length=13.0000 global_step=54203.0000 loss=327.2885
+rainbow train: 100%|█████████▉| 1999/2000 [1:02:00<00:01,  1.21s/it][step=2000] episode=2000.0000 return=-10.0398 length=33.0000 global_step=54236.0000 loss=238.8380
+rainbow train: 100%|██████████| 2000/2000 [1:02:02<00:00,  1.44s/it]rainbow train: 100%|██████████| 2000/2000 [1:02:02<00:00,  1.86s/it]
+wandb: updating run metadata
+wandb: uploading output.log; uploading wandb-summary.json
+wandb: uploading output.log; uploading config.yaml
+wandb: uploading history steps 1996-1999, summary, console lines 1998-2000
+wandb: 
+wandb: Run history:
+wandb:     episode ▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▃▄▄▄▅▅▅▅▅▅▆▆▆▆▆▇▇▇▇▇▇▇▇██
+wandb: global_step ▁▁▁▁▁▁▂▂▂▂▂▃▃▃▃▄▄▄▄▄▅▅▅▅▅▅▅▆▆▆▆▆▆▆▇▇████
+wandb:      length ▃▂▂▂▁▂▁▃▁▃▃▄▂▁▂▂▄▁▄▁▁▆▁▁▂▂▄▄▁▂▂▄▁▂▃█▄▃▃▁
+wandb:        loss ▆▆▅▄▅▃▆▃▇▃▄▁▅▆█▄▄▃▄▂▅▄▂█▅▅▃▄▆▄▅▆▄▄▂▃▅▅▇▇
+wandb:      return ▁▂▁▂▂▁▁▁▁▂▃▅▁▁▃▃▂▁▅▃▄▃▅▃▅▂▃▃▃▃▁▃█▃▃▁▂▁▃▃
+wandb: 
+wandb: Run summary:
+wandb:     episode 2000
+wandb: global_step 54236
+wandb:      length 33
+wandb:        loss 238.83801
+wandb:      return -10.03984
+wandb: 
+wandb: 🚀 View run rainbow_seed0 at: https://wandb.ai/lee_changmin-sangmyung-uni/RLDoom/runs/njjrm2xh
+wandb: ⭐️ View project at: https://wandb.ai/lee_changmin-sangmyung-uni/RLDoom
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./logs/wandb/wandb/run-20251205_180912-njjrm2xh/logs
