@@ -54,8 +54,10 @@ def train_onpolicy(agent, cfg, logger):
         metrics: Dict[str, Any] = agent.update()
 
         # -------- logging --------
+        ep_idx = ep + 1  # 1-based episode index
+
         log_dict: Dict[str, float] = {
-            "episode": ep_idx,
+            "episode": float(ep_idx),
             "return": episode_return,
             "length": episode_len,
             "global_step": float(global_step),
@@ -63,10 +65,10 @@ def train_onpolicy(agent, cfg, logger):
         for k, v in metrics.items():
             log_dict[k] = float(v)
 
-        logger.log_metrics(log_dict, step=ep)
+        # Use ep_idx as wandb step (x-axis = episode)
+        logger.log_metrics(log_dict, step=ep_idx)
 
         # -------- checkpointing --------
-        ep_idx = ep + 1
         if (
             ep_idx % cfg.checkpoint_interval == 0
             or ep_idx == cfg.train_episodes
