@@ -55,14 +55,15 @@ class ReinforceAgent(Agent):
 
         return action
 
-    def observe(
-        self,
-        transition: Tuple[np.ndarray, int, float, np.ndarray, bool, Dict[str, Any]],
-    ) -> None:
-        _, _, reward, _, done, _ = transition
-        self.log_probs.append(self.last_log_prob)
+    def observe(self, transition):
+        """
+        Receive one transition:
+        (obs, action, reward, next_obs, done).
+        We only need reward (and optionally done) for REINFORCE.
+        """
+        obs, action, reward, next_obs, done = transition
+        # store reward for this time step
         self.rewards.append(float(reward))
-        self._done = done
 
     def update(self) -> Dict[str, float]:
         if not self._done:

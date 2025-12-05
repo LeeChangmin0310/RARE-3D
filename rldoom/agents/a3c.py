@@ -58,11 +58,9 @@ class A3CAgent(Agent):
                 action = int(dist.sample().item())
         return action
 
-    def observe(
-        self,
-        transition: Tuple[np.ndarray, int, float, np.ndarray, bool, Dict[str, Any]],
-    ) -> None:
-        obs, action, reward, next_obs, done, _ = transition
+    def observe(self, transition):
+        """Store transition in replay buffer."""
+        obs, action, reward, next_obs, done = transition
         self.buffer.add(obs, action, reward, next_obs, done)
 
     def update(self) -> Dict[str, float]:
