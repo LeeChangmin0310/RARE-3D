@@ -9,10 +9,10 @@ JOBS = [
     # ("dddqn", 0),
     # ("rainbow", 0),
     ("ddqn", 0),
-    ("reinforce", 0),
-    ("a2c", 0),
     ("ppo", 0),
+    ("reinforce", 0),
     ("trpo", 0),
+    ("a2c", 0),
     # ("a3c", 0),
 ]
 
