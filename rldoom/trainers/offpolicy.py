@@ -12,34 +12,45 @@ def train_offpolicy(agent, cfg, logger):
     Generic off-policy training loop
     (DQN / DDQN / DDDQN / Rainbow).
 
-    - 매 step마다: act -> env.step -> agent.observe() -> agent.update()
-    - agent.update()가 빈 dict가 아닌 metrics를 리턴하면,
-      그 즉시 logger.log_metrics로 loss/value_loss를 찍는다.
-    - 에피소드가 끝날 때 return/length/global_step도 따로 로깅.
+    - Each environment step:
+        * collect transition
+        * store into replay buffer
+        * call agent.update() for TD learning
+    - Logging is done once per episode, using the latest metrics
+      returned by agent.update() inside that episode.
+    - Checkpoints are saved periodically via Agent.save().
     """
     env = make_env(cfg)
     global_step = 0
 
+    # Ensure checkpoint directory exists
     os.makedirs(cfg.checkpoint_dir, exist_ok=True)
 
-    for ep_idx in trange(cfg.train_episodes, desc=f"{cfg.algo} train", dynamic_ncols=True):
+    # Main training loop over episodes
+    for ep in trange(cfg.train_episodes, desc=f"{cfg.algo} train", dynamic_ncols=True):
         obs = env.reset()
         episode_return = 0.0
         episode_len = 0
 
+        # Will store the last non-empty metrics from agent.update()
+        last_metrics: Dict[str, Any] = {}
+
         while True:
-            # 1) Select action
+            # 1) Select action from the current policy (epsilon-greedy, etc.)
             action = agent.act(obs, deterministic=False)
 
-            # 2) Step environment
+            # 2) Step the environment
             next_obs, reward, done, info = env.step(action)
 
-            # 3) Give transition to agent
+            # 3) Store transition into the replay buffer
             transition = (obs, action, reward, next_obs, done)
             agent.observe(transition)
 
-            # 4) One off-policy update step
+            # 4) Perform one off-policy TD update (if buffer is ready)
             step_metrics: Dict[str, Any] = agent.update()
+            if step_metrics:
+                # Keep the most recent loss/value_loss, etc. for this episode
+                last_metrics = step_metrics
 
             # 5) Bookkeeping
             episode_return += reward
@@ -47,37 +58,32 @@ def train_offpolicy(agent, cfg, logger):
             global_step += 1
             obs = next_obs
 
-            # --- per-step logging of losses (if any) ---
-            # 여기서 loss/value_loss가 실제로 wandb에 만들어진다.
-            if step_metrics:
-                log_step_dict: Dict[str, float] = {
-                    "global_step": float(global_step),
-                    "episode": float(ep_idx + 1),
-                    "return_so_far": float(episode_return),
-                    "length_so_far": float(episode_len),
-                }
-                for k, v in step_metrics.items():
-                    log_step_dict[k] = float(v)
-
-                # x축을 global_step으로 해서 step 단위 loss를 찍음
-                logger.log_metrics(log_step_dict, step=global_step)
-
+            # 6) Episode termination condition
             if done or episode_len >= cfg.max_steps_per_episode:
                 break
 
-        # -------- episode-level logging (return 등) --------
-        ep_num = ep_idx + 1
-        ep_log: Dict[str, float] = {
-            "episode": float(ep_num),
+        # -------- episode-level logging --------
+        ep_idx = ep + 1  # 1-based episode index (aligns with on-policy loop)
+
+        log_dict: Dict[str, float] = {
+            "episode": float(ep_idx),
             "return": float(episode_return),
             "length": float(episode_len),
             "global_step": float(global_step),
         }
-        logger.log_metrics(ep_log, step=ep_num)
+        # Merge the last metrics from TD updates (e.g., loss, value_loss)
+        for k, v in last_metrics.items():
+            log_dict[k] = float(v)
+
+        # Use ep_idx as wandb step so that x-axis = episode (same as on-policy)
+        logger.log_metrics(log_dict, step=ep_idx)
 
         # -------- checkpointing --------
-        if (ep_num % cfg.checkpoint_interval == 0) or (ep_num == cfg.train_episodes):
-            ckpt_name = f"{cfg.algo}_seed{cfg.seed}_ep{ep_num:06d}.pth"
+        if (
+            ep_idx % cfg.checkpoint_interval == 0
+            or ep_idx == cfg.train_episodes
+        ):
+            ckpt_name = f"{cfg.algo}_seed{cfg.seed}_ep{ep_idx:06d}.pth"
             ckpt_path = os.path.join(cfg.checkpoint_dir, ckpt_name)
             agent.save(ckpt_path)
 
