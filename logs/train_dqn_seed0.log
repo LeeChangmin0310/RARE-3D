@@ -1,26 +1,386 @@
 wandb: Currently logged in as: lee_changmin (lee_changmin-sangmyung-uni) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
-wandb: setting up run hrpwta0m
+wandb: setting up run t618zisj
 wandb: Tracking run with wandb version 0.23.0
-wandb: Run data is saved locally in /home/cia/disk1/bci_intern/AAAI2026/RLDoom/logs/wandb/wandb/run-20251205_180406-hrpwta0m
+wandb: Run data is saved locally in /home/cia/disk1/bci_intern/AAAI2026/RLDoom/logs/wandb/wandb/run-20251205_180912-t618zisj
 wandb: Run `wandb offline` to turn off syncing.
 wandb: Syncing run dqn_seed0
 wandb: ⭐️ View project at https://wandb.ai/lee_changmin-sangmyung-uni/RLDoom
-wandb: 🚀 View run at https://wandb.ai/lee_changmin-sangmyung-uni/RLDoom/runs/hrpwta0m
+wandb: 🚀 View run at https://wandb.ai/lee_changmin-sangmyung-uni/RLDoom/runs/t618zisj
 pci id for fd 8: 1a03:2000, driver (null)
 MESA-LOADER: failed to open ast: /usr/lib/dri/ast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri)
 pci id for fd 9: 1a03:2000, driver (null)
 kmsro: driver missing
-dqn train:   0%|          | 0/2000 [00:00<?, ?it/s]dqn train:   0%|          | 0/2000 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/home/cia/disk1/bci_intern/AAAI2026/RLDoom/train.py", line 87, in <module>
-    main()
-  File "/home/cia/disk1/bci_intern/AAAI2026/RLDoom/train.py", line 78, in main
-    train_offpolicy(agent, cfg, logger)
-  File "/home/cia/disk1/bci_intern/AAAI2026/RLDoom/rldoom/trainers/offpolicy.py", line 39, in train_offpolicy
-    agent.observe(transition)
-  File "/home/cia/disk1/bci_intern/AAAI2026/RLDoom/rldoom/agents/dqn.py", line 78, in observe
-    obs, action, reward, next_obs, done, _ = transition
-ValueError: not enough values to unpack (expected 6, got 5)
-[1;34mwandb[0m: 
-[1;34mwandb[0m: 🚀 View run [33mdqn_seed0[0m at: [34mhttps://wandb.ai/lee_changmin-sangmyung-uni/RLDoom/runs/hrpwta0m[0m
-[1;34mwandb[0m: Find logs at: [1;35mlogs/wandb/wandb/run-20251205_180406-hrpwta0m/logs[0m
+dqn train:   0%|          | 0/2000 [00:00<?, ?it/s][step=1] episode=1.0000 return=-110.5250 length=12.0000 global_step=12.0000
+dqn train:   0%|          | 1/2000 [00:00<24:16,  1.37it/s][step=2] episode=2.0000 return=-92.9580 length=29.0000 global_step=41.0000
+dqn train:   0%|          | 2/2000 [00:02<44:49,  1.35s/it][step=3] episode=3.0000 return=6.6775 length=26.0000 global_step=67.0000
+dqn train:   0%|          | 3/2000 [00:04<51:01,  1.53s/it][step=4] episode=4.0000 return=-111.6426 length=12.0000 global_step=79.0000
+dqn train:   0%|          | 4/2000 [00:05<41:03,  1.23s/it][step=5] episode=5.0000 return=-45.9968 length=26.0000 global_step=105.0000
+dqn train:   0%|          | 5/2000 [00:06<45:57,  1.38s/it][step=6] episode=6.0000 return=-115.9874 length=20.0000 global_step=125.0000
+dqn train:   0%|          | 6/2000 [00:07<43:57,  1.32s/it][step=7] episode=7.0000 return=-115.9972 length=29.0000 global_step=154.0000
+dqn train:   0%|          | 7/2000 [00:09<50:07,  1.51s/it][step=8] episode=8.0000 return=-115.8481 length=13.0000 global_step=167.0000
+dqn train:   0%|          | 8/2000 [00:10<42:54,  1.29s/it][step=9] episode=9.0000 return=-107.9455 length=28.0000 global_step=195.0000
+dqn train:   0%|          | 9/2000 [00:12<48:52,  1.47s/it][step=10] episode=10.0000 return=-85.1486 length=26.0000 global_step=221.0000
+dqn train:   0%|          | 10/2000 [00:14<50:00,  1.51s/it][step=11] episode=11.0000 return=-112.9733 length=29.0000 global_step=250.0000
+dqn train:   1%|          | 11/2000 [00:15<53:41,  1.62s/it][step=12] episode=12.0000 return=-74.2867 length=12.0000 global_step=262.0000
+dqn train:   1%|          | 12/2000 [00:16<44:53,  1.35s/it][step=13] episode=13.0000 return=-108.1106 length=19.0000 global_step=281.0000
+dqn train:   1%|          | 13/2000 [00:17<43:45,  1.32s/it][step=14] episode=14.0000 return=-88.5665 length=20.0000 global_step=301.0000
+dqn train:   1%|          | 14/2000 [00:19<43:43,  1.32s/it][step=15] episode=15.0000 return=-110.0913 length=22.0000 global_step=323.0000
+dqn train:   1%|          | 15/2000 [00:20<43:24,  1.31s/it][step=16] episode=16.0000 return=-115.9903 length=29.0000 global_step=352.0000
+dqn train:   1%|          | 16/2000 [00:22<48:50,  1.48s/it][step=17] episode=17.0000 return=35.3871 length=510.0000 global_step=862.0000
+dqn train:   1%|          | 17/2000 [00:53<5:44:49, 10.43s/it][step=18] episode=18.0000 return=-106.3589 length=20.0000 global_step=882.0000
+dqn train:   1%|          | 18/2000 [00:54<4:13:55,  7.69s/it][step=19] episode=19.0000 return=-90.2117 length=29.0000 global_step=911.0000
+dqn train:   1%|          | 19/2000 [00:56<3:16:04,  5.94s/it][step=20] episode=20.0000 return=-98.6570 length=28.0000 global_step=939.0000
+dqn train:   1%|          | 20/2000 [00:58<2:35:25,  4.71s/it][step=21] episode=21.0000 return=-89.8438 length=20.0000 global_step=959.0000
+dqn train:   1%|          | 21/2000 [00:59<2:00:06,  3.64s/it][step=22] episode=22.0000 return=-63.9678 length=50.0000 global_step=1009.0000
+dqn train:   1%|          | 22/2000 [01:02<1:54:28,  3.47s/it][step=23] episode=23.0000 return=-115.9993 length=29.0000 global_step=1038.0000
+dqn train:   1%|          | 23/2000 [01:04<1:38:07,  2.98s/it][step=24] episode=24.0000 return=-115.9756 length=58.0000 global_step=1096.0000
+dqn train:   1%|          | 24/2000 [01:08<1:44:04,  3.16s/it][step=25] episode=25.0000 return=-5.1462 length=20.0000 global_step=1116.0000
+dqn train:   1%|▏         | 25/2000 [01:09<1:24:54,  2.58s/it][step=26] episode=26.0000 return=-115.9909 length=20.0000 global_step=1136.0000
+dqn train:   1%|▏         | 26/2000 [01:10<1:12:12,  2.20s/it][step=27] episode=27.0000 return=-112.8625 length=29.0000 global_step=1165.0000
+dqn train:   1%|▏         | 27/2000 [01:12<1:09:07,  2.10s/it][step=28] episode=28.0000 return=-75.3228 length=19.0000 global_step=1184.0000
+dqn train:   1%|▏         | 28/2000 [01:13<1:00:01,  1.83s/it][step=29] episode=29.0000 return=-115.9797 length=13.0000 global_step=1197.0000
+dqn train:   1%|▏         | 29/2000 [01:14<49:50,  1.52s/it]  [step=30] episode=30.0000 return=-115.0005 length=12.0000 global_step=1209.0000
+dqn train:   2%|▏         | 30/2000 [01:15<41:59,  1.28s/it][step=31] episode=31.0000 return=-74.4482 length=20.0000 global_step=1229.0000
+dqn train:   2%|▏         | 31/2000 [01:16<41:57,  1.28s/it][step=32] episode=32.0000 return=-91.9877 length=27.0000 global_step=1256.0000
+dqn train:   2%|▏         | 32/2000 [01:18<45:46,  1.40s/it][step=33] episode=33.0000 return=-115.3479 length=21.0000 global_step=1277.0000
+dqn train:   2%|▏         | 33/2000 [01:19<44:37,  1.36s/it][step=34] episode=34.0000 return=-75.2827 length=26.0000 global_step=1303.0000
+dqn train:   2%|▏         | 34/2000 [01:21<47:03,  1.44s/it][step=35] episode=35.0000 return=-115.9979 length=20.0000 global_step=1323.0000
+dqn train:   2%|▏         | 35/2000 [01:22<45:17,  1.38s/it][step=36] episode=36.0000 return=-89.2111 length=20.0000 global_step=1343.0000
+dqn train:   2%|▏         | 36/2000 [01:23<44:47,  1.37s/it][step=37] episode=37.0000 return=-82.3332 length=33.0000 global_step=1376.0000
+dqn train:   2%|▏         | 37/2000 [01:25<51:18,  1.57s/it][step=38] episode=38.0000 return=-72.1279 length=57.0000 global_step=1433.0000
+dqn train:   2%|▏         | 38/2000 [01:29<1:09:59,  2.14s/it][step=39] episode=39.0000 return=-56.6322 length=12.0000 global_step=1445.0000
+dqn train:   2%|▏         | 39/2000 [01:30<56:20,  1.72s/it]  [step=40] episode=40.0000 return=-76.2246 length=42.0000 global_step=1487.0000
+dqn train:   2%|▏         | 40/2000 [01:32<1:05:47,  2.01s/it][step=41] episode=41.0000 return=-81.8221 length=37.0000 global_step=1524.0000
+dqn train:   2%|▏         | 41/2000 [01:35<1:08:39,  2.10s/it][step=42] episode=42.0000 return=-115.9760 length=11.0000 global_step=1535.0000
+dqn train:   2%|▏         | 42/2000 [01:35<54:54,  1.68s/it]  [step=43] episode=43.0000 return=-115.3879 length=25.0000 global_step=1560.0000
+dqn train:   2%|▏         | 43/2000 [01:37<54:04,  1.66s/it][step=44] episode=44.0000 return=-115.9943 length=13.0000 global_step=1573.0000
+dqn train:   2%|▏         | 44/2000 [01:38<45:50,  1.41s/it][step=45] episode=45.0000 return=-53.0702 length=20.0000 global_step=1593.0000
+dqn train:   2%|▏         | 45/2000 [01:39<44:29,  1.37s/it][step=46] episode=46.0000 return=-114.9712 length=11.0000 global_step=1604.0000
+dqn train:   2%|▏         | 46/2000 [01:40<37:54,  1.16s/it][step=47] episode=47.0000 return=-110.3473 length=21.0000 global_step=1625.0000
+dqn train:   2%|▏         | 47/2000 [01:41<39:55,  1.23s/it][step=48] episode=48.0000 return=-110.7384 length=37.0000 global_step=1662.0000
+dqn train:   2%|▏         | 48/2000 [01:43<49:43,  1.53s/it][step=49] episode=49.0000 return=-89.0066 length=12.0000 global_step=1674.0000
+dqn train:   2%|▏         | 49/2000 [01:44<42:00,  1.29s/it][step=50] episode=50.0000 return=-105.2874 length=30.0000 global_step=1704.0000
+dqn train:   2%|▎         | 50/2000 [01:46<46:48,  1.44s/it][step=51] episode=51.0000 return=-115.9986 length=21.0000 global_step=1725.0000
+dqn train:   3%|▎         | 51/2000 [01:47<45:35,  1.40s/it][step=52] episode=52.0000 return=-58.4149 length=29.0000 global_step=1754.0000
+dqn train:   3%|▎         | 52/2000 [01:49<49:14,  1.52s/it][step=53] episode=53.0000 return=-104.4104 length=21.0000 global_step=1775.0000
+dqn train:   3%|▎         | 53/2000 [01:50<47:21,  1.46s/it][step=54] episode=54.0000 return=-79.2222 length=19.0000 global_step=1794.0000
+dqn train:   3%|▎         | 54/2000 [01:51<44:25,  1.37s/it][step=55] episode=55.0000 return=-115.4832 length=20.0000 global_step=1814.0000
+dqn train:   3%|▎         | 55/2000 [01:53<43:36,  1.35s/it][step=56] episode=56.0000 return=-81.1837 length=30.0000 global_step=1844.0000
+dqn train:   3%|▎         | 56/2000 [01:55<49:09,  1.52s/it][step=57] episode=57.0000 return=-0.4050 length=71.0000 global_step=1915.0000
+dqn train:   3%|▎         | 57/2000 [01:59<1:16:49,  2.37s/it][step=58] episode=58.0000 return=-59.7065 length=56.0000 global_step=1971.0000
+dqn train:   3%|▎         | 58/2000 [02:02<1:25:47,  2.65s/it][step=59] episode=59.0000 return=-60.6595 length=28.0000 global_step=1999.0000
+dqn train:   3%|▎         | 59/2000 [02:04<1:17:11,  2.39s/it][step=60] episode=60.0000 return=-115.2224 length=11.0000 global_step=2010.0000
+dqn train:   3%|▎         | 60/2000 [02:05<1:01:15,  1.89s/it][step=61] episode=61.0000 return=-87.0326 length=58.0000 global_step=2068.0000
+dqn train:   3%|▎         | 61/2000 [02:08<1:18:08,  2.42s/it][step=62] episode=62.0000 return=-77.7601 length=21.0000 global_step=2089.0000
+dqn train:   3%|▎         | 62/2000 [02:10<1:06:37,  2.06s/it][step=63] episode=63.0000 return=-112.1075 length=46.0000 global_step=2135.0000
+dqn train:   3%|▎         | 63/2000 [02:13<1:13:59,  2.29s/it][step=64] episode=64.0000 return=-59.2478 length=35.0000 global_step=2170.0000
+dqn train:   3%|▎         | 64/2000 [02:15<1:12:01,  2.23s/it][step=65] episode=65.0000 return=-111.7419 length=20.0000 global_step=2190.0000
+dqn train:   3%|▎         | 65/2000 [02:16<1:02:55,  1.95s/it][step=66] episode=66.0000 return=7.0167 length=49.0000 global_step=2239.0000
+dqn train:   3%|▎         | 66/2000 [02:19<1:12:55,  2.26s/it][step=67] episode=67.0000 return=-99.3842 length=28.0000 global_step=2267.0000
+dqn train:   3%|▎         | 67/2000 [02:21<1:07:02,  2.08s/it][step=68] episode=68.0000 return=32.0231 length=250.0000 global_step=2517.0000
+dqn train:   3%|▎         | 68/2000 [02:36<3:14:48,  6.05s/it][step=69] episode=69.0000 return=-90.7466 length=20.0000 global_step=2537.0000
+dqn train:   3%|▎         | 69/2000 [02:37<2:28:54,  4.63s/it][step=70] episode=70.0000 return=-102.1158 length=21.0000 global_step=2558.0000
+dqn train:   4%|▎         | 70/2000 [02:38<1:56:29,  3.62s/it][step=71] episode=71.0000 return=-97.3312 length=18.0000 global_step=2576.0000
+dqn train:   4%|▎         | 71/2000 [02:40<1:32:25,  2.87s/it][step=72] episode=72.0000 return=-115.9319 length=52.0000 global_step=2628.0000
+dqn train:   4%|▎         | 72/2000 [02:43<1:35:09,  2.96s/it][step=73] episode=73.0000 return=-115.5984 length=33.0000 global_step=2661.0000
+dqn train:   4%|▎         | 73/2000 [02:45<1:26:54,  2.71s/it][step=74] episode=74.0000 return=-115.4111 length=22.0000 global_step=2683.0000
+dqn train:   4%|▎         | 74/2000 [02:46<1:14:22,  2.32s/it][step=75] episode=75.0000 return=-115.9975 length=18.0000 global_step=2701.0000
+dqn train:   4%|▍         | 75/2000 [02:47<1:03:43,  1.99s/it][step=76] episode=76.0000 return=-92.2214 length=21.0000 global_step=2722.0000
+dqn train:   4%|▍         | 76/2000 [02:49<57:23,  1.79s/it]  [step=77] episode=77.0000 return=-86.5213 length=20.0000 global_step=2742.0000
+dqn train:   4%|▍         | 77/2000 [02:50<52:26,  1.64s/it][step=78] episode=78.0000 return=-68.7873 length=21.0000 global_step=2763.0000
+dqn train:   4%|▍         | 78/2000 [02:51<48:09,  1.50s/it][step=79] episode=79.0000 return=-115.9966 length=30.0000 global_step=2793.0000
+dqn train:   4%|▍         | 79/2000 [02:53<52:24,  1.64s/it][step=80] episode=80.0000 return=-95.8934 length=13.0000 global_step=2806.0000
+dqn train:   4%|▍         | 80/2000 [02:54<44:23,  1.39s/it][step=81] episode=81.0000 return=-97.6845 length=28.0000 global_step=2834.0000
+dqn train:   4%|▍         | 81/2000 [02:56<47:27,  1.48s/it][step=82] episode=82.0000 return=-115.9407 length=13.0000 global_step=2847.0000
+dqn train:   4%|▍         | 82/2000 [02:57<41:05,  1.29s/it][step=83] episode=83.0000 return=-71.5366 length=30.0000 global_step=2877.0000
+dqn train:   4%|▍         | 83/2000 [02:58<46:55,  1.47s/it][step=84] episode=84.0000 return=-111.3794 length=88.0000 global_step=2965.0000
+dqn train:   4%|▍         | 84/2000 [03:04<1:24:06,  2.63s/it][step=85] episode=85.0000 return=-95.4966 length=36.0000 global_step=3001.0000
+dqn train:   4%|▍         | 85/2000 [03:06<1:19:30,  2.49s/it][step=86] episode=86.0000 return=-105.5476 length=13.0000 global_step=3014.0000
+dqn train:   4%|▍         | 86/2000 [03:07<1:03:41,  2.00s/it][step=87] episode=87.0000 return=-40.9605 length=49.0000 global_step=3063.0000
+dqn train:   4%|▍         | 87/2000 [03:10<1:13:51,  2.32s/it][step=88] episode=88.0000 return=-94.7968 length=12.0000 global_step=3075.0000
+dqn train:   4%|▍         | 88/2000 [03:11<59:12,  1.86s/it]  [step=89] episode=89.0000 return=-115.9875 length=28.0000 global_step=3103.0000
+dqn train:   4%|▍         | 89/2000 [03:12<58:04,  1.82s/it][step=90] episode=90.0000 return=-107.8665 length=28.0000 global_step=3131.0000
+dqn train:   4%|▍         | 90/2000 [03:14<57:09,  1.80s/it][step=91] episode=91.0000 return=-84.3842 length=26.0000 global_step=3157.0000
+dqn train:   5%|▍         | 91/2000 [03:16<55:44,  1.75s/it][step=92] episode=92.0000 return=-57.0065 length=49.0000 global_step=3206.0000
+dqn train:   5%|▍         | 92/2000 [03:19<1:07:43,  2.13s/it][step=93] episode=93.0000 return=-115.9835 length=20.0000 global_step=3226.0000
+dqn train:   5%|▍         | 93/2000 [03:20<59:26,  1.87s/it]  [step=94] episode=94.0000 return=-48.8140 length=45.0000 global_step=3271.0000
+dqn train:   5%|▍         | 94/2000 [03:23<1:07:39,  2.13s/it][step=95] episode=95.0000 return=-114.0250 length=13.0000 global_step=3284.0000
+dqn train:   5%|▍         | 95/2000 [03:24<54:52,  1.73s/it]  [step=96] episode=96.0000 return=-50.3203 length=18.0000 global_step=3302.0000
+dqn train:   5%|▍         | 96/2000 [03:25<48:53,  1.54s/it][step=97] episode=97.0000 return=-115.9583 length=21.0000 global_step=3323.0000
+dqn train:   5%|▍         | 97/2000 [03:26<46:33,  1.47s/it][step=98] episode=98.0000 return=-99.5670 length=87.0000 global_step=3410.0000
+dqn train:   5%|▍         | 98/2000 [03:31<1:23:48,  2.64s/it][step=99] episode=99.0000 return=-109.7787 length=29.0000 global_step=3439.0000
+dqn train:   5%|▍         | 99/2000 [03:33<1:15:52,  2.39s/it][step=100] episode=100.0000 return=-94.2957 length=20.0000 global_step=3459.0000
+dqn train:   5%|▌         | 100/2000 [03:34<1:05:31,  2.07s/it][step=101] episode=101.0000 return=-7.8161 length=21.0000 global_step=3480.0000
+dqn train:   5%|▌         | 101/2000 [03:36<58:06,  1.84s/it]  [step=102] episode=102.0000 return=-99.0595 length=33.0000 global_step=3513.0000
+dqn train:   5%|▌         | 102/2000 [03:38<1:00:48,  1.92s/it][step=103] episode=103.0000 return=-115.9969 length=20.0000 global_step=3533.0000
+dqn train:   5%|▌         | 103/2000 [03:39<54:03,  1.71s/it]  [step=104] episode=104.0000 return=-103.9311 length=26.0000 global_step=3559.0000
+dqn train:   5%|▌         | 104/2000 [03:41<54:11,  1.72s/it][step=105] episode=105.0000 return=-91.9532 length=20.0000 global_step=3579.0000
+dqn train:   5%|▌         | 105/2000 [03:42<49:49,  1.58s/it][step=106] episode=106.0000 return=-115.9059 length=29.0000 global_step=3608.0000
+dqn train:   5%|▌         | 106/2000 [03:44<51:15,  1.62s/it][step=107] episode=107.0000 return=-99.7684 length=20.0000 global_step=3628.0000
+dqn train:   5%|▌         | 107/2000 [03:45<48:03,  1.52s/it][step=108] episode=108.0000 return=-39.5685 length=27.0000 global_step=3655.0000
+dqn train:   5%|▌         | 108/2000 [03:47<49:32,  1.57s/it][step=109] episode=109.0000 return=-115.9778 length=11.0000 global_step=3666.0000
+dqn train:   5%|▌         | 109/2000 [03:47<41:09,  1.31s/it][step=110] episode=110.0000 return=-80.4528 length=20.0000 global_step=3686.0000
+dqn train:   6%|▌         | 110/2000 [03:49<41:00,  1.30s/it][step=111] episode=111.0000 return=-100.9868 length=21.0000 global_step=3707.0000
+dqn train:   6%|▌         | 111/2000 [03:50<40:39,  1.29s/it][step=112] episode=112.0000 return=-108.7345 length=12.0000 global_step=3719.0000
+dqn train:   6%|▌         | 112/2000 [03:51<35:47,  1.14s/it][step=113] episode=113.0000 return=-88.3615 length=29.0000 global_step=3748.0000
+dqn train:   6%|▌         | 113/2000 [03:53<41:36,  1.32s/it][step=114] episode=114.0000 return=-65.8859 length=37.0000 global_step=3785.0000
+dqn train:   6%|▌         | 114/2000 [03:55<51:22,  1.63s/it][step=115] episode=115.0000 return=-101.7022 length=18.0000 global_step=3803.0000
+dqn train:   6%|▌         | 115/2000 [03:56<46:37,  1.48s/it][step=116] episode=116.0000 return=-67.6572 length=28.0000 global_step=3831.0000
+dqn train:   6%|▌         | 116/2000 [03:58<48:55,  1.56s/it][step=117] episode=117.0000 return=-97.8020 length=20.0000 global_step=3851.0000
+dqn train:   6%|▌         | 117/2000 [03:59<46:35,  1.48s/it][step=118] episode=118.0000 return=-33.9700 length=30.0000 global_step=3881.0000
+dqn train:   6%|▌         | 118/2000 [04:01<50:16,  1.60s/it][step=119] episode=119.0000 return=-45.5791 length=28.0000 global_step=3909.0000
+dqn train:   6%|▌         | 119/2000 [04:03<51:49,  1.65s/it][step=120] episode=120.0000 return=-112.0808 length=21.0000 global_step=3930.0000
+dqn train:   6%|▌         | 120/2000 [04:04<48:25,  1.55s/it][step=121] episode=121.0000 return=-112.5496 length=28.0000 global_step=3958.0000
+dqn train:   6%|▌         | 121/2000 [04:06<49:55,  1.59s/it][step=122] episode=122.0000 return=-111.4770 length=29.0000 global_step=3987.0000
+dqn train:   6%|▌         | 122/2000 [04:08<51:55,  1.66s/it][step=123] episode=123.0000 return=-78.9584 length=18.0000 global_step=4005.0000
+dqn train:   6%|▌         | 123/2000 [04:09<47:25,  1.52s/it][step=124] episode=124.0000 return=-79.9719 length=22.0000 global_step=4027.0000
+dqn train:   6%|▌         | 124/2000 [04:10<45:27,  1.45s/it][step=125] episode=125.0000 return=-113.5872 length=28.0000 global_step=4055.0000
+dqn train:   6%|▋         | 125/2000 [04:12<48:25,  1.55s/it][step=126] episode=126.0000 return=-113.1408 length=18.0000 global_step=4073.0000
+dqn train:   6%|▋         | 126/2000 [04:13<44:30,  1.43s/it][step=127] episode=127.0000 return=30.9705 length=65.0000 global_step=4138.0000
+dqn train:   6%|▋         | 127/2000 [04:17<1:09:31,  2.23s/it][step=128] episode=128.0000 return=-59.7609 length=21.0000 global_step=4159.0000
+dqn train:   6%|▋         | 128/2000 [04:18<1:01:13,  1.96s/it][step=129] episode=129.0000 return=-110.0779 length=25.0000 global_step=4184.0000
+dqn train:   6%|▋         | 129/2000 [04:20<58:06,  1.86s/it]  [step=130] episode=130.0000 return=-115.9280 length=20.0000 global_step=4204.0000
+dqn train:   6%|▋         | 130/2000 [04:21<52:18,  1.68s/it][step=131] episode=131.0000 return=-86.3393 length=28.0000 global_step=4232.0000
+dqn train:   7%|▋         | 131/2000 [04:23<52:23,  1.68s/it][step=132] episode=132.0000 return=100.4203 length=462.0000 global_step=4694.0000
+dqn train:   7%|▋         | 132/2000 [04:51<5:00:32,  9.65s/it][step=133] episode=133.0000 return=-88.6882 length=26.0000 global_step=4720.0000
+dqn train:   7%|▋         | 133/2000 [04:53<3:44:53,  7.23s/it][step=134] episode=134.0000 return=-102.7938 length=34.0000 global_step=4754.0000
+dqn train:   7%|▋         | 134/2000 [04:55<2:56:40,  5.68s/it][step=135] episode=135.0000 return=-87.0450 length=13.0000 global_step=4767.0000
+dqn train:   7%|▋         | 135/2000 [04:56<2:11:20,  4.23s/it][step=136] episode=136.0000 return=202.8892 length=178.0000 global_step=4945.0000
+dqn train:   7%|▋         | 136/2000 [05:07<3:14:38,  6.27s/it][step=137] episode=137.0000 return=-38.5903 length=30.0000 global_step=4975.0000
+dqn train:   7%|▋         | 137/2000 [05:09<2:32:47,  4.92s/it][step=138] episode=138.0000 return=-115.9700 length=20.0000 global_step=4995.0000
+dqn train:   7%|▋         | 138/2000 [05:10<1:58:01,  3.80s/it][step=139] episode=139.0000 return=-115.9428 length=35.0000 global_step=5030.0000 loss=252.7393
+dqn train:   7%|▋         | 139/2000 [05:12<1:46:15,  3.43s/it][step=140] episode=140.0000 return=-105.8802 length=13.0000 global_step=5043.0000 loss=249.4283
+dqn train:   7%|▋         | 140/2000 [05:13<1:22:34,  2.66s/it][step=141] episode=141.0000 return=-12.9100 length=28.0000 global_step=5071.0000 loss=249.0780
+dqn train:   7%|▋         | 141/2000 [05:15<1:15:10,  2.43s/it][step=142] episode=142.0000 return=-72.9050 length=21.0000 global_step=5092.0000 loss=395.0361
+dqn train:   7%|▋         | 142/2000 [05:16<1:05:48,  2.13s/it][step=143] episode=143.0000 return=88.7365 length=138.0000 global_step=5230.0000 loss=27.7917
+dqn train:   7%|▋         | 143/2000 [05:26<2:12:41,  4.29s/it][step=144] episode=144.0000 return=-103.9639 length=21.0000 global_step=5251.0000 loss=470.2677
+dqn train:   7%|▋         | 144/2000 [05:27<1:45:58,  3.43s/it][step=145] episode=145.0000 return=-38.9694 length=22.0000 global_step=5273.0000 loss=175.7425
+dqn train:   7%|▋         | 145/2000 [05:29<1:27:58,  2.85s/it][step=146] episode=146.0000 return=-114.3580 length=29.0000 global_step=5302.0000 loss=178.0343
+dqn train:   7%|▋         | 146/2000 [05:31<1:19:09,  2.56s/it][step=147] episode=147.0000 return=-115.1283 length=13.0000 global_step=5315.0000 loss=173.4205
+dqn train:   7%|▋         | 147/2000 [05:32<1:03:49,  2.07s/it][step=148] episode=148.0000 return=-97.2248 length=20.0000 global_step=5335.0000 loss=175.5347
+dqn train:   7%|▋         | 148/2000 [05:33<57:48,  1.87s/it]  [step=149] episode=149.0000 return=-64.8883 length=22.0000 global_step=5357.0000 loss=615.9027
+dqn train:   7%|▋         | 149/2000 [05:34<54:12,  1.76s/it][step=150] episode=150.0000 return=-54.2661 length=28.0000 global_step=5385.0000 loss=541.1133
+dqn train:   8%|▊         | 150/2000 [05:36<55:23,  1.80s/it][step=151] episode=151.0000 return=-108.8929 length=19.0000 global_step=5404.0000 loss=315.4899
+dqn train:   8%|▊         | 151/2000 [05:38<50:34,  1.64s/it][step=152] episode=152.0000 return=-97.2498 length=22.0000 global_step=5426.0000 loss=259.2288
+dqn train:   8%|▊         | 152/2000 [05:39<48:38,  1.58s/it][step=153] episode=153.0000 return=-12.3247 length=19.0000 global_step=5445.0000 loss=245.6115
+dqn train:   8%|▊         | 153/2000 [05:40<45:42,  1.49s/it][step=154] episode=154.0000 return=-113.9400 length=20.0000 global_step=5465.0000 loss=467.2944
+dqn train:   8%|▊         | 154/2000 [05:42<44:47,  1.46s/it][step=155] episode=155.0000 return=-39.3490 length=22.0000 global_step=5487.0000 loss=105.7839
+dqn train:   8%|▊         | 155/2000 [05:43<45:09,  1.47s/it][step=156] episode=156.0000 return=-94.9614 length=26.0000 global_step=5513.0000 loss=175.6080
+dqn train:   8%|▊         | 156/2000 [05:45<47:34,  1.55s/it][step=157] episode=157.0000 return=-32.9260 length=20.0000 global_step=5533.0000 loss=345.7396
+dqn train:   8%|▊         | 157/2000 [05:46<46:31,  1.51s/it][step=158] episode=158.0000 return=-107.8164 length=21.0000 global_step=5554.0000 loss=169.0970
+dqn train:   8%|▊         | 158/2000 [05:48<46:08,  1.50s/it][step=159] episode=159.0000 return=-26.4380 length=27.0000 global_step=5581.0000 loss=313.1166
+dqn train:   8%|▊         | 159/2000 [05:50<49:03,  1.60s/it][step=160] episode=160.0000 return=-36.7905 length=20.0000 global_step=5601.0000 loss=105.3140
+dqn train:   8%|▊         | 160/2000 [05:51<47:17,  1.54s/it][step=161] episode=161.0000 return=-46.0452 length=20.0000 global_step=5621.0000 loss=168.3437
+dqn train:   8%|▊         | 161/2000 [05:52<45:19,  1.48s/it][step=162] episode=162.0000 return=-82.2865 length=53.0000 global_step=5674.0000 loss=456.8858
+dqn train:   8%|▊         | 162/2000 [05:56<1:05:05,  2.13s/it][step=163] episode=163.0000 return=-82.5624 length=19.0000 global_step=5693.0000 loss=331.5048
+dqn train:   8%|▊         | 163/2000 [05:57<57:40,  1.88s/it]  [step=164] episode=164.0000 return=-113.8015 length=36.0000 global_step=5729.0000 loss=451.2928
+dqn train:   8%|▊         | 164/2000 [06:00<1:02:44,  2.05s/it][step=165] episode=165.0000 return=-100.6879 length=29.0000 global_step=5758.0000 loss=186.8829
+dqn train:   8%|▊         | 165/2000 [06:02<1:02:38,  2.05s/it][step=166] episode=166.0000 return=-101.8955 length=19.0000 global_step=5777.0000 loss=490.6012
+dqn train:   8%|▊         | 166/2000 [06:03<55:14,  1.81s/it]  [step=167] episode=167.0000 return=-102.7771 length=12.0000 global_step=5789.0000 loss=27.5099
+dqn train:   8%|▊         | 167/2000 [06:04<46:16,  1.51s/it][step=168] episode=168.0000 return=-71.6012 length=25.0000 global_step=5814.0000 loss=455.2283
+dqn train:   8%|▊         | 168/2000 [06:06<48:17,  1.58s/it][step=169] episode=169.0000 return=-93.0671 length=28.0000 global_step=5842.0000 loss=550.6901
+dqn train:   8%|▊         | 169/2000 [06:08<51:09,  1.68s/it][step=170] episode=170.0000 return=-115.8693 length=13.0000 global_step=5855.0000 loss=275.3127
+dqn train:   8%|▊         | 170/2000 [06:08<44:17,  1.45s/it][step=171] episode=171.0000 return=-115.9871 length=13.0000 global_step=5868.0000 loss=318.1714
+dqn train:   9%|▊         | 171/2000 [06:09<38:43,  1.27s/it][step=172] episode=172.0000 return=1.2289 length=20.0000 global_step=5888.0000 loss=244.4383
+dqn train:   9%|▊         | 172/2000 [06:11<39:16,  1.29s/it][step=173] episode=173.0000 return=-65.1644 length=21.0000 global_step=5909.0000 loss=246.6126
+dqn train:   9%|▊         | 173/2000 [06:12<40:29,  1.33s/it][step=174] episode=174.0000 return=-97.1817 length=13.0000 global_step=5922.0000 loss=324.2899
+dqn train:   9%|▊         | 174/2000 [06:13<36:25,  1.20s/it][step=175] episode=175.0000 return=-110.9244 length=26.0000 global_step=5948.0000 loss=250.4807
+dqn train:   9%|▉         | 175/2000 [06:15<41:49,  1.37s/it][step=176] episode=176.0000 return=-106.5343 length=13.0000 global_step=5961.0000 loss=260.7367
+dqn train:   9%|▉         | 176/2000 [06:16<37:27,  1.23s/it][step=177] episode=177.0000 return=-44.1524 length=64.0000 global_step=6025.0000 loss=354.5988
+dqn train:   9%|▉         | 177/2000 [06:20<1:05:52,  2.17s/it][step=178] episode=178.0000 return=-112.1889 length=20.0000 global_step=6045.0000 loss=804.5822
+dqn train:   9%|▉         | 178/2000 [06:21<58:49,  1.94s/it]  [step=179] episode=179.0000 return=-102.9748 length=34.0000 global_step=6079.0000 loss=358.0001
+dqn train:   9%|▉         | 179/2000 [06:24<1:02:48,  2.07s/it][step=180] episode=180.0000 return=-99.0548 length=29.0000 global_step=6108.0000 loss=337.1608
+dqn train:   9%|▉         | 180/2000 [06:26<1:02:25,  2.06s/it][step=181] episode=181.0000 return=-69.7897 length=26.0000 global_step=6134.0000 loss=119.1243
+dqn train:   9%|▉         | 181/2000 [06:28<59:48,  1.97s/it]  [step=182] episode=182.0000 return=-75.9889 length=29.0000 global_step=6163.0000 loss=322.8738
+dqn train:   9%|▉         | 182/2000 [06:30<1:00:09,  1.99s/it][step=183] episode=183.0000 return=-95.7223 length=11.0000 global_step=6174.0000 loss=317.9178
+dqn train:   9%|▉         | 183/2000 [06:30<48:56,  1.62s/it]  [step=184] episode=184.0000 return=-75.7439 length=29.0000 global_step=6203.0000 loss=271.0907
+dqn train:   9%|▉         | 184/2000 [06:32<52:42,  1.74s/it][step=185] episode=185.0000 return=-88.3207 length=20.0000 global_step=6223.0000 loss=187.4081
+dqn train:   9%|▉         | 185/2000 [06:34<49:02,  1.62s/it][step=186] episode=186.0000 return=-39.4725 length=35.0000 global_step=6258.0000 loss=346.9130
+dqn train:   9%|▉         | 186/2000 [06:36<55:30,  1.84s/it][step=187] episode=187.0000 return=-80.9270 length=12.0000 global_step=6270.0000 loss=111.3213
+dqn train:   9%|▉         | 187/2000 [06:37<46:45,  1.55s/it][step=188] episode=188.0000 return=-115.9758 length=20.0000 global_step=6290.0000 loss=396.8549
+dqn train:   9%|▉         | 188/2000 [06:38<45:26,  1.50s/it][step=189] episode=189.0000 return=-20.3423 length=30.0000 global_step=6320.0000 loss=594.5325
+dqn train:   9%|▉         | 189/2000 [06:40<49:35,  1.64s/it][step=190] episode=190.0000 return=-68.6206 length=19.0000 global_step=6339.0000 loss=488.9082
+dqn train:  10%|▉         | 190/2000 [06:42<46:50,  1.55s/it][step=191] episode=191.0000 return=-110.8623 length=26.0000 global_step=6365.0000 loss=504.9344
+dqn train:  10%|▉         | 191/2000 [06:43<48:39,  1.61s/it][step=192] episode=192.0000 return=-114.3701 length=18.0000 global_step=6383.0000 loss=126.5844
+dqn train:  10%|▉         | 192/2000 [06:45<45:03,  1.50s/it][step=193] episode=193.0000 return=-78.7576 length=11.0000 global_step=6394.0000 loss=493.2393
+dqn train:  10%|▉         | 193/2000 [06:45<38:01,  1.26s/it][step=194] episode=194.0000 return=-90.1710 length=13.0000 global_step=6407.0000 loss=651.7290
+dqn train:  10%|▉         | 194/2000 [06:46<34:57,  1.16s/it][step=195] episode=195.0000 return=-115.9979 length=12.0000 global_step=6419.0000 loss=413.6049
+dqn train:  10%|▉         | 195/2000 [06:47<32:05,  1.07s/it][step=196] episode=196.0000 return=-65.5403 length=45.0000 global_step=6464.0000 loss=338.2975
+dqn train:  10%|▉         | 196/2000 [06:50<50:35,  1.68s/it][step=197] episode=197.0000 return=-31.0970 length=22.0000 global_step=6486.0000 loss=356.5534
+dqn train:  10%|▉         | 197/2000 [06:52<49:05,  1.63s/it][step=198] episode=198.0000 return=-90.8947 length=54.0000 global_step=6540.0000 loss=266.1618
+dqn train:  10%|▉         | 198/2000 [06:55<1:07:38,  2.25s/it][step=199] episode=199.0000 return=-57.9731 length=28.0000 global_step=6568.0000 loss=394.7365
+dqn train:  10%|▉         | 199/2000 [06:57<1:04:48,  2.16s/it][step=200] episode=200.0000 return=-63.0417 length=19.0000 global_step=6587.0000 loss=245.5863
+dqn train:  10%|█         | 200/2000 [06:59<57:55,  1.93s/it]  [step=201] episode=201.0000 return=-24.2565 length=40.0000 global_step=6627.0000 loss=427.1586
+dqn train:  10%|█         | 201/2000 [07:02<1:05:04,  2.17s/it][step=202] episode=202.0000 return=-110.2256 length=20.0000 global_step=6647.0000 loss=119.7468
+dqn train:  10%|█         | 202/2000 [07:03<58:32,  1.95s/it]  [step=203] episode=203.0000 return=-94.2575 length=26.0000 global_step=6673.0000 loss=740.1255
+dqn train:  10%|█         | 203/2000 [07:05<56:45,  1.90s/it][step=204] episode=204.0000 return=-115.9971 length=21.0000 global_step=6694.0000 loss=329.2120
+dqn train:  10%|█         | 204/2000 [07:06<52:23,  1.75s/it][step=205] episode=205.0000 return=-115.9342 length=18.0000 global_step=6712.0000 loss=418.5488
+dqn train:  10%|█         | 205/2000 [07:07<47:51,  1.60s/it][step=206] episode=206.0000 return=-115.9363 length=12.0000 global_step=6724.0000 loss=404.1785
+dqn train:  10%|█         | 206/2000 [07:08<41:19,  1.38s/it][step=207] episode=207.0000 return=-55.5901 length=13.0000 global_step=6737.0000 loss=424.9058
+dqn train:  10%|█         | 207/2000 [07:09<36:42,  1.23s/it][step=208] episode=208.0000 return=-68.9691 length=25.0000 global_step=6762.0000 loss=559.0534
+dqn train:  10%|█         | 208/2000 [07:11<41:02,  1.37s/it][step=209] episode=209.0000 return=-98.6856 length=27.0000 global_step=6789.0000 loss=179.1647
+dqn train:  10%|█         | 209/2000 [07:13<45:38,  1.53s/it][step=210] episode=210.0000 return=-107.9718 length=13.0000 global_step=6802.0000 loss=598.8837
+dqn train:  10%|█         | 210/2000 [07:14<40:12,  1.35s/it][step=211] episode=211.0000 return=-90.0417 length=21.0000 global_step=6823.0000 loss=267.3095
+dqn train:  11%|█         | 211/2000 [07:15<40:57,  1.37s/it][step=212] episode=212.0000 return=-43.1376 length=19.0000 global_step=6842.0000 loss=122.6800
+dqn train:  11%|█         | 212/2000 [07:16<40:35,  1.36s/it][step=213] episode=213.0000 return=36.6461 length=19.0000 global_step=6861.0000 loss=487.2144
+dqn train:  11%|█         | 213/2000 [07:18<40:08,  1.35s/it][step=214] episode=214.0000 return=-103.0767 length=29.0000 global_step=6890.0000 loss=198.3492
+dqn train:  11%|█         | 214/2000 [07:20<46:12,  1.55s/it][step=215] episode=215.0000 return=-34.6436 length=22.0000 global_step=6912.0000 loss=570.6772
+dqn train:  11%|█         | 215/2000 [07:21<45:46,  1.54s/it][step=216] episode=216.0000 return=-92.3430 length=21.0000 global_step=6933.0000 loss=178.0106
+dqn train:  11%|█         | 216/2000 [07:23<44:34,  1.50s/it][step=217] episode=217.0000 return=-115.8351 length=34.0000 global_step=6967.0000 loss=412.1536
+dqn train:  11%|█         | 217/2000 [07:25<52:36,  1.77s/it][step=218] episode=218.0000 return=-115.9796 length=11.0000 global_step=6978.0000 loss=444.8452
+dqn train:  11%|█         | 218/2000 [07:26<43:54,  1.48s/it][step=219] episode=219.0000 return=-35.6114 length=21.0000 global_step=6999.0000 loss=196.2918
+dqn train:  11%|█         | 219/2000 [07:27<42:31,  1.43s/it][step=220] episode=220.0000 return=-115.9993 length=29.0000 global_step=7028.0000 loss=188.0761
+dqn train:  11%|█         | 220/2000 [07:29<47:20,  1.60s/it][step=221] episode=221.0000 return=-115.4355 length=34.0000 global_step=7062.0000 loss=183.5633
+dqn train:  11%|█         | 221/2000 [07:31<53:38,  1.81s/it][step=222] episode=222.0000 return=-89.1152 length=19.0000 global_step=7081.0000 loss=182.3404
+dqn train:  11%|█         | 222/2000 [07:33<48:49,  1.65s/it][step=223] episode=223.0000 return=-115.9774 length=13.0000 global_step=7094.0000 loss=347.2286
+dqn train:  11%|█         | 223/2000 [07:34<42:26,  1.43s/it][step=224] episode=224.0000 return=-108.9091 length=28.0000 global_step=7122.0000 loss=191.1537
+dqn train:  11%|█         | 224/2000 [07:36<46:45,  1.58s/it][step=225] episode=225.0000 return=-69.4008 length=49.0000 global_step=7171.0000 loss=211.3362
+dqn train:  11%|█▏        | 225/2000 [07:39<1:02:07,  2.10s/it][step=226] episode=226.0000 return=29.3946 length=30.0000 global_step=7201.0000 loss=344.7395
+dqn train:  11%|█▏        | 226/2000 [07:41<1:02:06,  2.10s/it][step=227] episode=227.0000 return=74.9912 length=26.0000 global_step=7227.0000 loss=248.4338
+dqn train:  11%|█▏        | 227/2000 [07:43<59:27,  2.01s/it]  [step=228] episode=228.0000 return=-112.5881 length=11.0000 global_step=7238.0000 loss=238.7714
+dqn train:  11%|█▏        | 228/2000 [07:44<48:45,  1.65s/it][step=229] episode=229.0000 return=-44.3131 length=34.0000 global_step=7272.0000 loss=513.5637
+dqn train:  11%|█▏        | 229/2000 [07:46<54:49,  1.86s/it][step=230] episode=230.0000 return=-67.9515 length=12.0000 global_step=7284.0000 loss=568.1271
+dqn train:  12%|█▏        | 230/2000 [07:47<45:37,  1.55s/it][step=231] episode=231.0000 return=-61.6457 length=21.0000 global_step=7305.0000 loss=421.6365
+dqn train:  12%|█▏        | 231/2000 [07:48<45:13,  1.53s/it][step=232] episode=232.0000 return=1.4982 length=20.0000 global_step=7325.0000 loss=436.4060
+dqn train:  12%|█▏        | 232/2000 [07:50<43:20,  1.47s/it][step=233] episode=233.0000 return=-99.5114 length=21.0000 global_step=7346.0000 loss=128.0849
+dqn train:  12%|█▏        | 233/2000 [07:51<43:21,  1.47s/it][step=234] episode=234.0000 return=-67.0126 length=12.0000 global_step=7358.0000 loss=615.8533
+dqn train:  12%|█▏        | 234/2000 [07:52<37:43,  1.28s/it][step=235] episode=235.0000 return=-78.1519 length=21.0000 global_step=7379.0000 loss=188.6589
+dqn train:  12%|█▏        | 235/2000 [07:53<39:40,  1.35s/it][step=236] episode=236.0000 return=-112.5070 length=12.0000 global_step=7391.0000 loss=252.7995
+dqn train:  12%|█▏        | 236/2000 [07:54<34:34,  1.18s/it][step=237] episode=237.0000 return=-104.9076 length=20.0000 global_step=7411.0000 loss=180.2960
+dqn train:  12%|█▏        | 237/2000 [07:56<36:26,  1.24s/it][step=238] episode=238.0000 return=-30.1671 length=38.0000 global_step=7449.0000 loss=275.3705
+dqn train:  12%|█▏        | 238/2000 [07:58<48:37,  1.66s/it][step=239] episode=239.0000 return=-101.8468 length=19.0000 global_step=7468.0000 loss=403.8734
+dqn train:  12%|█▏        | 239/2000 [08:00<45:38,  1.56s/it][step=240] episode=240.0000 return=-67.4186 length=13.0000 global_step=7481.0000 loss=418.9111
+dqn train:  12%|█▏        | 240/2000 [08:00<40:04,  1.37s/it][step=241] episode=241.0000 return=-55.0560 length=12.0000 global_step=7493.0000 loss=267.6313
+dqn train:  12%|█▏        | 241/2000 [08:01<35:45,  1.22s/it][step=242] episode=242.0000 return=-92.8498 length=44.0000 global_step=7537.0000 loss=183.7477
+dqn train:  12%|█▏        | 242/2000 [08:04<51:45,  1.77s/it][step=243] episode=243.0000 return=-52.9460 length=20.0000 global_step=7557.0000 loss=345.2251
+dqn train:  12%|█▏        | 243/2000 [08:06<48:16,  1.65s/it][step=244] episode=244.0000 return=-64.7272 length=18.0000 global_step=7575.0000 loss=343.1193
+dqn train:  12%|█▏        | 244/2000 [08:07<44:37,  1.52s/it][step=245] episode=245.0000 return=27.4384 length=30.0000 global_step=7605.0000 loss=428.2684
+dqn train:  12%|█▏        | 245/2000 [08:09<49:49,  1.70s/it][step=246] episode=246.0000 return=-59.4265 length=28.0000 global_step=7633.0000 loss=414.5560
+dqn train:  12%|█▏        | 246/2000 [08:11<51:03,  1.75s/it][step=247] episode=247.0000 return=-98.5855 length=21.0000 global_step=7654.0000 loss=341.4913
+dqn train:  12%|█▏        | 247/2000 [08:12<48:01,  1.64s/it][step=248] episode=248.0000 return=-115.9972 length=21.0000 global_step=7675.0000 loss=304.8023
+dqn train:  12%|█▏        | 248/2000 [08:14<45:42,  1.57s/it][step=249] episode=249.0000 return=-38.8103 length=11.0000 global_step=7686.0000 loss=430.4779
+dqn train:  12%|█▏        | 249/2000 [08:15<38:45,  1.33s/it][step=250] episode=250.0000 return=-92.1682 length=30.0000 global_step=7716.0000 loss=182.7083
+dqn train:  12%|█▎        | 250/2000 [08:17<45:26,  1.56s/it][step=251] episode=251.0000 return=-50.4842 length=30.0000 global_step=7746.0000 loss=640.8693
+dqn train:  13%|█▎        | 251/2000 [08:19<50:04,  1.72s/it][step=252] episode=252.0000 return=-88.3143 length=18.0000 global_step=7764.0000 loss=521.8877
+dqn train:  13%|█▎        | 252/2000 [08:20<45:33,  1.56s/it][step=253] episode=253.0000 return=-82.0615 length=20.0000 global_step=7784.0000 loss=419.5905
+dqn train:  13%|█▎        | 253/2000 [08:21<43:23,  1.49s/it][step=254] episode=254.0000 return=170.4465 length=107.0000 global_step=7891.0000 loss=343.1072
+dqn train:  13%|█▎        | 254/2000 [08:29<1:34:34,  3.25s/it][step=255] episode=255.0000 return=-87.7316 length=20.0000 global_step=7911.0000 loss=314.7342
+dqn train:  13%|█▎        | 255/2000 [08:30<1:18:09,  2.69s/it][step=256] episode=256.0000 return=-114.3168 length=13.0000 global_step=7924.0000 loss=121.9346
+dqn train:  13%|█▎        | 256/2000 [08:31<1:02:02,  2.13s/it][step=257] episode=257.0000 return=-62.1552 length=28.0000 global_step=7952.0000 loss=189.3285
+dqn train:  13%|█▎        | 257/2000 [08:33<1:00:54,  2.10s/it][step=258] episode=258.0000 return=-98.3609 length=28.0000 global_step=7980.0000 loss=274.9923
+dqn train:  13%|█▎        | 258/2000 [08:35<58:53,  2.03s/it]  [step=259] episode=259.0000 return=-92.6836 length=12.0000 global_step=7992.0000 loss=507.2639
+dqn train:  13%|█▎        | 259/2000 [08:36<48:29,  1.67s/it][step=260] episode=260.0000 return=-84.8264 length=41.0000 global_step=8033.0000 loss=265.3156
+dqn train:  13%|█▎        | 260/2000 [08:38<58:20,  2.01s/it][step=261] episode=261.0000 return=-91.1827 length=28.0000 global_step=8061.0000 loss=413.0683
+dqn train:  13%|█▎        | 261/2000 [08:40<57:47,  1.99s/it][step=262] episode=262.0000 return=-78.6761 length=29.0000 global_step=8090.0000 loss=440.1077
+dqn train:  13%|█▎        | 262/2000 [08:42<56:57,  1.97s/it][step=263] episode=263.0000 return=-67.4122 length=21.0000 global_step=8111.0000 loss=607.8714
+dqn train:  13%|█▎        | 263/2000 [08:44<52:24,  1.81s/it][step=264] episode=264.0000 return=-85.1679 length=20.0000 global_step=8131.0000 loss=250.5929
+dqn train:  13%|█▎        | 264/2000 [08:45<48:34,  1.68s/it][step=265] episode=265.0000 return=-112.7876 length=35.0000 global_step=8166.0000 loss=445.3303
+dqn train:  13%|█▎        | 265/2000 [08:47<55:17,  1.91s/it][step=266] episode=266.0000 return=-47.3635 length=20.0000 global_step=8186.0000 loss=524.2512
+dqn train:  13%|█▎        | 266/2000 [08:49<50:23,  1.74s/it][step=267] episode=267.0000 return=-100.2327 length=27.0000 global_step=8213.0000 loss=607.4031
+dqn train:  13%|█▎        | 267/2000 [08:51<51:03,  1.77s/it][step=268] episode=268.0000 return=-101.6801 length=36.0000 global_step=8249.0000 loss=422.3362
+dqn train:  13%|█▎        | 268/2000 [08:53<57:19,  1.99s/it][step=269] episode=269.0000 return=-91.9006 length=12.0000 global_step=8261.0000 loss=299.1505
+dqn train:  13%|█▎        | 269/2000 [08:54<47:17,  1.64s/it][step=270] episode=270.0000 return=-86.1453 length=20.0000 global_step=8281.0000 loss=284.2966
+dqn train:  14%|█▎        | 270/2000 [08:55<44:58,  1.56s/it][step=271] episode=271.0000 return=-2.6310 length=20.0000 global_step=8301.0000 loss=346.0087
+dqn train:  14%|█▎        | 271/2000 [08:57<43:06,  1.50s/it][step=272] episode=272.0000 return=-114.6537 length=38.0000 global_step=8339.0000 loss=532.2427
+dqn train:  14%|█▎        | 272/2000 [08:59<52:02,  1.81s/it][step=273] episode=273.0000 return=-63.3188 length=58.0000 global_step=8397.0000 loss=644.4187
+dqn train:  14%|█▎        | 273/2000 [09:03<1:11:35,  2.49s/it][step=274] episode=274.0000 return=-82.5052 length=29.0000 global_step=8426.0000 loss=254.8102
+dqn train:  14%|█▎        | 274/2000 [09:05<1:06:39,  2.32s/it][step=275] episode=275.0000 return=-64.6380 length=20.0000 global_step=8446.0000 loss=377.7365
+dqn train:  14%|█▍        | 275/2000 [09:07<58:11,  2.02s/it]  [step=276] episode=276.0000 return=-87.4008 length=27.0000 global_step=8473.0000 loss=446.0936
+dqn train:  14%|█▍        | 276/2000 [09:08<56:36,  1.97s/it][step=277] episode=277.0000 return=-101.8348 length=19.0000 global_step=8492.0000 loss=455.1162
+dqn train:  14%|█▍        | 277/2000 [09:10<51:23,  1.79s/it][step=278] episode=278.0000 return=-68.7310 length=33.0000 global_step=8525.0000 loss=634.6307
+dqn train:  14%|█▍        | 278/2000 [09:12<55:26,  1.93s/it][step=279] episode=279.0000 return=-50.4983 length=28.0000 global_step=8553.0000 loss=319.8998
+dqn train:  14%|█▍        | 279/2000 [09:14<54:55,  1.91s/it][step=280] episode=280.0000 return=-110.9483 length=20.0000 global_step=8573.0000 loss=178.5972
+dqn train:  14%|█▍        | 280/2000 [09:15<49:36,  1.73s/it][step=281] episode=281.0000 return=-115.9783 length=20.0000 global_step=8593.0000 loss=381.1215
+dqn train:  14%|█▍        | 281/2000 [09:17<46:28,  1.62s/it][step=282] episode=282.0000 return=51.2348 length=21.0000 global_step=8614.0000 loss=103.1692
+dqn train:  14%|█▍        | 282/2000 [09:18<44:52,  1.57s/it][step=283] episode=283.0000 return=-15.6401 length=12.0000 global_step=8626.0000 loss=430.6913
+dqn train:  14%|█▍        | 283/2000 [09:19<38:43,  1.35s/it][step=284] episode=284.0000 return=-89.8334 length=20.0000 global_step=8646.0000 loss=270.6517
+dqn train:  14%|█▍        | 284/2000 [09:20<39:06,  1.37s/it][step=285] episode=285.0000 return=39.5702 length=58.0000 global_step=8704.0000 loss=122.9246
+dqn train:  14%|█▍        | 285/2000 [09:24<1:00:18,  2.11s/it][step=286] episode=286.0000 return=-115.9781 length=36.0000 global_step=8740.0000 loss=516.1791
+dqn train:  14%|█▍        | 286/2000 [09:27<1:02:53,  2.20s/it][step=287] episode=287.0000 return=-63.7353 length=20.0000 global_step=8760.0000 loss=275.0543
+dqn train:  14%|█▍        | 287/2000 [09:28<55:41,  1.95s/it]  [step=288] episode=288.0000 return=-47.7566 length=22.0000 global_step=8782.0000 loss=285.4617
+dqn train:  14%|█▍        | 288/2000 [09:29<51:36,  1.81s/it][step=289] episode=289.0000 return=-71.7066 length=33.0000 global_step=8815.0000 loss=206.0921
+dqn train:  14%|█▍        | 289/2000 [09:32<54:46,  1.92s/it][step=290] episode=290.0000 return=-107.5895 length=28.0000 global_step=8843.0000 loss=185.9291
+dqn train:  14%|█▍        | 290/2000 [09:33<54:46,  1.92s/it][step=291] episode=291.0000 return=-80.1623 length=28.0000 global_step=8871.0000 loss=539.1888
+dqn train:  15%|█▍        | 291/2000 [09:35<55:05,  1.93s/it][step=292] episode=292.0000 return=-62.3742 length=27.0000 global_step=8898.0000 loss=118.1806
+dqn train:  15%|█▍        | 292/2000 [09:37<53:54,  1.89s/it][step=293] episode=293.0000 return=-71.7130 length=20.0000 global_step=8918.0000 loss=310.4710
+dqn train:  15%|█▍        | 293/2000 [09:39<49:31,  1.74s/it][step=294] episode=294.0000 return=-100.1223 length=11.0000 global_step=8929.0000 loss=404.6847
+dqn train:  15%|█▍        | 294/2000 [09:39<41:20,  1.45s/it][step=295] episode=295.0000 return=-30.5356 length=25.0000 global_step=8954.0000 loss=662.6157
+dqn train:  15%|█▍        | 295/2000 [09:41<43:06,  1.52s/it][step=296] episode=296.0000 return=-86.3083 length=26.0000 global_step=8980.0000 loss=309.4938
+dqn train:  15%|█▍        | 296/2000 [09:43<46:09,  1.63s/it][step=297] episode=297.0000 return=-101.8353 length=30.0000 global_step=9010.0000 loss=325.7531
+dqn train:  15%|█▍        | 297/2000 [09:45<50:13,  1.77s/it][step=298] episode=298.0000 return=-85.5614 length=22.0000 global_step=9032.0000 loss=353.5042
+dqn train:  15%|█▍        | 298/2000 [09:46<47:13,  1.66s/it][step=299] episode=299.0000 return=-89.6638 length=21.0000 global_step=9053.0000 loss=225.8474
+dqn train:  15%|█▍        | 299/2000 [09:48<45:27,  1.60s/it][step=300] episode=300.0000 return=-64.7443 length=12.0000 global_step=9065.0000 loss=302.5652
+dqn train:  15%|█▌        | 300/2000 [09:49<39:45,  1.40s/it][step=301] episode=301.0000 return=-115.9971 length=22.0000 global_step=9087.0000 loss=499.2062
+dqn train:  15%|█▌        | 301/2000 [09:50<40:25,  1.43s/it][step=302] episode=302.0000 return=-57.8138 length=41.0000 global_step=9128.0000 loss=590.6932
+dqn train:  15%|█▌        | 302/2000 [09:53<51:46,  1.83s/it][step=303] episode=303.0000 return=-87.4291 length=29.0000 global_step=9157.0000 loss=176.8406
+dqn train:  15%|█▌        | 303/2000 [09:55<53:02,  1.88s/it][step=304] episode=304.0000 return=-94.0289 length=21.0000 global_step=9178.0000 loss=292.6136
+dqn train:  15%|█▌        | 304/2000 [09:57<49:17,  1.74s/it][step=305] episode=305.0000 return=-98.5894 length=37.0000 global_step=9215.0000 loss=298.0587
+dqn train:  15%|█▌        | 305/2000 [09:59<56:04,  1.99s/it][step=306] episode=306.0000 return=-65.0326 length=20.0000 global_step=9235.0000 loss=220.3223
+dqn train:  15%|█▌        | 306/2000 [10:00<50:53,  1.80s/it][step=307] episode=307.0000 return=-115.9986 length=21.0000 global_step=9256.0000 loss=195.5662
+dqn train:  15%|█▌        | 307/2000 [10:02<47:44,  1.69s/it][step=308] episode=308.0000 return=-54.2693 length=20.0000 global_step=9276.0000 loss=287.5815
+dqn train:  15%|█▌        | 308/2000 [10:03<45:14,  1.60s/it][step=309] episode=309.0000 return=-21.4694 length=63.0000 global_step=9339.0000 loss=262.9725
+dqn train:  15%|█▌        | 309/2000 [10:08<1:07:31,  2.40s/it][step=310] episode=310.0000 return=-114.1118 length=30.0000 global_step=9369.0000 loss=583.5494
+dqn train:  16%|█▌        | 310/2000 [10:10<1:04:43,  2.30s/it][step=311] episode=311.0000 return=171.9099 length=292.0000 global_step=9661.0000 loss=557.6370
+dqn train:  16%|█▌        | 311/2000 [10:29<3:30:54,  7.49s/it][step=312] episode=312.0000 return=-20.5529 length=12.0000 global_step=9673.0000 loss=308.1426
+dqn train:  16%|█▌        | 312/2000 [10:30<2:34:22,  5.49s/it][step=313] episode=313.0000 return=-79.3728 length=13.0000 global_step=9686.0000 loss=466.6514
+dqn train:  16%|█▌        | 313/2000 [10:31<1:55:44,  4.12s/it][step=314] episode=314.0000 return=-68.9992 length=20.0000 global_step=9706.0000 loss=606.1326
+dqn train:  16%|█▌        | 314/2000 [10:32<1:32:43,  3.30s/it][step=315] episode=315.0000 return=-100.5366 length=12.0000 global_step=9718.0000 loss=332.8683
+dqn train:  16%|█▌        | 315/2000 [10:33<1:12:09,  2.57s/it][step=316] episode=316.0000 return=-87.8551 length=20.0000 global_step=9738.0000 loss=312.3918
+dqn train:  16%|█▌        | 316/2000 [10:35<1:01:56,  2.21s/it][step=317] episode=317.0000 return=-115.9919 length=21.0000 global_step=9759.0000 loss=129.2113
+dqn train:  16%|█▌        | 317/2000 [10:36<55:56,  1.99s/it]  [step=318] episode=318.0000 return=-95.2982 length=21.0000 global_step=9780.0000 loss=119.8031
+dqn train:  16%|█▌        | 318/2000 [10:37<50:37,  1.81s/it][step=319] episode=319.0000 return=19.5384 length=21.0000 global_step=9801.0000 loss=212.2754
+dqn train:  16%|█▌        | 319/2000 [10:39<47:24,  1.69s/it][step=320] episode=320.0000 return=-115.9793 length=20.0000 global_step=9821.0000 loss=195.5415
+dqn train:  16%|█▌        | 320/2000 [10:40<44:56,  1.61s/it][step=321] episode=321.0000 return=-115.9758 length=20.0000 global_step=9841.0000 loss=206.5423
+dqn train:  16%|█▌        | 321/2000 [10:42<43:09,  1.54s/it][step=322] episode=322.0000 return=-30.1318 length=57.0000 global_step=9898.0000 loss=421.6779
+dqn train:  16%|█▌        | 322/2000 [10:46<1:03:37,  2.28s/it][step=323] episode=323.0000 return=-58.4810 length=34.0000 global_step=9932.0000 loss=284.4270
+dqn train:  16%|█▌        | 323/2000 [10:48<1:03:42,  2.28s/it][step=324] episode=324.0000 return=132.0109 length=178.0000 global_step=10110.0000 loss=212.4776
+dqn train:  16%|█▌        | 324/2000 [11:00<2:24:46,  5.18s/it][step=325] episode=325.0000 return=-109.8296 length=21.0000 global_step=10131.0000 loss=301.1603
+dqn train:  16%|█▋        | 325/2000 [11:01<1:52:59,  4.05s/it][step=326] episode=326.0000 return=-4.1242 length=22.0000 global_step=10153.0000 loss=366.2266
+dqn train:  16%|█▋        | 326/2000 [11:03<1:31:06,  3.27s/it][step=327] episode=327.0000 return=-79.4630 length=30.0000 global_step=10183.0000 loss=122.2838
+dqn train:  16%|█▋        | 327/2000 [11:05<1:20:29,  2.89s/it][step=328] episode=328.0000 return=-113.6233 length=20.0000 global_step=10203.0000 loss=640.6105
+dqn train:  16%|█▋        | 328/2000 [11:06<1:07:37,  2.43s/it][step=329] episode=329.0000 return=-114.9269 length=28.0000 global_step=10231.0000 loss=204.2618
+dqn train:  16%|█▋        | 329/2000 [11:08<1:03:23,  2.28s/it][step=330] episode=330.0000 return=-52.7478 length=42.0000 global_step=10273.0000 loss=202.6616
+dqn train:  16%|█▋        | 330/2000 [11:11<1:08:40,  2.47s/it][step=331] episode=331.0000 return=-106.1588 length=27.0000 global_step=10300.0000 loss=146.0359
+dqn train:  17%|█▋        | 331/2000 [11:13<1:03:26,  2.28s/it][step=332] episode=332.0000 return=-115.9815 length=25.0000 global_step=10325.0000 loss=153.4992
+dqn train:  17%|█▋        | 332/2000 [11:14<57:55,  2.08s/it]  [step=333] episode=333.0000 return=-72.5998 length=12.0000 global_step=10337.0000 loss=280.2802
+dqn train:  17%|█▋        | 333/2000 [11:15<47:17,  1.70s/it][step=334] episode=334.0000 return=-86.2879 length=25.0000 global_step=10362.0000 loss=615.5547
+dqn train:  17%|█▋        | 334/2000 [11:17<47:13,  1.70s/it][step=335] episode=335.0000 return=-74.5288 length=20.0000 global_step=10382.0000 loss=390.1507
+dqn train:  17%|█▋        | 335/2000 [11:18<44:33,  1.61s/it][step=336] episode=336.0000 return=26.3689 length=28.0000 global_step=10410.0000 loss=387.5337
+dqn train:  17%|█▋        | 336/2000 [11:20<47:03,  1.70s/it][step=337] episode=337.0000 return=-44.6364 length=20.0000 global_step=10430.0000 loss=367.9578
+dqn train:  17%|█▋        | 337/2000 [11:22<44:29,  1.61s/it][step=338] episode=338.0000 return=51.8553 length=86.0000 global_step=10516.0000 loss=320.2737
+dqn train:  17%|█▋        | 338/2000 [11:27<1:18:23,  2.83s/it][step=339] episode=339.0000 return=-82.3441 length=12.0000 global_step=10528.0000 loss=131.3644
+dqn train:  17%|█▋        | 339/2000 [11:28<1:01:25,  2.22s/it][step=340] episode=340.0000 return=-31.5170 length=35.0000 global_step=10563.0000 loss=561.6081
+dqn train:  17%|█▋        | 340/2000 [11:30<1:02:09,  2.25s/it][step=341] episode=341.0000 return=-99.2781 length=20.0000 global_step=10583.0000 loss=431.2453
+dqn train:  17%|█▋        | 341/2000 [11:32<54:52,  1.98s/it]  [step=342] episode=342.0000 return=5.7641 length=20.0000 global_step=10603.0000 loss=616.1943
+dqn train:  17%|█▋        | 342/2000 [11:33<50:04,  1.81s/it][step=343] episode=343.0000 return=-24.1813 length=19.0000 global_step=10622.0000 loss=106.5173
+dqn train:  17%|█▋        | 343/2000 [11:35<46:25,  1.68s/it][step=344] episode=344.0000 return=-97.1596 length=21.0000 global_step=10643.0000 loss=203.3126
+dqn train:  17%|█▋        | 344/2000 [11:36<44:00,  1.59s/it][step=345] episode=345.0000 return=-33.1452 length=13.0000 global_step=10656.0000 loss=513.1769
+dqn train:  17%|█▋        | 345/2000 [11:37<37:35,  1.36s/it][step=346] episode=346.0000 return=-7.2186 length=36.0000 global_step=10692.0000 loss=408.0522
+dqn train:  17%|█▋        | 346/2000 [11:39<46:27,  1.69s/it][step=347] episode=347.0000 return=-106.9166 length=20.0000 global_step=10712.0000 loss=747.4671
+dqn train:  17%|█▋        | 347/2000 [11:41<43:38,  1.58s/it][step=348] episode=348.0000 return=-86.6365 length=20.0000 global_step=10732.0000 loss=314.8511
+dqn train:  17%|█▋        | 348/2000 [11:42<42:24,  1.54s/it][step=349] episode=349.0000 return=-87.7908 length=27.0000 global_step=10759.0000 loss=316.2579
+dqn train:  17%|█▋        | 349/2000 [11:44<44:41,  1.62s/it][step=350] episode=350.0000 return=-62.0033 length=11.0000 global_step=10770.0000 loss=254.7110
+dqn train:  18%|█▊        | 350/2000 [11:45<38:20,  1.39s/it][step=351] episode=351.0000 return=-115.3558 length=33.0000 global_step=10803.0000 loss=467.0714
+dqn train:  18%|█▊        | 351/2000 [11:47<45:36,  1.66s/it][step=352] episode=352.0000 return=-76.2701 length=27.0000 global_step=10830.0000 loss=327.5236
+dqn train:  18%|█▊        | 352/2000 [11:49<47:34,  1.73s/it][step=353] episode=353.0000 return=-87.0040 length=19.0000 global_step=10849.0000 loss=199.4120
+dqn train:  18%|█▊        | 353/2000 [11:50<44:17,  1.61s/it][step=354] episode=354.0000 return=-2.7629 length=21.0000 global_step=10870.0000 loss=443.3627
+dqn train:  18%|█▊        | 354/2000 [11:52<43:16,  1.58s/it][step=355] episode=355.0000 return=-85.5033 length=42.0000 global_step=10912.0000 loss=667.2804
+dqn train:  18%|█▊        | 355/2000 [11:54<53:28,  1.95s/it][step=356] episode=356.0000 return=-115.9964 length=29.0000 global_step=10941.0000 loss=407.9669
+dqn train:  18%|█▊        | 356/2000 [11:56<53:41,  1.96s/it][step=357] episode=357.0000 return=-58.0375 length=20.0000 global_step=10961.0000 loss=252.7402
+dqn train:  18%|█▊        | 357/2000 [11:58<48:30,  1.77s/it][step=358] episode=358.0000 return=-100.3320 length=22.0000 global_step=10983.0000 loss=239.8749
+dqn train:  18%|█▊        | 358/2000 [11:59<46:32,  1.70s/it][step=359] episode=359.0000 return=-27.4445 length=20.0000 global_step=11003.0000 loss=443.9497
+dqn train:  18%|█▊        | 359/2000 [12:01<43:42,  1.60s/it][step=360] episode=360.0000 return=-75.9362 length=29.0000 global_step=11032.0000 loss=179.1573
+dqn train:  18%|█▊        | 360/2000 [12:03<46:54,  1.72s/it][step=361] episode=361.0000 return=-87.5933 length=19.0000 global_step=11051.0000 loss=434.8643
+dqn train:  18%|█▊        | 361/2000 [12:04<43:28,  1.59s/it][step=362] episode=362.0000 return=-98.4722 length=13.0000 global_step=11064.0000 loss=620.5505
+dqn train:  18%|█▊        | 362/2000 [12:05<38:03,  1.39s/it][step=363] episode=363.0000 return=-65.7473 length=88.0000 global_step=11152.0000 loss=710.7849
+dqn train:  18%|█▊        | 363/2000 [12:11<1:15:22,  2.76s/it][step=364] episode=364.0000 return=-96.7468 length=20.0000 global_step=11172.0000 loss=543.0192
+dqn train:  18%|█▊        | 364/2000 [12:12<1:03:35,  2.33s/it][step=365] episode=365.0000 return=-98.0119 length=19.0000 global_step=11191.0000 loss=185.6211
+dqn train:  18%|█▊        | 365/2000 [12:14<55:21,  2.03s/it]  [step=366] episode=366.0000 return=-96.1395 length=13.0000 global_step=11204.0000 loss=134.2106
+dqn train:  18%|█▊        | 366/2000 [12:14<46:03,  1.69s/it][step=367] episode=367.0000 return=-26.0991 length=19.0000 global_step=11223.0000 loss=536.9174
+dqn train:  18%|█▊        | 367/2000 [12:16<43:13,  1.59s/it][step=368] episode=368.0000 return=-26.3891 length=21.0000 global_step=11244.0000 loss=138.7871
+dqn train:  18%|█▊        | 368/2000 [12:17<41:51,  1.54s/it][step=369] episode=369.0000 return=-90.9039 length=27.0000 global_step=11271.0000 loss=489.1899
+dqn train:  18%|█▊        | 369/2000 [12:19<44:00,  1.62s/it][step=370] episode=370.0000 return=-115.1620 length=21.0000 global_step=11292.0000 loss=326.3546
+dqn train:  18%|█▊        | 370/2000 [12:20<42:53,  1.58s/it][step=371] episode=371.0000 return=-59.4409 length=56.0000 global_step=11348.0000 loss=218.4809
+dqn train:  19%|█▊        | 371/2000 [12:24<1:00:34,  2.23s/it][step=372] episode=372.0000 return=-60.2331 length=18.0000 global_step=11366.0000 loss=284.5983
+dqn train:  19%|█▊        | 372/2000 [12:25<52:22,  1.93s/it]  [step=373] episode=373.0000 return=-100.3586 length=37.0000 global_step=11403.0000 loss=544.7417
+dqn train:  19%|█▊        | 373/2000 [12:28<57:09,  2.11s/it]
