@@ -5,10 +5,10 @@ import subprocess
 
 # Jobs to run: (algo, seed)
 JOBS = [
-    # ("dqn", 0),
-    # ("dddqn", 0),
-    # ("rainbow", 0),
+    ("dqn", 0),
     ("ddqn", 0),
+    ("dddqn", 0),
+    ("rainbow", 0),
     ("ppo", 0),
     ("reinforce", 0),
     ("trpo", 0),
